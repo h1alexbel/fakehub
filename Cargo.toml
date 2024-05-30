@@ -26,9 +26,9 @@ version = "0.0.0"
 edition = "2021"
 license = "MIT"
 description = """
-GitHub API Server Stub. Fully functioning mock version of a GitHub API,
-which would support all functions, but work locally, with absolutely no
-connection to GitHub.
+GitHub API Server Stub. Fully functional fake version of a GitHub API that
+supports all the features and works locally, with no connection to GitHub at
+all.
 """
 authors = ["Aliaksei Bialíauski <aliaksei.bialiauski@hey.com>", "Ivanchuk Ivan <l3r8y@duck.com>"]
 
