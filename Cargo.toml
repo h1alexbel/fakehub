@@ -1,0 +1,18 @@
+[package]
+name = "fakehub"
+version = "0.0.0"
+edition = "2021"
+license = "MIT"
+description = """
+GitHub API Server Stub.
+There are many applications that use GitHub API for different purposes.
+All of them need to create automated tests, which need to mock the API server somehow.
+Would be nice to have a fully functioning mock version of a GitHub API, which would support all functions,
+but work locally, with absolutely no connection to GitHub.
+"""
+authors = ["Aliaksei Bialíauski <aliaksei.bialiauski@hey.com>", "Ivanchuk Ivan <l3r8y@duck.com>"]
+
+[dependencies]
+clippy = "0.0.302"
+serde = "1.0.203"
+anyhow = "1.0.86"
