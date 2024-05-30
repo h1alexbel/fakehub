@@ -28,25 +28,17 @@ on:
   pull_request:
     branches:
       - master
-env:
-  RUSTFLAGS: "-Dwarnings"
 concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
+env:
+  RUSTFLAGS: "-Dwarnings"
 jobs:
-  clippy_check:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run Clippy
-        run: cargo clippy --all-targets --all-features
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+      - uses: actions/checkout@v4
       - run: cargo test
       - run: cargo test --release
+      - run: cargo clippy --all-targets --all-features
       - run: cargo fmt --check
