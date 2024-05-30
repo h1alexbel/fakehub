@@ -19,5 +19,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-disallowed-names = ["not-jeff"]
+---
+extends: default
+rules:
+  line-length: disable
+  brackets:
+    min-spaces-inside: 1
+    max-spaces-inside: 2
+  truthy:
+    level: warning
+    allowed-values: [ 'on', 'true', 'false', 'yes', 'no' ]

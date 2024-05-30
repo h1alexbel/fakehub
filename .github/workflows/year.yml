@@ -19,5 +19,30 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-disallowed-names = ["not-jeff"]
+---
+name: year
+on:
+  schedule:
+    - cron: '0 1 22 * *'  # Runs at 01:00 UTC on the 22nd of every month
+concurrency:
+  group: year-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  license:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: FantasticFiasco/action-update-license-year@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: | #add new path with glob pattern https://www.npmjs.com/package/glob
+            **/LICENSE.txt
+            **/*.xml
+            **/*.xsl
+            **/*.rs
+            **/*.yaml
+            **/*.yml
+            **/*.toml
+          commitTitle: "update license year"
