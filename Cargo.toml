@@ -23,7 +23,7 @@
 [package]
 name = "fakehub"
 version = "0.0.0"
-edition = "2024"
+edition = "2021"
 license = "MIT"
 description = """
 GitHub API Server Stub. Fully functioning mock version of a GitHub API,
