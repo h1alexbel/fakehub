@@ -11,7 +11,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/h1alexbel/fakehub/badge.svg)](https://snyk.io/test/github/h1alexbel/fakehub)
 
 fakehub - A fully functional fake version of a GitHub API that supports all the
-features but works locally, with no connection to GitHub at all.
+features and works locally, with no connection to GitHub at all.
 
 **Motivation**. There are many applications that use GitHub API for different
 purposes. All of them need to create automated tests, which need to mock the
