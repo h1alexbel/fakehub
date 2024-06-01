@@ -49,7 +49,7 @@ pub async fn home() -> impl IntoResponse {
 async fn json(path: &str) -> Result<String, Box<dyn Error>> {
     let content = fs::read_to_string(path).await.unwrap();
     let mut data: HashMap<String, String> = serde_json::from_str(&content).unwrap();
-    for (_, value) in &mut data {
+    for value in data.values_mut() {
         *value = value.replace("{port}", "3000");
     }
     let updated = serde_json::to_string(&data).unwrap();
