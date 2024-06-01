@@ -22,11 +22,11 @@
 use std::collections::HashMap;
 use std::error::Error;
 
+use crate::routes::rs_err::RsErr;
 use axum::http::StatusCode;
 use axum::response::IntoResponse;
 use axum::Json;
 use tokio::fs;
-use crate::routes::rs_err::RsErr;
 
 // @todo #9:25min Create unit tests for home.rs.
 //  We need to create a few unit testes for home endpoints,
