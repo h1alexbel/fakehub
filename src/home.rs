@@ -29,6 +29,9 @@ use tokio::fs;
 
 use crate::rs_err::RsErr;
 
+// @todo #9:25min Create unit tests for home.rs.
+//  We need to create a few unit testes for home endpoints,
+//  bootstrapping, and fetching. Don't forget to remove this puzzle.
 pub async fn home() -> impl IntoResponse {
     match json("resources/home.json").await {
         Ok(content) => {
