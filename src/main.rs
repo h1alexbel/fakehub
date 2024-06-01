@@ -20,20 +20,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-use axum::Router;
 use axum::routing::get;
+use axum::Router;
 
 mod home;
 mod rs_err;
 
 #[tokio::main]
 async fn main() {
-    let app = Router::new()
-        .route(
-            "/",
-            get(home::home),
-        );
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await
-        .unwrap();
+    let app = Router::new().route("/", get(home::home));
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
