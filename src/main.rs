@@ -19,12 +19,10 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-
 use axum::routing::get;
 use axum::Router;
-
-mod home;
-mod rs_err;
+mod routes;
+use crate::routes::home;
 
 #[tokio::main]
 async fn main() {

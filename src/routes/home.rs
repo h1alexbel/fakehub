@@ -26,8 +26,7 @@ use axum::http::StatusCode;
 use axum::response::IntoResponse;
 use axum::Json;
 use tokio::fs;
-
-use crate::rs_err::RsErr;
+use crate::routes::rs_err::RsErr;
 
 // @todo #9:25min Create unit tests for home.rs.
 //  We need to create a few unit testes for home endpoints,
