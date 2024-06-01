@@ -19,21 +19,33 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use std::io;
+use tokio::fs;
+use axum::http::StatusCode;
+use axum::Json;
+use axum::response::IntoResponse;
+use crate::rs_err::RsErr;
 
-use axum::Router;
-use axum::routing::get;
+pub async fn home() -> impl IntoResponse {
+    match json("resources/home.json").await {
+        Ok(content) => {
+            let objs = serde_json::from_str(&content).unwrap();
+            Json(objs)
+        }
+        Err(e) => {
+            Json(
+                serde_json::to_value(
+                    RsErr {
+                        status: StatusCode::INTERNAL_SERVER_ERROR.to_string(),
+                        message: "Failed to fetch home (/) endpoints".to_owned(),
+                        trace: e.to_string(),
+                    }
+                ).unwrap()
+            )
+        }
+    }
+}
 
-mod home;
-mod rs_err;
-
-#[tokio::main]
-async fn main() {
-    let app = Router::new()
-        .route(
-            "/",
-            get(home::home),
-        );
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await
-        .unwrap();
-    axum::serve(listener, app).await.unwrap();
+async fn json(path: &str) -> io::Result<String> {
+    fs::read_to_string(path).await
 }
