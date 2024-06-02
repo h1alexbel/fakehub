@@ -28,6 +28,8 @@ assets:
   credentials: l3r8yJ/home#assets/crates-credentials
 install: |
   pdd --file=/dev/null
+  sudo apt install rustc
+  rustc -V
 merge:
   script: |
     cargo --color=never test -vv
