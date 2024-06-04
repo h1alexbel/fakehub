@@ -23,7 +23,7 @@
 architect:
   - h1alexbel
 docker:
-  image: yegor256/rultor-image:1.13.0
+  image: _/rust:latest
 assets:
   credentials: l3r8yJ/home#assets/crates-credentials
 install: |
