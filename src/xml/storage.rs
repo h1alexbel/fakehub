@@ -25,7 +25,7 @@ use std::fs::File;
 use log::info;
 
 pub fn touch_storage(name: Option<&str>) -> Result<File, Error> {
-    let path = "fakehub.xml";
+    let path = name.unwrap_or("fakehub.xml");
     info!("Initializing XML storage: {path}");
     let creating = File::create(path);
     match creating {
@@ -41,24 +41,31 @@ pub fn touch_storage(name: Option<&str>) -> Result<File, Error> {
 
 #[cfg(test)]
 mod tests {
-    use std::fs;
     use std::path::Path;
 
     use crate::xml::storage::touch_storage;
 
-    fn clean() {
-        fs::remove_file("fakehub.xml").unwrap();
-    }
-
     #[test]
-    fn creates_xml_storage() {
-        touch_storage().unwrap();
+    fn creates_xml_storage() -> anyhow::Result<()> {
+        touch_storage(None).unwrap();
         let storage = "fakehub.xml";
         let exists = Path::new(storage).exists();
         assert!(
             exists,
-            "storage file '{storage}' was not created, but should"
+            "storage file '{storage}' was not created, but should be"
         );
-        clean();
+        Ok(())
+    }
+
+    #[test]
+    fn creates_xml_storage_with_different_name() -> anyhow::Result<()> {
+        let path = "test.xml";
+        touch_storage(Some(path)).unwrap();
+        let exists = Path::new(path).exists();
+        assert!(
+            exists,
+            "storage file '{path}' was not created, but should be"
+        );
+        Ok(())
     }
 }
