@@ -46,7 +46,7 @@ mod tests {
         init();
         let storage = "fakehub.xml";
         let exists = Path::new(storage).exists();
-        assert!(exists, "storage file {storage} was not created, but should");
+        assert!(exists, "storage file '{storage}' was not created, but should");
         clean();
     }
 }
