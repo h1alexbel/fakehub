@@ -1,3 +1,4 @@
+use std::fmt::Error;
 // The MIT License (MIT)
 //
 // Copyright (c) 2024 Aliaksei Bialiauski
@@ -26,14 +27,24 @@ use log::info;
 pub fn touch_storage() {
     let path = "fakehub.xml";
     info!("Initializing XML storage: {path}");
-    File::create(path).unwrap();
-    info!("'{path}' initialized.");
+    let creating = File::create(path);
+    let _ = match creating {
+        Ok(file) => {
+            info!("'{path}' initialized");
+            Ok::<File, Error>(file)
+        }
+        Err(err) => {
+            panic!("fakehub storage failed to initialize in '{path}': {err}");
+        }
+    };
 }
+
 
 #[cfg(test)]
 mod tests {
     use std::fs;
     use std::path::Path;
+
     use crate::xml::storage::touch_storage;
 
     fn clean() {

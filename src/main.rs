@@ -20,11 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-use crate::xml::storage::init;
+use crate::xml::storage::touch_storage;
 
 mod xml;
 
 fn main() {
-    init();
+    touch_storage();
     println!("Hello, world!");
 }
