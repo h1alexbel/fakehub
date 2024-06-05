@@ -41,6 +41,7 @@ pub fn touch_storage(name: Option<&str>) -> Result<File, Error> {
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
     use std::path::Path;
 
     use crate::xml::storage::touch_storage;
@@ -54,6 +55,7 @@ mod tests {
             exists,
             "storage file '{storage}' was not created, but should be"
         );
+        fs::remove_file(storage).unwrap();
         Ok(())
     }
 
@@ -66,6 +68,7 @@ mod tests {
             exists,
             "storage file '{path}' was not created, but should be"
         );
+        fs::remove_file(path).unwrap();
         Ok(())
     }
 }
