@@ -35,7 +35,11 @@ env:
   RUSTFLAGS: "-Dwarnings"
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-20.04, windows-2022, macos-12 ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - run: cargo test
