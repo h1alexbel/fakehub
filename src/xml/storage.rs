@@ -23,7 +23,7 @@ use std::fs::File;
 
 use log::info;
 
-pub fn init() {
+pub fn touch_storage() {
     let path = "fakehub.xml";
     info!("Initializing XML storage: {path}");
     File::create(path).unwrap();
