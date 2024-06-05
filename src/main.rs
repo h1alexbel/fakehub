@@ -28,7 +28,7 @@ use crate::xml::storage::touch_storage;
 
 #[tokio::main]
 async fn main() {
-    touch_storage();
+    touch_storage().unwrap();
     let app = Router::new().route("/", get(home::home));
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();

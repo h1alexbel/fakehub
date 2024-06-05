@@ -24,19 +24,19 @@ use std::fs::File;
 
 use log::info;
 
-pub fn touch_storage() {
+pub fn touch_storage() -> Result<File, Error> {
     let path = "fakehub.xml";
     info!("Initializing XML storage: {path}");
     let creating = File::create(path);
-    let _ = match creating {
+    match creating {
         Ok(file) => {
             info!("'{path}' initialized");
-            Ok::<File, Error>(file)
+            Ok(file)
         }
         Err(err) => {
-            panic!("fakehub storage failed to initialize in '{path}': {err}");
+            panic!("fakehub storage failed to initialize in '{path}': {err}")
         }
-    };
+    }
 }
 
 #[cfg(test)]
@@ -52,7 +52,7 @@ mod tests {
 
     #[test]
     fn creates_xml_storage() {
-        touch_storage();
+        touch_storage().unwrap();
         let storage = "fakehub.xml";
         let exists = Path::new(storage).exists();
         assert!(
