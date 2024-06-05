@@ -19,9 +19,28 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use std::fs::File;
 
-mod xml;
+use log::info;
 
-fn main() {
-    println!("Hello, world!");
+pub fn xml() {
+    let path = "fakehub.xml";
+    info!("Initializing XML storage: {path}");
+    File::create(path).unwrap();
+    info!("{path} initialized.");
+}
+
+#[cfg(test)]
+mod tests {
+    use std::path::Path;
+
+    use crate::xml::storage::xml;
+
+    #[test]
+    fn creates_xml_storage() {
+        xml();
+        let storage = "fakehub.xml";
+        let exists = Path::new(storage).exists();
+        assert!(exists, "storage file {storage} was not created, but should")
+    }
 }

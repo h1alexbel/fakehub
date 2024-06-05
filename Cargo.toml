@@ -34,5 +34,7 @@ authors = ["Aliaksei Bialíauski <aliaksei.bialiauski@hey.com>", "Ivanchuk Ivan 
 
 [dependencies]
 clippy = "0.0.302"
+env_logger = "0.11.3"
 serde = "1.0.203"
 anyhow = "1.0.86"
+log = { version = "0.4.21", features = [] }
