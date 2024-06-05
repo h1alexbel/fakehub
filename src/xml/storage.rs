@@ -39,7 +39,6 @@ pub fn touch_storage() {
     };
 }
 
-
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -56,7 +55,10 @@ mod tests {
         touch_storage();
         let storage = "fakehub.xml";
         let exists = Path::new(storage).exists();
-        assert!(exists, "storage file '{storage}' was not created, but should");
+        assert!(
+            exists,
+            "storage file '{storage}' was not created, but should"
+        );
         clean();
     }
 }
