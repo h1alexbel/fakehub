@@ -23,7 +23,7 @@ use std::fs::File;
 
 use log::info;
 
-pub fn xml() {
+pub fn init() {
     let path = "fakehub.xml";
     info!("Initializing XML storage: {path}");
     File::create(path).unwrap();
@@ -32,15 +32,21 @@ pub fn xml() {
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
     use std::path::Path;
+    
+    use crate::xml::storage::init;
 
-    use crate::xml::storage::xml;
+    fn clean() {
+        fs::remove_file("fakehub.xml").unwrap();
+    }
 
     #[test]
     fn creates_xml_storage() {
-        xml();
+        init();
         let storage = "fakehub.xml";
         let exists = Path::new(storage).exists();
-        assert!(exists, "storage file {storage} was not created, but should")
+        assert!(exists, "storage file {storage} was not created, but should");
+        clean();
     }
 }
