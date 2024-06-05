@@ -34,7 +34,7 @@ pub fn init() {
 mod tests {
     use std::fs;
     use std::path::Path;
-    
+
     use crate::xml::storage::init;
 
     fn clean() {
