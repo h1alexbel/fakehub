@@ -19,14 +19,11 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use axum::routing::get;
-use axum::Router;
-mod routes;
-use crate::routes::home;
+use serde::Serialize;
 
-#[tokio::main]
-async fn main() {
-    let app = Router::new().route("/", get(home::home));
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    axum::serve(listener, app).await.unwrap();
+#[derive(Serialize)]
+pub struct RsErr {
+    pub status: String,
+    pub message: String,
+    pub trace: String,
 }
