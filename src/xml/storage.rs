@@ -27,7 +27,7 @@ pub fn init() {
     let path = "fakehub.xml";
     info!("Initializing XML storage: {path}");
     File::create(path).unwrap();
-    info!("{path} initialized.");
+    info!("'{path}' initialized.");
 }
 
 #[cfg(test)]
