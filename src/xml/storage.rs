@@ -34,8 +34,7 @@ pub fn touch_storage() {
 mod tests {
     use std::fs;
     use std::path::Path;
-
-    use crate::xml::storage::init;
+    use crate::xml::storage::touch_storage;
 
     fn clean() {
         fs::remove_file("fakehub.xml").unwrap();
@@ -43,7 +42,7 @@ mod tests {
 
     #[test]
     fn creates_xml_storage() {
-        init();
+        touch_storage();
         let storage = "fakehub.xml";
         let exists = Path::new(storage).exists();
         assert!(exists, "storage file '{storage}' was not created, but should");
