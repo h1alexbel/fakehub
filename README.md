@@ -5,6 +5,7 @@
 
 [![cargo](https://github.com/h1alexbel/fakehub/actions/workflows/cargo.yml/badge.svg)](https://github.com/h1alexbel/fakehub/actions/workflows/cargo.yml)
 [![Crates.io Version](https://img.shields.io/crates/v/fakehub)](https://crates.io/crates/fakehub)
+[![codecov](https://codecov.io/gh/h1alexbel/fakehub/graph/badge.svg?token=0bcdqd2UKT)](https://codecov.io/gh/h1alexbel/fakehub)
 [![PDD status](http://www.0pdd.com/svg?name=h1alexbel/fakehub)](http://www.0pdd.com/p?name=h1alexbel/fakehub)
 [![Hits-of-Code](https://hitsofcode.com/github/h1alexbel/fakehub)](https://hitsofcode.com/view/github/h1alexbel/fakehub)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/h1alexbel/fakehub/blob/master/LICENSE.txt)
