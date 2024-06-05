@@ -25,6 +25,9 @@ name: tarpaulin
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
   tarpaulin:
     runs-on: ubuntu-22.04
