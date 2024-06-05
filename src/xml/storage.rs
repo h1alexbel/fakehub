@@ -24,7 +24,7 @@ use std::fs::File;
 
 use log::info;
 
-pub fn touch_storage() -> Result<File, Error> {
+pub fn touch_storage(name: Option<&str>) -> Result<File, Error> {
     let path = "fakehub.xml";
     info!("Initializing XML storage: {path}");
     let creating = File::create(path);
