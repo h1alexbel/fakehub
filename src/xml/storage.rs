@@ -24,51 +24,51 @@ use std::fs::File;
 
 use log::info;
 
-pub fn touch_storage(name: Option<&str>) -> Result<File, Error> {
-    let path = name.unwrap_or("fakehub.xml");
-    info!("Initializing XML storage: {path}");
-    let creating = File::create(path);
-    match creating {
+pub fn touch_storage(path: Option<&str>) -> Result<File, Error> {
+    let location = path.unwrap_or("fakehub.xml");
+    info!("Initializing XML storage: {location}");
+    match File::create(location) {
         Ok(file) => {
-            info!("'{path}' initialized");
+            info!("'{location}' initialized");
             Ok(file)
         }
         Err(err) => {
-            panic!("fakehub storage failed to initialize in '{path}': {err}")
+            panic!("fakehub storage failed to initialize in '{location}': {err}")
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use std::fs;
-    use std::path::Path;
+    use tempdir::TempDir;
 
     use crate::xml::storage::touch_storage;
 
     #[test]
     fn creates_xml_storage() -> anyhow::Result<()> {
-        touch_storage(None).unwrap();
-        let storage = "fakehub.xml";
-        let exists = Path::new(storage).exists();
+        let temp = TempDir::new("temp")?;
+        let path = temp.path().join("fakehub.xml");
+        let storage = path.to_str();
+        touch_storage(storage).unwrap();
         assert!(
-            exists,
-            "storage file '{storage}' was not created, but should be"
+            path.exists(),
+            "storage file {:?} was not created, but should be",
+            storage
         );
-        fs::remove_file(storage).unwrap();
         Ok(())
     }
 
     #[test]
     fn creates_xml_storage_with_different_name() -> anyhow::Result<()> {
-        let path = "test.xml";
-        touch_storage(Some(path)).unwrap();
-        let exists = Path::new(path).exists();
+        let temp = TempDir::new("temp")?;
+        let path = temp.path().join("test.xml");
+        let storage = path.to_str();
+        touch_storage(storage).unwrap();
         assert!(
-            exists,
-            "storage file '{path}' was not created, but should be"
+            path.exists(),
+            "storage file {:?} was not created, but should be",
+            storage
         );
-        fs::remove_file(path).unwrap();
         Ok(())
     }
 }
