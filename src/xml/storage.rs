@@ -19,18 +19,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::fmt::Error;
 use std::fs::File;
 
 use log::info;
 
-pub fn touch_storage(path: Option<&str>) -> Result<File, Error> {
+pub fn touch_storage(path: Option<&str>) -> File {
     let location = path.unwrap_or("fakehub.xml");
     info!("Initializing XML storage: {location}");
     match File::create(location) {
         Ok(file) => {
             info!("'{location}' initialized");
-            Ok(file)
+            file
         }
         Err(err) => {
             panic!("fakehub storage failed to initialize in '{location}': {err}")
@@ -49,7 +48,7 @@ mod tests {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("fakehub.xml");
         let storage = path.to_str();
-        touch_storage(storage).unwrap();
+        touch_storage(storage);
         assert!(
             path.exists(),
             "storage file {:?} was not created, but should be",
@@ -63,7 +62,7 @@ mod tests {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("test.xml");
         let storage = path.to_str();
-        touch_storage(storage).unwrap();
+        touch_storage(storage);
         assert!(
             path.exists(),
             "storage file {:?} was not created, but should be",
