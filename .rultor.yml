@@ -23,7 +23,7 @@
 architect:
   - h1alexbel
 docker:
-  image: _/rust:latest
+  image: rust:latest
 assets:
   credentials: l3r8yJ/home#assets/crates-credentials
 install: |
