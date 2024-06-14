@@ -1,3 +1,4 @@
+use axum::Router;
 // The MIT License (MIT)
 //
 // Copyright (c) 2024 Aliaksei Bialiauski
@@ -20,16 +21,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use axum::routing::get;
-use axum::Router;
-mod routes;
-mod xml;
+
 use crate::routes::home;
 use crate::xml::storage::touch_storage;
 
-#[tokio::main]
-async fn main() {
-    touch_storage(Some("fakehub.xml"));
-    let app = Router::new().route("/", get(home::home));
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    axum::serve(listener, app).await.unwrap();
+mod routes;
+mod xml;
+
+#[derive(Default)]
+pub struct Server {}
+
+impl Server {
+    pub async fn start() {
+        touch_storage(Some("fakehub.xml"));
+        let app = Router::new().route("/", get(home::home));
+        let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+        axum::serve(listener, app).await.unwrap();
+    }
 }
