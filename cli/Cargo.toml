@@ -8,4 +8,6 @@ name = "fakehub-cli"
 path = "src/main.rs"
 
 [dependencies]
+clap = "4.5.7"
 server = { path = "../server" }
+tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros"] }
