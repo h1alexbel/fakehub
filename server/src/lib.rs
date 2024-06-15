@@ -1,4 +1,3 @@
-use axum::Router;
 // The MIT License (MIT)
 //
 // Copyright (c) 2024 Aliaksei Bialiauski
@@ -21,6 +20,7 @@ use axum::Router;
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use axum::routing::get;
+use axum::Router;
 use tokio::net::TcpListener;
 
 use crate::routes::home;
@@ -41,7 +41,7 @@ impl Server {
 }
 
 impl Server {
-    pub async fn start(self) -> anyhow::Result<()>{
+    pub async fn start(self) -> anyhow::Result<()> {
         touch_storage(Some("fakehub.xml"));
         let app: Router = Router::new().route("/", get(home::home));
         let addr: String = format!("0.0.0.0:{}", self.port);
