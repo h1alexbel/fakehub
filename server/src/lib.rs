@@ -21,6 +21,7 @@
 // SOFTWARE.
 use std::io;
 
+use anyhow::Result;
 use axum::routing::get;
 use axum::Router;
 use tokio::net::TcpListener;
@@ -43,7 +44,7 @@ impl Server {
 }
 
 impl Server {
-    pub async fn start(self) -> anyhow::Result<()> {
+    pub async fn start(self) -> Result<()> {
         touch_storage(Some("fakehub.xml"));
         let app: Router = Router::new().route("/", get(home::home));
         let addr: String = format!("0.0.0.0:{}", self.port);
@@ -60,9 +61,10 @@ impl Server {
 
 #[cfg(test)]
 mod tests {
+    use anyhow::Result;
 
     #[test]
-    fn creates_the_server() -> anyhow::Result<()> {
+    fn creates_the_server() -> Result<()> {
         let server = crate::Server::new(1234);
         assert_eq!(server.port, 1234);
         Ok(())

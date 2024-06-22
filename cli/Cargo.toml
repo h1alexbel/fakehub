@@ -25,10 +25,15 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "fakehub-cli"
+name = "cli"
 path = "src/main.rs"
 
+[dev-dependencies]
+assert_cmd = "2.0.14"
+
 [dependencies]
-clap = "4.5.7"
+anyhow = "1.0.86"
+clap = { version = "4.5.7", features = ["derive"] }
 server = { path = "../server" }
 tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros"] }
+log = "0.4.21"
