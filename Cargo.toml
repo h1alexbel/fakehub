@@ -24,5 +24,4 @@ members = [
     "server",
     "cli",
 ]
-
 resolver = "1"

@@ -19,6 +19,8 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use std::io;
+
 use axum::routing::get;
 use axum::Router;
 use tokio::net::TcpListener;
@@ -45,7 +47,7 @@ impl Server {
         touch_storage(Some("fakehub.xml"));
         let app: Router = Router::new().route("/", get(home::home));
         let addr: String = format!("0.0.0.0:{}", self.port);
-        let started: std::io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
+        let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
             Ok(listener) => axum::serve(listener, app).await?,
             Err(err) => {
@@ -56,6 +58,7 @@ impl Server {
     }
 }
 
+#[cfg(test)]
 mod tests {
 
     #[test]
