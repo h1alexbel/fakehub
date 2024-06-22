@@ -23,5 +23,6 @@
 members = [
     "server",
     "cli",
+    "tests",
 ]
 resolver = "1"

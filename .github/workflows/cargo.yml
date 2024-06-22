@@ -34,6 +34,11 @@ concurrency:
 env:
   RUSTFLAGS: "-Dwarnings"
 jobs:
+  clippy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo clippy --all-targets --all-features
   build:
     strategy:
       fail-fast: false
@@ -42,11 +47,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - run: cargo clean
+      - run: cargo build
       - run: cargo test
+      - run: cargo build --release
       - run: cargo test --release
       - run: cargo fmt --check
-  clippy:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - run: cargo clippy --all-targets --all-features

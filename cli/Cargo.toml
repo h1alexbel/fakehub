@@ -28,9 +28,6 @@ edition = "2021"
 name = "cli"
 path = "src/main.rs"
 
-[dev-dependencies]
-assert_cmd = "2.0.14"
-
 [dependencies]
 anyhow = "1.0.86"
 clap = { version = "4.5.7", features = ["derive"] }
