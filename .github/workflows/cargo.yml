@@ -39,6 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cargo clippy --all-targets --all-features
+      - run: cargo fmt --check
   build:
     strategy:
       fail-fast: false
