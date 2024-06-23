@@ -32,7 +32,7 @@ provided they don't violate our quality standards. To avoid frustration,
 before sending us your pull request please run full cargo build:
 
 ```bash
-cargo test
+cargo tests
 ```
 
 You will need [Rust] installed on your system.
