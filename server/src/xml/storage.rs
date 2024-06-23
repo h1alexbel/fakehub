@@ -39,12 +39,13 @@ pub fn touch_storage(path: Option<&str>) -> File {
 
 #[cfg(test)]
 mod tests {
+    use anyhow::Result;
     use tempdir::TempDir;
 
     use crate::xml::storage::touch_storage;
 
     #[test]
-    fn creates_xml_storage() -> anyhow::Result<()> {
+    fn creates_xml_storage() -> Result<()> {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("fakehub.xml");
         let storage = path.to_str();
@@ -58,7 +59,7 @@ mod tests {
     }
 
     #[test]
-    fn creates_xml_storage_with_different_name() -> anyhow::Result<()> {
+    fn creates_xml_storage_with_different_name() -> Result<()> {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("test.xml");
         let storage = path.to_str();
