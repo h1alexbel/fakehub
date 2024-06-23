@@ -61,7 +61,7 @@ mod tests {
     #[test]
     fn creates_xml_storage_with_different_name() -> Result<()> {
         let temp = TempDir::new("temp")?;
-        let path = temp.path().join("tests.xml");
+        let path = temp.path().join("test.xml");
         let storage = path.to_str();
         touch_storage(storage);
         assert!(
