@@ -49,8 +49,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cargo clean
-      - run: cargo build
       - run: cargo test
-      - run: cargo build --release
-      - run: cargo test --release
       - run: cargo fmt --check

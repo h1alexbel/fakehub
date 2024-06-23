@@ -33,7 +33,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - run: cargo build
       - uses: actions-rs/tarpaulin@v0.1
         with:
           version: '0.22.0'
