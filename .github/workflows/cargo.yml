@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: cargo clean
       - run: cargo build
-      - run: cargo tests
+      - run: cargo test
       - run: cargo build --release
-      - run: cargo tests --release
+      - run: cargo test --release
       - run: cargo fmt --check
