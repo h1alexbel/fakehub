@@ -41,7 +41,7 @@ use std::path::Path;
 /// ```
 pub fn template(path: Option<&str>) -> String {
     return fs::read_to_string(Path::new(path.unwrap_or("resources/report.tex")))
-        .unwrap();
+        .expect("template should be read from");
 }
 
 #[cfg(test)]
