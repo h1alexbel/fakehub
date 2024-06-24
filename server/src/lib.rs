@@ -31,6 +31,7 @@ use crate::xml::storage::touch_storage;
 
 mod routes;
 mod xml;
+pub mod report;
 
 #[derive(Default)]
 pub struct Server {

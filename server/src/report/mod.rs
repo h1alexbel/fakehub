@@ -19,21 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use clap::Parser;
-
-// @todo #13:15min Handle port argument
-//  We should process the port argument and
-//  pass it to the server on `start` command.
-//  Start command should be added also with clap
-// @todo #41:15min Add --report argument together with content type flags.
-//  Together with --report option let's add flags for XML, TeX, and Text
-//  reports. So user can generate report in many formats like this: --report
-//  --tex --html.
-// @todo #41:45min Parse content type flag from stdin. Let's pick report generation
-//  function based on provided flags, such as: --xml, --tex, --txt.
-#[derive(Parser, Debug)]
-pub(crate) struct Args {
-    /// The port to run
-    #[arg(short, long, default_value_t = 3000)]
-    pub(crate) port: usize,
-}
+// @todo #41:45min Create similar to latex.rs functions for XML and TXT formats.
+//  Let's create similar to latex.rs functions for generating reports in XML and TXT.
+//  Don't forget to remove this puzzle.
+pub mod latex;
