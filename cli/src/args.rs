@@ -25,12 +25,10 @@ use clap::Parser;
 //  We should process the port argument and
 //  pass it to the server on `start` command.
 //  Start command should be added also with clap
-// @todo #41:15min Add --report argument together with content type flags.
-//  Together with --report option let's add flags for XML, TeX, and Text
-//  reports. So user can generate report in many formats like this: --report
-//  --tex --html.
-// @todo #41:45min Parse content type flag from stdin. Let's pick report generation
-//  function based on provided flags, such as: --xml, --tex, --txt.
+// @todo #41:15min Add --report argument.
+//  Let's add --report option for generating reports in desired formats:
+//  We should support following formats: xml, tex, and txt. User should have
+//  ability to generate report in many formats as well: --report tex,xml,txt.
 #[derive(Parser, Debug)]
 pub(crate) struct Args {
     /// The port to run
