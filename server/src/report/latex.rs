@@ -22,35 +22,33 @@
 use std::fs;
 use std::path::Path;
 
-/// 
 /// Read LaTeX template.
 /// @todo #41:60min Add function for appending new content into the template.
 ///  We need to create new function that will append input into the template,
 ///  thus it will build a detailed report.
-/// # Arguments 
-/// 
+/// # Arguments
+///
 /// * `path`: Template path
-/// 
-/// returns: String 
-/// 
-/// # Examples 
-/// 
+///
+/// returns: String
+///
+/// # Examples
+///
 /// ```
 /// use crate::server::report::latex::template;
 /// let content = template(None);
 /// print!("{content}")
 /// ```
 pub fn template(path: Option<&str>) -> String {
-    return fs::read_to_string(
-        Path::new(path.unwrap_or("resources/report.tex"))
-    ).unwrap();
+    return fs::read_to_string(Path::new(path.unwrap_or("resources/report.tex")))
+        .unwrap();
 }
 
 #[cfg(test)]
 mod tests {
+    use anyhow::Result;
     use std::fs::File;
     use std::io::Write;
-    use anyhow::Result;
     use tempdir::TempDir;
 
     use crate::report::latex::template;
@@ -67,8 +65,7 @@ mod tests {
 \end{document}
 ";
         assert_eq!(
-            content,
-            expected,
+            content, expected,
             "Template content '{content}' does not match with '{expected}'"
         );
         Ok(())
@@ -83,8 +80,7 @@ mod tests {
         File::create(path).unwrap().write_all(bytes.as_slice())?;
         let content = template(path.to_str());
         assert_eq!(
-            content,
-            expected,
+            content, expected,
             "Template content '{content} does not match with '{expected}'"
         );
         Ok(())

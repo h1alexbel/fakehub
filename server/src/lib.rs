@@ -29,9 +29,9 @@ use tokio::net::TcpListener;
 use crate::routes::home;
 use crate::xml::storage::touch_storage;
 
+pub mod report;
 mod routes;
 mod xml;
-pub mod report;
 
 #[derive(Default)]
 pub struct Server {
