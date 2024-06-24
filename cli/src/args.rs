@@ -28,7 +28,7 @@ use clap::Parser;
 // @todo #41:15min Add --report argument.
 //  Let's add --report option for generating reports in desired formats:
 //  We should support following formats: xml, tex, and txt. User should have
-//  ability to generate report in many formats as well: --report tex,xml,txt.
+//  ability to generate report in multiple formats as well: --report tex,xml,txt.
 #[derive(Parser, Debug)]
 pub(crate) struct Args {
     /// The port to run
