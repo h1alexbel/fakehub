@@ -33,7 +33,14 @@ assert_cmd = "2.0.14"
 
 [dependencies]
 anyhow = "1.0.86"
-clap = { version = "4.5.7", features = ["derive"] }
+clap = { version = "4.5.7", optional = true, features = ["derive", "string"] }
+clap_complete = { version = "4.5.1", optional = true }
+clap_mangen = { version = "0.2.20", optional = true }
+clap_complete_nushell = { version = "4.5.1", optional = true }
 server = { path = "../server" }
 tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros"] }
 log = "0.4.21"
+
+[features]
+default = ["cli"]
+cli = ["clap", "clap_complete", "clap_mangen", "clap_complete_nushell"]
