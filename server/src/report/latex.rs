@@ -40,8 +40,7 @@ use std::path::Path;
 /// print!("{content}")
 /// ```
 pub fn template(path: &str) -> String {
-    return fs::read_to_string(Path::new(path))
-        .expect("template should be read from");
+    return fs::read_to_string(Path::new(path)).expect("template should be read from");
 }
 
 #[cfg(test)]
