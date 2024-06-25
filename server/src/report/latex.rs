@@ -36,20 +36,17 @@ use std::path::Path;
 ///
 /// ```
 /// use crate::server::report::latex::template;
-/// let content = template(None);
+/// let content = template("resources/report.tex");
 /// print!("{content}")
 /// ```
-pub fn template(path: Option<&str>) -> String {
-    return fs::read_to_string(Path::new(path.unwrap_or("resources/report.tex")))
-        .unwrap_or_else(|_| panic!("the world is ending: {}", path.unwrap().to_owned()));
+pub fn template(path: &str) -> String {
+    return fs::read_to_string(Path::new(path))
+        .expect("template should be read from");
 }
 
 #[cfg(test)]
 mod tests {
     use anyhow::Result;
-    use std::fs::File;
-    use std::io::Write;
-    use tempdir::TempDir;
 
     use crate::report::latex::template;
 
@@ -58,8 +55,8 @@ mod tests {
     //  We should use extensions in order to pass expected as parameters into
     //  test. If there is no crate with such functionality - let's develop and
     //  release one.
-    fn returns_default_template() -> Result<()> {
-        let content = template(None);
+    fn returns_template_content() -> Result<()> {
+        let content = template("resources/report.tex");
         let expected = r"\usepackage{to-be-determined}
 \documentclass[12pt]{article}
 \begin{document}
@@ -71,21 +68,6 @@ mod tests {
         assert_eq!(
             content, expected,
             "Template content '{content}' does not match with '{expected}'"
-        );
-        Ok(())
-    }
-
-    #[test]
-    fn returns_custom_template() -> Result<()> {
-        let temp = TempDir::new("temp")?;
-        let path = &temp.path().join("custom.tex");
-        let expected = "$This is custom template!$";
-        let bytes = expected.to_string().into_bytes();
-        File::create(path).unwrap().write_all(bytes.as_slice())?;
-        let content = template(path.to_str());
-        assert_eq!(
-            content, expected,
-            "Template content '{content} does not match with '{expected}'"
         );
         Ok(())
     }
