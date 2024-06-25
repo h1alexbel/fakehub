@@ -41,7 +41,7 @@ use std::path::Path;
 /// ```
 pub fn template(path: Option<&str>) -> String {
     return fs::read_to_string(Path::new(path.unwrap_or("resources/report.tex")))
-        .expect("template should be read from");
+        .unwrap_or_else(|_| panic!("the world is ending: {}", path.unwrap().to_owned()));
 }
 
 #[cfg(test)]
@@ -54,6 +54,10 @@ mod tests {
     use crate::report::latex::template;
 
     #[test]
+    // @todo #41:60min Add support of @ExtendsWith from JUnit in order to pass expected as test parameter.
+    //  We should use extensions in order to pass expected as parameters into
+    //  test. If there is no crate with such functionality - let's develop and
+    //  release one.
     fn returns_default_template() -> Result<()> {
         let content = template(None);
         let expected = r"\usepackage{to-be-determined}
