@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: yamllint
+name: gen-api
 'on':
   push:
     branches:
@@ -29,10 +29,11 @@ name: yamllint
     branches:
       - master
 jobs:
-  yamllint:
+  generate:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ibiqlik/action-yamllint@v3
-        with:
-          config_file: .yamllint.yml
+      - run: |
+          cd github-api
+          npm install @openapitools/openapi-generator-cli -g
+          openapi-generator-cli generate -i github.yml -g rust -o .

@@ -1,0 +1,129 @@
+# The MIT License (MIT)
+#
+# Copyright (c) 2024 Aliaksei Bialiauski
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+---
+openapi: 3.1.0
+info:
+  version: 1.1.4
+  title: GitHub v3 REST API
+  description: GitHub's v3 REST API.
+  license:
+    name: MIT
+    url: https://spdx.org/licenses/MIT
+  termsOfService: https://docs.github.com/articles/github-terms-of-service
+  contact:
+    name: Support
+    url: https://support.github.com/contact?tags=dotcom-rest-api
+  x-github-plan: api.github.com
+tags:
+  - name: actions
+    description: Endpoints to manage GitHub Actions using the REST API.
+  - name: activity
+    description: Activity APIs provide access to notifications, subscriptions, and timelines.
+  - name: apps
+    description: Information for integrations and installations.
+  - name: billing
+    description: Monitor charges and usage from Actions and Packages.
+  - name: checks
+    description: Rich interactions with checks run by your integrations.
+  - name: code-scanning
+    description: Retrieve code scanning alerts from a repository.
+  - name: codes-of-conduct
+    description: Insight into codes of conduct for your communities.
+  - name: emojis
+    description: List emojis available to use on GitHub.
+  - name: dependabot
+    description: Endpoints to manage Dependabot.
+  - name: dependency-graph
+    description: Endpoints to access Dependency Graph features.
+  - name: gists
+    description: View, modify your gists.
+  - name: git
+    description: Raw Git functionality.
+  - name: gitignore
+    description: View gitignore templates
+  - name: issues
+    description: Interact with GitHub Issues.
+  - name: licenses
+    description: View various OSS licenses.
+  - name: markdown
+    description: Render GitHub flavored markdown
+  - name: merge-queue
+    description: Interact with GitHub Merge Queues.
+  - name: meta
+    description: Endpoints that give information about the API.
+  - name: migrations
+    description: Move projects to or from GitHub.
+  - name: oidc
+    description: Endpoints to manage GitHub OIDC configuration using the REST API.
+  - name: orgs
+    description: Interact with GitHub Orgs.
+  - name: packages
+    description: Manage packages for authenticated users and organizations.
+  - name: projects
+    description: Interact with GitHub Projects.
+  - name: pulls
+    description: Interact with GitHub Pull Requests.
+  - name: rate-limit
+    description: Check your current rate limit status
+  - name: reactions
+    description: Interact with reactions to various GitHub entities.
+  - name: repos
+    description: Interact with GitHub Repos.
+  - name: search
+    description: Look for stuff on GitHub.
+  - name: secret-scanning
+    description: Retrieve secret scanning alerts from a repository.
+  - name: teams
+    description: Interact with GitHub Teams.
+  - name: users
+    description: Interact with and view information about users and also current user.
+  - name: codespaces
+    description: Endpoints to manage Codespaces using the REST API.
+  - name: copilot
+    description: Endpoints to manage Copilot using the REST API.
+  - name: security-advisories
+    description: Manage security advisories.
+  - name: interactions
+    description: Owner or admin management of users interactions.
+  - name: classroom
+    description: Interact with GitHub Classroom.
+  - name: desktop
+    description: Desktop specific endpoints.
+  - name: enterprise-teams
+    description: Endpoints to manage GitHub Enterprise Teams.
+  - name: code-security
+    description: Endpoints to manage Code security using the REST API.
+servers:
+  - url: https://api.github.com
+externalDocs:
+  description: GitHub v3 REST API
+  url: https://docs.github.com/rest/
+paths:
+  "/":
+    $ref: './paths/root.yml'
+#  @todo #35:45min advisories.yml is broken.
+#   We can't compile an Open API spec with advisories.yml due to this error:
+#   -attribute (get).responses.200.content.'application/json'.schema. is not of type `object` (./paths/advisories.yml).
+#   This issue is critical, since it potentially affect all the endpoints
+#   containing same structure. Don't forget to remove this puzzle.
+#  "/advisories":
+#    $ref: './paths/advisories.yml'
