@@ -120,5 +120,10 @@ externalDocs:
 paths:
   "/":
     $ref: './paths/root.yml'
-  "/advisories":
-    $ref: './paths/advisories.yml'
+#  @todo #35:45min advisories.yml is broken.
+#   We can't compile an Open API spec with advisories.yml due to this error:
+#   -attribute (get).responses.200.content.'application/json'.schema. is not of type `object` (./paths/advisories.yml).
+#   This issue is critical, since it potentially affect all the endpoints
+#   containing same structure. Don't forget to remove this puzzle.
+#  "/advisories":
+#    $ref: './paths/advisories.yml'
