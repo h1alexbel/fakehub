@@ -24,7 +24,7 @@ get:
   summary: List global security advisories
   description: |-
     Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.
-    
+
     By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
   tags:
     - security-advisories
@@ -92,7 +92,7 @@ get:
       in: query
       description: |-
         If specified, only advisories with these Common Weakness Enumerations (CWEs) will be returned.
-        
+
         Example: `cwes=79,284,22` or `cwes[]=79&cwes[]=284&cwes[]=22`
       schema:
         oneOf:
@@ -110,7 +110,7 @@ get:
       description: |-
         If specified, only return advisories that affect any of `package` or `package@version`. A maximum of 1000 packages can be specified.
         If the query parameter causes the URL to exceed the maximum URL length supported by your client, you must specify fewer packages.
-        
+
         Example: `affects=package1,package2@1.0.0,package3@^2.0.0` or `affects[]=package1&affects[]=package2@1.0.0`
       schema:
         oneOf:
@@ -123,7 +123,7 @@ get:
       in: query
       description: |-
         If specified, only return advisories that were published on a date or date range.
-        
+
         For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
       schema:
         type: string
@@ -131,14 +131,14 @@ get:
       in: query
       description: |-
         If specified, only return advisories that were updated on a date or date range.
-        
+
         For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
       schema:
         type: string
     - name: modified
       description: |-
         If specified, only show advisories that were updated or published on a date or date range.
-        
+
         For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
       in: query
       schema:
