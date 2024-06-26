@@ -25,6 +25,10 @@ use clap::Parser;
 //  We should process the port argument and
 //  pass it to the server on `start` command.
 //  Start command should be added also with clap
+// @todo #41:15min Add --report argument.
+//  Let's add --report option for generating reports in desired formats:
+//  We should support following formats: xml, tex, and txt. User should have
+//  ability to generate report in multiple formats as well: --report tex,xml,txt.
 #[derive(Parser, Debug)]
 pub(crate) struct Args {
     /// The port to run

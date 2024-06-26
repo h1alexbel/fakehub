@@ -19,55 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::io;
-
-use anyhow::Result;
-use axum::routing::get;
-use axum::Router;
-use tokio::net::TcpListener;
-
-use crate::routes::home;
-use crate::xml::storage::touch_storage;
-
-pub mod report;
-mod routes;
-mod xml;
-
-#[derive(Default)]
-pub struct Server {
-    port: usize,
-}
-
-impl Server {
-    pub fn new(port: usize) -> Server {
-        Server { port }
-    }
-}
-
-impl Server {
-    pub async fn start(self) -> Result<()> {
-        touch_storage(Some("fakehub.xml"));
-        let app: Router = Router::new().route("/", get(home::home));
-        let addr: String = format!("0.0.0.0:{}", self.port);
-        let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
-        match started {
-            Ok(listener) => axum::serve(listener, app).await?,
-            Err(err) => {
-                panic!("Can't bind address {}: '{}'", addr.clone(), err)
-            }
-        };
-        Ok(())
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use anyhow::Result;
-
-    #[test]
-    fn creates_the_server() -> Result<()> {
-        let server = crate::Server::new(1234);
-        assert_eq!(server.port, 1234);
-        Ok(())
-    }
-}
+// @todo #41:45min Create similar to latex.rs functions for XML and TXT formats.
+//  Let's create similar to latex.rs functions for generating reports in XML and TXT.
+//  Don't forget to remove this puzzle.
+pub mod latex;
