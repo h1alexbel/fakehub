@@ -48,7 +48,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: ${{ matrix.java }}
-      - uses: extractions/setup-just@v1
+      - uses: extractions/setup-just@v2
         with:
           just-version: ${{ matrix.just-version }}
         name: Install toolchain
