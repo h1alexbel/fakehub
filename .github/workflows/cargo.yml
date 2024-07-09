@@ -38,16 +38,20 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - run: cargo clippy --all-targets --all-features
-      - run: cargo fmt --check
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: 1.30.1
+      - run: just check
   build:
     strategy:
       fail-fast: false
       matrix:
         os: [ ubuntu-22.04, windows-2022, macos-12 ]
+        just-version: [ "1.30.1" ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - run: cargo clean
-      - run: cargo test
-      - run: cargo fmt --check
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: ${{ matrix.just-version }}
+      - run: just full
