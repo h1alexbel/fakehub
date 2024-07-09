@@ -20,20 +20,47 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: gen-api
-'on':
+name: just
+on:
   push:
     branches:
       - master
   pull_request:
     branches:
       - master
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+env:
+  RUSTFLAGS: "-Dwarnings"
 jobs:
-  generate:
-    runs-on: ubuntu-22.04
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-22.04, windows-2022, macos-12 ]
+        just-version: [ "1.30.1" ]
+        java: [ 21 ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          cd github-api
-          npm install @openapitools/openapi-generator-cli -g
-          openapi-generator-cli generate -i github.yml -g rust -o .
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java }}
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: ${{ matrix.just-version }}
+        name: Install toolchain
+      - run: rustup toolchain install nightly
+        name: Build
+      - name: Install cargo-fmt (Linux)
+        if: ${{ runner.os == 'Linux' }}
+        run: rustup component add --toolchain nightly-x86_64-unknown-linux-gnu rustfmt
+      - name: Install cargo-fmt (Windows)
+        if: ${{ runner.os == 'Windows' }}
+        run: rustup component add --toolchain nightly-x86_64-pc-windows-msvc rustfmt
+      - name: Install cargo-fmt (macOS)
+        if: ${{ runner.os == 'macOS' }}
+        run: rustup component add --toolchain nightly-x86_64-apple-darwin rustfmt
+      - run: just full

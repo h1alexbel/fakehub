@@ -19,35 +19,31 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
----
-name: cargo
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true
-env:
-  RUSTFLAGS: "-Dwarnings"
-jobs:
-  clippy:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - run: cargo clippy --all-targets --all-features
-      - run: cargo fmt --check
-  build:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-22.04, windows-2022, macos-12 ]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v4
-      - run: cargo clean
-      - run: cargo test
-      - run: cargo fmt --check
+
+# Full build.
+full:
+  just gen
+  just build
+
+# Generate code.
+gen:
+  npm --version
+  cd github-mirror && \
+   npm install @openapitools/openapi-generator-cli -g && \
+    openapi-generator-cli generate -i github.yml -g rust -o .
+
+# Build the project.
+build:
+  cargo clean
+  just test
+  just check
+  cargo build
+
+# Run tests.
+test:
+  cargo test
+
+# Check the quality of code.
+check:
+  cargo clippy --all-targets --all-features
+  cargo +nightly fmt --check

@@ -23,5 +23,6 @@
 members = [
     "server",
     "cli",
+    "github-mirror"
 ]
 resolver = "1"

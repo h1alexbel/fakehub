@@ -3,7 +3,7 @@
 [![DevOps By Rultor.com](http://www.rultor.com/b/h1alexbel/fakehub)](http://www.rultor.com/p/h1alexbel/fakehub)
 [![We recommend IntelliJ IDEA](https://www.elegantobjects.org/intellij-idea.svg)](https://www.jetbrains.com/idea/)
 
-[![cargo](https://github.com/h1alexbel/fakehub/actions/workflows/cargo.yml/badge.svg)](https://github.com/h1alexbel/fakehub/actions/workflows/cargo.yml)
+[![just](https://github.com/h1alexbel/fakehub/actions/workflows/just.yml/badge.svg)](https://github.com/h1alexbel/fakehub/actions/workflows/just.yml)
 [![Crates.io Version](https://img.shields.io/crates/v/fakehub)](https://crates.io/crates/fakehub)
 [![codecov](https://codecov.io/gh/h1alexbel/fakehub/graph/badge.svg?token=0bcdqd2UKT)](https://codecov.io/gh/h1alexbel/fakehub)
 [![PDD status](http://www.0pdd.com/svg?name=h1alexbel/fakehub)](http://www.0pdd.com/p?name=h1alexbel/fakehub)
@@ -26,15 +26,17 @@ TBD..
 
 ## How to contribute?
 
-Fork repository, make changes, send us a [pull request](https://www.yegor256.com/2014/04/15/github-guidelines.html).
-We will review your changes and apply them to the `master` branch shortly,
-provided they don't violate our quality standards. To avoid frustration,
-before sending us your pull request please run full cargo build:
+Make sure that you have [Rust], [npm], Java 21+ and [just] installed on your
+system, then fork this repository, make changes, send us a
+[pull request][guidelines]. We will review your changes and apply them to the
+`master` branch shortly, provided they don't violate our quality standards. To
+avoid frustration, before sending us your pull request please run full build:
 
 ```bash
-cargo test
+just full
 ```
 
-You will need [Rust] installed on your system.
-
 [Rust]: https://www.rust-lang.org/tools/install
+[npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+[guidelines]: https://www.yegor256.com/2014/04/15/github-guidelines.html
+[just]: https://just.systems/man/en/chapter_4.html
