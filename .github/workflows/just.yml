@@ -51,4 +51,7 @@ jobs:
       - uses: extractions/setup-just@v1
         with:
           just-version: ${{ matrix.just-version }}
+        name: Install toolchain
+      - run: rustup toolchain install nightly
+        name: Build
       - run: just full
