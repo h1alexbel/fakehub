@@ -3,7 +3,7 @@
 [![DevOps By Rultor.com](http://www.rultor.com/b/h1alexbel/fakehub)](http://www.rultor.com/p/h1alexbel/fakehub)
 [![We recommend IntelliJ IDEA](https://www.elegantobjects.org/intellij-idea.svg)](https://www.jetbrains.com/idea/)
 
-[![cargo](https://github.com/h1alexbel/fakehub/actions/workflows/cargo.yml/badge.svg)](https://github.com/h1alexbel/fakehub/actions/workflows/cargo.yml)
+[![just](https://github.com/h1alexbel/fakehub/actions/workflows/just.yml/badge.svg)](https://github.com/h1alexbel/fakehub/actions/workflows/just.yml)
 [![Crates.io Version](https://img.shields.io/crates/v/fakehub)](https://crates.io/crates/fakehub)
 [![codecov](https://codecov.io/gh/h1alexbel/fakehub/graph/badge.svg?token=0bcdqd2UKT)](https://codecov.io/gh/h1alexbel/fakehub)
 [![PDD status](http://www.0pdd.com/svg?name=h1alexbel/fakehub)](http://www.0pdd.com/p?name=h1alexbel/fakehub)
