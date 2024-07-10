@@ -37,7 +37,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
-      - uses: extractions/setup-just@v1
+      - uses: extractions/setup-just@v2
         with:
           just-version: 1.30.1
       - name: Build mirror
