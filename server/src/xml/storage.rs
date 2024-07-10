@@ -26,6 +26,7 @@ use anyhow::Result;
 use log::info;
 
 #[derive(Default)]
+#[allow(dead_code)]
 pub struct Storage {
     pub(crate) path: String,
 }
@@ -60,6 +61,7 @@ impl Storage {
 //  function should be thread-safe, as it intended to be used concurrently.
 //  Don't forget to create a unit tests related to #xml function.
 impl Storage {
+    #[allow(dead_code)]
     pub fn xml() -> Result<()> {
         Ok(())
     }
