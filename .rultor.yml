@@ -26,8 +26,11 @@ docker:
   image: yegor256/rultor-image:1.23.1
 assets:
   credentials: l3r8yJ/home#assets/crates-credentials
+install: |
+  cargo install --version 1.30.1 just
 merge:
   script: |
+    just gen
     cargo --color=never test -vv
     cargo --color=never fmt --check
     cargo doc --no-deps
