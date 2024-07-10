@@ -20,10 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use anyhow::Result;
-use log::info;
-use serde::Deserialize;
+use log::{debug, info};
+use serde::{Deserialize, Serialize};
+use serde_xml_rs::to_string;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct User {
     pub(crate) username: String,
 }
@@ -34,9 +35,38 @@ impl User {
     }
 }
 
+// @todo #17:40min Apply XMLed user to the <users/> node in storage.
+//  We should apply XMLed user to the <users> XML node in storage. First we
+//  need to check that user with provided name does not exist, and only then
+//  apply it to the storage. Keep in mind that application function in the
+//  storage should be thread-safe (as well as #xml function). Don't forget to
+//  create unit tests that prove that.
 impl User {
     pub async fn save(self) -> Result<()> {
         info!("registering user @{}", self.username);
+        let xml = to_string(&self).unwrap();
+        debug!("XMLed user: {}", xml);
+        Ok(())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use anyhow::Result;
+    use crate::objects::user::User;
+
+    #[test]
+    fn returns_username() -> Result<()> {
+        let expected = "jeff";
+        let jeff = User::new(String::from(expected));
+        assert_eq!(
+            jeff.username,
+            expected,
+            "Username {} from user: {:?} does not match with expected {}",
+            jeff.username,
+            jeff,
+            expected
+        );
         Ok(())
     }
 }
