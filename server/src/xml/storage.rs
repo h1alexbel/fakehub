@@ -1,3 +1,6 @@
+use std::fs::File;
+use std::io::Write;
+
 // The MIT License (MIT)
 //
 // Copyright (c) 2024 Aliaksei Bialiauski
@@ -20,8 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use anyhow::Result;
-use std::fs::File;
-use std::io::Write;
 use log::info;
 
 #[derive(Default)]
@@ -34,9 +35,7 @@ impl Storage {
         let location = path.unwrap_or("fakehub.xml");
         info!("Initializing XML storage: {location}");
         let mut file = match File::create(location) {
-            Ok(file) => {
-                file
-            }
+            Ok(file) => file,
             Err(err) => {
                 panic!("fakehub storage failed to initialize in '{location}': {err}");
             }
@@ -44,12 +43,15 @@ impl Storage {
         if let Err(err) = file.write_all(
             "<root>\
              <github><users/></github>\
-            </root>".as_bytes()
+            </root>"
+                .as_bytes(),
         ) {
             panic!("Failed to write initial content to '{}': {}", location, err);
         }
         info!("'{}' initialized", location);
-        Storage { path: String::from(location) }
+        Storage {
+            path: String::from(location),
+        }
     }
 }
 
@@ -66,8 +68,10 @@ impl Storage {
 #[cfg(test)]
 mod tests {
     use std::fs;
+
     use anyhow::Result;
     use tempdir::TempDir;
+
     use crate::xml::storage::Storage;
 
     #[test]
@@ -85,18 +89,16 @@ mod tests {
     }
 
     #[test]
-    fn reads_initial_content() -> Result<()>{
+    fn reads_initial_content() -> Result<()> {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("fakehub.xml");
         Storage::new(path.to_str());
         let xml = fs::read_to_string(path).unwrap();
         let expected = "<root><github><users/></github></root>";
         assert_eq!(
-            xml,
-            expected,
+            xml, expected,
             "Received initial XML {} does not match with expected {}",
-            xml,
-            expected
+            xml, expected
         );
         Ok(())
     }

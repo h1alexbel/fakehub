@@ -28,8 +28,6 @@ pub async fn register_user(Json(payload): Json<User>) -> Result<StatusCode, Stri
     let user = User::new(payload.username.clone());
     match user.save().await {
         Ok(_) => Ok(StatusCode::CREATED),
-        Err(e) => Err(
-            format!("Can't register {}: {}", payload.username, e),
-        ),
+        Err(e) => Err(format!("Can't register {}: {}", payload.username, e)),
     }
 }

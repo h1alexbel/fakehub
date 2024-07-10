@@ -20,5 +20,5 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 pub mod home;
-pub mod rs_err;
 pub mod register_user;
+pub mod rs_err;

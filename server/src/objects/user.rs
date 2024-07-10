@@ -53,6 +53,7 @@ impl User {
 #[cfg(test)]
 mod tests {
     use anyhow::Result;
+
     use crate::objects::user::User;
 
     #[test]
@@ -60,12 +61,9 @@ mod tests {
         let expected = "jeff";
         let jeff = User::new(String::from(expected));
         assert_eq!(
-            jeff.username,
-            expected,
+            jeff.username, expected,
             "Username {} from user: {:?} does not match with expected {}",
-            jeff.username,
-            jeff,
-            expected
+            jeff.username, jeff, expected
         );
         Ok(())
     }

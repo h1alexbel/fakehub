@@ -27,11 +27,11 @@ use axum::Router;
 use tokio::net::TcpListener;
 
 use crate::routes::home;
-use crate::routes::register_user::{register_user};
+use crate::routes::register_user::register_user;
 use crate::xml::storage::Storage;
 
-pub mod report;
 mod objects;
+pub mod report;
 mod routes;
 mod xml;
 
