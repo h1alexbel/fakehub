@@ -20,11 +20,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use clap::Parser;
+use log::info;
 
-use crate::args::Args;
+use server::Server;
+
+use crate::args::{Args, Command};
 
 mod args;
 
-fn main() {
-    let _ = Args::parse();
+#[tokio::main]
+async fn main() {
+    let args = Args::parse();
+    match args.command {
+        Command::Start(start_args) => {
+            info!("Starting server on port {}", start_args.port);
+            let server = Server::new(start_args.port);
+            match server.start().await {
+                Ok(_) => info!("Server started successfully on port {}", start_args.port),
+                Err(e) => panic!(
+                    "{}",
+                    format!("Failed to start server on port {}: {}", start_args.port, e)
+                ),
+            }
+        }
+    }
 }

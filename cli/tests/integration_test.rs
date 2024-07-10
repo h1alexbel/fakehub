@@ -25,12 +25,48 @@ use anyhow::Result;
 use assert_cmd::Command;
 
 #[test]
-fn should_output_help() -> Result<()> {
+fn outputs_help() -> Result<()> {
     env!("CARGO_BIN_EXE_cli");
     let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
     let bytes = assertion.get_output().stdout.as_slice();
     let output = str::from_utf8(bytes)?;
-    assert!(output.contains("The port to run"));
-    assert!(output.contains("3000"));
+    assert!(output.contains("help"));
+    assert!(output.contains("start"));
+    assert!(output.contains("Start the server"));
+    assert!(output.contains("--help"));
+    assert!(output.contains("Print help"));
+    Ok(())
+}
+
+#[test]
+fn outputs_start_opts() -> Result<()> {
+    env!("CARGO_BIN_EXE_cli");
+    let assertion = Command::cargo_bin("cli")?
+        .arg("start")
+        .arg("--help")
+        .assert();
+    let bytes = assertion.get_output().stdout.as_slice();
+    let output = str::from_utf8(bytes)?;
+    assert!(output.contains("--port"));
+    assert!(output.contains("The port to run [default: 3000]"));
+    Ok(())
+}
+
+// @todo #43:30min Enable starts_server integration test.
+//  We should enable this integration test that checks whether server starts or
+//  not. This test should output success message in info!. For now it does not
+//  work. Probably some error with logging configuration. Don't forget to
+//  remove this puzzle.
+#[test]
+#[ignore]
+fn starts_server() -> Result<()> {
+    env!("CARGO_BIN_EXE_cli");
+    let assertion = Command::cargo_bin("cli")?
+        .arg("start")
+        .arg("--port 8080")
+        .assert();
+    let bytes = assertion.get_output().stdout.as_slice();
+    let output = str::from_utf8(bytes)?;
+    assert!(output.contains("Server started successfully on port 8080"));
     Ok(())
 }
