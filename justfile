@@ -50,7 +50,7 @@ check:
 
 # Rultor merge script.
 rultor:
-  just gen
+  sudo just gen
   cargo --color=never test -vv
   cargo --color=never fmt --check
   cargo doc --no-deps
