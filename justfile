@@ -47,3 +47,11 @@ test:
 check:
   cargo clippy --all-targets --all-features
   cargo +nightly fmt --check
+
+# Rultor merge script.
+rultor:
+  just gen
+  cargo --color=never test -vv
+  cargo --color=never fmt --check
+  cargo doc --no-deps
+  cargo clippy
