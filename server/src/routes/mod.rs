@@ -21,3 +21,4 @@
 // SOFTWARE.
 pub mod home;
 pub mod rs_err;
+pub mod register_user;
