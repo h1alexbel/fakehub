@@ -22,14 +22,16 @@
 use std::io;
 
 use anyhow::Result;
-use axum::routing::get;
+use axum::routing::{get, post};
 use axum::Router;
 use tokio::net::TcpListener;
 
 use crate::routes::home;
-use crate::xml::storage::touch_storage;
+use crate::routes::register_user::{register_user};
+use crate::xml::storage::Storage;
 
 pub mod report;
+mod objects;
 mod routes;
 mod xml;
 
@@ -46,8 +48,11 @@ impl Server {
 
 impl Server {
     pub async fn start(self) -> Result<()> {
-        touch_storage(Some("fakehub.xml"));
-        let app: Router = Router::new().route("/", get(home::home));
+        tracing_subscriber::fmt::init();
+        Storage::new(Some("fakehub.xml"));
+        let app: Router = Router::new()
+            .route("/", get(home::home))
+            .route("/users", post(register_user));
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
