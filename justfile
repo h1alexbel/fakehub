@@ -51,7 +51,7 @@ check:
 # Rultor merge script.
 rultor:
   npm --version
-  sudo cd github-mirror && \
+  cd github-mirror && \
    sudo npm install @openapitools/openapi-generator-cli -g && \
     sudo openapi-generator-cli generate -i github.yml -g rust -o .
   cargo --color=never test -vv
