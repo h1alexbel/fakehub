@@ -58,7 +58,6 @@ fn outputs_start_opts() -> Result<()> {
 #[test]
 #[ignore]
 fn starts_server() -> Result<()> {
-    env!("CARGO_BIN_EXE_cli");
     let assertion = Command::cargo_bin("cli")?
         .arg("start")
         .arg("--port 8080")
