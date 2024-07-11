@@ -40,7 +40,6 @@ fn outputs_help() -> Result<()> {
 
 #[test]
 fn outputs_start_opts() -> Result<()> {
-    env!("CARGO_BIN_EXE_cli");
     let assertion = Command::cargo_bin("cli")?
         .arg("start")
         .arg("--help")
