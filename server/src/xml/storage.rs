@@ -31,9 +31,10 @@ pub struct Storage {
     pub(crate) path: String,
 }
 
-const INIT_XML: &str = "<root>\
-                        <github><users/></github>\
-                        </root>";
+const INIT_XML: &str = "<root>
+<github><users/></github>
+</root>
+";
 
 impl Storage {
     pub fn new(path: Option<&str>) -> Storage {
@@ -92,7 +93,7 @@ mod tests {
         let path = temp.path().join("fakehub.xml");
         Storage::new(path.to_str());
         let xml = fs::read_to_string(path).unwrap();
-        let expected = "<root><github><users/></github></root>";
+        let expected = "<root>\n<github><users/></github>\n</root>\n";
         assert_that!(xml, is(equal_to(String::from(expected))));
         Ok(())
     }
