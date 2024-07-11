@@ -55,6 +55,6 @@ rultor:
    sudo npm install @openapitools/openapi-generator-cli -g && \
     sudo openapi-generator-cli generate -i github.yml -g rust -o .
   cargo --color=never test -vv
-  cargo --color=never +nightly fmt --check
+  cargo +nightly fmt --check -- --color=never
   cargo doc --no-deps
   cargo clippy
