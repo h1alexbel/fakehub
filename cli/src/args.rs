@@ -19,18 +19,28 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
-// @todo #13:15min Handle port argument
-//  We should process the port argument and
-//  pass it to the server on `start` command.
-//  Start command should be added also with clap
 // @todo #41:15min Add --report argument.
 //  Let's add --report option for generating reports in desired formats:
 //  We should support following formats: xml, tex, and txt. User should have
 //  ability to generate report in multiple formats as well: --report tex,xml,txt.
 #[derive(Parser, Debug)]
+#[command(name = "fakehub")]
 pub(crate) struct Args {
+    #[command(subcommand)]
+    pub(crate) command: Command,
+}
+
+#[derive(Subcommand, Debug)]
+pub(crate) enum Command {
+    /// Start the server
+    #[command(about = "Start the server")]
+    Start(StartArgs),
+}
+
+#[derive(Parser, Debug)]
+pub(crate) struct StartArgs {
     /// The port to run
     #[arg(short, long, default_value_t = 3000)]
     pub(crate) port: usize,
