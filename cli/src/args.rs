@@ -34,7 +34,7 @@ pub(crate) struct Args {
 
 #[derive(Subcommand, Debug)]
 pub(crate) enum Command {
-    // Start the server
+    /// Start the server
     #[command(about = "Start the server")]
     Start(StartArgs),
 }
