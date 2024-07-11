@@ -52,19 +52,15 @@ impl User {
 
 #[cfg(test)]
 mod tests {
-    use anyhow::Result;
-
     use crate::objects::user::User;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
     fn returns_username() -> Result<()> {
         let expected = "jeff";
         let jeff = User::new(String::from(expected));
-        assert_eq!(
-            jeff.username, expected,
-            "Username {} from user: {:?} does not match with expected {}",
-            jeff.username, jeff, expected
-        );
+        assert_that!(jeff.username, is(equal_to(String::from(expected))));
         Ok(())
     }
 }

@@ -34,6 +34,9 @@ mod objects;
 pub mod report;
 mod routes;
 mod xml;
+#[allow(unused_imports)]
+#[macro_use]
+extern crate hamcrest;
 
 #[derive(Default)]
 pub struct Server {
@@ -68,11 +71,12 @@ impl Server {
 #[cfg(test)]
 mod tests {
     use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
     fn creates_the_server() -> Result<()> {
         let server = crate::Server::new(1234);
-        assert_eq!(server.port, 1234);
+        assert_that!(server.port, is(equal_to(1234)));
         Ok(())
     }
 }

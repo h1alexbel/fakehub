@@ -45,9 +45,9 @@ pub fn template(path: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use anyhow::Result;
-
     use crate::report::latex::template;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
     // @todo #41:60min Add support of @ExtendsWith from JUnit in order to pass expected as test parameter.
@@ -64,10 +64,7 @@ mod tests {
 \tbd{History: TBD}
 \end{document}
 ";
-        assert_eq!(
-            content, expected,
-            "Template content '{content}' does not match with '{expected}'"
-        );
+        assert_that!(content, is(equal_to(String::from(expected))));
         Ok(())
     }
 }

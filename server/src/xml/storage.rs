@@ -71,6 +71,7 @@ mod tests {
     use std::fs;
 
     use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
     use tempdir::TempDir;
 
     use crate::xml::storage::Storage;
@@ -81,11 +82,7 @@ mod tests {
         let path = temp.path().join("fakehub.xml");
         let storage = path.to_str();
         Storage::new(storage);
-        assert!(
-            path.exists(),
-            "storage file {:?} was not created, but should be",
-            storage
-        );
+        assert_that!(path.exists(), is(equal_to(true)));
         Ok(())
     }
 
@@ -96,11 +93,7 @@ mod tests {
         Storage::new(path.to_str());
         let xml = fs::read_to_string(path).unwrap();
         let expected = "<root><github><users/></github></root>";
-        assert_eq!(
-            xml, expected,
-            "Received initial XML {} does not match with expected {}",
-            xml, expected
-        );
+        assert_that!(xml, is(equal_to(String::from(expected))));
         Ok(())
     }
 
@@ -110,11 +103,7 @@ mod tests {
         let path = temp.path().join("test.xml");
         let storage = path.to_str();
         Storage::new(storage);
-        assert!(
-            path.exists(),
-            "storage file {:?} was not created, but should be",
-            storage
-        );
+        assert_that!(path.exists(), is(equal_to(true)));
         Ok(())
     }
 }
