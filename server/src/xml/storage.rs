@@ -1,3 +1,6 @@
+use std::fs::File;
+use std::io::Write;
+
 // The MIT License (MIT)
 //
 // Copyright (c) 2024 Aliaksei Bialiauski
@@ -19,42 +22,79 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::fs::File;
-
+use anyhow::Result;
 use log::info;
 
-pub fn touch_storage(path: Option<&str>) -> File {
-    let location = path.unwrap_or("fakehub.xml");
-    info!("Initializing XML storage: {location}");
-    match File::create(location) {
-        Ok(file) => {
-            info!("'{location}' initialized");
-            file
+#[derive(Default)]
+#[allow(dead_code)]
+pub struct Storage {
+    pub(crate) path: String,
+}
+
+const INIT_XML: &str = "<root>
+<github><users/></github>
+</root>
+";
+
+impl Storage {
+    pub fn new(path: Option<&str>) -> Storage {
+        let location = path.unwrap_or("fakehub.xml");
+        info!("Initializing XML storage: {location}");
+        let mut file = match File::create(location) {
+            Ok(file) => file,
+            Err(err) => {
+                panic!("fakehub storage failed to initialize in '{location}': {err}");
+            }
+        };
+        if let Err(err) = file.write_all(INIT_XML.as_bytes()) {
+            panic!("Failed to write initial content to '{}': {}", location, err);
         }
-        Err(err) => {
-            panic!("fakehub storage failed to initialize in '{location}': {err}")
+        info!("'{}' initialized", location);
+        Storage {
+            path: String::from(location),
         }
+    }
+}
+
+// @todo #17:35min Implement #xml function in Storage.
+//  This function should return full XML storage has at the moment. #xml
+//  function should be thread-safe, as it intended to be used concurrently.
+//  Don't forget to create a unit tests related to #xml function.
+impl Storage {
+    #[allow(dead_code)]
+    pub fn xml() -> Result<()> {
+        Ok(())
     }
 }
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
+
     use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
     use tempdir::TempDir;
 
-    use crate::xml::storage::touch_storage;
+    use crate::xml::storage::Storage;
 
     #[test]
     fn creates_xml_storage() -> Result<()> {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("fakehub.xml");
         let storage = path.to_str();
-        touch_storage(storage);
-        assert!(
-            path.exists(),
-            "storage file {:?} was not created, but should be",
-            storage
-        );
+        Storage::new(storage);
+        assert_that!(path.exists(), is(equal_to(true)));
+        Ok(())
+    }
+
+    #[test]
+    fn reads_initial_content() -> Result<()> {
+        let temp = TempDir::new("temp")?;
+        let path = temp.path().join("fakehub.xml");
+        Storage::new(path.to_str());
+        let xml = fs::read_to_string(path).unwrap();
+        let expected = "<root>\n<github><users/></github>\n</root>\n";
+        assert_that!(xml, is(equal_to(String::from(expected))));
         Ok(())
     }
 
@@ -63,12 +103,8 @@ mod tests {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("test.xml");
         let storage = path.to_str();
-        touch_storage(storage);
-        assert!(
-            path.exists(),
-            "storage file {:?} was not created, but should be",
-            storage
-        );
+        Storage::new(storage);
+        assert_that!(path.exists(), is(equal_to(true)));
         Ok(())
     }
 }

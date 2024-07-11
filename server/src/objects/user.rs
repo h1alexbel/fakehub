@@ -19,64 +19,51 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::io;
-
 use anyhow::Result;
-use axum::routing::{get, post};
-use axum::Router;
-use tokio::net::TcpListener;
+use log::{debug, info};
+use serde::{Deserialize, Serialize};
+use serde_xml_rs::to_string;
 
-use crate::routes::home;
-use crate::routes::register_user::register_user;
-use crate::xml::storage::Storage;
-
-mod objects;
-pub mod report;
-mod routes;
-mod xml;
-#[allow(unused_imports)]
-#[macro_use]
-extern crate hamcrest;
-
-#[derive(Default)]
-pub struct Server {
-    port: usize,
+#[derive(Debug, Serialize, Deserialize)]
+pub struct User {
+    pub(crate) username: String,
 }
 
-impl Server {
-    pub fn new(port: usize) -> Server {
-        Server { port }
+impl User {
+    pub fn new(username: String) -> User {
+        User { username }
     }
 }
 
-impl Server {
-    pub async fn start(self) -> Result<()> {
-        tracing_subscriber::fmt::init();
-        Storage::new(Some("fakehub.xml"));
-        let app: Router = Router::new()
-            .route("/", get(home::home))
-            .route("/users", post(register_user));
-        let addr: String = format!("0.0.0.0:{}", self.port);
-        let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
-        match started {
-            Ok(listener) => axum::serve(listener, app).await?,
-            Err(err) => {
-                panic!("Can't bind address {}: '{}'", addr.clone(), err)
-            }
-        };
+// @todo #17:40min Apply XMLed user to the <users/> node in storage.
+//  We should apply XMLed user to the <users> XML node in storage. First we
+//  need to check that user with provided name does not exist, and only then
+//  apply it to the storage. Keep in mind that application function in the
+//  storage should be thread-safe (as well as #xml function). Don't forget to
+//  create unit tests that prove that.
+// @todo #17:30min Configure clippy to reject code with #unwrap().
+//  We should prohibit to use #unwrap() function in our code. Let's configure
+//  clippy tool in the respective manner and get rid of all #unwrap() calls.
+impl User {
+    pub async fn save(self) -> Result<()> {
+        info!("registering user @{}", self.username);
+        let xml = to_string(&self).unwrap();
+        debug!("XMLed user: {}", xml);
         Ok(())
     }
 }
 
 #[cfg(test)]
 mod tests {
+    use crate::objects::user::User;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
-    fn creates_the_server() -> Result<()> {
-        let server = crate::Server::new(1234);
-        assert_that!(server.port, is(equal_to(1234)));
+    fn returns_username() -> Result<()> {
+        let expected = "jeff";
+        let jeff = User::new(String::from(expected));
+        assert_that!(jeff.username, is(equal_to(String::from(expected))));
         Ok(())
     }
 }

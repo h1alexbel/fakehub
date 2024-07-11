@@ -19,6 +19,15 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-pub mod home;
-pub mod register_user;
-pub mod rs_err;
+use axum::http::StatusCode;
+use axum::Json;
+
+use crate::objects::user::User;
+
+pub async fn register_user(Json(payload): Json<User>) -> Result<StatusCode, String> {
+    let user = User::new(payload.username.clone());
+    match user.save().await {
+        Ok(_) => Ok(StatusCode::CREATED),
+        Err(e) => Err(format!("Can't register {}: {}", payload.username, e)),
+    }
+}
