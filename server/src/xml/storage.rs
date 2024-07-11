@@ -31,6 +31,10 @@ pub struct Storage {
     pub(crate) path: String,
 }
 
+const INIT_XML: &str = "<root>\
+                        <github><users/></github>\
+                        </root>";
+
 impl Storage {
     pub fn new(path: Option<&str>) -> Storage {
         let location = path.unwrap_or("fakehub.xml");
@@ -41,12 +45,7 @@ impl Storage {
                 panic!("fakehub storage failed to initialize in '{location}': {err}");
             }
         };
-        if let Err(err) = file.write_all(
-            "<root>\
-             <github><users/></github>\
-            </root>"
-                .as_bytes(),
-        ) {
+        if let Err(err) = file.write_all(INIT_XML.as_bytes()) {
             panic!("Failed to write initial content to '{}': {}", location, err);
         }
         info!("'{}' initialized", location);
