@@ -28,6 +28,7 @@ assets:
   credentials: l3r8yJ/home#assets/crates-credentials
 install: |
   cargo install --version 1.30.1 just
+  rustup component add --toolchain nightly-x86_64-unknown-linux-gnu rustfmt
 merge:
   script: |
     just rultor
