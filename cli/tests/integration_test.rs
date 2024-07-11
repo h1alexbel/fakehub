@@ -26,7 +26,6 @@ use assert_cmd::Command;
 
 #[test]
 fn outputs_help() -> Result<()> {
-    env!("CARGO_BIN_EXE_cli");
     let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
     let bytes = assertion.get_output().stdout.as_slice();
     let output = str::from_utf8(bytes)?;
