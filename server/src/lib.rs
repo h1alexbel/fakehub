@@ -49,13 +49,27 @@ impl Server {
     }
 }
 
+#[derive(Clone)]
+pub struct ServerConfig {
+    pub host: String,
+    pub port: usize,
+}
+
+// @todo #79:30min Log 404 NOT FOUND requests too.
+//  Let's create a handler that would log requests failed with 404. Let's use
+//  info!() for this one.
 impl Server {
     pub async fn start(self) -> Result<()> {
         tracing_subscriber::fmt::init();
         Storage::new(Some("fakehub.xml"));
-        let app: Router = Router::new()
+        let config = ServerConfig {
+            host: "0.0.0.0".into(),
+            port: self.port,
+        };
+        let app = Router::new()
             .route("/", get(home::home))
-            .route("/users", post(register_user));
+            .route("/users", post(register_user))
+            .with_state(config);
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
