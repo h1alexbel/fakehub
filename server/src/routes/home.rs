@@ -27,9 +27,6 @@ use log::debug;
 use crate::ServerConfig;
 use openapi::models::MetaRoot200Response;
 
-// @todo #9:25min Create unit tests for home.rs.
-//  We need to create a few unit testes for home endpoints,
-//  bootstrapping, and fetching. Don't forget to remove this puzzle.
 pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
     let response = Json(
         MetaRoot200Response::new(
