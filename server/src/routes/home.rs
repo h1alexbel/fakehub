@@ -187,3 +187,68 @@ pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
     debug!("{:?}", response);
     response
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::routes::home::home;
+    use crate::ServerConfig;
+    use anyhow::Result;
+    use axum::body::to_bytes;
+    use axum::extract::State;
+    use axum::response::IntoResponse;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use serde_json::{from_str, Value};
+    use tokio::fs;
+
+    const BYTES_READ_LIMIT: usize = 10000;
+
+    #[tokio::test]
+    async fn returns_ok() -> Result<()> {
+        assert_that!(
+            IntoResponse::into_response(
+                home(State(ServerConfig {
+                    host: String::from("test"),
+                    port: 1234
+                }))
+                .await
+            )
+            .status()
+            .as_u16(),
+            is(equal_to(200))
+        );
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn returns_root_response() -> Result<()> {
+        let actual: Value = from_str(
+            &String::from_utf8(
+                to_bytes(
+                    IntoResponse::into_response(
+                        home(State(ServerConfig {
+                            host: String::from("test"),
+                            port: 1234,
+                        }))
+                        .await,
+                    )
+                    .into_body(),
+                    BYTES_READ_LIMIT,
+                )
+                .await
+                .unwrap()
+                .to_vec(),
+            )
+            .unwrap(),
+        )
+        .expect("Failed to parse JSON");
+        assert_that!(
+            actual.to_string(),
+            is(equal_to(
+                fs::read_to_string("resources/home.json")
+                    .await
+                    .expect("Failed to read file")
+            ))
+        );
+        Ok(())
+    }
+}
