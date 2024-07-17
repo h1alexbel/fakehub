@@ -27,6 +27,10 @@ use log::debug;
 use crate::ServerConfig;
 use openapi::models::MetaRoot200Response;
 
+// @todo #79:45min Make mod/fn/struct documentation required.
+//  Let's configure cargo in such way, so documentation will be required at all
+//  levels. When such rule will be configured, please fix all warnings/errors
+//  and integrate changes into master branch.
 pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
     let response = Json(
         MetaRoot200Response::new(
