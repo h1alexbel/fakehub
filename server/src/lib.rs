@@ -62,14 +62,15 @@ impl Server {
     pub async fn start(self) -> Result<()> {
         tracing_subscriber::fmt::init();
         Storage::new(Some("fakehub.xml"));
-        let config = ServerConfig {
-            host: "0.0.0.0".into(),
-            port: self.port,
-        };
         let app = Router::new()
             .route("/", get(home::home))
             .route("/users", post(register_user))
-            .with_state(config);
+            .with_state(
+                ServerConfig {
+                    host: "0.0.0.0".into(),
+                    port: self.port,
+                }
+            );
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
