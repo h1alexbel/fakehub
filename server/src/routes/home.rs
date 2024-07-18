@@ -19,41 +19,237 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::collections::HashMap;
-use std::error::Error;
-
-use crate::routes::rs_err::RsErr;
-use axum::http::StatusCode;
+use axum::extract::State;
 use axum::response::IntoResponse;
 use axum::Json;
-use tokio::fs;
+use log::debug;
 
-// @todo #9:25min Create unit tests for home.rs.
-//  We need to create a few unit testes for home endpoints,
-//  bootstrapping, and fetching. Don't forget to remove this puzzle.
-pub async fn home() -> impl IntoResponse {
-    match json("resources/home.json").await {
-        Ok(content) => {
-            let objs = serde_json::from_str(&content).unwrap();
-            Json(objs)
-        }
-        Err(e) => Json(
-            serde_json::to_value(RsErr {
-                status: StatusCode::INTERNAL_SERVER_ERROR.to_string(),
-                message: "Failed to fetch home (/) endpoints".to_owned(),
-                trace: e.to_string(),
-            })
-            .unwrap(),
-        ),
-    }
+use crate::ServerConfig;
+use openapi::models::MetaRoot200Response;
+
+// @todo #79:45min Make mod/fn/struct documentation required.
+//  Let's configure cargo in such way, so documentation will be required at all
+//  levels. When such rule will be configured, please fix all warnings/errors
+//  and integrate changes into master branch.
+pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
+    let response = Json(
+        MetaRoot200Response::new(
+            format!("http://{}:{}/user", config.host, config.port),
+            format!(
+                "http://{}{}/settings/connections/applications{{/client_id}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/authorizations", config.host, config.port
+            ),
+            format!(
+                "http://{}:{}/search/code?q={{query}}{{&page,per_page,sort,order}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/search/commits?q={{query}}{{&page,per_page,sort,order}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/emails",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/emojis",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/events",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/feeds",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/followers",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/following{{/target}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/gists{{/gist_id}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/search/issues?q={{query}}{{&page,per_page,sort,order}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/issues",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/keys",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/search/labels?q={{query}}&repository_id={{repository_id}}{{&page,per_page}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/notifications",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/orgs/{{org}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/orgs/{{org}}/repos{{?type,page,per_page,sort}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/orgs/{{org}}/teams",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/gists/public",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/rate_limit",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/repos/{{owner}}/{{repo}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/search/repositories?q={{query}}{{&page,per_page,sort,order}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/repos{{?type,page,per_page,sort}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/starred{{/owner}}{{/repo}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/gists/starred",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/users/{{user}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/user/orgs",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/users/{{user}}/repos{{?type,page,per_page,sort}}",
+                config.host,
+                config.port
+            ),
+            format!(
+                "http://{}:{}/search/users?q={{query}}{{&page,per_page,sort,order}}",
+                config.host,
+                config.port
+            ),
+        )
+    );
+    debug!("{:?}", response);
+    response
 }
 
-async fn json(path: &str) -> Result<String, Box<dyn Error>> {
-    let content = fs::read_to_string(path).await.unwrap();
-    let mut data: HashMap<String, String> = serde_json::from_str(&content).unwrap();
-    for value in data.values_mut() {
-        *value = value.replace("{port}", "3000");
+#[cfg(test)]
+mod tests {
+    use crate::routes::home::home;
+    use crate::ServerConfig;
+    use anyhow::Result;
+    use axum::body::to_bytes;
+    use axum::extract::State;
+    use axum::response::IntoResponse;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use serde_json::{from_str, Value};
+    use tokio::fs;
+
+    const BYTES_READ_LIMIT: usize = 10000;
+
+    #[tokio::test]
+    async fn returns_ok() -> Result<()> {
+        assert_that!(
+            IntoResponse::into_response(
+                home(State(ServerConfig {
+                    host: String::from("test"),
+                    port: 1234
+                }))
+                .await
+            )
+            .status()
+            .as_u16(),
+            is(equal_to(200))
+        );
+        Ok(())
     }
-    let updated = serde_json::to_string(&data).unwrap();
-    Ok(updated)
+
+    #[tokio::test]
+    async fn returns_root_response() -> Result<()> {
+        let actual: Value = from_str(
+            &String::from_utf8(
+                to_bytes(
+                    IntoResponse::into_response(
+                        home(State(ServerConfig {
+                            host: String::from("test"),
+                            port: 1234,
+                        }))
+                        .await,
+                    )
+                    .into_body(),
+                    BYTES_READ_LIMIT,
+                )
+                .await
+                .unwrap()
+                .to_vec(),
+            )
+            .unwrap(),
+        )
+        .expect("Failed to parse JSON");
+        assert_that!(
+            actual.to_string(),
+            is(equal_to(
+                fs::read_to_string("resources/home.json")
+                    .await
+                    .expect("Failed to read file")
+            ))
+        );
+        Ok(())
+    }
 }
