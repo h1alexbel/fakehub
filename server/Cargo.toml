@@ -34,6 +34,9 @@ authors = ["Aliaksei Bialíauski <aliaksei.bialiauski@hey.com>", "Ivanchuk Ivan 
 [lib]
 path = "src/lib.rs"
 
+[lints.rust]
+missing_docs = "warn"
+
 [dependencies]
 openapi = { path = "../github-mirror" }
 anyhow = "1.0.86"

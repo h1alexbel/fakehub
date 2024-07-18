@@ -24,12 +24,26 @@ use log::{debug, info};
 use serde::{Deserialize, Serialize};
 use serde_xml_rs::to_string;
 
+/// GitHub user.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct User {
+    /// Username.
     pub(crate) username: String,
 }
 
 impl User {
+    /// New user.
+    ///
+    /// # Fields
+    ///
+    /// * `username`: Username
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use server::objects::user::User;
+    /// let jeff = User::new(String::from("jeff123"));
+    /// ```
     pub fn new(username: String) -> User {
         User { username }
     }
@@ -45,8 +59,9 @@ impl User {
 //  We should prohibit to use #unwrap() function in our code. Let's configure
 //  clippy tool in the respective manner and get rid of all #unwrap() calls.
 impl User {
+    /// Save user.
     pub async fn save(self) -> Result<()> {
-        info!("registering user @{}", self.username);
+        info!("saving user @{}", self.username);
         let xml = to_string(&self).unwrap();
         debug!("XMLed user: {}", xml);
         Ok(())

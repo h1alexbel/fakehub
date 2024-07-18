@@ -22,4 +22,5 @@
 // @todo #41:45min Create similar to latex.rs functions for XML and TXT formats.
 //  Let's create similar to latex.rs functions for generating reports in XML and TXT.
 //  Don't forget to remove this puzzle.
+/// LaTeX report.
 pub mod latex;

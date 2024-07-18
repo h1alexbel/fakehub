@@ -1,6 +1,3 @@
-use std::fs::File;
-use std::io::Write;
-
 // The MIT License (MIT)
 //
 // Copyright (c) 2024 Aliaksei Bialiauski
@@ -24,9 +21,12 @@ use std::io::Write;
 // SOFTWARE.
 use anyhow::Result;
 use log::info;
+use std::fs::File;
+use std::io::Write;
 
 #[derive(Default)]
 #[allow(dead_code)]
+/// Storage.
 pub struct Storage {
     pub(crate) path: String,
 }
@@ -37,6 +37,22 @@ const INIT_XML: &str = "<root>
 ";
 
 impl Storage {
+    /// New storage.
+    ///
+    /// # Fields
+    /// * `path`: Storage path
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use server::xml::storage::Storage;
+    /// let storage = Storage::new(Some("test.xml"));
+    /// ```
+    /// Or use default path:
+    /// ```
+    /// use server::xml::storage::Storage;
+    /// let storage = Storage::new(None);
+    /// ```
     pub fn new(path: Option<&str>) -> Storage {
         let location = path.unwrap_or("fakehub.xml");
         info!("Initializing XML storage: {location}");
@@ -62,6 +78,7 @@ impl Storage {
 //  Don't forget to create a unit tests related to #xml function.
 impl Storage {
     #[allow(dead_code)]
+    /// Return XML from the storage.
     pub fn xml() -> Result<()> {
         Ok(())
     }

@@ -19,6 +19,9 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+/*!
+Fakehub server and storage.
+ */
 use std::io;
 
 use anyhow::Result;
@@ -26,32 +29,53 @@ use axum::routing::{get, post};
 use axum::Router;
 use tokio::net::TcpListener;
 
-use crate::routes::home;
-use crate::routes::register_user::register_user;
+use crate::handlers::home;
+use crate::handlers::register_user::register_user;
 use crate::xml::storage::Storage;
 
-mod objects;
+/// Handlers.
+pub mod handlers;
+/// GitHub domain objects.
+pub mod objects;
+/// Reports.
 pub mod report;
-mod routes;
-mod xml;
+/// XML storage.
+pub mod xml;
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
 
+/// Server.
 #[derive(Default)]
 pub struct Server {
+    /// Port.
     port: usize,
 }
 
 impl Server {
+    /// Create new server with port.
+    ///
+    /// * `port`: Server port
+    ///
+    /// returns: Server
+    ///
+    /// Examples:
+    ///
+    /// ```
+    /// use server::Server;
+    /// let server = Server::new(1234);
+    /// ```
     pub fn new(port: usize) -> Server {
         Server { port }
     }
 }
 
+/// Server configuration.
 #[derive(Clone)]
 pub struct ServerConfig {
+    /// Server host.
     pub host: String,
+    /// Server port.
     pub port: usize,
 }
 
@@ -59,6 +83,7 @@ pub struct ServerConfig {
 //  Let's create a handler that would log requests failed with 404. Let's use
 //  info!() for this one.
 impl Server {
+    /// Start a server.
     pub async fn start(self) -> Result<()> {
         tracing_subscriber::fmt::init();
         Storage::new(Some("fakehub.xml"));
