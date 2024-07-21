@@ -24,8 +24,9 @@ use axum::response::IntoResponse;
 use axum::Json;
 use log::debug;
 
-use crate::ServerConfig;
 use openapi::models::MetaRoot200Response;
+
+use crate::ServerConfig;
 
 /// Home handler.
 pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
@@ -188,8 +189,6 @@ pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
 
 #[cfg(test)]
 mod tests {
-    use crate::handlers::home::home;
-    use crate::ServerConfig;
     use anyhow::Result;
     use axum::body::to_bytes;
     use axum::extract::State;
@@ -197,6 +196,9 @@ mod tests {
     use hamcrest::{equal_to, is, HamcrestMatcher};
     use serde_json::{from_str, Value};
     use tokio::fs;
+
+    use crate::handlers::home::home;
+    use crate::ServerConfig;
 
     const BYTES_READ_LIMIT: usize = 10000;
 
@@ -219,25 +221,21 @@ mod tests {
 
     #[tokio::test]
     async fn returns_root_response() -> Result<()> {
-        let actual: Value = from_str(
-            &String::from_utf8(
-                to_bytes(
-                    IntoResponse::into_response(
-                        home(State(ServerConfig {
-                            host: String::from("test"),
-                            port: 1234,
-                        }))
-                        .await,
-                    )
-                    .into_body(),
-                    BYTES_READ_LIMIT,
+        let actual: Value = from_str(&String::from_utf8(
+            to_bytes(
+                IntoResponse::into_response(
+                    home(State(ServerConfig {
+                        host: String::from("test"),
+                        port: 1234,
+                    }))
+                    .await,
                 )
-                .await
-                .unwrap()
-                .to_vec(),
+                .into_body(),
+                BYTES_READ_LIMIT,
             )
-            .unwrap(),
-        )
+            .await?
+            .to_vec(),
+        )?)
         .expect("Failed to parse JSON");
         assert_that!(
             actual.to_string(),

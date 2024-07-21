@@ -109,7 +109,7 @@ mod tests {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("fakehub.xml");
         Storage::new(path.to_str());
-        let xml = fs::read_to_string(path).unwrap();
+        let xml = fs::read_to_string(path)?;
         let expected = "<root>\n<github><users/></github>\n</root>\n";
         assert_that!(xml, is(equal_to(String::from(expected))));
         Ok(())

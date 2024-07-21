@@ -59,7 +59,7 @@ impl User {
     /// Save user.
     pub async fn save(self) -> Result<()> {
         info!("saving user @{}", self.username);
-        let xml = to_string(&self).unwrap();
+        let xml = to_string(&self)?;
         debug!("XMLed user: {}", xml);
         Ok(())
     }

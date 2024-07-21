@@ -37,6 +37,9 @@ path = "src/lib.rs"
 [lints.rust]
 missing_docs = "deny"
 
+# @todo #74:30min\DEV Find way to spread clippy config
+#  We need to find way to spread clippy/rustfmt configuration
+#  through all workspaces to reduce duplications in child workspaces.
 [lints.clippy]
 unwrap_used = "deny"
 
