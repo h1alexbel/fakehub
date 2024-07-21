@@ -28,9 +28,6 @@ edition = "2021"
 name = "cli"
 path = "src/main.rs"
 
-[lints.rust]
-missing_docs = "deny"
-
 [lints.clippy]
 unwrap_used = "deny"
 
