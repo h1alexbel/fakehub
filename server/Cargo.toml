@@ -37,6 +37,9 @@ path = "src/lib.rs"
 [lints.rust]
 missing_docs = "deny"
 
+[lints.clippy]
+unwrap_used = "deny"
+
 [dependencies]
 openapi = { path = "../github-mirror" }
 anyhow = "1.0.86"
