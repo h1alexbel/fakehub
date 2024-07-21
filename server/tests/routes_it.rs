@@ -47,8 +47,7 @@ mod routes_its {
         let response = reqwest::Client::new()
             .get(format!("http://localhost:{}/", port))
             .send()
-            .await
-            .unwrap();
+            .await?;
         assert_that!(response.status().as_u16(), is(equal_to(200)));
         Ok(())
     }

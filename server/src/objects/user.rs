@@ -55,14 +55,11 @@ impl User {
 //  apply it to the storage. Keep in mind that application function in the
 //  storage should be thread-safe (as well as #xml function). Don't forget to
 //  create unit tests that prove that.
-// @todo #17:30min Configure clippy to reject code with #unwrap().
-//  We should prohibit to use #unwrap() function in our code. Let's configure
-//  clippy tool in the respective manner and get rid of all #unwrap() calls.
 impl User {
     /// Save user.
     pub async fn save(self) -> Result<()> {
         info!("saving user @{}", self.username);
-        let xml = to_string(&self).unwrap();
+        let xml = to_string(&self)?;
         debug!("XMLed user: {}", xml);
         Ok(())
     }
