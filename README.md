@@ -11,8 +11,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/h1alexbel/fakehub/blob/master/LICENSE.txt)
 [![Known Vulnerabilities](https://snyk.io/test/github/h1alexbel/fakehub/badge.svg)](https://snyk.io/test/github/h1alexbel/fakehub)
 
-fakehub - A fully functional fake version of a GitHub API that supports all the
-features and works locally, with no connection to GitHub at all.
+fakehub - A fully functional fake version of a [GitHub API] that supports all
+the features and works locally, with no connection to GitHub at all.
 
 **Motivation**. There are many applications that use GitHub API for different
 purposes. All of them need to create automated tests, which need to mock the
@@ -22,7 +22,62 @@ connection to GitHub.
 
 ## How to use?
 
+First, install it from [crate][fakehub-crate]:
+
+```bash
+cargo install fakehub
+```
+
+or with [homebrew] (macOS):
+
+```bash
+brew install fakehub
+```
+
+Then, run it:
+
+```bash
+fakehub start --port 8080
+```
+
+Table of contents:
+
+* [Overview](#overview)
+* [Login](#login)
+* [Repositories](#repositories)
+* [Issues](#issues)
+* [CLI Options](#cli-options)
+
+### Overview
+
+Fakehub is a full clone of [GitHub API]. This is very beneficial for testing,
+when you should not use real GitHub API, but a mock version of it instead.
+Fakehub stores all the data in [XML] format in file-system. When request
+arrives, we query the storage, transform data into GitHub API-compatible format
+([JSON]) and give it to you.
+
+### Login
+
 TBD..
+
+### Repositories
+
+TBD..
+
+### Issues
+
+TBD..
+
+### CLI Options
+
+You can use the following options within `fakehub` command-line tool:
+
+| Name            | Value   | Default | Description                                                                                               |
+|-----------------|---------|---------|-----------------------------------------------------------------------------------------------------------|
+| `port`          | int     | `3000`  | Port to run fakehub server on.                                                                            |
+| `v`             | boolean | `false` | Verbose run output, i.e. debug logs, etc.                                                                 |
+| `report`        | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
+| `report-format` | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
 
 ## How to contribute?
 
@@ -36,6 +91,12 @@ avoid frustration, before sending us your pull request please run full build:
 just full
 ```
 
+[GitHub API]: https://docs.github.com/en/rest?apiVersion=2022-11-28
+[homebrew]: https://brew.sh
+[fakehub-crate]: https://crates.io/crates/fakehub
+[LaTeX]: https://en.wikipedia.org/wiki/LaTeX
+[XML]: https://en.wikipedia.org/wiki/XML
+[JSON]: https://en.wikipedia.org/wiki/JSON
 [Rust]: https://www.rust-lang.org/tools/install
 [npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [guidelines]: https://www.yegor256.com/2014/04/15/github-guidelines.html
