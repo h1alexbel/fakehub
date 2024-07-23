@@ -74,6 +74,10 @@ impl Storage {
 
 impl Storage {
     /// Returns full XML from the storage.
+    // @todo #75:60min Make xml() thread-safe.
+    //  We should make this function thread-safe in order to get sequential of
+    //  reads and write to the store. Don't forget to create a unit-test that
+    //  checks concurrency cases.
     pub fn xml(self) -> io::Result<String> {
         let mut file = File::open(self.path)?;
         let mut xml = String::new();
