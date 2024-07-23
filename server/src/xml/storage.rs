@@ -91,7 +91,7 @@ mod tests {
     use std::fs;
 
     use anyhow::Result;
-    use hamcrest::{equal_to, is, HamcrestMatcher, contains};
+    use hamcrest::{equal_to, is, HamcrestMatcher};
     use tempdir::TempDir;
 
     use crate::xml::storage::Storage;
