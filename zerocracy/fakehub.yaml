@@ -3,10 +3,10 @@
   cycles: 3
   error: The 'ZEROCRAT_TOKEN' secret is not set
   removed: 8
-  seconds: 4.742857299
+  seconds: 4.701065029
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-23 18:18:28.768695439 Z
+  when: 2024-07-23 19:10:48.635626113 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2080,8 +2080,59 @@
   when: 2024-07-11 06:38:04.000000000 Z
   where: github
   who: 83453843
-- _id: 175
-  _time: 2024-07-23 18:18:27.216508619 Z
+- _id: 176
+  _time: 2024-07-23 18:18:27.362165965 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  cause: 74
+  comments: 0
+  details: The pull request h1alexbel/fakehub#64 with 2 HoC created by @h1alexbel
+    was merged by @h1alexbel after 22 seconds of being in review and 0 comments.
+  hoc: 2
+  is_human: 1
+  issue: 64
+  merger: 83453843
+  repository: 807802459
+  seconds: 22
+  what: code-was-contributed
+  when: 2024-07-10 19:57:20.000000000 Z
+  where: github
+  who: 83453843
+- _id: 180
+  _time: 2024-07-23 19:10:44.155865693 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  cause: 76
+  comments: 1
+  details: The pull request h1alexbel/fakehub#63 with 15 HoC created by @h1alexbel
+    was merged by @h1alexbel after 22 minutes of being in review and 1 comments.
+  hoc: 15
+  is_human: 1
+  issue: 63
+  merger: 83453843
+  repository: 807802459
+  seconds: 1366
+  what: code-was-contributed
+  when: 2024-07-10 19:30:06.000000000 Z
+  where: github
+  who: 83453843
+- _id: 182
+  _time: 2024-07-23 19:10:45.886175925 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  cause: 115
+  comments: 3
+  details: The pull request h1alexbel/fakehub#93 with 130 HoC created by @h1alexbel
+    was merged by @rultor after 26 minutes of being in review and 3 comments.
+  hoc: 130
+  is_human: 1
+  issue: 93
+  merger: 8086956
+  repository: 807802459
+  seconds: 1575
+  what: code-was-contributed
+  when: 2024-07-23 13:59:50.000000000 Z
+  where: github
+  who: 83453843
+- _id: 183
+  _time: 2024-07-23 19:10:47.202584871 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2116,59 +2167,8 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 176
-  _time: 2024-07-23 18:18:27.362165965 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  cause: 74
-  comments: 0
-  details: The pull request h1alexbel/fakehub#64 with 2 HoC created by @h1alexbel
-    was merged by @h1alexbel after 22 seconds of being in review and 0 comments.
-  hoc: 2
-  is_human: 1
-  issue: 64
-  merger: 83453843
-  repository: 807802459
-  seconds: 22
-  what: code-was-contributed
-  when: 2024-07-10 19:57:20.000000000 Z
-  where: github
-  who: 83453843
-- _id: 176
-  _time: 2024-07-23 18:18:27.585088484 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  cause: 76
-  comments: 1
-  details: The pull request h1alexbel/fakehub#63 with 15 HoC created by @h1alexbel
-    was merged by @h1alexbel after 22 minutes of being in review and 1 comments.
-  hoc: 15
-  is_human: 1
-  issue: 63
-  merger: 83453843
-  repository: 807802459
-  seconds: 1366
-  what: code-was-contributed
-  when: 2024-07-10 19:30:06.000000000 Z
-  where: github
-  who: 83453843
-- _id: 176
-  _time: 2024-07-23 18:18:27.599641452 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  cause: 115
-  comments: 3
-  details: The pull request h1alexbel/fakehub#93 with 130 HoC created by @h1alexbel
-    was merged by @rultor after 26 minutes of being in review and 3 comments.
-  hoc: 130
-  is_human: 1
-  issue: 93
-  merger: 8086956
-  repository: 807802459
-  seconds: 1575
-  what: code-was-contributed
-  when: 2024-07-23 13:59:50.000000000 Z
-  where: github
-  who: 83453843
-- _id: 176
-  _time: 2024-07-23 18:18:27.675203592 Z
+- _id: 184
+  _time: 2024-07-23 19:10:47.364235611 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 135
   comments: 3
@@ -2184,8 +2184,8 @@
   when: 2024-07-23 15:04:27.000000000 Z
   where: github
   who: 83453843
-- _id: 176
-  _time: 2024-07-23 18:18:27.688210495 Z
+- _id: 184
+  _time: 2024-07-23 19:10:47.616327523 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 151
   comments: 0
@@ -2201,15 +2201,15 @@
   when: 2024-07-23 15:35:03.000000000 Z
   where: github
   who: 83453843
-- _id: 177
-  _time: 2024-07-23 19:10:34.826127884 Z
+- _id: 185
+  _time: 2024-07-23 20:14:20.040698290 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40396972543
+  latest: 40398786504
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 178
-  _time: 2024-07-23 19:10:39.758307650 Z
+- _id: 186
+  _time: 2024-07-23 20:14:24.707948917 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
