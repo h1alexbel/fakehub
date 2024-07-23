@@ -19,10 +19,10 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use anyhow::Result;
 use log::info;
 use std::fs::File;
-use std::io::Write;
+use std::io;
+use std::io::{Read, Write};
 
 #[derive(Default)]
 #[allow(dead_code)]
@@ -48,7 +48,7 @@ impl Storage {
     /// use server::xml::storage::Storage;
     /// let storage = Storage::new(Some("test.xml"));
     /// ```
-    /// Or use default path:
+    /// Or use it with default path:
     /// ```
     /// use server::xml::storage::Storage;
     /// let storage = Storage::new(None);
@@ -72,15 +72,13 @@ impl Storage {
     }
 }
 
-// @todo #17:35min Implement #xml function in Storage.
-//  This function should return full XML storage has at the moment. #xml
-//  function should be thread-safe, as it intended to be used concurrently.
-//  Don't forget to create a unit tests related to #xml function.
 impl Storage {
-    #[allow(dead_code)]
-    /// Return XML from the storage.
-    pub fn xml() -> Result<()> {
-        Ok(())
+    /// Returns full XML from the storage.
+    pub fn xml(self) -> io::Result<String> {
+        let mut file = File::open(self.path)?;
+        let mut xml = String::new();
+        file.read_to_string(&mut xml)?;
+        Ok(xml)
     }
 }
 
@@ -89,7 +87,7 @@ mod tests {
     use std::fs;
 
     use anyhow::Result;
-    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use hamcrest::{equal_to, is, HamcrestMatcher, contains};
     use tempdir::TempDir;
 
     use crate::xml::storage::Storage;
@@ -122,6 +120,17 @@ mod tests {
         let storage = path.to_str();
         Storage::new(storage);
         assert_that!(path.exists(), is(equal_to(true)));
+        Ok(())
+    }
+
+    #[test]
+    fn outputs_full_xml() -> Result<()> {
+        let temp = TempDir::new("temp")?;
+        let path = temp.path().join("test.xml");
+        let xml = Storage::new(path.to_str()).xml()?;
+        assert_that!(xml.contains("<root>"), true);
+        assert_that!(xml.contains("<github>"), true);
+        assert_that!(xml.contains("<users/>"), true);
         Ok(())
     }
 }
