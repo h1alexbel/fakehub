@@ -27,6 +27,7 @@ name: zerocracy
 concurrency:
   group: zerocracy
   cancel-in-progress: false
+permissions: write-all
 jobs:
   zerocracy:
     runs-on: ubuntu-22.04
