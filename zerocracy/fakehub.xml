@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.2.1" size="58254">
+<fb version="0.2.1" size="58945">
   <f>
     <added t="I">8</added>
     <cycles t="I">3</cycles>
     <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
     <removed t="I">8</removed>
-    <seconds t="F">2.490491724</seconds>
+    <seconds t="F">2.341099872</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-23T20:14:40Z</when>
+    <when t="T">2024-07-23T21:15:42Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2368,8 +2368,25 @@
     <why t="S">Code was contributed in h1alexbel/fakehub#94</why>
   </f>
   <f>
-    <_id t="I">192</_id>
-    <_time t="T">2024-07-23T20:14:39Z</_time>
+    <_id t="I">196</_id>
+    <_time t="T">2024-07-23T21:15:40Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <award t="I">5</award>
+    <cause t="I">189</cause>
+    <details t="S">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#97, the reward amount is 5.</details>
+    <greeting t="S">Thanks for the contribution! You've earned +5 points for this: +20 as a basis; +5 for 5 hits-of-code; -15 for the lack of code review; -5 for 0 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is +30. </greeting>
+    <is_human t="I">1</is_human>
+    <issue t="I">97</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-contribution-was-rewarded</what>
+    <when t="T">2024-07-23T21:15:40Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Code was contributed in h1alexbel/fakehub#97</why>
+  </f>
+  <f>
+    <_id t="I">197</_id>
+    <_time t="T">2024-07-23T21:15:41Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2390,17 +2407,17 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">193</_id>
-    <_time t="T">2024-07-23T21:15:31Z</_time>
+    <_id t="I">198</_id>
+    <_time t="T">2024-07-23T22:13:26Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40400205314</latest>
+    <latest t="I">40401835900</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">194</_id>
-    <_time t="T">2024-07-23T21:15:36Z</_time>
+    <_id t="I">199</_id>
+    <_time t="T">2024-07-23T22:13:30Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>

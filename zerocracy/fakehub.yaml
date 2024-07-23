@@ -3,10 +3,10 @@
   cycles: 3
   error: The 'ZEROCRAT_TOKEN' secret is not set
   removed: 8
-  seconds: 2.490491724
+  seconds: 2.341099872
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-23 20:14:40.369137724 Z
+  when: 2024-07-23 21:15:42.488430441 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2204,8 +2204,27 @@
   where: github
   who: 83453843
   why: Code was contributed in h1alexbel/fakehub#94
-- _id: 192
-  _time: 2024-07-23 20:14:39.621665810 Z
+- _id: 196
+  _time: 2024-07-23 21:15:40.290341688 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  award: 5
+  cause: 189
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#97,
+    the reward amount is 5.
+  greeting: 'Thanks for the contribution! You''ve earned +5 points for this: +20 as
+    a basis; +5 for 5 hits-of-code; -15 for the lack of code review; -5 for 0 comments
+    of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    them coming. Your running balance is +30. '
+  is_human: 1
+  issue: 97
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-07-23 21:15:40.292485190 Z
+  where: github
+  who: 83453843
+  why: Code was contributed in h1alexbel/fakehub#97
+- _id: 197
+  _time: 2024-07-23 21:15:41.765875349 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2240,15 +2259,15 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 193
-  _time: 2024-07-23 21:15:31.676666254 Z
+- _id: 198
+  _time: 2024-07-23 22:13:26.042772710 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40400205314
+  latest: 40401835900
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 194
-  _time: 2024-07-23 21:15:36.236181267 Z
+- _id: 199
+  _time: 2024-07-23 22:13:30.317220527 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
