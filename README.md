@@ -91,6 +91,9 @@ avoid frustration, before sending us your pull request please run full build:
 just full
 ```
 
+Here is the [contribution vitals][Zerocracy Vitals], made by [zerocracy/judges-action]
+(updated every hour!).
+
 [GitHub API]: https://docs.github.com/en/rest?apiVersion=2022-11-28
 [homebrew]: https://brew.sh
 [fakehub-crate]: https://crates.io/crates/fakehub
@@ -101,3 +104,5 @@ just full
 [npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [guidelines]: https://www.yegor256.com/2014/04/15/github-guidelines.html
 [just]: https://just.systems/man/en/chapter_4.html
+[Zerocracy Vitals]: https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html
+[zerocracy/judges-action]: https://github.com/zerocracy/judges-action
