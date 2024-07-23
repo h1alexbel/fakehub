@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 18.832362613
+  seconds: 13.251023671
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-23 15:15:24.875297327 Z
+  when: 2024-07-23 16:19:23.822899285 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -1450,8 +1450,198 @@
   when: 2024-07-21 13:19:46.000000000 Z
   where: github
   who: 83453843
-- _id: 112
-  _time: 2024-07-23 14:22:24.665793695 Z
+- _id: 113
+  _time: 2024-07-23 14:22:24.739646983 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  cause: 13
+  comments: 5
+  details: The pull request h1alexbel/fakehub#89 with 134 HoC created by @h1alexbel
+    was merged by @h1alexbel after 3 days of being in review and 5 comments.
+  hoc: 134
+  is_human: 1
+  issue: 89
+  merger: 83453843
+  repository: 807802459
+  seconds: 267878
+  what: code-was-contributed
+  when: 2024-07-21 11:35:47.000000000 Z
+  where: github
+  who: 83453843
+- _id: 114
+  _time: 2024-07-23 14:22:25.131243775 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  author: 83453843
+  cause: 14
+  comments: 5
+  details: The pull request h1alexbel/fakehub#89 with 134 HoC created by @h1alexbel
+    was reviewed by @l3r8yJ after 3 days and 5 comments.
+  hoc: 134
+  is_human: 1
+  issue: 89
+  repository: 807802459
+  seconds: 267530
+  what: code-was-reviewed
+  when: 2024-07-21 11:29:59.000000000 Z
+  where: github
+  who: 46355873
+- _id: 115
+  _time: 2024-07-23 15:15:08.882207695 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  branch: chore-member-docs
+  comments: 3
+  details: The pull request h1alexbel/fakehub#93 has been closed by @rultor, with
+    130 HoC and 3 comments.
+  event_id: 40390417485
+  event_type: PullRequestEvent
+  hoc: 130
+  is_human: 1
+  issue: 93
+  repository: 807802459
+  what: pull-was-merged
+  when: 2024-07-23 13:59:50.000000000 Z
+  where: github
+  who: 8086956
+- _id: 121
+  _time: 2024-07-23 15:15:30.230505790 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  award: 22
+  cause: 106
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#92,
+    the reward amount is 22.
+  greeting: 'Thanks for the contribution! You''ve earned +22 points for this: +20
+    as a basis; +7 for 70 hits-of-code; -5 for 5 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    them coming. Your running balance is -20. '
+  is_human: 1
+  issue: 92
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-07-23 15:15:30.232663757 Z
+  where: github
+  who: 83453843
+  why: Code was contributed in h1alexbel/fakehub#92
+- _id: 122
+  _time: 2024-07-23 15:15:30.541237789 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  award: 5
+  cause: 107
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#92,
+    the reward amount is 5.
+  greeting: 'Thanks for the review! You''ve earned +5 points for this: +25 as a basis;
+    -40 for reviewing your own contribution; +20 to give you at least something.  Your
+    running balance is +15. '
+  is_human: 1
+  issue: 92
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-07-23 15:15:30.543014523 Z
+  where: github
+  who: 83453843
+  why: Code was reviewed in h1alexbel/fakehub#92
+- _id: 123
+  _time: 2024-07-23 15:15:30.596229050 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  cause: 28
+  comments: 4
+  details: The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel
+    was merged by @rultor after 1 days of being in review and 4 comments.
+  hoc: 401
+  is_human: 1
+  issue: 80
+  merger: 8086956
+  repository: 807802459
+  seconds: 133944
+  what: code-was-contributed
+  when: 2024-07-18 05:18:48.000000000 Z
+  where: github
+  who: 83453843
+- _id: 124
+  _time: 2024-07-23 15:15:30.868865265 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  author: 83453843
+  cause: 30
+  comments: 5
+  details: The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel
+    was reviewed by @l3r8yJ after 1 days and 5 comments.
+  hoc: 401
+  is_human: 1
+  issue: 80
+  repository: 807802459
+  seconds: 117337
+  what: code-was-reviewed
+  when: 2024-07-18 00:42:01.000000000 Z
+  where: github
+  who: 46355873
+- _id: 126
+  _time: 2024-07-23 15:15:32.059684939 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  award: 20
+  cause: 110
+  details: It's time to reward @l3r8yJ for the code contributed in h1alexbel/fakehub#90,
+    the reward amount is 20.
+  greeting: 'Thanks for the contribution! You''ve earned +20 points for this: +20
+    as a basis; +5 for 57 hits-of-code; -5 for 1 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    them coming. '
+  is_human: 1
+  issue: 90
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-07-23 15:15:32.061711855 Z
+  where: github
+  who: 46355873
+  why: Code was contributed in h1alexbel/fakehub#90
+- _id: 127
+  _time: 2024-07-23 15:15:32.357967054 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  award: 35
+  cause: 111
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#90,
+    the reward amount is 35.
+  greeting: 'Thanks for the review! You''ve earned +35 points for this: +25 as a basis;
+    +5 for 57 hits-of-code; +5 for 1 comments.  Your running balance is +20. '
+  is_human: 1
+  issue: 90
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-07-23 15:15:32.360221737 Z
+  where: github
+  who: 83453843
+  why: Code was reviewed in h1alexbel/fakehub#90
+- _id: 128
+  _time: 2024-07-23 15:15:32.403466195 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  cause: 38
+  comments: 8
+  details: The pull request h1alexbel/fakehub#60 with 84 HoC created by @h1alexbel
+    was merged by @h1alexbel after 20 hours of being in review and 8 comments.
+  hoc: 84
+  is_human: 1
+  issue: 60
+  merger: 83453843
+  repository: 807802459
+  seconds: 74054
+  what: code-was-contributed
+  when: 2024-07-11 10:34:16.000000000 Z
+  where: github
+  who: 83453843
+- _id: 129
+  _time: 2024-07-23 15:15:32.652350007 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  author: 83453843
+  cause: 46
+  comments: 11
+  details: The pull request h1alexbel/fakehub#61 with 240 HoC created by @h1alexbel
+    was reviewed by @l3r8yJ after 17 hours and 11 comments.
+  hoc: 240
+  is_human: 1
+  issue: 61
+  repository: 807802459
+  seconds: 64502
+  what: code-was-reviewed
+  when: 2024-07-11 10:08:03.000000000 Z
+  where: github
+  who: 46355873
+- _id: 130
+  _time: 2024-07-23 15:15:33.692486835 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -1486,59 +1676,44 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 113
-  _time: 2024-07-23 14:22:24.739646983 Z
+- _id: 131
+  _time: 2024-07-23 15:15:33.756044054 Z
   _version: 0.2.1/0.20.0/0.0.35
-  cause: 13
-  comments: 5
-  details: The pull request h1alexbel/fakehub#89 with 134 HoC created by @h1alexbel
-    was merged by @h1alexbel after 3 days of being in review and 5 comments.
-  hoc: 134
+  award: 13
+  cause: 113
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#89,
+    the reward amount is 13.
+  greeting: 'Thanks for the contribution! You''ve earned +13 points for this: +20
+    as a basis; +5 for 134 hits-of-code; -7 for too many hits-of-code (134 >= 100);
+    -5 for 5 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    them coming. Your running balance is +42. '
   is_human: 1
   issue: 89
-  merger: 83453843
   repository: 807802459
-  seconds: 267878
-  what: code-was-contributed
-  when: 2024-07-21 11:35:47.000000000 Z
+  what: code-contribution-was-rewarded
+  when: 2024-07-23 15:15:33.758343896 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:24.928935996 Z
+  why: Code was contributed in h1alexbel/fakehub#89
+- _id: 132
+  _time: 2024-07-23 15:15:33.984614192 Z
   _version: 0.2.1/0.20.0/0.0.35
-  cause: 28
-  comments: 4
-  details: The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel
-    was merged by @rultor after 1 days of being in review and 4 comments.
-  hoc: 401
+  award: 43
+  cause: 114
+  details: It's time to reward @l3r8yJ for the code review in h1alexbel/fakehub#89,
+    the reward amount is 43.
+  greeting: 'Thanks for the review! You''ve earned +43 points for this: +25 as a basis;
+    +13 for 134 hits-of-code; +5 for 5 comments.  Your running balance is +20. '
   is_human: 1
-  issue: 80
-  merger: 8086956
+  issue: 89
   repository: 807802459
-  seconds: 133944
-  what: code-was-contributed
-  when: 2024-07-18 05:18:48.000000000 Z
+  what: code-review-was-rewarded
+  when: 2024-07-23 15:15:33.986708978 Z
   where: github
-  who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:24.996482822 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  cause: 38
-  comments: 8
-  details: The pull request h1alexbel/fakehub#60 with 84 HoC created by @h1alexbel
-    was merged by @h1alexbel after 20 hours of being in review and 8 comments.
-  hoc: 84
-  is_human: 1
-  issue: 60
-  merger: 83453843
-  repository: 807802459
-  seconds: 74054
-  what: code-was-contributed
-  when: 2024-07-11 10:34:16.000000000 Z
-  where: github
-  who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.005964561 Z
+  who: 46355873
+  why: Code was reviewed in h1alexbel/fakehub#89
+- _id: 133
+  _time: 2024-07-23 15:15:34.074566098 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 43
   comments: 11
@@ -1554,8 +1729,8 @@
   when: 2024-07-11 10:34:06.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.017561055 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.085449761 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 44
   comments: 0
@@ -1571,8 +1746,8 @@
   when: 2024-07-11 10:33:47.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.027417340 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.095699219 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 48
   comments: 0
@@ -1588,8 +1763,8 @@
   when: 2024-07-11 09:59:45.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.037149190 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.106117035 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 50
   comments: 0
@@ -1605,8 +1780,8 @@
   when: 2024-07-11 09:27:40.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.046982847 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.115986845 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 52
   comments: 0
@@ -1622,8 +1797,8 @@
   when: 2024-07-11 09:03:17.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.056971428 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.127525092 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 54
   comments: 0
@@ -1639,8 +1814,8 @@
   when: 2024-07-11 08:39:46.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.066943782 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.138101436 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 60
   comments: 0
@@ -1656,8 +1831,8 @@
   when: 2024-07-11 08:12:38.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.075744036 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.148613035 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 64
   comments: 0
@@ -1673,8 +1848,8 @@
   when: 2024-07-11 07:18:53.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.084821514 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.158949787 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 66
   comments: 1
@@ -1690,8 +1865,8 @@
   when: 2024-07-11 06:38:04.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.098110861 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.169316976 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 74
   comments: 0
@@ -1707,8 +1882,8 @@
   when: 2024-07-10 19:57:20.000000000 Z
   where: github
   who: 83453843
-- _id: 113
-  _time: 2024-07-23 14:22:25.108024505 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.179361650 Z
   _version: 0.2.1/0.20.0/0.0.35
   cause: 76
   comments: 1
@@ -1724,59 +1899,25 @@
   when: 2024-07-10 19:30:06.000000000 Z
   where: github
   who: 83453843
-- _id: 114
-  _time: 2024-07-23 14:22:25.131243775 Z
+- _id: 133
+  _time: 2024-07-23 15:15:34.192508167 Z
   _version: 0.2.1/0.20.0/0.0.35
-  author: 83453843
-  cause: 14
-  comments: 5
-  details: The pull request h1alexbel/fakehub#89 with 134 HoC created by @h1alexbel
-    was reviewed by @l3r8yJ after 3 days and 5 comments.
-  hoc: 134
+  cause: 115
+  comments: 3
+  details: The pull request h1alexbel/fakehub#93 with 130 HoC created by @h1alexbel
+    was merged by @rultor after 26 minutes of being in review and 3 comments.
+  hoc: 130
   is_human: 1
-  issue: 89
+  issue: 93
+  merger: 8086956
   repository: 807802459
-  seconds: 267530
-  what: code-was-reviewed
-  when: 2024-07-21 11:29:59.000000000 Z
+  seconds: 1575
+  what: code-was-contributed
+  when: 2024-07-23 13:59:50.000000000 Z
   where: github
-  who: 46355873
-- _id: 114
-  _time: 2024-07-23 14:22:25.213219306 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  author: 83453843
-  cause: 30
-  comments: 5
-  details: The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel
-    was reviewed by @l3r8yJ after 1 days and 5 comments.
-  hoc: 401
-  is_human: 1
-  issue: 80
-  repository: 807802459
-  seconds: 117337
-  what: code-was-reviewed
-  when: 2024-07-18 00:42:01.000000000 Z
-  where: github
-  who: 46355873
-- _id: 114
-  _time: 2024-07-23 14:22:25.224209721 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  author: 83453843
-  cause: 46
-  comments: 11
-  details: The pull request h1alexbel/fakehub#61 with 240 HoC created by @h1alexbel
-    was reviewed by @l3r8yJ after 17 hours and 11 comments.
-  hoc: 240
-  is_human: 1
-  issue: 61
-  repository: 807802459
-  seconds: 64502
-  what: code-was-reviewed
-  when: 2024-07-11 10:08:03.000000000 Z
-  where: github
-  who: 46355873
-- _id: 114
-  _time: 2024-07-23 14:22:25.237713936 Z
+  who: 83453843
+- _id: 134
+  _time: 2024-07-23 15:15:34.293676598 Z
   _version: 0.2.1/0.20.0/0.0.35
   author: 83453843
   cause: 47
@@ -1792,32 +1933,60 @@
   when: 2024-07-11 10:07:13.000000000 Z
   where: github
   who: 46355873
-- _id: 115
-  _time: 2024-07-23 15:15:08.882207695 Z
+- _id: 135
+  _time: 2024-07-23 16:19:12.529853917 Z
   _version: 0.2.1/0.20.0/0.0.35
   branch: chore-member-docs
   comments: 3
-  details: The pull request h1alexbel/fakehub#93 has been closed by @rultor, with
-    130 HoC and 3 comments.
-  event_id: 40390417485
+  details: The pull request h1alexbel/fakehub#94 has been closed by @rultor, with
+    1 HoC and 3 comments.
+  event_id: 40392891108
   event_type: PullRequestEvent
-  hoc: 130
+  hoc: 1
   is_human: 1
-  issue: 93
+  issue: 94
   repository: 807802459
   what: pull-was-merged
-  when: 2024-07-23 13:59:50.000000000 Z
+  when: 2024-07-23 15:04:27.000000000 Z
   where: github
   who: 8086956
-- _id: 118
-  _time: 2024-07-23 15:15:18.571284737 Z
+- _id: 136
+  _time: 2024-07-23 16:19:12.924232790 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40390446704
+  branch: 75-xml
+  details: The pull request h1alexbel/fakehub#95 has been opened by @h1alexbel.
+  event_id: 40392354392
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-07-23 14:50:12.000000000 Z
+  where: github
+  who: 83453843
+- _id: 137
+  _time: 2024-07-23 16:19:13.110033682 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  branch: chore-member-docs
+  details: The pull request h1alexbel/fakehub#94 has been opened by @h1alexbel.
+  event_id: 40391893973
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 94
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-07-23 14:38:00.000000000 Z
+  where: github
+  who: 83453843
+- _id: 140
+  _time: 2024-07-23 16:19:19.082027438 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  latest: 40392922276
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 119
-  _time: 2024-07-23 15:15:24.869973119 Z
+- _id: 141
+  _time: 2024-07-23 16:19:23.817415978 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459

@@ -49,7 +49,7 @@
           <tbody>
             <tr>
               <td>
-                <span style="color:#2471A3">2024-07-23T15:15:24Z</span>
+                <span style="color:#2471A3">2024-07-23T16:19:23Z</span>
               </td>
               <td>
                 <span style="color:#196F3D">judges-summary</span>
@@ -66,7 +66,7 @@
               <td>
                 <span style="color:"/>
               </td>
-              <td> added:<span style="color:#212F3C">8</span> cycles:<span style="color:#212F3C">2</span> removed:<span style="color:#212F3C">8</span> seconds:<span style="color:#E74C3C">18.832362613</span> version:<span style="color:#196F3D">0.20.0</span>  when:<span style="color:#2471A3">2024-07-23T15:15:24Z</span></td>
+              <td> added:<span style="color:#212F3C">8</span> cycles:<span style="color:#212F3C">2</span> removed:<span style="color:#212F3C">8</span> seconds:<span style="color:#E74C3C">13.251023671</span> version:<span style="color:#196F3D">0.20.0</span>  when:<span style="color:#2471A3">2024-07-23T16:19:23Z</span></td>
             </tr>
             <tr>
               <td>
@@ -2149,33 +2149,6 @@
             </tr>
             <tr>
               <td>
-                <span style="color:"/>
-              </td>
-              <td>
-                <span style="color:#196F3D">pmp</span>
-              </td>
-              <td>
-                <span style="color:"/>
-              </td>
-              <td>
-                <span style="color:"/>
-              </td>
-              <td>
-                <span style="color:"/>
-              </td>
-              <td>
-                <span style="color:"/>
-              </td>
-              <td> _id:<span style="color:#212F3C">112</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> area:<span style="color:#196F3D">hr</span> bad_branch_name_was_punished:<span style="color:#196F3D">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</span> bug_report_was_rewarded:<span style="color:#196F3D">(award (explain 'When a bug is reported and accepted by the team, the reporter gets a bonus') (aka (let bonus 15) (give bonus 'as a basis') 'award ${bonus} points'))</span> code_contribution_was_rewarded:<span style="color:#196F3D">(award (explain 'When a code contribution is made, the author gets a bonus') (in hoc 'the total number of hits-of-code in the contribution') (in comments 'the total number of comments made by all reviewers') (in reviews 'the number of reviews provided') (aka (let basis 20) (give basis 'as a basis') 'award ${basis} points') (aka (let hoc_threshold 100) (let hoc_k 0.1) (let hoc_max 40) (let hoc_min 5) (set b1 (if (lt hoc hoc_threshold) (times hoc hoc_k) 0)) (set b1 (between b1 hoc_min hoc_max)) (give b1 'for ${hoc} hits-of-code') 'add ${hoc_k} points for each
-          [hit-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html),
-          but not more than ${hoc_max} points') (aka (let fee2 7) (set b2 (if (gte hoc hoc_threshold) (times -1 fee2) 0)) (give b2 'for too many hits-of-code (${hoc} &gt;= ${hoc_threshold})') 'deduct ${fee2} points if more than ${hoc_threshold}
-          [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html)') (aka (let hoc_threshold2 400) (let fee3 15) (set b3 (if (gte hoc hoc_threshold2) (times -1 fee3) 0)) (give b3 'for way too many hits-of-code (${hoc} &gt;= ${hoc_threshold2})') 'deduct ${fee3} points if more than ${hoc_threshold2}
-          [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html)') (aka (let fee4 15) (set b4 (if (eq reviews 0) (times -1 fee4) 0)) (give b4 'for the lack of code review') 'deduct ${fee4} points if there were no code review') (aka (let comments_k 1) (let comments_max -20) (let comments_min -5) (set b5 (times comments (times -1 comments_k))) (set b5 (between b5 comments_max comments_min)) (give b5 'for ${comments} comments of reviewers') 'deduct ${comments_k} points for every comment, but not more than ${comments_max} points') (aka (let max_bonus 100) (set b6 (if (gt (total) max_bonus) (minus max_bonus (total)) 0)) (give b6 'to not go over the cap') (let min_bonus 5) (set b7 (if (lt (total) min_bonus) (minus min_bonus (total)) 0)) (give b7 'to give you at least something') 'make sure the reward is not larger than ${max_bonus} points and not smaller than ${min_bonus} points'))</span> code_review_was_rewarded:<span style="color:#196F3D">(award (explain 'An author of every code review gets a bonus') (in hoc 'the total number of hits-of-code in the contribution') (in comments 'the total number of comments made by all reviewers') (in self '1 if the review was made for their own code contribution, otherwise zero') (aka (let basis 25) (give basis 'as a basis') 'award ${basis} points') (aka (let self_fee 40) (set b1 (if (eq self 1) (times -1 self_fee) 0)) (give b1 'for reviewing your own contribution') 'deduct ${self_fee} points if they reviewed their own contribution') (aka (let hoc_k 0.1) (let hoc_max 40) (let hoc_min 5) (set b2 (times hoc hoc_k)) (set b2 (between b2 hoc_min hoc_max)) (set b2 (if (eq self 1) 0 b2)) (give b2 'for ${hoc} hits-of-code') 'add ${hoc_k} points for each
-          [hit-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html),
-          but not more than ${hoc_max} points') (aka (let comments_k 1) (let comments_max 20) (let comments_min 5) (set b3 (times comments comments_k)) (set b3 (between b3 comments_min comments_max)) (set b3 (if (eq self 1) 0 b3)) (give b3 'for ${comments} comments') 'add ${comments_k} points for each comment during the review, but not more than ${comments_max} points') (aka (let max_bonus 100) (set b4 (if (gt (total) max_bonus) (minus max_bonus (total)) 0)) (give b4 'to not go over the cap') (let min_bonus 5) (set b5 (if (lt (total) min_bonus) (minus min_bonus (total)) 0)) (give b5 'to give you at least something') 'make sure the reward is not larger than ${max_bonus} points and not smaller than ${min_bonus} points'))</span> days_of_running_balance:<span style="color:#212F3C">28</span> days_to_reward:<span style="color:#212F3C">7</span> master_punish_days:<span style="color:#212F3C">4</span> push_to_master_was_punished:<span style="color:#196F3D">(award (explain 'When someone pushes directly to the default branch, they get a penalty') (aka (let fee -20) (give fee 'as a basis') '${fee} points'))</span> resolved_bug_was_rewarded:<span style="color:#196F3D">(award (explain 'When a bug is resolved, the person who was assigned to it gets a bonus') (in hours 'how many hours it took to resolve the bug') (set days (div hours 24)) (aka (let basis 30) (give basis 'as a basis') 'award ${basis} points') (aka (let hours_threshold 24) (let b1 10) (set b1 (if (lt hours hours_threshold) b1 0)) (give b1 'for resolving it in less than ${hours_threshold} hours') 'add ${b1} points if it was resolved in less than ${hours_threshold} hours') (aka (let day_fee 1) (set b2 (times -1 (times days day_fee))) (let days_fee_max -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))</span> </td>
-            </tr>
-            <tr>
-              <td>
                 <span style="color:#2471A3">2024-07-21T11:35:47Z</span>
               </td>
               <td>
@@ -2194,279 +2167,6 @@
                 <span style="color:#196F3D">The pull request h1alexbel/fakehub#89 with 134 HoC created by @h1alexbel was merged by @h1alexbel after 3 days of being in review and 5 comments.</span>
               </td>
               <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">13</span> comments:<span style="color:#212F3C">5</span>  hoc:<span style="color:#212F3C">134</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">267878</span>  when:<span style="color:#2471A3">2024-07-21T11:35:47Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-18T05:18:48Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">80</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel was merged by @rultor after 1 days of being in review and 4 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">28</span> comments:<span style="color:#212F3C">4</span>  hoc:<span style="color:#212F3C">401</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">8086956</span>  seconds:<span style="color:#212F3C">133944</span>  when:<span style="color:#2471A3">2024-07-18T05:18:48Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T10:34:16Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">60</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#60 with 84 HoC created by @h1alexbel was merged by @h1alexbel after 20 hours of being in review and 8 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">38</span> comments:<span style="color:#212F3C">8</span>  hoc:<span style="color:#212F3C">84</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">74054</span>  when:<span style="color:#2471A3">2024-07-11T10:34:16Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T10:34:06Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">61</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#61 with 240 HoC created by @h1alexbel was merged by @h1alexbel after 18 hours of being in review and 11 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">43</span> comments:<span style="color:#212F3C">11</span>  hoc:<span style="color:#212F3C">240</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">66065</span>  when:<span style="color:#2471A3">2024-07-11T10:34:06Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T10:33:47Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">72</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#72 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 49 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">44</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">49</span>  when:<span style="color:#2471A3">2024-07-11T10:33:47Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T09:59:45Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">71</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#71 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 5 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">48</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">5</span>  when:<span style="color:#2471A3">2024-07-11T09:59:45Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T09:27:40Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">70</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#70 with 3 HoC created by @h1alexbel was merged by @h1alexbel after 4 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">50</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">3</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">4</span>  when:<span style="color:#2471A3">2024-07-11T09:27:40Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T09:03:17Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">69</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#69 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 10 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">52</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">10</span>  when:<span style="color:#2471A3">2024-07-11T09:03:17Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T08:39:46Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">68</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#68 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 10 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">54</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">10</span>  when:<span style="color:#2471A3">2024-07-11T08:39:46Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T08:12:38Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">67</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#67 with 1 HoC created by @h1alexbel was merged by @h1alexbel after 1 minutes of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">60</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">1</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">62</span>  when:<span style="color:#2471A3">2024-07-11T08:12:38Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T07:18:53Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">66</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#66 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 20 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">64</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">20</span>  when:<span style="color:#2471A3">2024-07-11T07:18:53Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T06:38:04Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">65</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#65 with 5 HoC created by @h1alexbel was merged by @h1alexbel after 12 minutes of being in review and 1 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">66</span> comments:<span style="color:#212F3C">1</span>  hoc:<span style="color:#212F3C">5</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">724</span>  when:<span style="color:#2471A3">2024-07-11T06:38:04Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-10T19:57:20Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">64</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#64 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 22 seconds of being in review and 0 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">74</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">22</span>  when:<span style="color:#2471A3">2024-07-10T19:57:20Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-10T19:30:06Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-contributed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">83453843</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">63</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#63 with 15 HoC created by @h1alexbel was merged by @h1alexbel after 22 minutes of being in review and 1 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">113</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">76</span> comments:<span style="color:#212F3C">1</span>  hoc:<span style="color:#212F3C">15</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">1366</span>  when:<span style="color:#2471A3">2024-07-10T19:30:06Z</span> where:<span style="color:#196F3D">github</span> </td>
             </tr>
             <tr>
               <td>
@@ -2491,69 +2191,6 @@
             </tr>
             <tr>
               <td>
-                <span style="color:#2471A3">2024-07-18T00:42:01Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-reviewed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">46355873</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">80</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel was reviewed by @l3r8yJ after 1 days and 5 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">114</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> author:<span style="color:#212F3C">83453843</span> cause:<span style="color:#212F3C">30</span> comments:<span style="color:#212F3C">5</span>  hoc:<span style="color:#212F3C">401</span> is_human:<span style="color:#212F3C">1</span>   seconds:<span style="color:#212F3C">117337</span>  when:<span style="color:#2471A3">2024-07-18T00:42:01Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T10:08:03Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-reviewed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">46355873</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">61</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#61 with 240 HoC created by @h1alexbel was reviewed by @l3r8yJ after 17 hours and 11 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">114</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> author:<span style="color:#212F3C">83453843</span> cause:<span style="color:#212F3C">46</span> comments:<span style="color:#212F3C">11</span>  hoc:<span style="color:#212F3C">240</span> is_human:<span style="color:#212F3C">1</span>   seconds:<span style="color:#212F3C">64502</span>  when:<span style="color:#2471A3">2024-07-11T10:08:03Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
-                <span style="color:#2471A3">2024-07-11T10:07:13Z</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">code-was-reviewed</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">46355873</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">807802459</span>
-              </td>
-              <td>
-                <span style="color:#212F3C">60</span>
-              </td>
-              <td>
-                <span style="color:#196F3D">The pull request h1alexbel/fakehub#60 with 84 HoC created by @h1alexbel was reviewed by @l3r8yJ after 20 hours and 8 comments.</span>
-              </td>
-              <td> _id:<span style="color:#212F3C">114</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> author:<span style="color:#212F3C">83453843</span> cause:<span style="color:#212F3C">47</span> comments:<span style="color:#212F3C">8</span>  hoc:<span style="color:#212F3C">84</span> is_human:<span style="color:#212F3C">1</span>   seconds:<span style="color:#212F3C">72431</span>  when:<span style="color:#2471A3">2024-07-11T10:07:13Z</span> where:<span style="color:#196F3D">github</span> </td>
-            </tr>
-            <tr>
-              <td>
                 <span style="color:#2471A3">2024-07-23T13:59:50Z</span>
               </td>
               <td>
@@ -2575,6 +2212,579 @@
             </tr>
             <tr>
               <td>
+                <span style="color:#2471A3">2024-07-23T15:15:30Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-contribution-was-rewarded</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">92</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#92, the reward amount is 22.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">121</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> award:<span style="color:#212F3C">22</span> cause:<span style="color:#212F3C">106</span>  greeting:<span style="color:#196F3D">Thanks for the contribution! You've earned +22 points for this: +20 as a basis; +7 for 70 hits-of-code; -5 for 5 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is -20. </span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:15:30Z</span> where:<span style="color:#196F3D">github</span>  why:<span style="color:#196F3D">Code was contributed in h1alexbel/fakehub#92</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T15:15:30Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-review-was-rewarded</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">92</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#92, the reward amount is 5.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">122</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> award:<span style="color:#212F3C">5</span> cause:<span style="color:#212F3C">107</span>  greeting:<span style="color:#196F3D">Thanks for the review! You've earned +5 points for this: +25 as a basis; -40 for reviewing your own contribution; +20 to give you at least something.  Your running balance is +15. </span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:15:30Z</span> where:<span style="color:#196F3D">github</span>  why:<span style="color:#196F3D">Code was reviewed in h1alexbel/fakehub#92</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-18T05:18:48Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">80</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel was merged by @rultor after 1 days of being in review and 4 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">123</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">28</span> comments:<span style="color:#212F3C">4</span>  hoc:<span style="color:#212F3C">401</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">8086956</span>  seconds:<span style="color:#212F3C">133944</span>  when:<span style="color:#2471A3">2024-07-18T05:18:48Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-18T00:42:01Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-reviewed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">46355873</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">80</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#80 with 401 HoC created by @h1alexbel was reviewed by @l3r8yJ after 1 days and 5 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">124</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> author:<span style="color:#212F3C">83453843</span> cause:<span style="color:#212F3C">30</span> comments:<span style="color:#212F3C">5</span>  hoc:<span style="color:#212F3C">401</span> is_human:<span style="color:#212F3C">1</span>   seconds:<span style="color:#212F3C">117337</span>  when:<span style="color:#2471A3">2024-07-18T00:42:01Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T15:15:32Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-contribution-was-rewarded</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">46355873</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">90</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">It's time to reward @l3r8yJ for the code contributed in h1alexbel/fakehub#90, the reward amount is 20.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">126</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> award:<span style="color:#212F3C">20</span> cause:<span style="color:#212F3C">110</span>  greeting:<span style="color:#196F3D">Thanks for the contribution! You've earned +20 points for this: +20 as a basis; +5 for 57 hits-of-code; -5 for 1 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. </span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:15:32Z</span> where:<span style="color:#196F3D">github</span>  why:<span style="color:#196F3D">Code was contributed in h1alexbel/fakehub#90</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T15:15:32Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-review-was-rewarded</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">90</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#90, the reward amount is 35.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">127</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> award:<span style="color:#212F3C">35</span> cause:<span style="color:#212F3C">111</span>  greeting:<span style="color:#196F3D">Thanks for the review! You've earned +35 points for this: +25 as a basis; +5 for 57 hits-of-code; +5 for 1 comments.  Your running balance is +20. </span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:15:32Z</span> where:<span style="color:#196F3D">github</span>  why:<span style="color:#196F3D">Code was reviewed in h1alexbel/fakehub#90</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T10:34:16Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">60</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#60 with 84 HoC created by @h1alexbel was merged by @h1alexbel after 20 hours of being in review and 8 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">128</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">38</span> comments:<span style="color:#212F3C">8</span>  hoc:<span style="color:#212F3C">84</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">74054</span>  when:<span style="color:#2471A3">2024-07-11T10:34:16Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T10:08:03Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-reviewed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">46355873</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">61</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#61 with 240 HoC created by @h1alexbel was reviewed by @l3r8yJ after 17 hours and 11 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">129</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> author:<span style="color:#212F3C">83453843</span> cause:<span style="color:#212F3C">46</span> comments:<span style="color:#212F3C">11</span>  hoc:<span style="color:#212F3C">240</span> is_human:<span style="color:#212F3C">1</span>   seconds:<span style="color:#212F3C">64502</span>  when:<span style="color:#2471A3">2024-07-11T10:08:03Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:"/>
+              </td>
+              <td>
+                <span style="color:#196F3D">pmp</span>
+              </td>
+              <td>
+                <span style="color:"/>
+              </td>
+              <td>
+                <span style="color:"/>
+              </td>
+              <td>
+                <span style="color:"/>
+              </td>
+              <td>
+                <span style="color:"/>
+              </td>
+              <td> _id:<span style="color:#212F3C">130</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> area:<span style="color:#196F3D">hr</span> bad_branch_name_was_punished:<span style="color:#196F3D">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</span> bug_report_was_rewarded:<span style="color:#196F3D">(award (explain 'When a bug is reported and accepted by the team, the reporter gets a bonus') (aka (let bonus 15) (give bonus 'as a basis') 'award ${bonus} points'))</span> code_contribution_was_rewarded:<span style="color:#196F3D">(award (explain 'When a code contribution is made, the author gets a bonus') (in hoc 'the total number of hits-of-code in the contribution') (in comments 'the total number of comments made by all reviewers') (in reviews 'the number of reviews provided') (aka (let basis 20) (give basis 'as a basis') 'award ${basis} points') (aka (let hoc_threshold 100) (let hoc_k 0.1) (let hoc_max 40) (let hoc_min 5) (set b1 (if (lt hoc hoc_threshold) (times hoc hoc_k) 0)) (set b1 (between b1 hoc_min hoc_max)) (give b1 'for ${hoc} hits-of-code') 'add ${hoc_k} points for each
+          [hit-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html),
+          but not more than ${hoc_max} points') (aka (let fee2 7) (set b2 (if (gte hoc hoc_threshold) (times -1 fee2) 0)) (give b2 'for too many hits-of-code (${hoc} &gt;= ${hoc_threshold})') 'deduct ${fee2} points if more than ${hoc_threshold}
+          [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html)') (aka (let hoc_threshold2 400) (let fee3 15) (set b3 (if (gte hoc hoc_threshold2) (times -1 fee3) 0)) (give b3 'for way too many hits-of-code (${hoc} &gt;= ${hoc_threshold2})') 'deduct ${fee3} points if more than ${hoc_threshold2}
+          [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html)') (aka (let fee4 15) (set b4 (if (eq reviews 0) (times -1 fee4) 0)) (give b4 'for the lack of code review') 'deduct ${fee4} points if there were no code review') (aka (let comments_k 1) (let comments_max -20) (let comments_min -5) (set b5 (times comments (times -1 comments_k))) (set b5 (between b5 comments_max comments_min)) (give b5 'for ${comments} comments of reviewers') 'deduct ${comments_k} points for every comment, but not more than ${comments_max} points') (aka (let max_bonus 100) (set b6 (if (gt (total) max_bonus) (minus max_bonus (total)) 0)) (give b6 'to not go over the cap') (let min_bonus 5) (set b7 (if (lt (total) min_bonus) (minus min_bonus (total)) 0)) (give b7 'to give you at least something') 'make sure the reward is not larger than ${max_bonus} points and not smaller than ${min_bonus} points'))</span> code_review_was_rewarded:<span style="color:#196F3D">(award (explain 'An author of every code review gets a bonus') (in hoc 'the total number of hits-of-code in the contribution') (in comments 'the total number of comments made by all reviewers') (in self '1 if the review was made for their own code contribution, otherwise zero') (aka (let basis 25) (give basis 'as a basis') 'award ${basis} points') (aka (let self_fee 40) (set b1 (if (eq self 1) (times -1 self_fee) 0)) (give b1 'for reviewing your own contribution') 'deduct ${self_fee} points if they reviewed their own contribution') (aka (let hoc_k 0.1) (let hoc_max 40) (let hoc_min 5) (set b2 (times hoc hoc_k)) (set b2 (between b2 hoc_min hoc_max)) (set b2 (if (eq self 1) 0 b2)) (give b2 'for ${hoc} hits-of-code') 'add ${hoc_k} points for each
+          [hit-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html),
+          but not more than ${hoc_max} points') (aka (let comments_k 1) (let comments_max 20) (let comments_min 5) (set b3 (times comments comments_k)) (set b3 (between b3 comments_min comments_max)) (set b3 (if (eq self 1) 0 b3)) (give b3 'for ${comments} comments') 'add ${comments_k} points for each comment during the review, but not more than ${comments_max} points') (aka (let max_bonus 100) (set b4 (if (gt (total) max_bonus) (minus max_bonus (total)) 0)) (give b4 'to not go over the cap') (let min_bonus 5) (set b5 (if (lt (total) min_bonus) (minus min_bonus (total)) 0)) (give b5 'to give you at least something') 'make sure the reward is not larger than ${max_bonus} points and not smaller than ${min_bonus} points'))</span> days_of_running_balance:<span style="color:#212F3C">28</span> days_to_reward:<span style="color:#212F3C">7</span> master_punish_days:<span style="color:#212F3C">4</span> push_to_master_was_punished:<span style="color:#196F3D">(award (explain 'When someone pushes directly to the default branch, they get a penalty') (aka (let fee -20) (give fee 'as a basis') '${fee} points'))</span> resolved_bug_was_rewarded:<span style="color:#196F3D">(award (explain 'When a bug is resolved, the person who was assigned to it gets a bonus') (in hours 'how many hours it took to resolve the bug') (set days (div hours 24)) (aka (let basis 30) (give basis 'as a basis') 'award ${basis} points') (aka (let hours_threshold 24) (let b1 10) (set b1 (if (lt hours hours_threshold) b1 0)) (give b1 'for resolving it in less than ${hours_threshold} hours') 'add ${b1} points if it was resolved in less than ${hours_threshold} hours') (aka (let day_fee 1) (set b2 (times -1 (times days day_fee))) (let days_fee_max -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T15:15:33Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-contribution-was-rewarded</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">89</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#89, the reward amount is 13.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">131</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> award:<span style="color:#212F3C">13</span> cause:<span style="color:#212F3C">113</span>  greeting:<span style="color:#196F3D">Thanks for the contribution! You've earned +13 points for this: +20 as a basis; +5 for 134 hits-of-code; -7 for too many hits-of-code (134 &gt;= 100); -5 for 5 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is +42. </span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:15:33Z</span> where:<span style="color:#196F3D">github</span>  why:<span style="color:#196F3D">Code was contributed in h1alexbel/fakehub#89</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T15:15:33Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-review-was-rewarded</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">46355873</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">89</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">It's time to reward @l3r8yJ for the code review in h1alexbel/fakehub#89, the reward amount is 43.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">132</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> award:<span style="color:#212F3C">43</span> cause:<span style="color:#212F3C">114</span>  greeting:<span style="color:#196F3D">Thanks for the review! You've earned +43 points for this: +25 as a basis; +13 for 134 hits-of-code; +5 for 5 comments.  Your running balance is +20. </span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:15:33Z</span> where:<span style="color:#196F3D">github</span>  why:<span style="color:#196F3D">Code was reviewed in h1alexbel/fakehub#89</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T10:34:06Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">61</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#61 with 240 HoC created by @h1alexbel was merged by @h1alexbel after 18 hours of being in review and 11 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">43</span> comments:<span style="color:#212F3C">11</span>  hoc:<span style="color:#212F3C">240</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">66065</span>  when:<span style="color:#2471A3">2024-07-11T10:34:06Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T10:33:47Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">72</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#72 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 49 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">44</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">49</span>  when:<span style="color:#2471A3">2024-07-11T10:33:47Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T09:59:45Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">71</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#71 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 5 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">48</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">5</span>  when:<span style="color:#2471A3">2024-07-11T09:59:45Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T09:27:40Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">70</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#70 with 3 HoC created by @h1alexbel was merged by @h1alexbel after 4 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">50</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">3</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">4</span>  when:<span style="color:#2471A3">2024-07-11T09:27:40Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T09:03:17Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">69</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#69 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 10 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">52</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">10</span>  when:<span style="color:#2471A3">2024-07-11T09:03:17Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T08:39:46Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">68</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#68 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 10 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">54</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">10</span>  when:<span style="color:#2471A3">2024-07-11T08:39:46Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T08:12:38Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">67</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#67 with 1 HoC created by @h1alexbel was merged by @h1alexbel after 1 minutes of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">60</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">1</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">62</span>  when:<span style="color:#2471A3">2024-07-11T08:12:38Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T07:18:53Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">66</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#66 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 20 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">64</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">20</span>  when:<span style="color:#2471A3">2024-07-11T07:18:53Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T06:38:04Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">65</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#65 with 5 HoC created by @h1alexbel was merged by @h1alexbel after 12 minutes of being in review and 1 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">66</span> comments:<span style="color:#212F3C">1</span>  hoc:<span style="color:#212F3C">5</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">724</span>  when:<span style="color:#2471A3">2024-07-11T06:38:04Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-10T19:57:20Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">64</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#64 with 2 HoC created by @h1alexbel was merged by @h1alexbel after 22 seconds of being in review and 0 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">74</span> comments:<span style="color:#212F3C">0</span>  hoc:<span style="color:#212F3C">2</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">22</span>  when:<span style="color:#2471A3">2024-07-10T19:57:20Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-10T19:30:06Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">63</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#63 with 15 HoC created by @h1alexbel was merged by @h1alexbel after 22 minutes of being in review and 1 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">76</span> comments:<span style="color:#212F3C">1</span>  hoc:<span style="color:#212F3C">15</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">83453843</span>  seconds:<span style="color:#212F3C">1366</span>  when:<span style="color:#2471A3">2024-07-10T19:30:06Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T13:59:50Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-contributed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">93</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#93 with 130 HoC created by @h1alexbel was merged by @rultor after 26 minutes of being in review and 3 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">133</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> cause:<span style="color:#212F3C">115</span> comments:<span style="color:#212F3C">3</span>  hoc:<span style="color:#212F3C">130</span> is_human:<span style="color:#212F3C">1</span>  merger:<span style="color:#212F3C">8086956</span>  seconds:<span style="color:#212F3C">1575</span>  when:<span style="color:#2471A3">2024-07-23T13:59:50Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-11T10:07:13Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">code-was-reviewed</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">46355873</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">60</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#60 with 84 HoC created by @h1alexbel was reviewed by @l3r8yJ after 20 hours and 8 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">134</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> author:<span style="color:#212F3C">83453843</span> cause:<span style="color:#212F3C">47</span> comments:<span style="color:#212F3C">8</span>  hoc:<span style="color:#212F3C">84</span> is_human:<span style="color:#212F3C">1</span>   seconds:<span style="color:#212F3C">72431</span>  when:<span style="color:#2471A3">2024-07-11T10:07:13Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T15:04:27Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">pull-was-merged</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">8086956</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">94</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#94 has been closed by @rultor, with 1 HoC and 3 comments.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">135</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> branch:<span style="color:#196F3D">chore-member-docs</span> comments:<span style="color:#212F3C">3</span>  event_id:<span style="color:#212F3C">40392891108</span> event_type:<span style="color:#196F3D">PullRequestEvent</span> hoc:<span style="color:#212F3C">1</span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T15:04:27Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T14:50:12Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">pull-was-opened</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">95</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#95 has been opened by @h1alexbel.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">136</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> branch:<span style="color:#196F3D">75-xml</span>  event_id:<span style="color:#212F3C">40392354392</span> event_type:<span style="color:#196F3D">PullRequestEvent</span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T14:50:12Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:#2471A3">2024-07-23T14:38:00Z</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">pull-was-opened</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">83453843</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">807802459</span>
+              </td>
+              <td>
+                <span style="color:#212F3C">94</span>
+              </td>
+              <td>
+                <span style="color:#196F3D">The pull request h1alexbel/fakehub#94 has been opened by @h1alexbel.</span>
+              </td>
+              <td> _id:<span style="color:#212F3C">137</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> branch:<span style="color:#196F3D">chore-member-docs</span>  event_id:<span style="color:#212F3C">40391893973</span> event_type:<span style="color:#196F3D">PullRequestEvent</span> is_human:<span style="color:#212F3C">1</span>    when:<span style="color:#2471A3">2024-07-23T14:38:00Z</span> where:<span style="color:#196F3D">github</span> </td>
+            </tr>
+            <tr>
+              <td>
                 <span style="color:"/>
               </td>
               <td>
@@ -2592,7 +2802,7 @@
               <td>
                 <span style="color:"/>
               </td>
-              <td> _id:<span style="color:#212F3C">118</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> latest:<span style="color:#212F3C">40390446704</span>   where:<span style="color:#196F3D">github</span></td>
+              <td> _id:<span style="color:#212F3C">140</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> latest:<span style="color:#212F3C">40392922276</span>   where:<span style="color:#196F3D">github</span></td>
             </tr>
             <tr>
               <td>
@@ -2613,13 +2823,13 @@
               <td>
                 <span style="color:"/>
               </td>
-              <td> _id:<span style="color:#212F3C">119</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> latest:<span style="color:#212F3C">0</span>   where:<span style="color:#196F3D">github</span></td>
+              <td> _id:<span style="color:#212F3C">141</span> <span style="color:gray;">_time</span> <span style="color:gray;">_version</span> latest:<span style="color:#212F3C">0</span>   where:<span style="color:#196F3D">github</span></td>
             </tr>
           </tbody>
         </table>
       </article>
       <footer class="smaller">
-        <p>The page was generated by the <a href="https://github.com/yegor256/judges">judges</a> tool (0.20.0) on 2024-07-23T15:15:29Z.<br/><a href="https://github.com/yegor256/factbase">Factbase</a>: 122 facts, 44538 bytes, version 0.2.1.</p>
+        <p>The page was generated by the <a href="https://github.com/yegor256/judges">judges</a> tool (0.20.0) on 2024-07-23T16:19:27Z.<br/><a href="https://github.com/yegor256/factbase">Factbase</a>: 132 facts, 49666 bytes, version 0.2.1.</p>
       </footer>
     </section>
   </body>
