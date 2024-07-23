@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.2.1" size="56773">
+<fb version="0.2.1" size="58254">
   <f>
     <added t="I">8</added>
     <cycles t="I">3</cycles>
     <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
     <removed t="I">8</removed>
-    <seconds t="F">4.701065029</seconds>
+    <seconds t="F">2.490491724</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-23T19:10:48Z</when>
+    <when t="T">2024-07-23T20:14:40Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2298,8 +2298,78 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">183</_id>
+    <_id t="I">184</_id>
     <_time t="T">2024-07-23T19:10:47Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <cause t="I">135</cause>
+    <comments t="I">3</comments>
+    <details t="S">The pull request h1alexbel/fakehub#94 with 1 HoC created by @h1alexbel was merged by @rultor after 26 minutes of being in review and 3 comments.</details>
+    <hoc t="I">1</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">94</issue>
+    <merger t="I">8086956</merger>
+    <repository t="I">807802459</repository>
+    <seconds t="I">1587</seconds>
+    <what t="S">code-was-contributed</what>
+    <when t="T">2024-07-23T15:04:27Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">188</_id>
+    <_time t="T">2024-07-23T20:14:38Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <award t="I">5</award>
+    <cause t="I">182</cause>
+    <details t="S">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#93, the reward amount is 5.</details>
+    <greeting t="S">Thanks for the contribution! You've earned +5 points for this: +20 as a basis; +5 for 130 hits-of-code; -7 for too many hits-of-code (130 &gt;= 100); -15 for the lack of code review; -5 for 3 comments of reviewers; +7 to give you at least something. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is +20. </greeting>
+    <is_human t="I">1</is_human>
+    <issue t="I">93</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-contribution-was-rewarded</what>
+    <when t="T">2024-07-23T20:14:38Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Code was contributed in h1alexbel/fakehub#93</why>
+  </f>
+  <f>
+    <_id t="I">189</_id>
+    <_time t="T">2024-07-23T20:14:38Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <cause t="I">151</cause>
+    <comments t="I">0</comments>
+    <details t="S">The pull request h1alexbel/fakehub#97 with 5 HoC created by @h1alexbel was merged by @h1alexbel after 8 seconds of being in review and 0 comments.</details>
+    <hoc t="I">5</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">97</issue>
+    <merger t="I">83453843</merger>
+    <repository t="I">807802459</repository>
+    <seconds t="I">8</seconds>
+    <what t="S">code-was-contributed</what>
+    <when t="T">2024-07-23T15:35:03Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">191</_id>
+    <_time t="T">2024-07-23T20:14:38Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <award t="I">5</award>
+    <cause t="I">184</cause>
+    <details t="S">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#94, the reward amount is 5.</details>
+    <greeting t="S">Thanks for the contribution! You've earned +5 points for this: +20 as a basis; +5 for 1 hits-of-code; -15 for the lack of code review; -5 for 3 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is +25. </greeting>
+    <is_human t="I">1</is_human>
+    <issue t="I">94</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-contribution-was-rewarded</what>
+    <when t="T">2024-07-23T20:14:38Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Code was contributed in h1alexbel/fakehub#94</why>
+  </f>
+  <f>
+    <_id t="I">192</_id>
+    <_time t="T">2024-07-23T20:14:39Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2320,53 +2390,17 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">184</_id>
-    <_time t="T">2024-07-23T19:10:47Z</_time>
+    <_id t="I">193</_id>
+    <_time t="T">2024-07-23T21:15:31Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <cause t="I">135</cause>
-    <comments t="I">3</comments>
-    <details t="S">The pull request h1alexbel/fakehub#94 with 1 HoC created by @h1alexbel was merged by @rultor after 26 minutes of being in review and 3 comments.</details>
-    <hoc t="I">1</hoc>
-    <is_human t="I">1</is_human>
-    <issue t="I">94</issue>
-    <merger t="I">8086956</merger>
-    <repository t="I">807802459</repository>
-    <seconds t="I">1587</seconds>
-    <what t="S">code-was-contributed</what>
-    <when t="T">2024-07-23T15:04:27Z</when>
-    <where t="S">github</where>
-    <who t="I">83453843</who>
-  </f>
-  <f>
-    <_id t="I">184</_id>
-    <_time t="T">2024-07-23T19:10:47Z</_time>
-    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <cause t="I">151</cause>
-    <comments t="I">0</comments>
-    <details t="S">The pull request h1alexbel/fakehub#97 with 5 HoC created by @h1alexbel was merged by @h1alexbel after 8 seconds of being in review and 0 comments.</details>
-    <hoc t="I">5</hoc>
-    <is_human t="I">1</is_human>
-    <issue t="I">97</issue>
-    <merger t="I">83453843</merger>
-    <repository t="I">807802459</repository>
-    <seconds t="I">8</seconds>
-    <what t="S">code-was-contributed</what>
-    <when t="T">2024-07-23T15:35:03Z</when>
-    <where t="S">github</where>
-    <who t="I">83453843</who>
-  </f>
-  <f>
-    <_id t="I">185</_id>
-    <_time t="T">2024-07-23T20:14:20Z</_time>
-    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40398786504</latest>
+    <latest t="I">40400205314</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">186</_id>
-    <_time t="T">2024-07-23T20:14:24Z</_time>
+    <_id t="I">194</_id>
+    <_time t="T">2024-07-23T21:15:36Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
