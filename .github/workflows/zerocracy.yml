@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.ZEROCRACY_TOKEN }}
           options: |
             github_token=${{ secrets.GITHUB_TOKEN }}
-            vitals_url=https://h1alexbel.github.io/fakehub/fakehub-vitals.html
+            vitals_url=https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html
             repositories=h1alexbel/fakehub
           factbase: fakehub.fb
       - uses: zerocracy/pages-action@0.0.23
