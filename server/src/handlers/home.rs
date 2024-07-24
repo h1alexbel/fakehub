@@ -187,6 +187,7 @@ pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
     response
 }
 
+#[allow(clippy::question_mark_used)]
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

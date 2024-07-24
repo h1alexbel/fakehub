@@ -59,7 +59,7 @@ impl User {
     /// Save user.
     pub async fn save(self) -> Result<()> {
         info!("saving user @{}", self.username);
-        let xml = to_string(&self).expect("");
+        let xml = to_string(&self).expect("Can't transform user to XML");
         debug!("XMLed user: {}", xml);
         Ok(())
     }
