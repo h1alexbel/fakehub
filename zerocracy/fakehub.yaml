@@ -1,11 +1,12 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 3
+  error: The 'ZEROCRAT_TOKEN' secret is not set
   removed: 8
-  seconds: 13.016320075
+  seconds: 2.448474256
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-24 08:17:02.561895337 Z
+  when: 2024-07-24 08:17:13.074496257 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2255,8 +2256,40 @@
   when: 2024-07-23 22:55:42.000000000 Z
   where: github
   who: 46355873
-- _id: 230
-  _time: 2024-07-24 07:13:31.679114133 Z
+- _id: 231
+  _time: 2024-07-24 08:16:51.367736158 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  comments: 6
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @h1alexbel with
+    38 HoC and 6 comments.
+  event_id: 40414899216
+  event_type: PullRequestReviewEvent
+  hoc: 38
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 07:56:42.000000000 Z
+  where: github
+  who: 83453843
+- _id: 232
+  _time: 2024-07-24 08:16:51.768876316 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  comments: 6
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @h1alexbel with
+    38 HoC and 6 comments.
+  event_id: 40414701336
+  event_type: PullRequestReviewEvent
+  hoc: 38
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 07:50:14.000000000 Z
+  where: github
+  who: 83453843
+- _id: 237
+  _time: 2024-07-24 08:17:12.340488585 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2291,47 +2324,15 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 231
-  _time: 2024-07-24 08:16:51.367736158 Z
+- _id: 238
+  _time: 2024-07-24 09:14:12.364623022 Z
   _version: 0.2.1/0.20.0/0.0.35
-  comments: 6
-  details: The pull request h1alexbel/fakehub#95 has been reviewed by @h1alexbel with
-    38 HoC and 6 comments.
-  event_id: 40414899216
-  event_type: PullRequestReviewEvent
-  hoc: 38
-  is_human: 1
-  issue: 95
-  repository: 807802459
-  what: pull-was-reviewed
-  when: 2024-07-24 07:56:42.000000000 Z
-  where: github
-  who: 83453843
-- _id: 232
-  _time: 2024-07-24 08:16:51.768876316 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  comments: 6
-  details: The pull request h1alexbel/fakehub#95 has been reviewed by @h1alexbel with
-    38 HoC and 6 comments.
-  event_id: 40414701336
-  event_type: PullRequestReviewEvent
-  hoc: 38
-  is_human: 1
-  issue: 95
-  repository: 807802459
-  what: pull-was-reviewed
-  when: 2024-07-24 07:50:14.000000000 Z
-  where: github
-  who: 83453843
-- _id: 235
-  _time: 2024-07-24 08:16:57.851676779 Z
-  _version: 0.2.1/0.20.0/0.0.35
-  latest: 40414899276
+  latest: 40415554394
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 236
-  _time: 2024-07-24 08:17:02.556924034 Z
+- _id: 239
+  _time: 2024-07-24 09:14:17.185910704 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
