@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 17.910681356
+  seconds: 15.197077516
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-24 10:16:33.566233813 Z
+  when: 2024-07-24 11:11:34.967024066 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2287,8 +2287,40 @@
   when: 2024-07-24 07:50:14.000000000 Z
   where: github
   who: 83453843
-- _id: 240
-  _time: 2024-07-24 09:14:29.807760486 Z
+- _id: 241
+  _time: 2024-07-24 10:16:18.205277683 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  comments: 7
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
+    38 HoC and 7 comments.
+  event_id: 40418828762
+  event_type: PullRequestReviewEvent
+  hoc: 38
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 09:54:08.000000000 Z
+  where: github
+  who: 46355873
+- _id: 242
+  _time: 2024-07-24 10:16:18.809028096 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  comments: 7
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
+    38 HoC and 7 comments.
+  event_id: 40418758887
+  event_type: PullRequestReviewEvent
+  hoc: 38
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 09:52:03.000000000 Z
+  where: github
+  who: 46355873
+- _id: 247
+  _time: 2024-07-24 10:16:46.662258141 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2323,47 +2355,125 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 241
-  _time: 2024-07-24 10:16:18.205277683 Z
+- _id: 248
+  _time: 2024-07-24 11:11:21.550810927 Z
   _version: 0.2.1/0.20.0/0.0.35
-  comments: 7
-  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
-    38 HoC and 7 comments.
-  event_id: 40418828762
+  comments: 1
+  details: The pull request h1alexbel/fakehub#100 has been reviewed by @l3r8yJ with
+    35 HoC and 1 comments.
+  event_id: 40421227263
   event_type: PullRequestReviewEvent
+  hoc: 35
+  is_human: 1
+  issue: 100
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 11:10:12.000000000 Z
+  where: github
+  who: 46355873
+- _id: 249
+  _time: 2024-07-24 11:11:22.142939476 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  branch: '99'
+  details: The pull request h1alexbel/fakehub#100 has been opened by @h1alexbel.
+  event_id: 40420331486
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 100
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-07-24 10:40:18.000000000 Z
+  where: github
+  who: 83453843
+- _id: 250
+  _time: 2024-07-24 11:11:22.716197372 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  details: The issue h1alexbel/fakehub#99 has been opened by @0pdd.
+  event_id: 40420259453
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 99
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-07-24 10:37:54.000000000 Z
+  where: github
+  who: 24456188
+- _id: 251
+  _time: 2024-07-24 11:11:22.737103719 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  details: The issue h1alexbel/fakehub#98 has been opened by @0pdd.
+  event_id: 40420258722
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 98
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-07-24 10:37:52.000000000 Z
+  where: github
+  who: 24456188
+- _id: 252
+  _time: 2024-07-24 11:11:22.767046205 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  branch: 75-xml
+  comments: 9
+  details: The pull request h1alexbel/fakehub#95 has been closed by @rultor, with
+    38 HoC and 9 comments.
+  event_id: 40420256924
+  event_type: PullRequestEvent
   hoc: 38
   is_human: 1
   issue: 95
   repository: 807802459
-  what: pull-was-reviewed
-  when: 2024-07-24 09:54:08.000000000 Z
+  what: pull-was-merged
+  when: 2024-07-24 10:37:49.000000000 Z
   where: github
-  who: 46355873
-- _id: 242
-  _time: 2024-07-24 10:16:18.809028096 Z
+  who: 8086956
+- _id: 253
+  _time: 2024-07-24 11:11:22.790565597 Z
   _version: 0.2.1/0.20.0/0.0.35
-  comments: 7
-  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
-    38 HoC and 7 comments.
-  event_id: 40418758887
-  event_type: PullRequestReviewEvent
-  hoc: 38
+  details: The issue h1alexbel/fakehub#75 has been closed by @rultor.
+  event_id: 40420257342
+  event_type: IssuesEvent
   is_human: 1
-  issue: 95
+  issue: 75
   repository: 807802459
-  what: pull-was-reviewed
-  when: 2024-07-24 09:52:03.000000000 Z
+  what: issue-was-closed
+  when: 2024-07-24 10:37:50.000000000 Z
   where: github
-  who: 46355873
-- _id: 245
-  _time: 2024-07-24 10:16:27.308839562 Z
+  who: 8086956
+- _id: 255
+  _time: 2024-07-24 11:11:28.096248078 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40418828866
+  details: The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#98.
+  is_human: 1
+  issue: 98
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-07-24 10:37:51.000000000 Z
+  where: github
+  who: 24456188
+- _id: 256
+  _time: 2024-07-24 11:11:28.472216901 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  details: The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#99.
+  is_human: 1
+  issue: 99
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-07-24 10:37:53.000000000 Z
+  where: github
+  who: 24456188
+- _id: 258
+  _time: 2024-07-24 11:11:29.780038433 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  latest: 40421227263
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 246
-  _time: 2024-07-24 10:16:33.560471967 Z
+- _id: 259
+  _time: 2024-07-24 11:11:34.961256865 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
