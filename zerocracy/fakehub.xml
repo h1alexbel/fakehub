@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.2.1" size="60320">
+<fb version="0.2.1" size="60940">
   <f>
     <added t="I">8</added>
-    <cycles t="I">3</cycles>
-    <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">2.448474256</seconds>
+    <seconds t="F">17.910681356</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-24T08:17:13Z</when>
+    <when t="T">2024-07-24T10:16:33Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2454,8 +2453,8 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">237</_id>
-    <_time t="T">2024-07-24T08:17:12Z</_time>
+    <_id t="I">240</_id>
+    <_time t="T">2024-07-24T09:14:29Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2476,17 +2475,51 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">238</_id>
-    <_time t="T">2024-07-24T09:14:12Z</_time>
+    <_id t="I">241</_id>
+    <_time t="T">2024-07-24T10:16:18Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40415554394</latest>
+    <comments t="I">7</comments>
+    <details t="S">The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with 38 HoC and 7 comments.</details>
+    <event_id t="I">40418828762</event_id>
+    <event_type t="S">PullRequestReviewEvent</event_type>
+    <hoc t="I">38</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">95</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-reviewed</what>
+    <when t="T">2024-07-24T09:54:08Z</when>
+    <where t="S">github</where>
+    <who t="I">46355873</who>
+  </f>
+  <f>
+    <_id t="I">242</_id>
+    <_time t="T">2024-07-24T10:16:18Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <comments t="I">7</comments>
+    <details t="S">The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with 38 HoC and 7 comments.</details>
+    <event_id t="I">40418758887</event_id>
+    <event_type t="S">PullRequestReviewEvent</event_type>
+    <hoc t="I">38</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">95</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-reviewed</what>
+    <when t="T">2024-07-24T09:52:03Z</when>
+    <where t="S">github</where>
+    <who t="I">46355873</who>
+  </f>
+  <f>
+    <_id t="I">245</_id>
+    <_time t="T">2024-07-24T10:16:27Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <latest t="I">40418828866</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">239</_id>
-    <_time t="T">2024-07-24T09:14:17Z</_time>
+    <_id t="I">246</_id>
+    <_time t="T">2024-07-24T10:16:33Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>

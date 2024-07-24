@@ -1,12 +1,11 @@
 ---
 - added: 8
-  cycles: 3
-  error: The 'ZEROCRAT_TOKEN' secret is not set
+  cycles: 2
   removed: 8
-  seconds: 2.448474256
+  seconds: 17.910681356
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-24 08:17:13.074496257 Z
+  when: 2024-07-24 10:16:33.566233813 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2288,8 +2287,8 @@
   when: 2024-07-24 07:50:14.000000000 Z
   where: github
   who: 83453843
-- _id: 237
-  _time: 2024-07-24 08:17:12.340488585 Z
+- _id: 240
+  _time: 2024-07-24 09:14:29.807760486 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2324,15 +2323,47 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 238
-  _time: 2024-07-24 09:14:12.364623022 Z
+- _id: 241
+  _time: 2024-07-24 10:16:18.205277683 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40415554394
+  comments: 7
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
+    38 HoC and 7 comments.
+  event_id: 40418828762
+  event_type: PullRequestReviewEvent
+  hoc: 38
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 09:54:08.000000000 Z
+  where: github
+  who: 46355873
+- _id: 242
+  _time: 2024-07-24 10:16:18.809028096 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  comments: 7
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
+    38 HoC and 7 comments.
+  event_id: 40418758887
+  event_type: PullRequestReviewEvent
+  hoc: 38
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-24 09:52:03.000000000 Z
+  where: github
+  who: 46355873
+- _id: 245
+  _time: 2024-07-24 10:16:27.308839562 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  latest: 40418828866
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 239
-  _time: 2024-07-24 09:14:17.185910704 Z
+- _id: 246
+  _time: 2024-07-24 10:16:33.560471967 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
