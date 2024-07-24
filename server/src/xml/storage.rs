@@ -19,10 +19,9 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use anyhow::Result;
 use log::info;
 use std::fs::File;
-use std::io::Write;
+use std::io::{Read, Write};
 
 #[derive(Default)]
 #[allow(dead_code)]
@@ -48,7 +47,7 @@ impl Storage {
     /// use server::xml::storage::Storage;
     /// let storage = Storage::new(Some("test.xml"));
     /// ```
-    /// Or use default path:
+    /// Or use it with default path:
     /// ```
     /// use server::xml::storage::Storage;
     /// let storage = Storage::new(None);
@@ -72,15 +71,21 @@ impl Storage {
     }
 }
 
-// @todo #17:35min Implement #xml function in Storage.
-//  This function should return full XML storage has at the moment. #xml
-//  function should be thread-safe, as it intended to be used concurrently.
-//  Don't forget to create a unit tests related to #xml function.
 impl Storage {
-    #[allow(dead_code)]
-    /// Return XML from the storage.
-    pub fn xml() -> Result<()> {
-        Ok(())
+    /// Returns full XML from the storage.
+    // @todo #75:60min Make xml() thread-safe.
+    //  We should make this function thread-safe in order to get sequential of
+    //  reads and write to the store. Don't forget to create a unit-test that
+    //  checks concurrency cases.
+    // @todo #75:35min Prohibit to use `?` (question mark operator).
+    //  Let's prohibit to use `?` as we did with `unwrap()`. Don't forget to
+    //  remove this puzzle.
+    pub fn xml(self) -> String {
+        let mut file = File::open(self.path).expect("Can't open file");
+        let mut xml = String::new();
+        file.read_to_string(&mut xml)
+            .expect("Can't read file with XML");
+        xml
     }
 }
 
@@ -122,6 +127,17 @@ mod tests {
         let storage = path.to_str();
         Storage::new(storage);
         assert_that!(path.exists(), is(equal_to(true)));
+        Ok(())
+    }
+
+    #[test]
+    fn outputs_full_xml() -> Result<()> {
+        let temp = TempDir::new("temp")?;
+        let path = temp.path().join("test.xml");
+        let xml = Storage::new(path.to_str()).xml();
+        assert_that!(xml.contains("<root>"), is(equal_to(true)));
+        assert_that!(xml.contains("<github>"), is(equal_to(true)));
+        assert_that!(xml.contains("<users/>"), is(equal_to(true)));
         Ok(())
     }
 }
