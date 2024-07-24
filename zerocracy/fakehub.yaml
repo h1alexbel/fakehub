@@ -1,12 +1,11 @@
 ---
 - added: 8
-  cycles: 3
-  error: The 'ZEROCRAT_TOKEN' secret is not set
+  cycles: 2
   removed: 8
-  seconds: 2.383506341
+  seconds: 21.290825706
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-23 22:13:43.861368317 Z
+  when: 2024-07-24 01:02:32.688887498 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2223,8 +2222,8 @@
   where: github
   who: 83453843
   why: Code was contributed in h1alexbel/fakehub#97
-- _id: 200
-  _time: 2024-07-23 22:13:43.127989028 Z
+- _id: 203
+  _time: 2024-07-23 23:15:29.631901938 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2259,15 +2258,47 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 201
-  _time: 2024-07-23 23:15:15.419646470 Z
+- _id: 204
+  _time: 2024-07-24 01:02:14.421908350 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40403335786
+  comments: 3
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
+    35 HoC and 3 comments.
+  event_id: 40405190372
+  event_type: PullRequestReviewEvent
+  hoc: 35
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-23 22:55:42.000000000 Z
+  where: github
+  who: 46355873
+- _id: 205
+  _time: 2024-07-24 01:02:15.334180657 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  comments: 3
+  details: The pull request h1alexbel/fakehub#95 has been reviewed by @l3r8yJ with
+    35 HoC and 3 comments.
+  event_id: 40405190350
+  event_type: PullRequestReviewEvent
+  hoc: 35
+  is_human: 1
+  issue: 95
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-07-23 22:55:42.000000000 Z
+  where: github
+  who: 46355873
+- _id: 208
+  _time: 2024-07-24 01:02:25.277386487 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  latest: 40405490027
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 202
-  _time: 2024-07-23 23:15:22.282521866 Z
+- _id: 209
+  _time: 2024-07-24 01:02:32.684409723 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
