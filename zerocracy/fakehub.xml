@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.2.1" size="67403">
+<fb version="0.2.1" size="68063">
   <f>
     <added t="I">8</added>
     <cycles t="I">3</cycles>
     <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
     <removed t="I">8</removed>
-    <seconds t="F">2.817406033</seconds>
+    <seconds t="F">2.704818866</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-24T12:25:50Z</when>
+    <when t="T">2024-07-24T13:17:58Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2779,8 +2779,25 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">277</_id>
-    <_time t="T">2024-07-24T12:25:50Z</_time>
+    <_id t="I">281</_id>
+    <_time t="T">2024-07-24T13:17:56Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <award t="I">20</award>
+    <cause t="I">276</cause>
+    <details t="S">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#100, the reward amount is 20.</details>
+    <greeting t="S">Thanks for the contribution! You've earned +20 points for this: +20 as a basis; +5 for 35 hits-of-code; -5 for 1 comments of reviewers. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is +51. </greeting>
+    <is_human t="I">1</is_human>
+    <issue t="I">100</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-contribution-was-rewarded</what>
+    <when t="T">2024-07-24T13:17:56Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Code was contributed in h1alexbel/fakehub#100</why>
+  </f>
+  <f>
+    <_id t="I">282</_id>
+    <_time t="T">2024-07-24T13:17:58Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2801,17 +2818,17 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">278</_id>
-    <_time t="T">2024-07-24T13:17:45Z</_time>
+    <_id t="I">283</_id>
+    <_time t="T">2024-07-24T14:13:53Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40423578136</latest>
+    <latest t="I">40425418362</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">279</_id>
-    <_time t="T">2024-07-24T13:17:51Z</_time>
+    <_id t="I">284</_id>
+    <_time t="T">2024-07-24T14:14:00Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
