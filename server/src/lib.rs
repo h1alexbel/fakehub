@@ -101,7 +101,8 @@ impl Server {
                             port: self.port,
                         }),
                 )
-                .await?
+                .await
+                .ok()
             }
             Err(err) => {
                 panic!("Can't bind address {}: '{}'", addr.clone(), err)

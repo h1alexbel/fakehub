@@ -89,6 +89,7 @@ impl Storage {
     }
 }
 
+#[allow(clippy::question_mark_used)]
 #[cfg(test)]
 mod tests {
     use std::fs;
