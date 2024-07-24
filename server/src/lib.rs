@@ -90,20 +90,18 @@ impl Server {
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
-            Ok(listener) => {
-                axum::serve(
-                    listener,
-                    Router::new()
-                        .route("/", get(home::home))
-                        .route("/users", post(register_user))
-                        .with_state(ServerConfig {
-                            host: "0.0.0.0".into(),
-                            port: self.port,
-                        }),
-                )
-                .await
-                .ok()
-            }
+            Ok(listener) => axum::serve(
+                listener,
+                Router::new()
+                    .route("/", get(home::home))
+                    .route("/users", post(register_user))
+                    .with_state(ServerConfig {
+                        host: "0.0.0.0".into(),
+                        port: self.port,
+                    }),
+            )
+            .await
+            .ok(),
             Err(err) => {
                 panic!("Can't bind address {}: '{}'", addr.clone(), err)
             }
