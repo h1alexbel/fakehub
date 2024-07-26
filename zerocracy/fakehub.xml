@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.2.1" size="68395">
+<fb version="0.2.1" size="68396">
   <f>
     <added t="I">8</added>
     <cycles t="I">3</cycles>
     <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
     <removed t="I">8</removed>
-    <seconds t="F">2.760267588</seconds>
+    <seconds t="F">2.914649035</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-26T16:18:04Z</when>
+    <when t="T">2024-07-26T17:13:00Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2813,8 +2813,8 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">429</_id>
-    <_time t="T">2024-07-26T16:18:03Z</_time>
+    <_id t="I">432</_id>
+    <_time t="T">2024-07-26T17:12:59Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2835,17 +2835,17 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">430</_id>
-    <_time t="T">2024-07-26T17:12:45Z</_time>
+    <_id t="I">433</_id>
+    <_time t="T">2024-07-26T18:17:59Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40501247048</latest>
+    <latest t="I">40502574123</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">431</_id>
-    <_time t="T">2024-07-26T17:12:52Z</_time>
+    <_id t="I">434</_id>
+    <_time t="T">2024-07-26T18:18:06Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
