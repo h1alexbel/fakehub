@@ -3,10 +3,10 @@
   cycles: 3
   error: The 'ZEROCRAT_TOKEN' secret is not set
   removed: 8
-  seconds: 2.772068517
+  seconds: 2.576974389
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-26 04:17:00.725849181 Z
+  when: 2024-07-26 06:19:55.183722487 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -1340,6 +1340,7 @@
   _version: 0.2.1/0.20.0/0.0.35
   area: quality
   qos_days: 28
+  qos_interval: 3
   what: pmp
 - _id: 105
   _time: 2024-07-23 14:22:21.269386930 Z
@@ -2606,8 +2607,8 @@
   where: github
   who: 83453843
   why: Code was contributed in h1alexbel/fakehub#100
-- _id: 393
-  _time: 2024-07-26 04:16:59.814294310 Z
+- _id: 396
+  _time: 2024-07-26 06:19:54.364478662 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2642,15 +2643,15 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 394
-  _time: 2024-07-26 06:19:35.626400286 Z
+- _id: 397
+  _time: 2024-07-26 07:12:47.698242638 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40483119324
+  latest: 40484342108
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 395
-  _time: 2024-07-26 06:19:43.941774890 Z
+- _id: 398
+  _time: 2024-07-26 07:12:53.136730221 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
