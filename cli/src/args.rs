@@ -47,4 +47,7 @@ pub(crate) struct StartArgs {
     /// The port to run
     #[arg(short, long, default_value_t = 3000)]
     pub(crate) port: usize,
+    /// Verbose output.
+    #[arg(short, long, default_value = "false")]
+    pub(crate) verbose: bool,
 }

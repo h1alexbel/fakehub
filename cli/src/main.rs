@@ -33,6 +33,13 @@ async fn main() {
     let args = Args::parse();
     match args.command {
         Command::Start(start_args) => {
+            if start_args.verbose {
+                tracing_subscriber::fmt()
+                    .with_max_level(tracing::Level::DEBUG)
+                    .init()
+            } else {
+                tracing_subscriber::fmt::init();
+            }
             info!("Starting server on port {}", start_args.port);
             let server = Server::new(start_args.port);
             match server.start().await {

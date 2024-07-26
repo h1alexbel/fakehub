@@ -85,7 +85,6 @@ pub struct ServerConfig {
 impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
-        tracing_subscriber::fmt::init();
         Storage::new(Some("fakehub.xml"));
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
