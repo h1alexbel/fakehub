@@ -3,10 +3,10 @@
   cycles: 3
   error: The 'ZEROCRAT_TOKEN' secret is not set
   removed: 8
-  seconds: 2.594287789
+  seconds: 2.666583114
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-26 19:12:55.943840000 Z
+  when: 2024-07-26 20:16:44.340332716 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2621,8 +2621,8 @@
   when: 2024-07-26 15:47:03.000000000 Z
   where: github
   who: 83453843
-- _id: 438
-  _time: 2024-07-26 19:12:55.129481595 Z
+- _id: 441
+  _time: 2024-07-26 20:16:43.496809323 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2657,15 +2657,15 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 439
-  _time: 2024-07-26 20:16:29.841625287 Z
+- _id: 442
+  _time: 2024-07-26 21:12:57.334057725 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40505282411
+  latest: 40506598972
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 440
-  _time: 2024-07-26 20:16:35.437867419 Z
+- _id: 443
+  _time: 2024-07-26 21:13:02.947194508 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459
