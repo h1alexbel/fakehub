@@ -5,10 +5,10 @@
     <cycles t="I">3</cycles>
     <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
     <removed t="I">8</removed>
-    <seconds t="F">2.695001847</seconds>
+    <seconds t="F">2.824820201</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-26T23:13:28Z</when>
+    <when t="T">2024-07-27T01:01:03Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2813,8 +2813,8 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">450</_id>
-    <_time t="T">2024-07-26T23:13:27Z</_time>
+    <_id t="I">453</_id>
+    <_time t="T">2024-07-27T01:01:02Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2835,17 +2835,17 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">451</_id>
-    <_time t="T">2024-07-27T01:00:44Z</_time>
+    <_id t="I">454</_id>
+    <_time t="T">2024-07-27T02:04:34Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40509379208</latest>
+    <latest t="I">40510372348</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">452</_id>
-    <_time t="T">2024-07-27T01:00:49Z</_time>
+    <_id t="I">455</_id>
+    <_time t="T">2024-07-27T02:04:41Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
