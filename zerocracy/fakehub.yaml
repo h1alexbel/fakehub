@@ -1,12 +1,11 @@
 ---
 - added: 8
-  cycles: 3
-  error: The 'ZEROCRAT_TOKEN' secret is not set
+  cycles: 2
   removed: 8
-  seconds: 2.486977923
+  seconds: 22.109323266
   version: 0.20.0
   what: judges-summary
-  when: 2024-07-27 06:17:22.531571607 Z
+  when: 2024-07-27 08:15:51.651881652 Z
 - _id: 1
   _time: 2024-07-23 14:20:48.716103903 Z
   _version: 0.2.1/0.20.0/0.0.35
@@ -2621,8 +2620,8 @@
   when: 2024-07-26 15:47:03.000000000 Z
   where: github
   who: 83453843
-- _id: 468
-  _time: 2024-07-27 06:17:21.748625693 Z
+- _id: 471
+  _time: 2024-07-27 07:13:36.510599837 Z
   _version: 0.2.1/0.20.0/0.0.35
   area: hr
   bad_branch_name_was_punished: "(award (explain 'If a branch has a name that doesn\\'t
@@ -2657,15 +2656,29 @@
     -20) (set b2 (max b2 days_fee_max)) (give b2 'for #{days} days of delay') 'deduct
     ${day_fee} points for each day of delay, but no more than ${days_fee_max} points'))"
   what: pmp
-- _id: 469
-  _time: 2024-07-27 07:13:18.004168753 Z
+- _id: 472
+  _time: 2024-07-27 08:15:32.369417335 Z
   _version: 0.2.1/0.20.0/0.0.35
-  latest: 40512739966
+  branch: renovate/zerocracy-judges-action-0.x
+  details: The pull request h1alexbel/fakehub#103 has been opened by @renovate[bot].
+  event_id: 40513171682
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 103
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-07-27 07:13:59.000000000 Z
+  where: github
+  who: 29139614
+- _id: 475
+  _time: 2024-07-27 08:15:43.331207488 Z
+  _version: 0.2.1/0.20.0/0.0.35
+  latest: 40513198341
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 470
-  _time: 2024-07-27 07:13:25.665344687 Z
+- _id: 476
+  _time: 2024-07-27 08:15:51.645647041 Z
   _version: 0.2.1/0.20.0/0.0.35
   latest: 0
   repository: 807802459

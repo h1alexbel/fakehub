@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.2.1" size="68398">
+<fb version="0.2.1" size="68684">
   <f>
     <added t="I">8</added>
-    <cycles t="I">3</cycles>
-    <error t="S">The 'ZEROCRAT_TOKEN' secret is not set</error>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">2.486977923</seconds>
+    <seconds t="F">22.109323266</seconds>
     <version t="S">0.20.0</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-07-27T06:17:22Z</when>
+    <when t="T">2024-07-27T08:15:51Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2813,8 +2812,8 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">468</_id>
-    <_time t="T">2024-07-27T06:17:21Z</_time>
+    <_id t="I">471</_id>
+    <_time t="T">2024-07-27T07:13:36Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <area t="S">hr</area>
     <bad_branch_name_was_punished t="S">(award (explain 'If a branch has a name that doesn\'t obey the convention, a penalty is given to the author') (aka (let fee -10) (give fee 'as a basis') 'deduct ${fee} points'))</bad_branch_name_was_punished>
@@ -2835,17 +2834,33 @@
     <what t="S">pmp</what>
   </f>
   <f>
-    <_id t="I">469</_id>
-    <_time t="T">2024-07-27T07:13:18Z</_time>
+    <_id t="I">472</_id>
+    <_time t="T">2024-07-27T08:15:32Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
-    <latest t="I">40512739966</latest>
+    <branch t="S">renovate/zerocracy-judges-action-0.x</branch>
+    <details t="S">The pull request h1alexbel/fakehub#103 has been opened by @renovate[bot].</details>
+    <event_id t="I">40513171682</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <is_human t="I">0</is_human>
+    <issue t="I">103</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-opened</what>
+    <when t="T">2024-07-27T07:13:59Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">475</_id>
+    <_time t="T">2024-07-27T08:15:43Z</_time>
+    <_version t="S">0.2.1/0.20.0/0.0.35</_version>
+    <latest t="I">40513198341</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">470</_id>
-    <_time t="T">2024-07-27T07:13:25Z</_time>
+    <_id t="I">476</_id>
+    <_time t="T">2024-07-27T08:15:51Z</_time>
     <_version t="S">0.2.1/0.20.0/0.0.35</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
