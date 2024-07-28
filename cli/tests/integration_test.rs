@@ -47,6 +47,8 @@ fn outputs_start_opts() -> Result<()> {
     let output = str::from_utf8(bytes)?;
     assert!(output.contains("--port"));
     assert!(output.contains("The port to run [default: 3000]"));
+    assert!(output.contains("--verbose"));
+    assert!(output.contains("Verbose output"));
     Ok(())
 }
 
@@ -65,5 +67,22 @@ fn starts_server() -> Result<()> {
     let bytes = assertion.get_output().stdout.as_slice();
     let output = str::from_utf8(bytes)?;
     assert!(output.contains("Server started successfully on port 8080"));
+    Ok(())
+}
+
+// @todo #82:30min Enable runs_in_verbose_mode test.
+//  We should enable this test right after we find out how to shutdown the server
+//  in test. This problem is similar to
+//  https://github.com/h1alexbel/fakehub/issues/76.
+#[test]
+#[ignore]
+fn runs_in_verbose_mode() -> Result<()> {
+    let assertion = Command::cargo_bin("cli")?
+        .arg("start")
+        .arg("--verbose")
+        .assert();
+    let bytes = assertion.get_output().stdout.as_slice();
+    let output = str::from_utf8(bytes)?;
+    assert!(output.contains("DEBUG"));
     Ok(())
 }
