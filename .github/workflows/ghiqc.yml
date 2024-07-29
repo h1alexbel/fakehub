@@ -20,19 +20,24 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: reports-check
+name: ghiqc
 on:
   issues:
     types: [ opened ]
 permissions:
   issues: write
   contents: read
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DEEPINFRA_TOKEN: ${{ secrets.DEEPINFRA_TOKEN }}
+  ISSUE: ${{ github.event.issue.number }}
 jobs:
   check:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: tracehubpm/reports-check-action@master
-        with:
-          deepinfra_token: ${{ secrets.DEEPINFRA_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install ghiqc
+        run: cargo install ghiqc
+      - name: Run ghiqc
+        run: |
+          ghiqc --repo "${{ github.repository }}" --issue "$ISSUE"
