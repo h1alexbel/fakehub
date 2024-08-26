@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install ghiqc
-        run: cargo install ghiqc
+        run: cargo install ghiqc --version 0.0.5
       - name: Run ghiqc
         run: |
           ghiqc --repo "${{ github.repository }}" --issue "$ISSUE"
