@@ -57,5 +57,5 @@ env_logger = "0.11.3"
 tempdir = "0.3.7"
 hamcrest = "0.1.5"
 reqwest = "0.12.5"
-sxd-document = "0.3.2"
-sxd-xpath = "0.4.2"
+postgres = "0.19.8"
+testcontainers-modules = { version = "0.9.0", features = ["postgres"] }
