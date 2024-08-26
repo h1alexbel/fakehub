@@ -22,6 +22,8 @@
 use log::info;
 use std::fs::File;
 use std::io::{Read, Write};
+use sxd_document::parser;
+use sxd_xpath::evaluate_xpath;
 
 #[derive(Default)]
 #[allow(dead_code)]
@@ -69,23 +71,28 @@ impl Storage {
             path: String::from(location),
         }
     }
-}
 
-impl Storage {
     /// Returns full XML from the storage.
     // @todo #75:60min Make xml() thread-safe.
     //  We should make this function thread-safe in order to get sequential of
     //  reads and write to the store. Don't forget to create a unit-test that
     //  checks concurrency cases.
-    // @todo #75:35min Prohibit to use `?` (question mark operator).
-    //  Let's prohibit to use `?` as we did with `unwrap()`. Don't forget to
-    //  remove this puzzle.
     pub fn xml(self) -> String {
         let mut file = File::open(self.path).expect("Can't open file");
         let mut xml = String::new();
         file.read_to_string(&mut xml)
             .expect("Can't read file with XML");
         xml
+    }
+
+    /// Evaluate XPath on current XML.
+    /// `xpath` XPath expression
+    pub fn xpath(self, xpath: &str) -> String {
+        let package = parser::parse(&*self.xml()).expect("Failed to parse XML");
+        let document = package.as_document();
+        evaluate_xpath(&document, xpath)
+            .expect("XPath evaluation failed")
+            .string()
     }
 }
 
@@ -96,6 +103,8 @@ mod tests {
 
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
+    use sxd_document::parser;
+    use sxd_xpath::evaluate_xpath;
     use tempdir::TempDir;
 
     use crate::xml::storage::Storage;
@@ -136,9 +145,22 @@ mod tests {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("test.xml");
         let xml = Storage::new(path.to_str()).xml();
+        print!("{}", xml);
         assert_that!(xml.contains("<root>"), is(equal_to(true)));
         assert_that!(xml.contains("<github>"), is(equal_to(true)));
         assert_that!(xml.contains("<users/>"), is(equal_to(true)));
+        Ok(())
+    }
+
+    /// Test case for XPath evaluation.
+    /// \n\n Is expected because XML at the moment does not contain
+    /// any values but rather nodes.
+    #[test]
+    fn evaluates_xpath() -> Result<()> {
+        let temp = TempDir::new("temp")?;
+        let path = temp.path().join("test.xml");
+        let xml = Storage::new(path.to_str()).xpath("/root");
+        assert_that!(xml, is(equal_to(String::from("\n\n"))));
         Ok(())
     }
 }
