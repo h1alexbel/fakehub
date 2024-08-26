@@ -25,7 +25,7 @@ use std::io::{Read, Write};
 use sxd_document::parser;
 use sxd_xpath::evaluate_xpath;
 
-#[derive(Default)]
+#[derive(Default, Debug)]
 #[allow(dead_code)]
 /// Storage.
 pub struct Storage {
@@ -103,8 +103,6 @@ mod tests {
 
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
-    use sxd_document::parser;
-    use sxd_xpath::evaluate_xpath;
     use tempdir::TempDir;
 
     use crate::xml::storage::Storage;
@@ -145,7 +143,6 @@ mod tests {
         let temp = TempDir::new("temp")?;
         let path = temp.path().join("test.xml");
         let xml = Storage::new(path.to_str()).xml();
-        print!("{}", xml);
         assert_that!(xml.contains("<root>"), is(equal_to(true)));
         assert_that!(xml.contains("<github>"), is(equal_to(true)));
         assert_that!(xml.contains("<users/>"), is(equal_to(true)));
