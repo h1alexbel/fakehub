@@ -30,7 +30,8 @@ use crate::db::mem_base::MemBase;
 //  on user's system. I suggest to try the following setup: Docker client with
 //  <a href="https://github.com/liquibase/liquibase/blob/master/liquibase-maven-plugin/pom.xml">liquibase-maven-plugin</a>.
 //  With docker we should be able to install Liquibase, and with plugin we
-//  should be able to parse and update changelog of migrations. 
+//  should be able to parse and update changelog of migrations.
+/// Initialize schema.
 pub fn initialize_schema(base: &MemBase) {
     base.exec(
         "
@@ -70,69 +71,69 @@ mod tests {
     //  from MemBase. Now we duplicating the same logic for reading data from
     //  MemBase. Let's encapsulate this logic into query() so it can wrap
     //  MemBase#prep function. This puzzle should affect all tests that use
-    //  MemBase to read data. 
+    //  MemBase to read data.
     fn initializes_tables() -> Result<()> {
-        let base = MemBase::new();
+        let base = MemBase::default();
         initialize_schema(&base);
         let mut statement = base.prep(String::from(
             "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'github';",
         ));
         let mut rows = statement.query([]).expect("Failed to obtain rows");
         let mut out: Vec<String> = Vec::new();
-        while let Some(row) = rows.next()? {
+        while let Some(row) = rows.next().expect("Failed to get next row") {
             out.push(row.get(0).expect("Failed to read row"));
         }
-        let result = out.get(0).expect("Failed to obtain result");
+        let result = out.first().expect("Failed to obtain result");
         assert_that!(result, is(equal_to("github")));
         Ok(())
     }
 
     #[test]
     fn reads_default_github_url() -> Result<()> {
-        let base = MemBase::new();
+        let base = MemBase::default();
         initialize_schema(&base);
         let mut statement =
             base.prep(String::from("SELECT url FROM github WHERE url = :public"));
         let public = "https://github.com";
         let mut rows = statement.query([public]).expect("Failed to obtain rows");
         let mut out: Vec<String> = Vec::new();
-        while let Some(row) = rows.next()? {
+        while let Some(row) = rows.next().expect("Failed to get next row") {
             out.push(row.get(0).expect("Failed to read row"));
         }
-        let result = out.get(0).expect("Failed to obtain result");
+        let result = out.first().expect("Failed to obtain result");
         assert_that!(result, is(equal_to(public)));
         Ok(())
     }
 
     #[test]
     fn reads_jeff() -> Result<()> {
-        let base = MemBase::new();
+        let base = MemBase::default();
         initialize_schema(&base);
         let mut statement =
             base.prep(String::from("SELECT login FROM user WHERE login = :login"));
         let login = "jeff";
         let mut rows = statement.query([login]).expect("Failed to obtain rows");
         let mut out: Vec<String> = Vec::new();
-        while let Some(row) = rows.next()? {
+        while let Some(row) = rows.next().expect("Failed to get next row") {
             out.push(row.get(0).expect("Failed to read row"));
         }
-        let result = out.get(0).expect("Failed to obtain result");
+        let result = out.first().expect("Failed to obtain result");
         assert_that!(result, is(equal_to(login)));
         Ok(())
     }
 
     #[test]
     fn checks_jeff_github() -> Result<()> {
-        let base = MemBase::new();
+        let base = MemBase::default();
         initialize_schema(&base);
         let mut statement =
             base.prep(String::from("SELECT github FROM user WHERE login = :login"));
         let mut rows = statement.query(["jeff"]).expect("Failed to obtain rows");
         let mut out: Vec<usize> = Vec::new();
-        while let Some(row) = rows.next()? {
+        while let Some(row) = rows.next().expect("Failed to get next row") {
             out.push(row.get(0).expect("Failed to read row"));
         }
-        let result = *out.get(0).expect("Failed to obtain result");
+        let result = *out.first().expect("Failed to obtain result");
         assert_that!(result, is(equal_to(1)));
         Ok(())
     }

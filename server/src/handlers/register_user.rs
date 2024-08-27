@@ -23,6 +23,7 @@ use axum::http::StatusCode;
 use axum::Json;
 
 use crate::objects::user::User;
+use crate::xml::storage::Storage;
 
 /// Register user.
 ///
@@ -36,10 +37,11 @@ use crate::objects::user::User;
 /// use axum::Json;
 /// use server::handlers::register_user::register_user;
 /// use server::objects::user::User;
-/// let registration = register_user(Json(User::new(String::from("jeff"))));
+/// use server::xml::storage::Storage;
+/// let registration = register_user(Json(User::new(String::from("jeff"), Storage::new(None))));
 /// ```
 pub async fn register_user(Json(payload): Json<User>) -> Result<StatusCode, String> {
-    let user = User::new(payload.username.clone());
+    let user = User::new(payload.username.clone(), Storage::new(None));
     match user.save().await {
         Ok(_) => Ok(StatusCode::CREATED),
         Err(e) => Err(format!("Can't register {}: {}", payload.username, e)),

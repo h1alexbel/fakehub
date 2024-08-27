@@ -26,14 +26,16 @@ pub struct MemBase {
     connection: Connection,
 }
 
-impl MemBase {
+impl Default for MemBase {
     /// New base.
-    pub fn new() -> MemBase {
+    fn default() -> MemBase {
         MemBase {
             connection: Connection::open_in_memory().expect("Can not open a connection"),
         }
     }
+}
 
+impl MemBase {
     /// Base from connection.
     pub fn conn(connection: Connection) -> MemBase {
         MemBase { connection }
@@ -45,7 +47,7 @@ impl MemBase {
     pub fn exec<P: Params>(&self, sql: &str, params: P) -> usize {
         self.connection
             .execute(sql, params)
-            .expect(&format!("Failed to to execute {}", sql))
+            .unwrap_or_else(|_| panic!("Failed to to execute {}", sql))
     }
 
     /// Prepare statement.
@@ -53,13 +55,12 @@ impl MemBase {
     pub fn prep(&self, sql: String) -> Statement {
         self.connection
             .prepare(&sql)
-            .expect(&format!("Failed to prepare {}", sql))
+            .unwrap_or_else(|_| panic!("Failed to to execute {}", sql))
     }
 }
 
 #[cfg(test)]
 mod tests {
-
     use crate::db::mem_base::MemBase;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
@@ -67,14 +68,14 @@ mod tests {
 
     #[test]
     fn connects_and_prepares() -> Result<()> {
-        let base = MemBase::new();
+        let base = MemBase::default();
         let mut statement = base.prep(String::from("SELECT 1 + 1"));
         let mut rows = statement.query([]).expect("Failed to obtain rows");
         let mut out: Vec<usize> = Vec::new();
-        while let Some(row) = rows.next()? {
+        while let Some(row) = rows.next().expect("Failed to get next row") {
             out.push(row.get(0).expect("Failed to read row"));
         }
-        let result = out.get(0).expect("Failed to obtain result");
+        let result = out.first().expect("Failed to obtain result");
         assert_that!(*result, is(equal_to(2)));
         Ok(())
     }

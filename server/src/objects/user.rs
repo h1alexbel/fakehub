@@ -19,6 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use crate::xml::storage::Storage;
 use anyhow::Result;
 use log::{debug, info};
 use serde::{Deserialize, Serialize};
@@ -29,6 +30,7 @@ use serde_xml_rs::to_string;
 pub struct User {
     /// Username.
     pub(crate) username: String,
+    storage: Storage,
 }
 
 impl User {
@@ -41,11 +43,13 @@ impl User {
     /// # Examples
     ///
     /// ```
+    /// use serde::de::Unexpected::Option;
     /// use server::objects::user::User;
-    /// let jeff = User::new(String::from("jeff123"));
+    /// use server::xml::storage::Storage;
+    /// let jeff = User::new(String::from("jeff123"), Storage::new(Some("storage.xml")));
     /// ```
-    pub fn new(username: String) -> User {
-        User { username }
+    pub fn new(username: String, storage: Storage) -> User {
+        User { username, storage }
     }
 }
 
@@ -61,6 +65,16 @@ impl User {
         info!("saving user @{}", self.username);
         let xml = to_string(&self).expect("Can't transform user to XML");
         debug!("XMLed user: {}", xml);
+        // if self
+        //     .storage
+        //     .xpath(&format!(
+        //         "//github/users/user[username='{}']",
+        //         self.username
+        //     ))
+        //     .contains(&self.username)
+        // {
+        //
+        // };
         Ok(())
     }
 }
@@ -68,13 +82,14 @@ impl User {
 #[cfg(test)]
 mod tests {
     use crate::objects::user::User;
+    use crate::xml::storage::Storage;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
     fn returns_username() -> Result<()> {
         let expected = "jeff";
-        let jeff = User::new(String::from(expected));
+        let jeff = User::new(String::from(expected), Storage::new(None));
         assert_that!(jeff.username, is(equal_to(String::from(expected))));
         Ok(())
     }

@@ -20,12 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use log::info;
+use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::{Read, Write};
-use sxd_document::parser;
-use sxd_xpath::evaluate_xpath;
 
-#[derive(Default, Debug)]
+#[derive(Default, Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 /// Storage.
 pub struct Storage {
@@ -84,16 +83,6 @@ impl Storage {
             .expect("Can't read file with XML");
         xml
     }
-
-    /// Evaluate XPath on current XML.
-    /// `xpath` XPath expression
-    pub fn xpath(self, xpath: &str) -> String {
-        let package = parser::parse(&*self.xml()).expect("Failed to parse XML");
-        let document = package.as_document();
-        evaluate_xpath(&document, xpath)
-            .expect("XPath evaluation failed")
-            .string()
-    }
 }
 
 #[allow(clippy::question_mark_used)]
@@ -146,18 +135,6 @@ mod tests {
         assert_that!(xml.contains("<root>"), is(equal_to(true)));
         assert_that!(xml.contains("<github>"), is(equal_to(true)));
         assert_that!(xml.contains("<users/>"), is(equal_to(true)));
-        Ok(())
-    }
-
-    /// Test case for XPath evaluation.
-    /// \n\n Is expected because XML at the moment does not contain
-    /// any values but rather nodes.
-    #[test]
-    fn evaluates_xpath() -> Result<()> {
-        let temp = TempDir::new("temp")?;
-        let path = temp.path().join("test.xml");
-        let xml = Storage::new(path.to_str()).xpath("/root");
-        assert_that!(xml, is(equal_to(String::from("\n\n"))));
         Ok(())
     }
 }

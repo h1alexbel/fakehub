@@ -33,6 +33,8 @@ use crate::handlers::home;
 use crate::handlers::register_user::register_user;
 use crate::xml::storage::Storage;
 
+/// Database.
+pub mod db;
 /// Handlers.
 pub mod handlers;
 /// GitHub domain objects.
@@ -41,6 +43,7 @@ pub mod objects;
 pub mod report;
 /// XML storage.
 pub mod xml;
+
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
