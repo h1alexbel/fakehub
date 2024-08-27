@@ -21,7 +21,16 @@
 // SOFTWARE.
 use crate::db::mem_base::MemBase;
 
-// @todo #121:60min Think about database migrations...
+// @todo #121:60min Use migration and versioning tool for initializing database
+//  schema. With manual schema initializing, we don't track the changes and can't
+//  easily rollback by removing some files. Would be much more convenient to
+//  operate with .xml/.yml/.sql files that will be read and applied by some
+//  versioning tool. However, keep in mind that tool should be integrated on
+//  the source code level, and don't depend on previously installed software
+//  on user's system. I suggest to try the following setup: Docker client with
+//  <a href="https://github.com/liquibase/liquibase/blob/master/liquibase-maven-plugin/pom.xml">liquibase-maven-plugin</a>.
+//  With docker we should be able to install Liquibase, and with plugin we
+//  should be able to parse and update changelog of migrations. 
 pub fn initialize_schema(base: &MemBase) {
     base.exec(
         "
