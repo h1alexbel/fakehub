@@ -106,9 +106,20 @@ mod tests {
         assert_that!(result, is(equal_to(login)));
         Ok(())
     }
-    
+
     #[test]
     fn checks_jeff_github() -> Result<()> {
+        let base = MemBase::new();
+        initialize_schema(&base);
+        let mut statement =
+            base.prep(String::from("SELECT github FROM user WHERE login = :login"));
+        let mut rows = statement.query(["jeff"]).expect("Failed to obtain rows");
+        let mut out: Vec<usize> = Vec::new();
+        while let Some(row) = rows.next()? {
+            out.push(row.get(0).expect("Failed to read row"));
+        }
+        let result = *out.get(0).expect("Failed to obtain result");
+        assert_that!(result, is(equal_to(1)));
         Ok(())
     }
 }
