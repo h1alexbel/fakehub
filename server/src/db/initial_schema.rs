@@ -57,6 +57,11 @@ mod tests {
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
+    // @todo #121:35min Remove code duplication in the logic of reading data
+    //  from MemBase. Now we duplicating the same logic for reading data from
+    //  MemBase. Let's encapsulate this logic into query() so it can wrap
+    //  MemBase#prep function. This puzzle should affect all tests that use
+    //  MemBase to read data. 
     fn initializes_tables() -> Result<()> {
         let base = MemBase::new();
         initialize_schema(&base);
