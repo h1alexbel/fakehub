@@ -31,6 +31,7 @@ use tokio::net::TcpListener;
 
 use crate::handlers::home;
 use crate::handlers::register_user::register_user;
+use crate::objects::fakehub::Fakehub;
 
 /// Handlers.
 pub mod handlers;
@@ -79,10 +80,13 @@ pub struct ServerConfig {
 // @todo #79:30min Log 404 NOT FOUND requests too.
 //  Let's create a handler that would log requests failed with 404. Let's use
 //  info!() for this one.
+// @todo #124:35min Pass fakehub to all required endpoints to be used.
+//  We should pass fakehub instance after Fakehub::default() into all places
+//  where we need to operate with data somehow.
 impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
-        // Storage::new(Some("fakehub.xml"));
+        Fakehub::default();
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
