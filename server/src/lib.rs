@@ -31,16 +31,13 @@ use tokio::net::TcpListener;
 
 use crate::handlers::home;
 use crate::handlers::register_user::register_user;
-use crate::xml::storage::Storage;
 
 /// Handlers.
 pub mod handlers;
-/// GitHub domain objects.
+/// Fakehub objects.
 pub mod objects;
 /// Reports.
 pub mod report;
-/// XML storage.
-pub mod xml;
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
@@ -85,7 +82,7 @@ pub struct ServerConfig {
 impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
-        Storage::new(Some("fakehub.xml"));
+        // Storage::new(Some("fakehub.xml"));
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {

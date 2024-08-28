@@ -19,5 +19,50 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Storage.
-pub mod storage;
+use crate::objects::github::GitHub;
+use uuid::Uuid;
+
+/// Fakehub.
+pub struct Fakehub {
+    hubs: Vec<GitHub>,
+}
+
+impl Default for Fakehub {
+    fn default() -> Fakehub {
+        Fakehub {
+            hubs: vec![GitHub {
+                id: Uuid::new_v4(),
+                url: String::from("https://github.com"),
+            }],
+        }
+    }
+}
+
+impl Fakehub {
+    /// New fakehub
+    pub fn new(hubs: Vec<GitHub>) -> Fakehub {
+        Fakehub { hubs }
+    }
+
+    /// Add new GitHub
+    pub fn add(mut self, github: GitHub) {
+        self.hubs.push(github);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use crate::objects::fakehub::Fakehub;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+
+    #[test]
+    fn creates_default_fakehub() -> Result<()> {
+        let fakehub = Fakehub::default();
+        let default = fakehub.hubs.first().expect("Can not obtain GitHub");
+        assert_that!(default.id.is_nil(), is(equal_to(false)));
+        assert_that!(&default.url, is(equal_to("https://github.com")));
+        Ok(())
+    }
+}

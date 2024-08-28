@@ -19,7 +19,10 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// GitHub user.
-pub mod user;
-pub mod fakehub;
-pub mod github;
+use uuid::Uuid;
+
+/// GitHub.
+pub struct GitHub {
+    pub(crate) id: Uuid,
+    pub(crate) url: String,
+}
