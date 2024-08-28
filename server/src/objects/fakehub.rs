@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use crate::objects::github::GitHub;
-use crate::objects::inverse::inversed;
+use crate::objects::inversed::inversed;
 use std::collections::HashMap;
 use uuid::Uuid;
 
@@ -54,7 +54,7 @@ impl Fakehub {
         self.hubs
             .iter()
             .map(|(k, v)| GitHub {
-                id: k.clone(),
+                id: *k,
                 url: v.clone(),
             })
             .collect()
@@ -93,13 +93,13 @@ mod tests {
         assert_that!(*id, is(equal_to(expected)));
         Ok(())
     }
-    
+
     #[test]
     fn returns_all_github_instances_after_add() -> Result<()> {
         let mut fakehub = Fakehub::default();
         fakehub.add(GitHub {
             id: Uuid::new_v4(),
-            url: String::from("https://test.github.com")
+            url: String::from("https://test.github.com"),
         });
         let instances = fakehub.githubs();
         assert_that!(instances.len(), is(equal_to(2)));

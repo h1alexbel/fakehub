@@ -34,7 +34,7 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::objects::inverse::inversed;
+    use crate::objects::inversed::inversed;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
     use std::collections::HashMap;
