@@ -20,49 +20,89 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use crate::objects::github::GitHub;
+use crate::objects::inverse::inversed;
+use std::collections::HashMap;
 use uuid::Uuid;
 
 /// Fakehub.
+#[derive(Clone)]
 pub struct Fakehub {
-    hubs: Vec<GitHub>,
+    hubs: HashMap<Uuid, String>,
+    inverse: HashMap<String, Uuid>,
 }
 
 impl Default for Fakehub {
     fn default() -> Fakehub {
+        let mut hubs: HashMap<Uuid, String> = HashMap::new();
+        hubs.insert(Uuid::new_v4(), String::from("https://github.com"));
         Fakehub {
-            hubs: vec![GitHub {
-                id: Uuid::new_v4(),
-                url: String::from("https://github.com"),
-            }],
+            hubs: hubs.clone(),
+            inverse: inversed(hubs),
         }
     }
 }
 
 impl Fakehub {
-    /// New fakehub
-    pub fn new(hubs: Vec<GitHub>) -> Fakehub {
-        Fakehub { hubs }
+    /// Add new GitHub
+    pub fn add(&mut self, github: GitHub) {
+        self.hubs.insert(github.id, github.url.clone());
+        self.inverse.insert(github.url, github.id);
     }
 
-    /// Add new GitHub
-    pub fn add(mut self, github: GitHub) {
-        self.hubs.push(github);
+    /// All GitHub instances.
+    pub fn githubs(self) -> Vec<GitHub> {
+        self.hubs
+            .iter()
+            .map(|(k, v)| GitHub {
+                id: k.clone(),
+                url: v.clone(),
+            })
+            .collect()
     }
 }
 
 #[cfg(test)]
 mod tests {
-
     use crate::objects::fakehub::Fakehub;
+    use crate::objects::github::GitHub;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
+    use uuid::Uuid;
 
     #[test]
     fn creates_default_fakehub() -> Result<()> {
         let fakehub = Fakehub::default();
-        let default = fakehub.hubs.first().expect("Can not obtain GitHub");
-        assert_that!(default.id.is_nil(), is(equal_to(false)));
-        assert_that!(&default.url, is(equal_to("https://github.com")));
+        let default = fakehub
+            .inverse
+            .get("https://github.com")
+            .expect("Failed to get GitHub");
+        assert_that!(default.is_nil(), is(equal_to(false)));
+        Ok(())
+    }
+
+    #[test]
+    fn adds_github() -> Result<()> {
+        let mut fakehub = Fakehub::default();
+        let url = String::from("https://jeff.github.com");
+        let expected = Uuid::new_v4();
+        fakehub.add(GitHub {
+            id: expected,
+            url: url.clone(),
+        });
+        let id = fakehub.inverse.get(&url).expect("Failed to get GitHub");
+        assert_that!(*id, is(equal_to(expected)));
+        Ok(())
+    }
+    
+    #[test]
+    fn returns_all_github_instances_after_add() -> Result<()> {
+        let mut fakehub = Fakehub::default();
+        fakehub.add(GitHub {
+            id: Uuid::new_v4(),
+            url: String::from("https://test.github.com")
+        });
+        let instances = fakehub.githubs();
+        assert_that!(instances.len(), is(equal_to(2)));
         Ok(())
     }
 }

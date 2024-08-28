@@ -19,8 +19,36 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// GitHub user.
-pub mod user;
-pub mod fakehub;
-pub mod github;
-mod inverse;
+use std::collections::HashMap;
+use std::hash::Hash;
+
+/// Inverse HashMap.
+/// `map` Input HashMap
+pub fn inversed<X, Y>(map: HashMap<X, Y>) -> HashMap<Y, X>
+where
+    X: Clone + Eq + Hash,
+    Y: Clone + Eq + Hash,
+{
+    map.into_iter().map(|(k, v)| (v, k)).collect()
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::objects::inverse::inversed;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use std::collections::HashMap;
+    use uuid::Uuid;
+
+    #[test]
+    fn inverses_map() -> Result<()> {
+        let mut map: HashMap<Uuid, String> = HashMap::new();
+        let value = String::from("test");
+        let key = Uuid::new_v4();
+        map.insert(key, value.clone());
+        let inversed = inversed(map);
+        let reverse = inversed.get(&value).expect("Failed to get value");
+        assert_that!(*reverse, is(equal_to(key)));
+        Ok(())
+    }
+}
