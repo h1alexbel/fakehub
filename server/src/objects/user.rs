@@ -25,7 +25,7 @@ use serde::{Deserialize, Serialize};
 use serde_xml_rs::to_string;
 
 /// GitHub user.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct User {
     /// Username.
     pub(crate) username: String,

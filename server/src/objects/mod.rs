@@ -23,7 +23,5 @@
 pub mod fakehub;
 /// GitHub.
 pub mod github;
-/// Inverse.
-pub mod inversed;
 /// GitHub user.
 pub mod user;

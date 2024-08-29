@@ -19,10 +19,51 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use crate::objects::user::User;
 use uuid::Uuid;
 
 /// GitHub.
+#[derive(Clone)]
 pub struct GitHub {
     pub(crate) id: Uuid,
     pub(crate) url: String,
+    pub(crate) users: Vec<User>,
+}
+
+impl GitHub {
+    /// Add user to GitHub.
+    /// `user` User
+    pub fn add_user(&mut self, user: User) {
+        self.users.push(user);
+    }
+
+    /// Users in GitHub.
+    pub fn users(self) -> Vec<User> {
+        self.users
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use crate::objects::github::GitHub;
+    use crate::objects::user::User;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use uuid::Uuid;
+
+    #[test]
+    fn adds_user() -> Result<()> {
+        let mut github = GitHub {
+            id: Uuid::new_v4(),
+            url: String::from("https://test.github.com"),
+            users: vec![],
+        };
+        let expected = String::from("jeff");
+        github.add_user(User::new(expected.clone()));
+        let users = github.users();
+        let user = users.first().expect("Failed to get user");
+        assert_that!(&user.username, is(equal_to(&expected)));
+        Ok(())
+    }
 }
