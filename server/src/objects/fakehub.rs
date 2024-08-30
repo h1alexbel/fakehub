@@ -24,7 +24,7 @@ use crate::objects::user::User;
 use std::collections::HashMap;
 use uuid::Uuid;
 
-/// Fakehub.
+/// Fakehub. Fake GitHub platform.
 /// ```
 /// use hamcrest::assert_that;
 /// use hamcrest::{equal_to, is, HamcrestMatcher};

@@ -23,7 +23,6 @@ use crate::objects::github::GitHub;
 use anyhow::Result;
 use log::info;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
 /// GitHub user.
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -46,9 +45,7 @@ impl User {
     /// let jeff = User::new(String::from("jeff123"));
     /// ```
     pub fn new(username: String) -> User {
-        User {
-            username
-        }
+        User { username }
     }
 }
 
@@ -56,14 +53,14 @@ impl User {
     /// Register user in GitHub.
     /// `github` GitHub
     /// /// Register user in GitHub.
-    /// ```
+    ///```
     /// use server::objects::fakehub::Fakehub;
     /// use server::objects::user::User;
     /// let fakehub = Fakehub::default();
-    /// let mut github = fakehub.browser.get("https://github.com").expect("Failed to get GitHub");
-    /// User::new(String::from("h1alexbel")).register_in(github.clone()).expect("Failed to register user");
-    /// ```
-    pub fn register_in(self, mut github: GitHub) -> Result<(), String> {
+    /// let mut github = fakehub.browser.get("https://github.com").expect("Failed to get GitHub").clone();
+    /// User::new(String::from("foo")).register_in(&mut github).expect("Failed to register user");
+    ///```
+    pub fn register_in(&self, github: &mut GitHub) -> Result<(), String> {
         match github.user(&self.username) {
             Some(u) => Err(format!("User with login @{} already exists!", u.username)),
             None => {
@@ -77,6 +74,7 @@ impl User {
 
 #[cfg(test)]
 mod tests {
+    use crate::objects::fakehub::Fakehub;
     use crate::objects::user::User;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
@@ -87,5 +85,36 @@ mod tests {
         let jeff = User::new(String::from(expected));
         assert_that!(jeff.username, is(equal_to(String::from(expected))));
         Ok(())
+    }
+
+    #[test]
+    fn registers_in_github() -> Result<()> {
+        let fakehub = Fakehub::default();
+        let mut github = fakehub
+            .browser
+            .get("https://github.com")
+            .expect("Failed to get GitHub")
+            .clone();
+        let foo = String::from("foo");
+        User::new(foo.clone())
+            .register_in(&mut github)
+            .expect("Failed to register user");
+        let pulled = github.users.get(&foo).expect("Failed to get user");
+        assert_that!(pulled.clone().username, is(equal_to(foo)));
+        Ok(())
+    }
+
+    #[should_panic(expected = "Failed to register user")]
+    #[test]
+    fn panics_when_already_registered() {
+        let fakehub = Fakehub::default();
+        let mut github = fakehub
+            .browser
+            .get("https://github.com")
+            .expect("Failed to get GitHub")
+            .clone();
+        User::new(String::from("jeff"))
+            .register_in(&mut github)
+            .expect("Failed to register user");
     }
 }
