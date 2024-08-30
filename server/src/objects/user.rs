@@ -47,8 +47,7 @@ impl User {
     /// ```
     pub fn new(username: String) -> User {
         User {
-            username,
-            repos: HashMap::new(),
+            username
         }
     }
 }
