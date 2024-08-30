@@ -84,4 +84,18 @@ mod tests {
         assert_that!(code, is(equal_to(201)));
         Ok(())
     }
+
+    #[should_panic(expected = "Failed to register user")]
+    #[tokio::test]
+    async fn panics_when_user_exists() {
+        let server = ServerConfig {
+            host: "0.0.0.0".into(),
+            port: 1234,
+            fakehub: Fakehub::default(),
+        };
+        let state = State(server);
+        register_user(state, Json::from(User::new(String::from("jeff"))))
+            .await
+            .expect("Failed to register user");
+    }
 }
