@@ -75,6 +75,8 @@ pub struct ServerConfig {
     pub host: String,
     /// Server port.
     pub port: usize,
+    /// Fakehub.
+    pub fakehub: Fakehub,
 }
 
 // @todo #79:30min Log 404 NOT FOUND requests too.
@@ -86,7 +88,6 @@ pub struct ServerConfig {
 impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
-        Fakehub::default();
         let addr: String = format!("0.0.0.0:{}", self.port);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
@@ -98,6 +99,7 @@ impl Server {
                     .with_state(ServerConfig {
                         host: "0.0.0.0".into(),
                         port: self.port,
+                        fakehub: Fakehub::default(),
                     }),
             )
             .await

@@ -55,6 +55,7 @@ use uuid::Uuid;
 /// assert_that!(created.clone().url, is(equal_to(custom)));
 /// assert_that!(instances.len(), is(equal_to(2)));
 /// ```
+#[derive(Clone)]
 pub struct Fakehub {
     /// GitHubs.
     pub hubs: HashMap<Uuid, GitHub>,

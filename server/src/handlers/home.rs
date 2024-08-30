@@ -199,6 +199,7 @@ mod tests {
     use tokio::fs;
 
     use crate::handlers::home::home;
+    use crate::objects::fakehub::Fakehub;
     use crate::ServerConfig;
 
     const BYTES_READ_LIMIT: usize = 10000;
@@ -209,7 +210,8 @@ mod tests {
             IntoResponse::into_response(
                 home(State(ServerConfig {
                     host: String::from("test"),
-                    port: 1234
+                    port: 1234,
+                    fakehub: Fakehub::default()
                 }))
                 .await
             )
@@ -228,6 +230,7 @@ mod tests {
                     home(State(ServerConfig {
                         host: String::from("test"),
                         port: 1234,
+                        fakehub: Fakehub::default(),
                     }))
                     .await,
                 )

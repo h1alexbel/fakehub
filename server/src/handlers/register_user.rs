@@ -19,29 +19,69 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use crate::objects::user::User;
+use crate::ServerConfig;
+use axum::extract::State;
 use axum::http::StatusCode;
 use axum::Json;
-
-use crate::objects::user::User;
+use log::info;
 
 /// Register user.
 ///
 /// # Fields
 ///
 /// * `payload`: JSON payload
-///
-/// # Examples
-///
-/// ```
-/// use axum::Json;
-/// use server::handlers::register_user::register_user;
-/// use server::objects::user::User;
-/// let registration = register_user(Json(User::new(String::from("jeff"))));
-/// ```
-pub async fn register_user(Json(payload): Json<User>)  {
-    // let user = User::new(payload.username.clone());
-    // match user.save().await {
-    //     Ok(_) => Ok(StatusCode::CREATED),
-    //     Err(e) => Err(format!("Can't register {}: {}", payload.username, e)),
-    // }
+// @todo #128:35min Parse GitHub target URL from headers.
+//  We should register user in target GitHub based on special header we obtain
+//  from request. Let's call it X-GITHUB-URL. If header is empty then we use
+//  the default one: https://github.com. Otherwise we pass url to
+//  fakehub.browser.get().
+pub async fn register_user(
+    State(config): State<ServerConfig>,
+    Json(payload): Json<User>,
+) -> Result<StatusCode, String> {
+    let newcomer = User::new(payload.username.clone());
+    let fakehub = config.fakehub;
+    let url = "https://github.com";
+    match fakehub.browser.get(url) {
+        Some(github) => match newcomer.register_in(&mut github.clone()) {
+            Ok(_) => {
+                info!("Registered @{} in {}", newcomer.username, url);
+                Ok(StatusCode::CREATED)
+            }
+            Err(e) => Err(format!("Can't register user @{}: {}", newcomer.username, e)),
+        },
+        None => Err(format!(
+            "Failed to find GitHub with URL {}. Is it a typo?",
+            url
+        )),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::handlers::register_user::register_user;
+    use crate::objects::fakehub::Fakehub;
+    use crate::objects::user::User;
+    use crate::ServerConfig;
+    use anyhow::Result;
+    use axum::extract::State;
+    use axum::Json;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+
+    #[tokio::test]
+    async fn registers_user() -> Result<()> {
+        let server = ServerConfig {
+            host: "0.0.0.0".into(),
+            port: 1234,
+            fakehub: Fakehub::default(),
+        };
+        let state = State(server);
+        let status = register_user(state, Json::from(User::new(String::from("new1234"))))
+            .await
+            .expect("Failed to register user");
+        let code = status.as_u16();
+        assert_that!(code, is(equal_to(201)));
+        Ok(())
+    }
 }
