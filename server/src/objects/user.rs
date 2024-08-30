@@ -19,10 +19,11 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use crate::objects::github::GitHub;
 use anyhow::Result;
-use log::{debug, info};
+use log::info;
 use serde::{Deserialize, Serialize};
-use serde_xml_rs::to_string;
+use std::collections::HashMap;
 
 /// GitHub user.
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -45,23 +46,33 @@ impl User {
     /// let jeff = User::new(String::from("jeff123"));
     /// ```
     pub fn new(username: String) -> User {
-        User { username }
+        User {
+            username,
+            repos: HashMap::new(),
+        }
     }
 }
 
-// @todo #17:40min Apply XMLed user to the <users/> node in storage.
-//  We should apply XMLed user to the <users> XML node in storage. First we
-//  need to check that user with provided name does not exist, and only then
-//  apply it to the storage. Keep in mind that application function in the
-//  storage should be thread-safe (as well as #xml function). Don't forget to
-//  create unit tests that prove that.
 impl User {
-    /// Save user.
-    pub async fn save(self) -> Result<()> {
-        info!("saving user @{}", self.username);
-        let xml = to_string(&self).expect("Can't transform user to XML");
-        debug!("XMLed user: {}", xml);
-        Ok(())
+    /// Register user in GitHub.
+    /// `github` GitHub
+    /// /// Register user in GitHub.
+    /// ```
+    /// use server::objects::fakehub::Fakehub;
+    /// use server::objects::user::User;
+    /// let fakehub = Fakehub::default();
+    /// let mut github = fakehub.browser.get("https://github.com").expect("Failed to get GitHub");
+    /// User::new(String::from("h1alexbel")).register_in(github.clone()).expect("Failed to register user");
+    /// ```
+    pub fn register_in(self, mut github: GitHub) -> Result<(), String> {
+        match github.user(&self.username) {
+            Some(u) => Err(format!("User with login @{} already exists!", u.username)),
+            None => {
+                github.add_user(self.clone());
+                info!("New user is here. Hello @{}", self.username);
+                Ok(())
+            }
+        }
     }
 }
 

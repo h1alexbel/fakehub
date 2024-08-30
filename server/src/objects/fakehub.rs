@@ -31,8 +31,8 @@ use uuid::Uuid;
 /// use server::objects::fakehub::Fakehub;
 ///
 /// let fakehub = Fakehub::default();
-/// let github = fakehub.urled.get("https://github.com").expect("Failed to get GitHub");
-/// let jeff = github.user("jeff");
+/// let github = fakehub.browser.get("https://github.com").expect("Failed to get GitHub");
+/// let jeff = github.user("jeff").expect("Failed to get user");
 /// assert_that!(&jeff.username, is(equal_to("jeff")));
 /// ```
 /// To add new GitHub:
@@ -59,7 +59,7 @@ pub struct Fakehub {
     /// GitHubs.
     pub hubs: HashMap<Uuid, GitHub>,
     /// Urled GitHubs.
-    pub urled: HashMap<String, GitHub>,
+    pub browser: HashMap<String, GitHub>,
 }
 
 impl Default for Fakehub {
@@ -79,7 +79,7 @@ impl Default for Fakehub {
         );
         Fakehub {
             hubs: hubs.clone(),
-            urled: hubs.into_values().map(|v| (v.clone().url, v)).collect(),
+            browser: hubs.into_values().map(|v| (v.clone().url, v)).collect(),
         }
     }
 }
@@ -88,7 +88,7 @@ impl Fakehub {
     /// Add new GitHub
     pub fn add(&mut self, github: GitHub) {
         self.hubs.insert(github.id, github.clone());
-        self.urled.insert(github.clone().url, github);
+        self.browser.insert(github.clone().url, github);
     }
 
     /// All GitHub instances.
@@ -117,7 +117,7 @@ mod tests {
     fn creates_default_fakehub() -> Result<()> {
         let fakehub = Fakehub::default();
         let default = fakehub
-            .urled
+            .browser
             .get("https://github.com")
             .expect("Failed to get GitHub");
         assert_that!(default.id.is_nil(), is(equal_to(false)));
@@ -134,7 +134,7 @@ mod tests {
             url: url.clone(),
             users: HashMap::new(),
         });
-        let github = fakehub.urled.get(&url).expect("Failed to get GitHub");
+        let github = fakehub.browser.get(&url).expect("Failed to get GitHub");
         assert_that!(github.id, is(equal_to(expected)));
         Ok(())
     }
@@ -169,7 +169,7 @@ mod tests {
     fn returns_github_with_users() -> Result<()> {
         let fakehub = Fakehub::default();
         let github = fakehub
-            .urled
+            .browser
             .get("https://github.com")
             .expect("Failed to get GitHub");
         let users = github.clone().users();

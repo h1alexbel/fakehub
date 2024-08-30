@@ -38,10 +38,10 @@ use crate::objects::user::User;
 /// use server::objects::user::User;
 /// let registration = register_user(Json(User::new(String::from("jeff"))));
 /// ```
-pub async fn register_user(Json(payload): Json<User>) -> Result<StatusCode, String> {
-    let user = User::new(payload.username.clone());
-    match user.save().await {
-        Ok(_) => Ok(StatusCode::CREATED),
-        Err(e) => Err(format!("Can't register {}: {}", payload.username, e)),
-    }
+pub async fn register_user(Json(payload): Json<User>)  {
+    // let user = User::new(payload.username.clone());
+    // match user.save().await {
+    //     Ok(_) => Ok(StatusCode::CREATED),
+    //     Err(e) => Err(format!("Can't register {}: {}", payload.username, e)),
+    // }
 }

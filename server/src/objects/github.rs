@@ -42,8 +42,8 @@ impl GitHub {
     }
 
     /// User.
-    pub fn user(&self, login: &str) -> &User {
-        self.users.get(login).expect("Failed to get user")
+    pub fn user(&self, login: &str) -> Option<&User> {
+        self.users.get(login)
     }
 
     /// Users in GitHub.
@@ -85,7 +85,7 @@ mod tests {
         };
         let expected = "foo";
         github.add_user(User::new(String::from(expected)));
-        let foo = github.user(expected);
+        let foo = github.user(expected).expect("Failed to get user");
         assert_that!(&foo.username, is(equal_to(expected)));
         Ok(())
     }
