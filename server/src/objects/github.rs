@@ -20,36 +20,45 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use crate::objects::user::User;
+use std::collections::HashMap;
 use uuid::Uuid;
 
 /// GitHub.
 #[derive(Clone)]
 pub struct GitHub {
-    pub(crate) id: Uuid,
-    pub(crate) url: String,
-    pub(crate) users: Vec<User>,
+    /// GitHub ID.
+    pub id: Uuid,
+    /// GitHub URL.
+    pub url: String,
+    /// Users inside.
+    pub users: HashMap<String, User>,
 }
 
 impl GitHub {
     /// Add user to GitHub.
     /// `user` User
     pub fn add_user(&mut self, user: User) {
-        self.users.push(user);
+        self.users.insert(user.clone().username, user);
+    }
+
+    /// User.
+    pub fn user(&self, login: &str) -> &User {
+        self.users.get(login).expect("Failed to get user")
     }
 
     /// Users in GitHub.
     pub fn users(self) -> Vec<User> {
-        self.users
+        self.users.into_values().collect()
     }
 }
 
 #[cfg(test)]
 mod tests {
-
     use crate::objects::github::GitHub;
     use crate::objects::user::User;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
+    use std::collections::HashMap;
     use uuid::Uuid;
 
     #[test]
@@ -57,13 +66,27 @@ mod tests {
         let mut github = GitHub {
             id: Uuid::new_v4(),
             url: String::from("https://test.github.com"),
-            users: vec![],
+            users: HashMap::new(),
         };
         let expected = String::from("jeff");
         github.add_user(User::new(expected.clone()));
         let users = github.users();
         let user = users.first().expect("Failed to get user");
         assert_that!(&user.username, is(equal_to(&expected)));
+        Ok(())
+    }
+
+    #[test]
+    fn returns_user_by_login() -> Result<()> {
+        let mut github = GitHub {
+            id: Uuid::new_v4(),
+            url: String::from("https://testing.github.com"),
+            users: HashMap::new(),
+        };
+        let expected = "foo";
+        github.add_user(User::new(String::from(expected)));
+        let foo = github.user(expected);
+        assert_that!(&foo.username, is(equal_to(expected)));
         Ok(())
     }
 }

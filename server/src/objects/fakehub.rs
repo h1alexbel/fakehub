@@ -25,21 +25,56 @@ use std::collections::HashMap;
 use uuid::Uuid;
 
 /// Fakehub.
+/// ```
+/// use hamcrest::assert_that;
+/// use hamcrest::{equal_to, is, HamcrestMatcher};
+/// use server::objects::fakehub::Fakehub;
+///
+/// let fakehub = Fakehub::default();
+/// let github = fakehub.urled.get("https://github.com").expect("Failed to get GitHub");
+/// let jeff = github.user("jeff");
+/// assert_that!(&jeff.username, is(equal_to("jeff")));
+/// ```
+/// To add new GitHub:
+/// ```
+/// use hamcrest::assert_that;
+/// use hamcrest::{equal_to, is, HamcrestMatcher};
+/// use std::collections::HashMap;
+/// use uuid::Uuid;
+/// use server::objects::fakehub::Fakehub;
+/// use server::objects::github::GitHub;
+///
+///
+/// let mut fakehub = Fakehub::default();
+/// let custom = String::from("https://jeff.github.com");
+/// let expected = Uuid::new_v4();
+/// fakehub.add(GitHub {id: expected, url: custom.clone(), users: HashMap::new(),});
+/// let instances = fakehub.githubs();
+/// let created = instances.get(1).expect("Failed to get GitHub");
+/// assert_that!(created.id, is(equal_to(expected)));
+/// assert_that!(created.clone().url, is(equal_to(custom)));
+/// assert_that!(instances.len(), is(equal_to(2)));
+/// ```
 pub struct Fakehub {
-    hubs: HashMap<Uuid, GitHub>,
-    urled: HashMap<String, GitHub>,
+    /// GitHubs.
+    pub hubs: HashMap<Uuid, GitHub>,
+    /// Urled GitHubs.
+    pub urled: HashMap<String, GitHub>,
 }
 
 impl Default for Fakehub {
     fn default() -> Fakehub {
         let mut hubs: HashMap<Uuid, GitHub> = HashMap::new();
         let id = Uuid::new_v4();
+        let mut users: HashMap<String, User> = HashMap::new();
+        let jeff = String::from("jeff");
+        users.insert(jeff.clone(), User::new(jeff));
         hubs.insert(
             id,
             GitHub {
                 id,
                 url: String::from("https://github.com"),
-                users: vec![User::new(String::from("jeff"))],
+                users,
             },
         );
         Fakehub {
@@ -75,6 +110,7 @@ mod tests {
     use crate::objects::github::GitHub;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
+    use std::collections::HashMap;
     use uuid::Uuid;
 
     #[test]
@@ -96,7 +132,7 @@ mod tests {
         fakehub.add(GitHub {
             id: expected,
             url: url.clone(),
-            users: vec![],
+            users: HashMap::new(),
         });
         let github = fakehub.urled.get(&url).expect("Failed to get GitHub");
         assert_that!(github.id, is(equal_to(expected)));
@@ -106,10 +142,11 @@ mod tests {
     #[test]
     fn returns_all_github_instances_after_add() -> Result<()> {
         let mut fakehub = Fakehub::default();
+        let custom = String::from("https://test.github.com");
         fakehub.add(GitHub {
             id: Uuid::new_v4(),
-            url: String::from("https://test.github.com"),
-            users: vec![],
+            url: custom.clone(),
+            users: HashMap::new(),
         });
         let instances = fakehub.githubs();
         assert_that!(instances.len(), is(equal_to(2)));
@@ -121,7 +158,7 @@ mod tests {
         let fakehub = Fakehub::default();
         let instances = fakehub.githubs();
         let github = instances.first().expect("Failed to get GitHub");
-        let users = github.clone().users;
+        let users = github.clone().users();
         let user = users.first().expect("Failed to get user");
         assert_that!(&github.url, is(equal_to("https://github.com")));
         assert_that!(&user.username, is(equal_to("jeff")));
@@ -135,7 +172,7 @@ mod tests {
             .urled
             .get("https://github.com")
             .expect("Failed to get GitHub");
-        let users = &github.users;
+        let users = github.clone().users();
         let user = users.first().expect("Failed to get user");
         assert_that!(&user.username, is(equal_to("jeff")));
         Ok(())

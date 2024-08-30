@@ -28,7 +28,7 @@ use serde_xml_rs::to_string;
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct User {
     /// Username.
-    pub(crate) username: String,
+    pub username: String,
 }
 
 impl User {
