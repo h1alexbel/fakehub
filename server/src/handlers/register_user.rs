@@ -80,8 +80,7 @@ mod tests {
         let status = register_user(state, Json::from(User::new(String::from("new1234"))))
             .await
             .expect("Failed to register user");
-        let code = status.as_u16();
-        assert_that!(code, is(equal_to(201)));
+        assert_that!(status.as_u16(), is(equal_to(201)));
         Ok(())
     }
 
