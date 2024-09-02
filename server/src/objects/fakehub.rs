@@ -40,7 +40,7 @@ use uuid::Uuid;
 #[derive(Clone)]
 pub struct Fakehub {
     /// GitHub.
-    pub github: GitHub
+    pub github: GitHub,
 }
 
 impl Default for Fakehub {
@@ -52,8 +52,8 @@ impl Default for Fakehub {
             github: GitHub {
                 id: Uuid::new_v4(),
                 name: String::from("main"),
-                users
-            }
+                users,
+            },
         }
     }
 }
