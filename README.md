@@ -11,13 +11,13 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/h1alexbel/fakehub/blob/master/LICENSE.txt)
 [![Known Vulnerabilities](https://snyk.io/test/github/h1alexbel/fakehub/badge.svg)](https://snyk.io/test/github/h1alexbel/fakehub)
 
-fakehub - A fully functional fake version of a [GitHub API] that supports all
+fakehub - A fully functional fake version of a [GitHub REST API] that supports all
 the features and works locally, with no connection to GitHub at all.
 
 **Motivation**. There are many applications that use GitHub API for different
 purposes. All of them need to create automated tests, which need to mock the
-API server somehow. We offer a fully functioning mock version of a GitHub API,
-which would support all functions, but work locally, with absolutely no
+API server somehow. We offer a fully functioning mock version of a GitHub REST
+API, which would support all functions, but work locally, with absolutely no
 connection to GitHub.
 
 ## How to use?
@@ -48,15 +48,15 @@ Table of contents:
 
 ### Overview
 
-fakehub is a full clone of [GitHub API]. This is very beneficial for testing,
-when you should not use real GitHub API, but a mock version of it instead.
-fakehub stores all the data in memory. When request arrives, we query the
-storage, transform objects into GitHub API-compatible format ([JSON]) and give
-it to you.
+fakehub is a full clone of [GitHub REST API]. This is very beneficial for
+testing, when you should not use real GitHub, but a mock version of it instead.
+fakehub stores all the data in memory. When [request arrives](#request-format),
+we query the storage, transform objects into GitHub API-compatible format
+([JSON]) and give it to you.
 
 ### Request Format
 
-fakehub supports the format specified in [GitHub REST API docs][GitHub API].
+fakehub supports the format specified in [GitHub REST API docs][GitHub REST API].
 For instance, if you want to use [Get a repository][GitHub REST API Get Repo]
 endpoint: you should just replace `api.github.com` to `localhost:$port` (make
 sure that `fakehub` is running on specified port).
@@ -79,7 +79,14 @@ curl -X POST \
   http://localhost:$port/login
 ```
 
-This should generate you an access token to fakehub API.
+This should generate you an access token to fakehub [API](#supported-api).
+
+### Supported API
+
+We support the following list of "fake" versions of GitHub endpoints:
+
+| Operation | GitHub REST API Endpoint | Supported in fakehub |
+|-----------|--------------------------|----------------------|
 
 ### GitHub Objects
 
@@ -143,7 +150,7 @@ just full
 Here is the [contribution vitals][Zerocracy Vitals], made by [zerocracy/judges-action]
 (updated every hour!).
 
-[GitHub API]: https://docs.github.com/en/rest?apiVersion=2022-11-28
+[GitHub REST API]: https://docs.github.com/en/rest?apiVersion=2022-11-28
 [homebrew]: https://brew.sh
 [fakehub-crate]: https://crates.io/crates/fakehub
 [LaTeX]: https://en.wikipedia.org/wiki/LaTeX
