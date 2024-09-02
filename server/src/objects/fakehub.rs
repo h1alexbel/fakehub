@@ -38,7 +38,7 @@ use uuid::Uuid;
 /// assert_that!(&jeff.username, is(equal_to("jeff")));
 /// ```
 #[derive(Clone)]
-pub struct Fakehub {
+pub struct FakeHub {
     /// GitHub.
     pub github: GitHub,
 }
