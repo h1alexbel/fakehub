@@ -31,29 +31,19 @@ use log::info;
 /// # Fields
 ///
 /// * `payload`: JSON payload
-// @todo #128:35min Parse GitHub target URL from headers.
-//  We should register user in target GitHub based on special header we obtain
-//  from request. Let's call it X-GITHUB-URL. If header is empty then we use
-//  the default one: `main`. Otherwise we pass url to fakehub.browser.get().
 pub async fn register_user(
     State(config): State<ServerConfig>,
     Json(payload): Json<User>,
 ) -> Result<StatusCode, String> {
     let newcomer = User::new(payload.username.clone());
     let fakehub = config.fakehub;
-    let key = "main";
-    match fakehub.browser.get(key) {
-        Some(github) => match newcomer.register_in(&mut github.clone()) {
-            Ok(_) => {
-                info!("Registered @{} in {}", newcomer.username, key);
-                Ok(StatusCode::CREATED)
-            }
-            Err(e) => Err(format!("Can't register user @{}: {}", newcomer.username, e)),
-        },
-        None => Err(format!(
-            "Failed to find GitHub with URL {}. Is it a typo?",
-            key
-        )),
+    let github = fakehub.main();
+    match newcomer.register_in(&mut github.clone()) {
+        Ok(_) => {
+            info!("New user is here. Hello @{}", newcomer.username);
+            Ok(StatusCode::CREATED)
+        }
+        Err(e) => Err(format!("Can't register user @{}: {}", newcomer.username, e)),
     }
 }
 

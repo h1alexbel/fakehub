@@ -65,7 +65,7 @@ impl User {
             Some(u) => Err(format!("User with login @{} already exists!", u.username)),
             None => {
                 github.add_user(self.clone());
-                info!("New user is here. Hello @{}", self.username);
+                info!("Registered @{}", self.username);
                 Ok(())
             }
         }
@@ -90,11 +90,7 @@ mod tests {
     #[test]
     fn registers_in_github() -> Result<()> {
         let fakehub = Fakehub::default();
-        let mut github = fakehub
-            .browser
-            .get("main")
-            .expect("Failed to get GitHub")
-            .clone();
+        let mut github = fakehub.main();
         let foo = String::from("foo");
         User::new(foo.clone())
             .register_in(&mut github)
@@ -108,11 +104,7 @@ mod tests {
     #[test]
     fn panics_when_already_registered() {
         let fakehub = Fakehub::default();
-        let mut github = fakehub
-            .browser
-            .get("main")
-            .expect("Failed to get GitHub")
-            .clone();
+        let mut github = fakehub.main();
         User::new(String::from("jeff"))
             .register_in(&mut github)
             .expect("Failed to register user");
