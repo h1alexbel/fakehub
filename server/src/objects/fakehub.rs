@@ -25,13 +25,15 @@ use std::collections::HashMap;
 use uuid::Uuid;
 
 /// Fakehub. Fake GitHub platform.
+///
+/// To use `main` GitHub:
 /// ```
 /// use hamcrest::assert_that;
 /// use hamcrest::{equal_to, is, HamcrestMatcher};
 /// use server::objects::fakehub::Fakehub;
 ///
 /// let fakehub = Fakehub::default();
-/// let github = fakehub.browser.get("https://github.com").expect("Failed to get GitHub");
+/// let github = fakehub.main();
 /// let jeff = github.user("jeff").expect("Failed to get user");
 /// assert_that!(&jeff.username, is(equal_to("jeff")));
 /// ```
@@ -44,22 +46,19 @@ use uuid::Uuid;
 /// use server::objects::fakehub::Fakehub;
 /// use server::objects::github::GitHub;
 ///
-///
 /// let mut fakehub = Fakehub::default();
-/// let custom = String::from("https://jeff.github.com");
+/// let custom = String::from("google");
 /// let expected = Uuid::new_v4();
-/// fakehub.add(GitHub {id: expected, url: custom.clone(), users: HashMap::new(),});
-/// let instances = fakehub.githubs();
-/// let created = instances.get(1).expect("Failed to get GitHub");
+/// fakehub.add(GitHub {id: expected, name: custom.clone(), users: HashMap::new(),});
+/// let created = fakehub.browser.get(&custom).expect("Failed to get GitHub");
 /// assert_that!(created.id, is(equal_to(expected)));
-/// assert_that!(created.clone().url, is(equal_to(custom)));
-/// assert_that!(instances.len(), is(equal_to(2)));
+/// assert_that!(created.clone().name, is(equal_to(custom)));
 /// ```
 #[derive(Clone)]
 pub struct Fakehub {
     /// GitHubs.
     pub hubs: HashMap<Uuid, GitHub>,
-    /// Urled GitHubs.
+    /// Prefixed GitHubs.
     pub browser: HashMap<String, GitHub>,
 }
 
@@ -74,13 +73,13 @@ impl Default for Fakehub {
             id,
             GitHub {
                 id,
-                url: String::from("https://github.com"),
+                name: String::from("main"),
                 users,
             },
         );
         Fakehub {
             hubs: hubs.clone(),
-            browser: hubs.into_values().map(|v| (v.clone().url, v)).collect(),
+            browser: hubs.into_values().map(|v| (v.clone().name, v)).collect(),
         }
     }
 }
@@ -89,7 +88,7 @@ impl Fakehub {
     /// Add new GitHub
     pub fn add(&mut self, github: GitHub) {
         self.hubs.insert(github.id, github.clone());
-        self.browser.insert(github.clone().url, github);
+        self.browser.insert(github.clone().name, github);
     }
 
     /// All GitHub instances.
@@ -98,10 +97,15 @@ impl Fakehub {
             .iter()
             .map(|(k, v)| GitHub {
                 id: *k,
-                url: v.url.clone(),
+                name: v.name.clone(),
                 users: v.users.clone(),
             })
             .collect()
+    }
+
+    /// Main GitHub.
+    pub fn main(&self) -> &GitHub {
+        self.browser.get("main").expect("Failed to get main GitHub")
     }
 }
 
@@ -117,10 +121,7 @@ mod tests {
     #[test]
     fn creates_default_fakehub() -> Result<()> {
         let fakehub = Fakehub::default();
-        let default = fakehub
-            .browser
-            .get("https://github.com")
-            .expect("Failed to get GitHub");
+        let default = fakehub.browser.get("main").expect("Failed to get GitHub");
         assert_that!(default.id.is_nil(), is(equal_to(false)));
         Ok(())
     }
@@ -128,11 +129,11 @@ mod tests {
     #[test]
     fn adds_github() -> Result<()> {
         let mut fakehub = Fakehub::default();
-        let url = String::from("https://jeff.github.com");
+        let url = String::from("google");
         let expected = Uuid::new_v4();
         fakehub.add(GitHub {
             id: expected,
-            url: url.clone(),
+            name: url.clone(),
             users: HashMap::new(),
         });
         let github = fakehub.browser.get(&url).expect("Failed to get GitHub");
@@ -143,10 +144,10 @@ mod tests {
     #[test]
     fn returns_all_github_instances_after_add() -> Result<()> {
         let mut fakehub = Fakehub::default();
-        let custom = String::from("https://test.github.com");
+        let custom = String::from("myStartup");
         fakehub.add(GitHub {
             id: Uuid::new_v4(),
-            url: custom.clone(),
+            name: custom.clone(),
             users: HashMap::new(),
         });
         let instances = fakehub.githubs();
@@ -161,7 +162,7 @@ mod tests {
         let github = instances.first().expect("Failed to get GitHub");
         let users = github.clone().users();
         let user = users.first().expect("Failed to get user");
-        assert_that!(&github.url, is(equal_to("https://github.com")));
+        assert_that!(&github.name, is(equal_to("main")));
         assert_that!(&user.username, is(equal_to("jeff")));
         Ok(())
     }
@@ -169,13 +170,21 @@ mod tests {
     #[test]
     fn returns_github_with_users() -> Result<()> {
         let fakehub = Fakehub::default();
-        let github = fakehub
-            .browser
-            .get("https://github.com")
-            .expect("Failed to get GitHub");
+        let github = fakehub.browser.get("main").expect("Failed to get GitHub");
         let users = github.clone().users();
         let user = users.first().expect("Failed to get user");
         assert_that!(&user.username, is(equal_to("jeff")));
+        Ok(())
+    }
+
+    #[test]
+    fn returns_main_github() -> Result<()> {
+        let fakehub = Fakehub::default();
+        let github = fakehub.main();
+        let users = github.clone().users();
+        assert_that!(github.clone().id.is_nil(), is(equal_to(false)));
+        assert_that!(&github.name, is(equal_to("main")));
+        assert_that!(users.len(), is(equal_to(1)));
         Ok(())
     }
 }

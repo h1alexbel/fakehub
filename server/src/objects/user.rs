@@ -57,7 +57,7 @@ impl User {
     /// use server::objects::fakehub::Fakehub;
     /// use server::objects::user::User;
     /// let fakehub = Fakehub::default();
-    /// let mut github = fakehub.browser.get("https://github.com").expect("Failed to get GitHub").clone();
+    /// let mut github = fakehub.main().clone();
     /// User::new(String::from("foo")).register_in(&mut github).expect("Failed to register user");
     ///```
     pub fn register_in(&self, github: &mut GitHub) -> Result<(), String> {
@@ -92,7 +92,7 @@ mod tests {
         let fakehub = Fakehub::default();
         let mut github = fakehub
             .browser
-            .get("https://github.com")
+            .get("main")
             .expect("Failed to get GitHub")
             .clone();
         let foo = String::from("foo");
@@ -110,7 +110,7 @@ mod tests {
         let fakehub = Fakehub::default();
         let mut github = fakehub
             .browser
-            .get("https://github.com")
+            .get("main")
             .expect("Failed to get GitHub")
             .clone();
         User::new(String::from("jeff"))

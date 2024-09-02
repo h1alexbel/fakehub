@@ -29,7 +29,7 @@ pub struct GitHub {
     /// GitHub ID.
     pub id: Uuid,
     /// GitHub URL.
-    pub url: String,
+    pub name: String,
     /// Users inside.
     pub users: HashMap<String, User>,
 }
@@ -65,7 +65,7 @@ mod tests {
     fn adds_user() -> Result<()> {
         let mut github = GitHub {
             id: Uuid::new_v4(),
-            url: String::from("https://test.github.com"),
+            name: String::from("bar"),
             users: HashMap::new(),
         };
         let expected = String::from("jeff");
@@ -80,7 +80,7 @@ mod tests {
     fn returns_user_by_login() -> Result<()> {
         let mut github = GitHub {
             id: Uuid::new_v4(),
-            url: String::from("https://testing.github.com"),
+            name: String::from("bar"),
             users: HashMap::new(),
         };
         let expected = "foo";
