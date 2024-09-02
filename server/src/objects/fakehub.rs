@@ -30,9 +30,9 @@ use uuid::Uuid;
 /// ```
 /// use hamcrest::assert_that;
 /// use hamcrest::{equal_to, is, HamcrestMatcher};
-/// use server::objects::fakehub::Fakehub;
+/// use server::objects::fakehub::FakeHub;
 ///
-/// let fakehub = Fakehub::default();
+/// let fakehub = FakeHub::default();
 /// let github = fakehub.main();
 /// let jeff = github.user("jeff").expect("Failed to get user");
 /// assert_that!(&jeff.username, is(equal_to("jeff")));
@@ -43,12 +43,12 @@ pub struct FakeHub {
     pub github: GitHub,
 }
 
-impl Default for Fakehub {
-    fn default() -> Fakehub {
+impl Default for FakeHub {
+    fn default() -> FakeHub {
         let mut users: HashMap<String, User> = HashMap::new();
         let jeff = String::from("jeff");
         users.insert(jeff.clone(), User::new(jeff));
-        Fakehub {
+        FakeHub {
             github: GitHub {
                 id: Uuid::new_v4(),
                 name: String::from("main"),
@@ -63,7 +63,7 @@ impl Default for Fakehub {
 //  platform does with GitHub Enterprise feature. Fakehub should have multiple
 //  GitHubs inside, and user can pick to which GitHub he wants store the
 //  testing data.
-impl Fakehub {
+impl FakeHub {
     /// Main GitHub.
     pub fn main(self) -> GitHub {
         self.github
@@ -72,13 +72,13 @@ impl Fakehub {
 
 #[cfg(test)]
 mod tests {
-    use crate::objects::fakehub::Fakehub;
+    use crate::objects::fakehub::FakeHub;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
     fn returns_default_fakehub_instance() -> Result<()> {
-        let fakehub = Fakehub::default();
+        let fakehub = FakeHub::default();
         let default = fakehub.main();
         assert_that!(default.id.is_nil(), is(equal_to(false)));
         Ok(())
@@ -86,7 +86,7 @@ mod tests {
 
     #[test]
     fn returns_default_github() -> Result<()> {
-        let fakehub = Fakehub::default();
+        let fakehub = FakeHub::default();
         let github = fakehub.main();
         let users = github.clone().users();
         let user = users.first().expect("Failed to get user");

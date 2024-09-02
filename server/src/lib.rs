@@ -31,7 +31,7 @@ use tokio::net::TcpListener;
 
 use crate::handlers::home;
 use crate::handlers::register_user::register_user;
-use crate::objects::fakehub::Fakehub;
+use crate::objects::fakehub::FakeHub;
 
 /// Handlers.
 pub mod handlers;
@@ -76,7 +76,7 @@ pub struct ServerConfig {
     /// Server port.
     pub port: usize,
     /// Fakehub.
-    pub fakehub: Fakehub,
+    pub fakehub: FakeHub,
 }
 
 // @todo #79:30min Log 404 NOT FOUND requests too.
@@ -99,7 +99,7 @@ impl Server {
                     .with_state(ServerConfig {
                         host: "0.0.0.0".into(),
                         port: self.port,
-                        fakehub: Fakehub::default(),
+                        fakehub: FakeHub::default(),
                     }),
             )
             .await

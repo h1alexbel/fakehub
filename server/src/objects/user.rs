@@ -54,9 +54,9 @@ impl User {
     /// `github` GitHub
     /// /// Register user in GitHub.
     ///```
-    /// use server::objects::fakehub::Fakehub;
+    /// use server::objects::fakehub::FakeHub;
     /// use server::objects::user::User;
-    /// let fakehub = Fakehub::default();
+    /// let fakehub = FakeHub::default();
     /// let mut github = fakehub.main().clone();
     /// User::new(String::from("foo")).register_in(&mut github).expect("Failed to register user");
     ///```
@@ -74,7 +74,7 @@ impl User {
 
 #[cfg(test)]
 mod tests {
-    use crate::objects::fakehub::Fakehub;
+    use crate::objects::fakehub::FakeHub;
     use crate::objects::user::User;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
@@ -89,7 +89,7 @@ mod tests {
 
     #[test]
     fn registers_in_github() -> Result<()> {
-        let fakehub = Fakehub::default();
+        let fakehub = FakeHub::default();
         let mut github = fakehub.main();
         let foo = String::from("foo");
         User::new(foo.clone())
@@ -103,7 +103,7 @@ mod tests {
     #[should_panic(expected = "Failed to register user")]
     #[test]
     fn panics_when_already_registered() {
-        let fakehub = Fakehub::default();
+        let fakehub = FakeHub::default();
         let mut github = fakehub.main();
         User::new(String::from("jeff"))
             .register_in(&mut github)

@@ -50,7 +50,7 @@ pub async fn register_user(
 #[cfg(test)]
 mod tests {
     use crate::handlers::register_user::register_user;
-    use crate::objects::fakehub::Fakehub;
+    use crate::objects::fakehub::FakeHub;
     use crate::objects::user::User;
     use crate::ServerConfig;
     use anyhow::Result;
@@ -63,7 +63,7 @@ mod tests {
         let server = ServerConfig {
             host: "0.0.0.0".into(),
             port: 1234,
-            fakehub: Fakehub::default(),
+            fakehub: FakeHub::default(),
         };
         let state = State(server);
         let status = register_user(state, Json::from(User::new(String::from("new1234"))))
@@ -79,7 +79,7 @@ mod tests {
         let server = ServerConfig {
             host: "0.0.0.0".into(),
             port: 1234,
-            fakehub: Fakehub::default(),
+            fakehub: FakeHub::default(),
         };
         let state = State(server);
         register_user(state, Json::from(User::new(String::from("jeff"))))

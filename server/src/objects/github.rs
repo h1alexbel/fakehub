@@ -31,7 +31,7 @@ pub struct GitHub {
     /// GitHub URL.
     pub name: String,
     /// Users inside.
-    pub users: HashMap<UUID, User>,
+    pub users: HashMap<String, User>,
 }
 
 impl GitHub {
