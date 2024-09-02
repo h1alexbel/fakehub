@@ -43,30 +43,79 @@ fakehub start --port 8080
 Table of contents:
 
 * [Overview](#overview)
-* [Login](#login)
-* [Repositories](#repositories)
-* [Issues](#issues)
+* [GitHub Objects](#github-objects)
 * [CLI Options](#cli-options)
 
 ### Overview
 
-Fakehub is a full clone of [GitHub API]. This is very beneficial for testing,
+fakehub is a full clone of [GitHub API]. This is very beneficial for testing,
 when you should not use real GitHub API, but a mock version of it instead.
-Fakehub stores all the data in [XML] format in file-system. When request
-arrives, we query the storage, transform data into GitHub API-compatible format
-([JSON]) and give it to you.
+fakehub stores all the data in memory. When request arrives, we query the
+storage, transform objects into GitHub API-compatible format ([JSON]) and give
+it to you.
 
-### Login
+### Request Format
 
-TBD..
+fakehub supports the format specified in [GitHub REST API docs][GitHub API].
+For instance, if you want to use [Get a repository][GitHub REST API Get Repo]
+endpoint: you should just replace `api.github.com` to `localhost:$port` (make
+sure that `fakehub` is running on specified port).
 
-### Repositories
+```bash
+curl -L \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer <YOUR-TOKEN>" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  http://localhost:$port/repos/OWNER/REPO
+```
 
-TBD..
+**Attention!** Don't use your own GitHub Personal Access Tokens to authorize in
+fakehub. Instead, use generated token by fakehub:
 
-### Issues
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"login": "jeff"}' \
+  http://localhost:$port/login
+```
 
-TBD..
+This should generate you an access token to fakehub API.
+
+### GitHub Objects
+
+#### Fakehub
+
+Root object of fakehub is `FakeHub`. You can initialize GitHub instance with
+it:
+
+```rust
+use hamcrest::assert_that;
+use hamcrest::{equal_to, is, HamcrestMatcher};
+use server::objects::fakehub::FakeHub;
+
+let fakehub = FakeHub::default();
+let github = fakehub.main();
+let jeff = github.user("jeff").expect("Failed to get user");
+assert_that!(&jeff.username, is(equal_to("jeff")));
+```
+
+With obtained `GitHub`, you can manage other GitHub objects attached to it.
+
+#### User
+
+To register new user:
+
+```rust
+use server::objects::user::User;
+use hamcrest::{equal_to, is, HamcrestMatcher};
+
+let github = ...;
+let foo = String::from("foo");
+User::new(foo.clone()).register_in(&mut github)
+    .expect("Failed to register user");
+let pulled = github.users.get(&foo).expect("Failed to get user");
+assert_that!(pulled.clone().username, is(equal_to(foo)));
+```
 
 ### CLI Options
 
@@ -81,7 +130,7 @@ You can use the following options within `fakehub` command-line tool:
 
 ## How to contribute?
 
-Make sure that you have [Rust], [npm], Java 21+ and [just] installed on your
+Make sure that you have [Rust], [just], [npm], and Java 21+ installed on your
 system, then fork this repository, make changes, send us a
 [pull request][guidelines]. We will review your changes and apply them to the
 `master` branch shortly, provided they don't violate our quality standards. To
@@ -106,3 +155,4 @@ Here is the [contribution vitals][Zerocracy Vitals], made by [zerocracy/judges-a
 [just]: https://just.systems/man/en/chapter_4.html
 [Zerocracy Vitals]: https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html
 [zerocracy/judges-action]: https://github.com/zerocracy/judges-action
+[GitHub REST API Get Repo]: https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#get-a-repository
