@@ -90,39 +90,7 @@ We support the following list of "fake" versions of GitHub endpoints:
 
 ### GitHub Objects
 
-#### Fakehub
-
-Root object of fakehub is `FakeHub`. You can initialize GitHub instance with
-it:
-
-```rust
-use hamcrest::assert_that;
-use hamcrest::{equal_to, is, HamcrestMatcher};
-use server::objects::fakehub::FakeHub;
-
-let fakehub = FakeHub::default();
-let github = fakehub.main();
-let jeff = github.user("jeff").expect("Failed to get user");
-assert_that!(&jeff.username, is(equal_to("jeff")));
-```
-
-With obtained `GitHub`, you can manage other GitHub objects attached to it.
-
-#### User
-
-To register new user:
-
-```rust
-use server::objects::user::User;
-use hamcrest::{equal_to, is, HamcrestMatcher};
-
-let github = ...;
-let foo = String::from("foo");
-User::new(foo.clone()).register_in(&mut github)
-    .expect("Failed to register user");
-let pulled = github.users.get(&foo).expect("Failed to get user");
-assert_that!(pulled.clone().username, is(equal_to(foo)));
-```
+TBD..
 
 ### CLI Options
 
