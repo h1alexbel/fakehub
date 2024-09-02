@@ -23,7 +23,7 @@
 pub mod fakehub;
 /// GitHub.
 pub mod github;
-/// GitHub user.
-pub mod user;
 /// GitHub repository.
 pub mod repo;
+/// GitHub user.
+pub mod user;

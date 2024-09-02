@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use crate::objects::github::GitHub;
+use crate::objects::repo::Repo;
 use anyhow::Result;
 use log::info;
 use serde::{Deserialize, Serialize};
@@ -29,6 +30,8 @@ use serde::{Deserialize, Serialize};
 pub struct User {
     /// Username.
     pub username: String,
+    /// Repos.
+    pub repos: Vec<Repo>,
 }
 
 impl User {
@@ -45,11 +48,12 @@ impl User {
     /// let jeff = User::new(String::from("jeff123"));
     /// ```
     pub fn new(username: String) -> User {
-        User { username }
+        User {
+            username,
+            repos: vec![],
+        }
     }
-}
 
-impl User {
     /// Register user in GitHub.
     /// `github` GitHub
     /// /// Register user in GitHub.
