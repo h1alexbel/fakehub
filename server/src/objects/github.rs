@@ -38,7 +38,7 @@ impl GitHub {
     /// Add user to GitHub.
     /// `user` User
     pub fn add_user(&mut self, user: User) {
-        self.users.insert(user.clone().username, user);
+        self.users.insert(user.clone().login, user);
     }
 
     /// User.
@@ -72,7 +72,7 @@ mod tests {
         github.add_user(User::new(expected.clone()));
         let users = github.users();
         let user = users.first().expect("Failed to get user");
-        assert_that!(&user.username, is(equal_to(&expected)));
+        assert_that!(&user.login, is(equal_to(&expected)));
         Ok(())
     }
 
@@ -86,7 +86,7 @@ mod tests {
         let expected = "foo";
         github.add_user(User::new(String::from(expected)));
         let foo = github.user(expected).expect("Failed to get user");
-        assert_that!(&foo.username, is(equal_to(expected)));
+        assert_that!(&foo.login, is(equal_to(expected)));
         Ok(())
     }
 }

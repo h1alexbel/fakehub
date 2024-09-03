@@ -35,7 +35,7 @@ use uuid::Uuid;
 /// let fakehub = FakeHub::default();
 /// let github = fakehub.main();
 /// let jeff = github.user("jeff").expect("Failed to get user");
-/// assert_that!(&jeff.username, is(equal_to("jeff")));
+/// assert_that!(&jeff.login, is(equal_to("jeff")));
 /// ```
 #[derive(Clone)]
 pub struct FakeHub {
@@ -91,7 +91,7 @@ mod tests {
         let users = github.clone().users();
         let user = users.first().expect("Failed to get user");
         assert_that!(&github.name, is(equal_to("main")));
-        assert_that!(&user.username, is(equal_to("jeff")));
+        assert_that!(&user.login, is(equal_to("jeff")));
         Ok(())
     }
 }

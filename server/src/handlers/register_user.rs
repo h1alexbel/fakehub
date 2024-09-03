@@ -35,15 +35,15 @@ pub async fn register_user(
     State(config): State<ServerConfig>,
     Json(payload): Json<User>,
 ) -> Result<StatusCode, String> {
-    let newcomer = User::new(payload.username.clone());
+    let mut newcomer = User::new(payload.login.clone());
     let fakehub = config.fakehub;
     let github = fakehub.main();
     match newcomer.register_in(&mut github.clone()) {
         Ok(_) => {
-            info!("New user is here. Hello @{}", newcomer.username);
+            info!("New user is here. Hello @{}", newcomer.login);
             Ok(StatusCode::CREATED)
         }
-        Err(e) => Err(format!("Can't register user @{}: {}", newcomer.username, e)),
+        Err(e) => Err(format!("Can't register user @{}: {}", newcomer.login, e)),
     }
 }
 

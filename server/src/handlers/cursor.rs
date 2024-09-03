@@ -19,13 +19,35 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// FakeHub.
-pub mod fakehub;
-/// GitHub.
-pub mod github;
-/// JSON objects.
-pub mod json;
-/// GitHub repository.
-pub mod repo;
-/// GitHub user.
-pub mod user;
+
+/// Cursor.
+#[derive(Clone)]
+pub struct Cursor {
+    /// Base.
+    pub base: String,
+}
+
+impl Cursor {
+    /// As string.
+    pub fn as_string(self) -> String {
+        self.base
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use crate::handlers::cursor::Cursor;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+
+    #[test]
+    fn prints_current() -> Result<()> {
+        let expected = String::from("test");
+        let cursor = Cursor {
+            base: expected.clone(),
+        };
+        assert_that!(cursor.as_string(), is(equal_to(expected)));
+        Ok(())
+    }
+}
