@@ -82,9 +82,6 @@ pub struct ServerConfig {
 // @todo #79:30min Log 404 NOT FOUND requests too.
 //  Let's create a handler that would log requests failed with 404. Let's use
 //  info!() for this one.
-// @todo #124:35min Pass fakehub to all required endpoints to be used.
-//  We should pass fakehub instance after Fakehub::default() into all places
-//  where we need to operate with data somehow.
 impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
