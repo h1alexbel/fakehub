@@ -21,6 +21,7 @@
 // SOFTWARE.
 use crate::handlers::cursor::Cursor;
 use crate::handlers::sh_cursor::ShCursor;
+use crate::objects::fakehub::FakeHub;
 use crate::objects::github::GitHub;
 use crate::objects::repo::Repo;
 use anyhow::Result;
@@ -63,24 +64,24 @@ impl User {
 
     /// Register user in GitHub.
     /// `github` GitHub
+    /// `instance` FakeHub instance
     /// /// Register user in GitHub.
     ///```
     /// use server::objects::fakehub::FakeHub;
     /// use server::objects::user::User;
     ///
     /// let fakehub = FakeHub::default();
-    /// let mut github = fakehub.main().clone();
-    /// User::new(String::from("foo")).register_in(&mut github).expect("Failed to register user");
+    /// let mut github = fakehub.clone().main().clone();
+    /// User::new(String::from("foo")).register_in(&mut github, fakehub).expect("Failed to register user");
     ///```
-    // @todo #137:30min Create NodeId object that will give MD5 hash.
-    //  Almost in any response, including user, we should display Node ID as
-    //  GitHub API does. Looks like they use MD5 for it. Let's do the same, but
-    //  we need only one that hash, because only one instance can be run. Let's
-    //  hash UTC datetime when server was bootstrapped.
     // @todo #137:35min Pass port to the base cursor. Now we hardcode the
     //  address localhost:3000, however we need to handle generic ports that
     //  users can set.
-    pub fn register_in(&mut self, github: &mut GitHub) -> Result<(), String> {
+    pub fn register_in(
+        &mut self,
+        github: &mut GitHub,
+        instance: FakeHub,
+    ) -> Result<(), String> {
         match github.user(&self.login) {
             Some(u) => Err(format!("User with login @{} already exists!", u.login)),
             None => {
@@ -89,7 +90,7 @@ impl User {
                 };
                 let id = rand::thread_rng().gen_range(0..100_000_000);
                 self.extra
-                    .insert(String::from("node_id"), Value::String(String::from("")));
+                    .insert(String::from("node_id"), Value::String(instance.node_id()));
                 self.extra
                     .insert(String::from("id"), Value::Number(Number::from(id)));
                 self.extra.insert(
@@ -247,6 +248,7 @@ mod tests {
     use crate::objects::fakehub::FakeHub;
     use crate::objects::user::User;
     use anyhow::Result;
+    use chrono::{TimeZone, Utc};
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
@@ -260,10 +262,10 @@ mod tests {
     #[test]
     fn registers_in_github() -> Result<()> {
         let fakehub = FakeHub::default();
-        let mut github = fakehub.main();
+        let mut github = fakehub.clone().main();
         let foo = String::from("foo");
         User::new(foo.clone())
-            .register_in(&mut github)
+            .register_in(&mut github, fakehub)
             .expect("Failed to register user");
         let pulled = github.users.get(&foo).expect("Failed to get user");
         assert_that!(pulled.clone().login, is(equal_to(foo)));
@@ -274,23 +276,40 @@ mod tests {
     #[test]
     fn panics_when_already_registered() {
         let fakehub = FakeHub::default();
-        let mut github = fakehub.main();
+        let mut github = fakehub.clone().main();
         User::new(String::from("jeff"))
-            .register_in(&mut github)
+            .register_in(&mut github, fakehub)
             .expect("Failed to register user");
     }
 
     #[test]
     fn registers_with_extra() -> Result<()> {
         let fakehub = FakeHub::default();
-        let mut github = fakehub.main();
+        let mut github = fakehub.clone().main();
         User::new(String::from("foo"))
-            .register_in(&mut github)
+            .register_in(&mut github, fakehub)
             .expect("Failed to register user");
         let user = github.users.get("foo").expect("Failed to get user");
         let url = user.extra.get("url").expect("Failed to read property");
         assert_that!(url.as_str(), is(equal_to(Some("localhost:3000/users/foo"))));
         assert_that!(user.extra.len(), is(equal_to(31)));
+        Ok(())
+    }
+
+    #[test]
+    #[allow(clippy::unwrap_used)]
+    fn registers_on_instance_with_predefined_start() -> Result<()> {
+        let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
+        let mut github = fakehub.clone().main();
+        User::new(String::from("foo"))
+            .register_in(&mut github, fakehub)
+            .expect("Failed to register user");
+        let user = github.users.get("foo").expect("Failed to get user");
+        let id = user.extra.get("node_id").expect("Failed to read property");
+        assert_that!(
+            id.as_str(),
+            is(equal_to(Some("305be946d516494d20c7c10f6d0020f9")))
+        );
         Ok(())
     }
 }

@@ -37,8 +37,8 @@ pub async fn register_user(
 ) -> Result<StatusCode, String> {
     let mut newcomer = User::new(payload.login.clone());
     let fakehub = config.fakehub;
-    let github = fakehub.main();
-    match newcomer.register_in(&mut github.clone()) {
+    let github = fakehub.clone().main();
+    match newcomer.register_in(&mut github.clone(), fakehub) {
         Ok(_) => {
             info!("New user is here. Hello @{}", newcomer.login);
             Ok(StatusCode::CREATED)
