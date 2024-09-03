@@ -27,6 +27,5 @@ pub mod github;
 pub mod repo;
 /// GitHub user.
 pub mod user;
-mod user_defaults;
-mod json;
-mod node_id;
+/// JSON objects.
+pub mod json;
