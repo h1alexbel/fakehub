@@ -28,7 +28,10 @@ use crate::handlers::cursor::Cursor;
 /// use server::handlers::cursor::Cursor;
 /// use server::handlers::sh_cursor::ShCursor;
 ///
-/// let url = ShCursor::new(Cursor::new(String::from("http://localhost:3000")), String::from("repos")).as_string();
+/// let url = ShCursor::new(
+///     Cursor {base: String::from("http://localhost:3000") },
+///     String::from("repos")
+/// ).as_string();
 /// assert_that!(url, is(equal_to(String::from("http://localhost:3000/repos"))));
 /// ```
 pub struct ShCursor {

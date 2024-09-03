@@ -23,9 +23,9 @@
 pub mod fakehub;
 /// GitHub.
 pub mod github;
+/// JSON objects.
+pub mod json;
 /// GitHub repository.
 pub mod repo;
 /// GitHub user.
 pub mod user;
-/// JSON objects.
-pub mod json;

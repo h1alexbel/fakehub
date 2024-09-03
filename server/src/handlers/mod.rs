@@ -19,11 +19,11 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+/// Cursor.
+pub mod cursor;
 /// Home handler.
 pub mod home;
 /// Handler for internal user registration.
 pub mod register_user;
 /// Slashed Cursor.
 pub mod sh_cursor;
-/// Cursor.
-pub mod cursor;

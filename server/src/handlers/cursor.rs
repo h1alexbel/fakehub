@@ -23,7 +23,8 @@
 /// Cursor.
 #[derive(Clone)]
 pub struct Cursor {
-    pub(crate) base: String,
+    /// Base.
+    pub base: String,
 }
 
 impl Cursor {
@@ -35,15 +36,17 @@ impl Cursor {
 
 #[cfg(test)]
 mod tests {
-    
+
+    use crate::handlers::cursor::Cursor;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
-    use crate::handlers::cursor::Cursor;
 
     #[test]
     fn prints_current() -> Result<()> {
         let expected = String::from("test");
-        let cursor = Cursor { base: expected.clone() };
+        let cursor = Cursor {
+            base: expected.clone(),
+        };
         assert_that!(cursor.as_string(), is(equal_to(expected)));
         Ok(())
     }
