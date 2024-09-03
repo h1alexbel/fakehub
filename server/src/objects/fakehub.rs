@@ -19,8 +19,10 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use crate::handlers::node_id::NodeId;
 use crate::objects::github::GitHub;
 use crate::objects::user::User;
+use chrono::{DateTime, Utc};
 use std::collections::HashMap;
 use uuid::Uuid;
 
@@ -41,20 +43,28 @@ use uuid::Uuid;
 pub struct FakeHub {
     /// GitHub.
     pub github: GitHub,
+    /// When it started.
+    pub started: DateTime<Utc>,
 }
 
 impl Default for FakeHub {
     fn default() -> FakeHub {
-        let mut users: HashMap<String, User> = HashMap::new();
-        let jeff = String::from("jeff");
-        users.insert(jeff.clone(), User::new(jeff));
         FakeHub {
-            github: GitHub {
-                id: Uuid::new_v4(),
-                name: String::from("main"),
-                users,
-            },
+            github: create_github(),
+            started: Utc::now(),
         }
+    }
+}
+
+/// Create GitHub.
+fn create_github() -> GitHub {
+    let mut users: HashMap<String, User> = HashMap::new();
+    let jeff = String::from("jeff");
+    users.insert(jeff.clone(), User::new(jeff));
+    GitHub {
+        id: Uuid::new_v4(),
+        name: String::from("main"),
+        users,
     }
 }
 
@@ -64,9 +74,22 @@ impl Default for FakeHub {
 //  GitHubs inside, and user can pick to which GitHub he wants store the
 //  testing data.
 impl FakeHub {
+    /// New.
+    pub fn new(started: DateTime<Utc>) -> FakeHub {
+        FakeHub {
+            github: create_github(),
+            started,
+        }
+    }
+
     /// Main GitHub.
     pub fn main(self) -> GitHub {
         self.github
+    }
+
+    /// Node id.
+    pub fn node_id(self) -> String {
+        NodeId { from: self.started }.as_string()
     }
 }
 
@@ -74,6 +97,7 @@ impl FakeHub {
 mod tests {
     use crate::objects::fakehub::FakeHub;
     use anyhow::Result;
+    use chrono::{TimeZone, Utc};
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[test]
@@ -92,6 +116,14 @@ mod tests {
         let user = users.first().expect("Failed to get user");
         assert_that!(&github.name, is(equal_to("main")));
         assert_that!(&user.login, is(equal_to("jeff")));
+        Ok(())
+    }
+
+    #[test]
+    #[allow(clippy::unwrap_used)]
+    fn returns_node_id_after_start() -> Result<()> {
+        let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
+        assert_that!(fakehub.node_id(), is(equal_to(String::from("305be946d516494d20c7c10f6d0020f9"))));
         Ok(())
     }
 }
