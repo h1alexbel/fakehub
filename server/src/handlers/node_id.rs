@@ -48,8 +48,11 @@ mod tests {
         let hash = NodeId {
             from: Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap(),
         }
-            .as_string();
-        assert_that!(hash, is(equal_to(String::from("305be946d516494d20c7c10f6d0020f9"))));
+        .as_string();
+        assert_that!(
+            hash,
+            is(equal_to(String::from("305be946d516494d20c7c10f6d0020f9")))
+        );
         Ok(())
     }
 }

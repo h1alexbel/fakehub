@@ -23,9 +23,9 @@
 pub mod cursor;
 /// Home handler.
 pub mod home;
+/// Node ID.
+pub mod node_id;
 /// Handler for internal user registration.
 pub mod register_user;
 /// Slashed Cursor.
 pub mod sh_cursor;
-/// Node ID.
-pub mod node_id;
