@@ -19,11 +19,32 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Home handler.
-pub mod home;
-/// Handler for internal user registration.
-pub mod register_user;
-/// Slashed Cursor.
-pub mod sh_cursor;
+
 /// Cursor.
-pub mod cursor;
+#[derive(Clone)]
+pub struct Cursor {
+    pub(crate) base: String,
+}
+
+impl Cursor {
+    /// As string.
+    pub fn as_string(self) -> String {
+        self.base
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use crate::handlers::cursor::Cursor;
+
+    #[test]
+    fn prints_current() -> Result<()> {
+        let expected = String::from("test");
+        let cursor = Cursor { base: expected.clone() };
+        assert_that!(cursor.as_string(), is(equal_to(expected)));
+        Ok(())
+    }
+}
