@@ -19,13 +19,37 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Cursor.
-pub mod cursor;
-/// Home handler.
-pub mod home;
-/// Handler for internal user registration.
-pub mod register_user;
-/// Slashed Cursor.
-pub mod sh_cursor;
+use chrono::{DateTime, Utc};
+
 /// Node ID.
-pub mod node_id;
+#[derive(Clone)]
+pub struct NodeId {
+    /// From.
+    pub from: DateTime<Utc>,
+}
+
+impl NodeId {
+    /// Print it as string.
+    pub fn as_string(self) -> String {
+        format!("{:x}", md5::compute(self.from.to_string()))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::handlers::node_id::NodeId;
+    use anyhow::Result;
+    use chrono::{TimeZone, Utc};
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+
+    #[test]
+    #[allow(clippy::unwrap_used)]
+    fn creates_node_id() -> Result<()> {
+        let hash = NodeId {
+            from: Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap(),
+        }
+            .as_string();
+        assert_that!(hash, is(equal_to(String::from("305be946d516494d20c7c10f6d0020f9"))));
+        Ok(())
+    }
+}
