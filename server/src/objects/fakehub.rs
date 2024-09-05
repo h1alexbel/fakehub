@@ -45,6 +45,8 @@ pub struct FakeHub {
     pub github: GitHub,
     /// When it started.
     pub started: DateTime<Utc>,
+    /// The address.
+    pub address: String,
 }
 
 impl Default for FakeHub {
@@ -52,6 +54,7 @@ impl Default for FakeHub {
         FakeHub {
             github: create_github(),
             started: Utc::now(),
+            address: String::from("localhost"),
         }
     }
 }
@@ -79,6 +82,16 @@ impl FakeHub {
         FakeHub {
             github: create_github(),
             started,
+            address: String::from("localhost"),
+        }
+    }
+
+    /// Create with address.
+    pub fn with_addr(address: String) -> FakeHub {
+        FakeHub {
+            github: create_github(),
+            started: Utc::now(),
+            address,
         }
     }
 
@@ -87,9 +100,13 @@ impl FakeHub {
         self.github
     }
 
-    /// Node id.
-    pub fn node_id(self) -> String {
-        NodeId { from: self.started }.as_string()
+    /// Coordinates.
+    pub fn coords(self) -> String {
+        format!(
+            "{};node:{}",
+            self.address,
+            NodeId { from: self.started }.as_string()
+        )
     }
 }
 
@@ -121,11 +138,13 @@ mod tests {
 
     #[test]
     #[allow(clippy::unwrap_used)]
-    fn returns_node_id_after_start() -> Result<()> {
+    fn returns_coords() -> Result<()> {
         let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
         assert_that!(
-            fakehub.node_id(),
-            is(equal_to(String::from("305be946d516494d20c7c10f6d0020f9")))
+            fakehub.coords(),
+            is(equal_to(String::from(
+                "localhost;node:305be946d516494d20c7c10f6d0020f9"
+            )))
         );
         Ok(())
     }

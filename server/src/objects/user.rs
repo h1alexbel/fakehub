@@ -19,6 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+use crate::handlers::coordinates::Coordinates;
 use crate::handlers::cursor::Cursor;
 use crate::handlers::sh_cursor::ShCursor;
 use crate::objects::fakehub::FakeHub;
@@ -74,9 +75,6 @@ impl User {
     /// let mut github = fakehub.clone().main().clone();
     /// User::new(String::from("foo")).register_in(&mut github, fakehub).expect("Failed to register user");
     ///```
-    // @todo #137:35min Pass port to the base cursor. Now we hardcode the
-    //  address localhost:3000, however we need to handle generic ports that
-    //  users can set.
     pub fn register_in(
         &mut self,
         github: &mut GitHub,
@@ -85,12 +83,15 @@ impl User {
         match github.user(&self.login) {
             Some(u) => Err(format!("User with login @{} already exists!", u.login)),
             None => {
+                let coordinates = Coordinates::new(instance);
                 let cursor = Cursor {
-                    base: String::from("localhost:3000"),
+                    base: coordinates.clone().address(),
                 };
                 let id = rand::thread_rng().gen_range(0..100_000_000);
-                self.extra
-                    .insert(String::from("node_id"), Value::String(instance.node_id()));
+                self.extra.insert(
+                    String::from("node_id"),
+                    Value::String(coordinates.node_id()),
+                );
                 self.extra
                     .insert(String::from("id"), Value::Number(Number::from(id)));
                 self.extra.insert(
@@ -291,7 +292,7 @@ mod tests {
             .expect("Failed to register user");
         let user = github.users.get("foo").expect("Failed to get user");
         let url = user.extra.get("url").expect("Failed to read property");
-        assert_that!(url.as_str(), is(equal_to(Some("localhost:3000/users/foo"))));
+        assert_that!(url.as_str(), is(equal_to(Some("localhost/users/foo"))));
         assert_that!(user.extra.len(), is(equal_to(31)));
         Ok(())
     }

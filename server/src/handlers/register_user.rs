@@ -61,8 +61,6 @@ mod tests {
     #[tokio::test]
     async fn registers_user() -> Result<()> {
         let server = ServerConfig {
-            host: "0.0.0.0".into(),
-            port: 1234,
             fakehub: FakeHub::default(),
         };
         let state = State(server);
@@ -77,8 +75,6 @@ mod tests {
     #[tokio::test]
     async fn panics_when_user_exists() {
         let server = ServerConfig {
-            host: "0.0.0.0".into(),
-            port: 1234,
             fakehub: FakeHub::default(),
         };
         let state = State(server);
