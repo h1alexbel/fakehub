@@ -45,7 +45,7 @@ pub struct FakeHub {
     pub github: GitHub,
     /// When it started.
     pub started: DateTime<Utc>,
-    /// Address.
+    /// The address.
     pub address: String,
 }
 
