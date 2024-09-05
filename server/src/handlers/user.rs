@@ -19,17 +19,31 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Coordinates.
-pub mod coordinates;
-/// Cursor.
-pub mod cursor;
-/// Home handler.
-pub mod home;
-/// Node ID.
-pub mod node_id;
-/// Handler for internal user registration.
-pub mod register_user;
-/// Slashed Cursor.
-pub mod sh_cursor;
-/// User.
-pub mod user;
+
+use crate::objects::json::json_user::JsonUser;
+use crate::ServerConfig;
+use axum::extract::{Path, State};
+use axum::Json;
+use serde_json::Value;
+use std::collections::HashMap;
+
+/// User by login.
+pub async fn user(
+    Path(params): Path<HashMap<String, String>>,
+    State(config): State<ServerConfig>,
+) -> Json<Value> {
+    let login = params.get("login").expect("Failed to get login");
+    let github = config.fakehub.main();
+    let user = github.user(login).expect("Failed to get user");
+    Json(JsonUser::new(user.clone()).as_json())
+}
+
+#[cfg(test)]
+mod tests {
+    use anyhow::Result;
+
+    #[test]
+    fn returns_user() -> Result<()> {
+        Ok(())
+    }
+}
