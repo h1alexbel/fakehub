@@ -71,10 +71,6 @@ impl Server {
 /// Server configuration.
 #[derive(Clone)]
 pub struct ServerConfig {
-    /// Server host.
-    pub host: String,
-    /// Server port.
-    pub port: usize,
     /// Fakehub.
     pub fakehub: FakeHub,
 }
@@ -94,9 +90,7 @@ impl Server {
                     .route("/", get(home::home))
                     .route("/users", post(register_user))
                     .with_state(ServerConfig {
-                        host: "0.0.0.0".into(),
-                        port: self.port,
-                        fakehub: FakeHub::default(),
+                        fakehub: FakeHub::with_addr(addr),
                     }),
             )
             .await

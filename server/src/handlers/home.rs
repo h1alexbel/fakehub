@@ -24,162 +24,66 @@ use axum::response::IntoResponse;
 use axum::Json;
 use log::debug;
 
-use openapi::models::MetaRoot200Response;
-
+use crate::handlers::coordinates::Coordinates;
 use crate::ServerConfig;
+use openapi::models::MetaRoot200Response;
 
 /// Home handler.
 pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
+    let address = Coordinates::new(config.fakehub).address();
     let response = Json(
         MetaRoot200Response::new(
-            format!("http://{}:{}/user", config.host, config.port),
+            format!("{}/user", address),
             format!(
-                "http://{}{}/settings/connections/applications{{/client_id}}",
-                config.host,
-                config.port
+                "{}/settings/connections/applications{{/client_id}}",
+                address
+            ),
+            format!("{}/authorizations", address),
+            format!(
+                "{}/search/code?q={{query}}{{&page,per_page,sort,order}}",
+                address
+            ),
+            format!("{}/search/commits?q={{query}}{{&page,per_page,sort,order}}", address),
+            format!("{}/user/emails", address),
+            format!("{}/emojis", address),
+            format!("{}/events", address),
+            format!("{}/feeds", address),
+            format!("{}/user/followers", address),
+            format!("{}/user/following{{/target}}", address),
+            format!("{}/gists{{/gist_id}}", address),
+            format!("{}/search/issues?q={{query}}{{&page,per_page,sort,order}}", address),
+            format!("{}/issues", address),
+            format!("{}/user/keys", address),
+            format!(
+                "{}/search/labels?q={{query}}&repository_id={{repository_id}}{{&page,per_page}}",
+                address
+            ),
+            format!("{}/notifications", address),
+            format!("{}/orgs/{{org}}", address),
+            format!(
+                "{}/orgs/{{org}}/repos{{?type,page,per_page,sort}}",
+                address
+            ),
+            format!("{}/orgs/{{org}}/teams", address),
+            format!("{}/gists/public", address),
+            format!("{}/rate_limit", address),
+            format!("{}/repos/{{owner}}/{{repo}}", address),
+            format!(
+                "{}/search/repositories?q={{query}}{{&page,per_page,sort,order}}",
+                address
+            ),
+            format!("{}/user/repos{{?type,page,per_page,sort}}", address),
+            format!("{}/user/starred{{/owner}}{{/repo}}", address),
+            format!("{}/gists/starred", address),
+            format!("{}/users/{{user}}", address),
+            format!("{}/user/orgs", address),
+            format!(
+                "{}/users/{{user}}/repos{{?type,page,per_page,sort}}",
+                address
             ),
             format!(
-                "http://{}:{}/authorizations", config.host, config.port
-            ),
-            format!(
-                "http://{}:{}/search/code?q={{query}}{{&page,per_page,sort,order}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/search/commits?q={{query}}{{&page,per_page,sort,order}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/emails",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/emojis",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/events",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/feeds",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/followers",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/following{{/target}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/gists{{/gist_id}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/search/issues?q={{query}}{{&page,per_page,sort,order}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/issues",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/keys",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/search/labels?q={{query}}&repository_id={{repository_id}}{{&page,per_page}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/notifications",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/orgs/{{org}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/orgs/{{org}}/repos{{?type,page,per_page,sort}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/orgs/{{org}}/teams",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/gists/public",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/rate_limit",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/repos/{{owner}}/{{repo}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/search/repositories?q={{query}}{{&page,per_page,sort,order}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/repos{{?type,page,per_page,sort}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/starred{{/owner}}{{/repo}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/gists/starred",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/users/{{user}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/user/orgs",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/users/{{user}}/repos{{?type,page,per_page,sort}}",
-                config.host,
-                config.port
-            ),
-            format!(
-                "http://{}:{}/search/users?q={{query}}{{&page,per_page,sort,order}}",
-                config.host,
-                config.port
+                "{}/search/users?q={{query}}{{&page,per_page,sort,order}}",
+                address
             ),
         )
     );
@@ -209,9 +113,7 @@ mod tests {
         assert_that!(
             IntoResponse::into_response(
                 home(State(ServerConfig {
-                    host: String::from("test"),
-                    port: 1234,
-                    fakehub: FakeHub::default()
+                    fakehub: FakeHub::with_addr(String::from("http://localhost:1234",)),
                 }))
                 .await
             )
@@ -228,9 +130,7 @@ mod tests {
             to_bytes(
                 IntoResponse::into_response(
                     home(State(ServerConfig {
-                        host: String::from("test"),
-                        port: 1234,
-                        fakehub: FakeHub::default(),
+                        fakehub: FakeHub::with_addr(String::from("http://test:1234")),
                     }))
                     .await,
                 )

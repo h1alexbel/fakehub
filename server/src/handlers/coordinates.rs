@@ -23,6 +23,7 @@ use crate::objects::fakehub::FakeHub;
 use regex::Regex;
 
 /// Coordinates.
+#[derive(Clone)]
 pub struct Coordinates {
     fakehub: FakeHub,
     regex: Regex,
