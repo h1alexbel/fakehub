@@ -46,6 +46,7 @@ mod tests {
     use crate::ServerConfig;
     use anyhow::Result;
     use axum::extract::State;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[tokio::test]
     #[allow(clippy::question_mark_used)]
@@ -54,8 +55,9 @@ mod tests {
             fakehub: FakeHub::default(),
         }))
         .await;
-        let print = users.0;
-        println!("{}", serde_json::to_string_pretty(&print)?);
+        let user = users.first().expect("Failed to get first JSON user");
+        assert_that!(user["id"].as_u64(), is(equal_to(Some(1))));
+        assert_that!(user["login"].as_str(), is(equal_to(Some("jeff"))));
         Ok(())
     }
 }

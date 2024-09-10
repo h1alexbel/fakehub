@@ -23,6 +23,7 @@ use crate::handlers::node_id::NodeId;
 use crate::objects::github::GitHub;
 use crate::objects::user::User;
 use chrono::{DateTime, Utc};
+use serde_json::{Number, Value};
 use std::collections::HashMap;
 use uuid::Uuid;
 
@@ -62,8 +63,11 @@ impl Default for FakeHub {
 /// Create GitHub.
 fn create_github() -> GitHub {
     let mut users: HashMap<String, User> = HashMap::new();
-    let jeff = String::from("jeff");
-    users.insert(jeff.clone(), User::new(jeff));
+    let name = String::from("jeff");
+    let mut jeff = User::new(name.clone());
+    jeff.extra
+        .insert(String::from("id"), Value::Number(Number::from(1)));
+    users.insert(name, jeff);
     GitHub {
         id: Uuid::new_v4(),
         name: String::from("main"),
