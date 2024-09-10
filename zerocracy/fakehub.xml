@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="51276">
+<fb version="0.4.0" size="52140">
   <f>
     <added t="I">8</added>
     <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">27.173890242</seconds>
+    <seconds t="F">21.092754086</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-10T18:19:32Z</when>
+    <when t="T">2024-09-10T19:13:09Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -1842,17 +1842,54 @@
     <who t="I">24456188</who>
   </f>
   <f>
-    <_id t="I">124</_id>
-    <_time t="T">2024-09-10T18:19:26Z</_time>
+    <_id t="I">126</_id>
+    <_job t="I">6548</_job>
+    <_time t="T">2024-09-10T18:19:36Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.51</_version>
+    <comments t="I">3</comments>
+    <details t="S">The pull request h1alexbel/fakehub#149 with 103 HoC created by @h1alexbel was merged by @rultor after 1 hours of being in review and 3 comments.</details>
+    <hoc t="I">103</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">149</issue>
+    <merger t="I">8086956</merger>
+    <repository t="I">807802459</repository>
+    <seconds t="I">3692</seconds>
+    <what t="S">code-was-contributed</what>
+    <when t="T">2024-09-10T16:16:29Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">127</_id>
+    <_time t="T">2024-09-10T19:12:51Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">41798807580</latest>
+    <commit t="S">8bfef028a9c39ccf305b9b54d2a11c18cf06ce53</commit>
+    <default_branch t="S">master</default_branch>
+    <details t="S">A new Git push #20171560128 has arrived to h1alexbel/fakehub, made by @h1alexbel (default branch is 'master'), not associated with any pull request.</details>
+    <event_id t="I">41800031989</event_id>
+    <event_type t="S">PushEvent</event_type>
+    <is_human t="I">1</is_human>
+    <push_id t="I">20171560128</push_id>
+    <ref t="S">refs/heads/master</ref>
+    <repository t="I">807802459</repository>
+    <to_master t="I">1</to_master>
+    <what t="S">git-was-pushed</what>
+    <when t="T">2024-09-10T16:57:14Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">130</_id>
+    <_time t="T">2024-09-10T19:13:01Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">41800466794</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">125</_id>
-    <_time t="T">2024-09-10T18:19:32Z</_time>
+    <_id t="I">131</_id>
+    <_time t="T">2024-09-10T19:13:08Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
