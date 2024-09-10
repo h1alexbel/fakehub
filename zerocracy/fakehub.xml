@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="49783">
+<fb version="0.4.0" size="51276">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">6.836915446</seconds>
+    <seconds t="F">27.173890242</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-10T16:17:21Z</when>
+    <when t="T">2024-09-10T18:19:32Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -1758,16 +1758,101 @@
   </f>
   <f>
     <_id t="I">117</_id>
-    <_time t="T">2024-09-10T16:17:16Z</_time>
+    <_time t="T">2024-09-10T18:19:07Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">41794095071</latest>
+    <details t="S">The issue h1alexbel/fakehub#150 has been opened by @0pdd.</details>
+    <event_id t="I">41798776538</event_id>
+    <event_type t="S">IssuesEvent</event_type>
+    <is_human t="I">0</is_human>
+    <issue t="I">150</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">issue-was-opened</what>
+    <when t="T">2024-09-10T16:16:32Z</when>
+    <where t="S">github</where>
+    <who t="I">24456188</who>
+  </f>
+  <f>
+    <_id t="I">118</_id>
+    <_time t="T">2024-09-10T18:19:07Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <details t="S">The issue h1alexbel/fakehub#144 has been closed by @rultor.</details>
+    <event_id t="I">41798775668</event_id>
+    <event_type t="S">IssuesEvent</event_type>
+    <is_human t="I">0</is_human>
+    <issue t="I">144</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">issue-was-closed</what>
+    <when t="T">2024-09-10T16:16:30Z</when>
+    <where t="S">github</where>
+    <who t="I">8086956</who>
+  </f>
+  <f>
+    <_id t="I">119</_id>
+    <_time t="T">2024-09-10T18:19:07Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">144</branch>
+    <comments t="I">3</comments>
+    <comments_appreciated t="I">1</comments_appreciated>
+    <comments_by_author t="I">1</comments_by_author>
+    <comments_by_reviewers t="I">3</comments_by_reviewers>
+    <comments_resolved t="I">0</comments_resolved>
+    <comments_to_code t="I">0</comments_to_code>
+    <details t="S">The pull request h1alexbel/fakehub#149 has been closed by @rultor, with 103 HoC and 3 comments.</details>
+    <event_id t="I">41798775256</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <failed_builds t="I">0</failed_builds>
+    <hoc t="I">103</hoc>
+    <is_human t="I">0</is_human>
+    <issue t="I">149</issue>
+    <repository t="I">807802459</repository>
+    <succeeded_builds t="I">11</succeeded_builds>
+    <what t="S">pull-was-merged</what>
+    <when t="T">2024-09-10T16:16:29Z</when>
+    <where t="S">github</where>
+    <who t="I">8086956</who>
+  </f>
+  <f>
+    <_id t="I">120</_id>
+    <_time t="T">2024-09-10T18:19:19Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">144</branch>
+    <details t="S">The pull request h1alexbel/fakehub#149 has been opened by @h1alexbel.</details>
+    <event_id t="I">41796536899</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <is_human t="I">1</is_human>
+    <issue t="I">149</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-opened</what>
+    <when t="T">2024-09-10T15:14:57Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">122</_id>
+    <_time t="T">2024-09-10T18:19:24Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <details t="S">The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#150.</details>
+    <is_human t="I">0</is_human>
+    <issue t="I">150</issue>
+    <label t="S">bug</label>
+    <repository t="I">807802459</repository>
+    <what t="S">label-was-attached</what>
+    <when t="T">2024-09-10T16:16:31Z</when>
+    <where t="S">github</where>
+    <who t="I">24456188</who>
+  </f>
+  <f>
+    <_id t="I">124</_id>
+    <_time t="T">2024-09-10T18:19:26Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">41798807580</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">118</_id>
-    <_time t="T">2024-09-10T16:17:21Z</_time>
+    <_id t="I">125</_id>
+    <_time t="T">2024-09-10T18:19:32Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
