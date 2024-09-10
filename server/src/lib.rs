@@ -32,6 +32,7 @@ use tokio::net::TcpListener;
 use crate::handlers::home;
 use crate::handlers::register_user::register_user;
 use crate::handlers::user::user;
+use crate::handlers::users::users;
 use crate::objects::fakehub::FakeHub;
 
 /// Handlers.
@@ -91,6 +92,7 @@ impl Server {
                     .route("/", get(home::home))
                     .route("/users", post(register_user))
                     .route("/users/:login", get(user))
+                    .route("/users", get(users))
                     .with_state(ServerConfig {
                         fakehub: FakeHub::with_addr(addr),
                     }),
