@@ -31,3 +31,5 @@ pub mod node_id;
 pub mod register_user;
 /// Slashed Cursor.
 pub mod sh_cursor;
+/// User.
+pub mod user;
