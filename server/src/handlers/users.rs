@@ -56,6 +56,7 @@ mod tests {
         }))
         .await;
         let user = users.first().expect("Failed to get first JSON user");
+        assert_that!(users.len(), is(equal_to(2)));
         assert_that!(user["id"].as_u64(), is(equal_to(Some(1))));
         assert_that!(user["login"].as_str(), is(equal_to(Some("jeff"))));
         Ok(())

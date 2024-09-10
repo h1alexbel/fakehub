@@ -67,6 +67,11 @@ fn create_github() -> GitHub {
     let mut jeff = User::new(name.clone());
     jeff.extra
         .insert(String::from("id"), Value::Number(Number::from(1)));
+    let mut second = User::new(String::from("h1alexbel"));
+    second
+        .extra
+        .insert(String::from("id"), Value::Number(Number::from(2)));
+    users.insert(String::from("h1alexbel"), second);
     users.insert(name, jeff);
     GitHub {
         id: Uuid::new_v4(),
@@ -134,9 +139,8 @@ mod tests {
         let fakehub = FakeHub::default();
         let github = fakehub.main();
         let users = github.clone().users();
-        let user = users.first().expect("Failed to get user");
         assert_that!(&github.name, is(equal_to("main")));
-        assert_that!(&user.login, is(equal_to("jeff")));
+        assert_that!(users.len(), is(equal_to(2)));
         Ok(())
     }
 
