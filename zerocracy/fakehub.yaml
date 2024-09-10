@@ -2,10 +2,10 @@
 - added: 8
   cycles: 1
   removed: 8
-  seconds: 7.106440771
+  seconds: 8.206911281
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-10 13:21:05.435150713 Z
+  when: 2024-09-10 14:14:02.188728672 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -1464,15 +1464,219 @@
   where: github
   who: 83453843
   why: Pushed f4cf14dcd to the default branch 'master' in h1alexbel/fakehub
-- _id: 101
-  _time: 2024-09-10 13:21:00.766625082 Z
+- _id: 103
+  _job: 6528
+  _time: 2024-09-10 13:21:11.595547571 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#146,
+    the reward amount is 4.
+  greeting: "Hey there, coder! \U0001F44B Thanks for your contribution, but we've
+    got some mixed news. You've earned +4 points, but there were a few hiccups: -8
+    for exceeding 200 hits-of-code (you hit 351!), -16 for skipping code review (oops!),
+    and -4 for only having 3 comments (we like to see at least 6). We added +28 to
+    keep you in the game, though! Your balance is now [-16](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Remember, [quality matters](https://www.yegor256.com/2018/03/06/speed-vs-quality.html),
+    so aim for fewer hits-of-code, get those reviews, and encourage more comments
+    next time. Keep the contributions coming - you've got this! \U0001F4AA"
+  href: https://github.com/h1alexbel/fakehub/issues/146/#issuecomment-2340764342
+  is_human: 1
+  issue: 146
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-09-10 13:21:11.598168016 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#146
+- _id: 104
+  _job: 6528
+  _time: 2024-09-10 13:21:16.176896828 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#143,
+    the reward amount is 4.
+  greeting: "Hey there, coding champ! \U0001F44B Nice work on your contribution! Let's
+    break down your points: You snagged 4 base points and a sweet 8 points for those
+    166 [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html) you
+    cranked out. But heads up – we missed out on 16 points due to no code review,
+    and lost 4 more because of only 3 comments. Don't sweat it though, we tossed in
+    12 points to keep you motivated. Your total? 4 points! [Keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    that code flowing, and remember, more reviews and comments can boost your score
+    next time. Your current balance sits at [-16](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Let's aim higher together!"
+  href: https://github.com/h1alexbel/fakehub/issues/143/#issuecomment-2340764402
+  is_human: 1
+  issue: 143
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-09-10 13:21:16.179829671 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#143
+- _id: 105
+  _job: 6528
+  _time: 2024-09-10 13:21:20.537506965 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#140,
+    the reward amount is 4.
+  greeting: "Thanks for your contribution! Here's the breakdown of your +4 points:
+    +4 base, -8 for 447 hits-of-code (≥200), -16 for no code review, -4 for only 3
+    comments, +28 adjustment. Remember, our [policy](https://www.yegor256.com/2014/11/14/hits-of-code.html)
+    rewards smaller, reviewable contributions with more comments. [Keep them coming](https://www.yegor256.com/2018/03/06/speed-vs-quality.html),
+    but aim for quality over quantity. Your balance is now [-16](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    \U0001F4BB\U0001F44D"
+  href: https://github.com/h1alexbel/fakehub/issues/140/#issuecomment-2340764466
+  is_human: 1
+  issue: 140
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-09-10 13:21:20.540448050 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#140
+- _id: 106
+  _job: 6528
+  _time: 2024-09-10 13:21:23.730109969 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#136,
+    the reward amount is 4.
+  greeting: "Great work on your contribution! \U0001F31F You've earned +4 points:
+    +4 base, -16 for missing code review, -4 for limited comments, +20 bonus. We appreciate
+    your effort! [Keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    the contributions flowing. Your current balance is [-16](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Looking forward to your next submission!"
+  href: https://github.com/h1alexbel/fakehub/issues/136/#issuecomment-2340764523
+  is_human: 1
+  issue: 136
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-09-10 13:21:23.733745779 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#136
+- _id: 107
+  _job: 6528
+  _time: 2024-09-10 13:21:25.935772348 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#131,
+    the reward amount is 4.
+  greeting: "Hey there! Thanks for your contribution! \U0001F44D You've earned +4
+    points, but there's room for improvement. We missed out on some points due to
+    no code review and only 3 comments. Remember, reviews and comments are crucial
+    - they help us all learn and grow! Next time, aim for at least 6 comments and
+    don't forget to get your code reviewed. Keep pushing those [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html),
+    but remember [quality matters too](https://www.yegor256.com/2018/03/06/speed-vs-quality.html).
+    Your current balance is [-16](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Looking forward to your next contribution!"
+  href: https://github.com/h1alexbel/fakehub/issues/131/#issuecomment-2340764617
+  is_human: 1
+  issue: 131
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-09-10 13:21:25.939274474 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#131
+- _id: 108
+  _job: 6528
+  _time: 2024-09-10 13:21:29.435217395 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#125,
+    the reward amount is 4.
+  greeting: 'Thanks for your contribution! Here''s a breakdown of your +4 points:
+    +4 base, -8 for 525 hits-of-code (exceeding 200), -5 for 29 review comments, and
+    +13 to meet the minimum reward. While the large code size and numerous comments
+    affected your score, we appreciate your effort. Remember, [concise contributions](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    often yield better results. Keep them coming! Your current balance is [-16](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).'
+  href: https://github.com/h1alexbel/fakehub/issues/125/#issuecomment-2340764684
+  is_human: 1
+  issue: 125
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-09-10 13:21:29.438600714 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#125
+- _id: 109
+  _job: 6528
+  _time: 2024-09-10 13:21:32.297419665 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#148,
+    the reward amount is 4.
+  greeting: "Thanks for your code review! Here's how your +4 points were calculated:
+    +4 base, -24 for self-review, +0.02 for 2 hits-of-code, -16 for no comments, -8
+    for <16 hits-of-code, then adjusted to the minimum 4 points. Your balance is now
+    [+8](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). Keep up
+    the good work, but remember more comments and hits-of-code can boost your future
+    rewards! \U0001F4BB\U0001F44D"
+  href: https://github.com/h1alexbel/fakehub/issues/148/#issuecomment-2340764772
+  is_human: 1
+  issue: 148
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-10 13:21:32.299737074 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#148
+- _id: 110
+  _job: 6528
+  _time: 2024-09-10 13:21:35.752110133 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#139,
+    the reward amount is 4.
+  greeting: Hello! Thank you for your code review. We appreciate your effort, but
+    there are some areas for improvement. According to our policy, you've earned 4
+    points as a base reward. However, we had to deduct 10 points due to the low number
+    of comments (4) and 8 points for the limited hits-of-code (2). To ensure you receive
+    some recognition, we've added 18 points, bringing your total to +4 for this review.
+    Your current balance stands at [+8](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    For future reviews, aim for more comprehensive comments and increased code contributions
+    to maximize your rewards. Keep up the good work!
+  href: https://github.com/h1alexbel/fakehub/issues/139/#issuecomment-2340764859
+  is_human: 1
+  issue: 139
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-10 13:21:35.754191756 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#139
+- _id: 111
+  _job: 6528
+  _time: 2024-09-10 13:21:39.411384097 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  award: 17
+  details: It's time to reward @l3r8yJ for the code review in h1alexbel/fakehub#125,
+    the reward amount is 17.
+  greeting: "Hey there, rockstar! \U0001F389 Awesome job on that review! You've snagged
+    a sweet +17 points bonus for your efforts. Here's the breakdown: +4 for stepping
+    up, +5 for tackling those 525 [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html)
+    (impressive!), and +7 for your 30 insightful comments. Keep up the great work
+    – your thorough reviews are making our code shine!"
+  href: https://github.com/h1alexbel/fakehub/issues/125/#issuecomment-2340764941
+  is_human: 1
+  issue: 125
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-10 13:21:39.413957616 Z
+  where: github
+  who: 46355873
+  why: Reviewed code in h1alexbel/fakehub#125
+- _id: 112
+  _time: 2024-09-10 14:13:56.677306663 Z
   _version: 0.4.0/0.26.1/
-  latest: 41687519761
+  latest: 41790250606
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 102
-  _time: 2024-09-10 13:21:05.424679019 Z
+- _id: 113
+  _time: 2024-09-10 14:14:02.178802741 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
