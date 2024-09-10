@@ -60,7 +60,6 @@ impl Default for FakeHub {
 }
 
 /// Create GitHub.
-// generate jeff
 fn create_github() -> GitHub {
     let mut users: HashMap<String, User> = HashMap::new();
     let jeff = String::from("jeff");
