@@ -23,7 +23,7 @@
 architect:
   - h1alexbel
 docker:
-  image: h1alexbel/rultor-rust-image:0.0.1
+  image: h1alexbel/rultor-rust-image:0.0.2
 assets:
   credentials: l3r8yJ/home#assets/crates-credentials
 install: |
