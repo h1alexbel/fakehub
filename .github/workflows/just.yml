@@ -63,4 +63,5 @@ jobs:
       - name: Install cargo-fmt (macOS)
         if: ${{ runner.os == 'macOS' }}
         run: rustup component add --toolchain nightly-x86_64-apple-darwin rustfmt
+      - run: just install
       - run: just full

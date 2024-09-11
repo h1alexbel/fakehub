@@ -20,6 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Install required tools
+install:
+  cargo install cargo-machete
+
 # Full build.
 full:
   just gen
@@ -47,6 +51,7 @@ test:
 check:
   cargo clippy --all-targets --all-features
   cargo +nightly fmt --check
+  cargo machete
 
 # Rultor merge script.
 rultor:
@@ -56,5 +61,6 @@ rultor:
     sudo openapi-generator-cli generate -i github.yml -g rust -o .
   cargo --color=never test
   cargo +nightly fmt --check -- --color=never
+  cargo machete
   cargo doc --no-deps
   cargo clippy
