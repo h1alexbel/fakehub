@@ -61,5 +61,6 @@ rultor:
     sudo openapi-generator-cli generate -i github.yml -g rust -o .
   cargo --color=never test -vv
   cargo +nightly fmt --check -- --color=never
+  cargo machete
   cargo doc --no-deps
   cargo clippy
