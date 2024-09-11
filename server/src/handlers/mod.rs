@@ -31,5 +31,7 @@ pub mod node_id;
 pub mod register_user;
 /// Slashed Cursor.
 pub mod sh_cursor;
-/// User.
+/// GitHub user by login.
 pub mod user;
+/// All GitHub users.
+pub mod users;
