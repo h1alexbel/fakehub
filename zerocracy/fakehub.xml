@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="59374">
+<fb version="0.4.0" size="61153">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">10.177114148</seconds>
+    <seconds t="F">32.606985607</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-11T17:12:50Z</when>
+    <when t="T">2024-09-11T18:20:05Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2172,17 +2172,75 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">183</_id>
-    <_time t="T">2024-09-11T17:12:43Z</_time>
+    <_id t="I">185</_id>
+    <_job t="I">6632</_job>
+    <_time t="T">2024-09-11T17:12:54Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.51</_version>
+    <award t="I">4</award>
+    <details t="S">It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#152, the reward amount is 4.</details>
+    <greeting t="S">Thank you for your contribution! We appreciate your effort in writing 152 hits-of-code. However, we noticed the absence of a code review, which is crucial for our team's quality assurance process. As per our policy, you've earned +4 points as a base, +7.6 points for the code written, but -16 points for the lack of review. Your final reward is +4 points (adjusted to the minimum). We encourage you to [keep contributing](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) and ensure code reviews in future submissions. Your updated balance is [+24](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).</greeting>
+    <href t="S">https://github.com/h1alexbel/fakehub/issues/152/#issuecomment-2344247449</href>
+    <is_human t="I">1</is_human>
+    <issue t="I">152</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-contribution-was-rewarded</what>
+    <when t="T">2024-09-11T17:12:54Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Contributed code in h1alexbel/fakehub#152</why>
+  </f>
+  <f>
+    <_id t="I">186</_id>
+    <_time t="T">2024-09-11T18:19:35Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">41834865076</latest>
+    <details t="S">The issue h1alexbel/fakehub#153 has been closed by @h1alexbel.</details>
+    <event_id t="I">41835320161</event_id>
+    <event_type t="S">IssuesEvent</event_type>
+    <is_human t="I">1</is_human>
+    <issue t="I">153</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">issue-was-closed</what>
+    <when t="T">2024-09-11T15:13:01Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">187</_id>
+    <_time t="T">2024-09-11T18:19:35Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">153</branch>
+    <comments t="I">1</comments>
+    <comments_appreciated t="I">0</comments_appreciated>
+    <comments_by_author t="I">0</comments_by_author>
+    <comments_by_reviewers t="I">1</comments_by_reviewers>
+    <comments_resolved t="I">0</comments_resolved>
+    <comments_to_code t="I">0</comments_to_code>
+    <details t="S">The pull request h1alexbel/fakehub#154 has been closed by @h1alexbel, with 18 HoC and 1 comments.</details>
+    <event_id t="I">41835321664</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <failed_builds t="I">0</failed_builds>
+    <hoc t="I">18</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">154</issue>
+    <repository t="I">807802459</repository>
+    <succeeded_builds t="I">11</succeeded_builds>
+    <what t="S">pull-was-merged</what>
+    <when t="T">2024-09-11T15:13:02Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">190</_id>
+    <_time t="T">2024-09-11T18:19:57Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">41835520290</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">184</_id>
-    <_time t="T">2024-09-11T17:12:50Z</_time>
+    <_id t="I">191</_id>
+    <_time t="T">2024-09-11T18:20:05Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
