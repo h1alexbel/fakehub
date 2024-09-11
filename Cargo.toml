@@ -26,3 +26,10 @@ members = [
     "github-mirror"
 ]
 resolver = "1"
+
+[workspace.lints.rust]
+missing_docs = "deny"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+question_mark_used = "deny"
