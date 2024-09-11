@@ -49,3 +49,6 @@ tracing = "0.1.40"
 [features]
 default = ["cli"]
 cli = ["clap", "clap_complete", "clap_mangen", "clap_complete_nushell"]
+
+[package.metadata.cargo-machete]
+ignored = ["clap_complete", "clap_complete_nushell", "clap_mangen"]

@@ -48,18 +48,14 @@ question_mark_used = "deny"
 openapi = { path = "../github-mirror" }
 anyhow = "1.0.86"
 serde = { version = "1.0.203", features = ["derive"] }
-serde-xml-rs = "0.6.0"
 serde_json = "1.0.117"
 tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros", "fs"] }
 axum = "0.7.5"
 log = { version = "0.4.21", features = [] }
-env_logger = "0.11.3"
-tempdir = "0.3.7"
 hamcrest = "0.1.5"
 reqwest = "0.12.5"
 uuid = { version = "1.10.0", features = ["v4", "fast-rng", "macro-diagnostics", ] }
 md5 = "0.7.0"
-hex-literal = "0.4.1"
 chrono = "0.4.38"
 rand = "0.8.5"
 regex = "1.10.6"

@@ -26,3 +26,6 @@ members = [
     "github-mirror"
 ]
 resolver = "1"
+
+[workspace.metadata.cargo-machete]
+ignored = ["uuid"]
