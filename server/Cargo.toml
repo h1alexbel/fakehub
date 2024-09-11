@@ -34,15 +34,8 @@ authors = ["Aliaksei Bialíauski <aliaksei.bialiauski@hey.com>", "Ivanchuk Ivan 
 [lib]
 path = "src/lib.rs"
 
-[lints.rust]
-missing_docs = "deny"
-
-# @todo #74:30min Find way to spread clippy config
-#  We need to find way to spread clippy/rustfmt configuration
-#  through all workspaces to reduce duplications in child workspaces.
-[lints.clippy]
-unwrap_used = "deny"
-question_mark_used = "deny"
+[lints]
+workspace = true
 
 [dependencies]
 openapi = { path = "../github-mirror" }

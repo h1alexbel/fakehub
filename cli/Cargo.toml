@@ -28,8 +28,8 @@ edition = "2021"
 name = "cli"
 path = "src/main.rs"
 
-[lints.clippy]
-unwrap_used = "deny"
+[lints]
+workspace = true
 
 [dev-dependencies]
 assert_cmd = "2.0.14"
