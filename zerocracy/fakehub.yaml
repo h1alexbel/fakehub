@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 20.375370748
+  seconds: 26.012672252
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-11 13:20:55.162756010 Z
+  when: 2024-09-11 14:14:02.387654811 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -1888,15 +1888,66 @@
   when: 2024-09-11 12:11:55.000000000 Z
   where: github
   who: 83453843
-- _id: 159
-  _time: 2024-09-11 13:20:47.819226119 Z
+- _id: 161
+  _time: 2024-09-11 14:13:38.787312761 Z
   _version: 0.4.0/0.26.1/
-  latest: 41828233755
+  details: The issue h1alexbel/fakehub#147 has been closed by @rultor.
+  event_id: 41829245647
+  event_type: IssuesEvent
+  is_human: 0
+  issue: 147
+  repository: 807802459
+  what: issue-was-closed
+  when: 2024-09-11 12:39:24.000000000 Z
+  where: github
+  who: 8086956
+- _id: 162
+  _time: 2024-09-11 14:13:38.804697633 Z
+  _version: 0.4.0/0.26.1/
+  branch: '147'
+  comments: 9
+  comments_appreciated: 3
+  comments_by_author: 3
+  comments_by_reviewers: 7
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#151 has been closed by @rultor, with
+    86 HoC and 9 comments.
+  event_id: 41829245196
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 86
+  is_human: 0
+  issue: 151
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-11 12:39:23.000000000 Z
+  where: github
+  who: 8086956
+- _id: 163
+  _time: 2024-09-11 14:13:50.442299499 Z
+  _version: 0.4.0/0.26.1/
+  branch: '153'
+  details: The pull request h1alexbel/fakehub#154 has been opened by @h1alexbel.
+  event_id: 41828620544
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 154
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-11 12:22:44.000000000 Z
+  where: github
+  who: 83453843
+- _id: 166
+  _time: 2024-09-11 14:13:57.327500364 Z
+  _version: 0.4.0/0.26.1/
+  latest: 41829252695
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 160
-  _time: 2024-09-11 13:20:55.154126927 Z
+- _id: 167
+  _time: 2024-09-11 14:14:02.378274706 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
