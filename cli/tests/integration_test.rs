@@ -19,70 +19,73 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::str;
+#[allow(clippy::question_mark_used)]
+#[cfg(test)]
+mod tests {
+    use std::str;
 
-use anyhow::Result;
-use assert_cmd::Command;
+    use anyhow::Result;
+    use assert_cmd::Command;
+    #[test]
+    fn outputs_help() -> Result<()> {
+        let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(output.contains("help"));
+        assert!(output.contains("start"));
+        assert!(output.contains("Start the server"));
+        assert!(output.contains("--help"));
+        assert!(output.contains("Print help"));
+        Ok(())
+    }
 
-#[test]
-fn outputs_help() -> Result<()> {
-    let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
-    let bytes = assertion.get_output().stdout.as_slice();
-    let output = str::from_utf8(bytes)?;
-    assert!(output.contains("help"));
-    assert!(output.contains("start"));
-    assert!(output.contains("Start the server"));
-    assert!(output.contains("--help"));
-    assert!(output.contains("Print help"));
-    Ok(())
-}
+    #[test]
+    fn outputs_start_opts() -> Result<()> {
+        let assertion = Command::cargo_bin("cli")?
+            .arg("start")
+            .arg("--help")
+            .assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(output.contains("--port"));
+        assert!(output.contains("The port to run [default: 3000]"));
+        assert!(output.contains("--verbose"));
+        assert!(output.contains("Verbose output"));
+        Ok(())
+    }
 
-#[test]
-fn outputs_start_opts() -> Result<()> {
-    let assertion = Command::cargo_bin("cli")?
-        .arg("start")
-        .arg("--help")
-        .assert();
-    let bytes = assertion.get_output().stdout.as_slice();
-    let output = str::from_utf8(bytes)?;
-    assert!(output.contains("--port"));
-    assert!(output.contains("The port to run [default: 3000]"));
-    assert!(output.contains("--verbose"));
-    assert!(output.contains("Verbose output"));
-    Ok(())
-}
+    // @todo #43:30min Enable starts_server integration test.
+    //  We should enable this integration test that checks whether server starts or
+    //  not. This test should output success message in info!. For now it does not
+    //  work. Probably some error with logging configuration. Don't forget to
+    //  remove this puzzle.
+    #[test]
+    #[ignore]
+    fn starts_server() -> Result<()> {
+        let assertion = Command::cargo_bin("cli")?
+            .arg("start")
+            .arg("--port 8080")
+            .assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(output.contains("Server started successfully on port 8080"));
+        Ok(())
+    }
 
-// @todo #43:30min Enable starts_server integration test.
-//  We should enable this integration test that checks whether server starts or
-//  not. This test should output success message in info!. For now it does not
-//  work. Probably some error with logging configuration. Don't forget to
-//  remove this puzzle.
-#[test]
-#[ignore]
-fn starts_server() -> Result<()> {
-    let assertion = Command::cargo_bin("cli")?
-        .arg("start")
-        .arg("--port 8080")
-        .assert();
-    let bytes = assertion.get_output().stdout.as_slice();
-    let output = str::from_utf8(bytes)?;
-    assert!(output.contains("Server started successfully on port 8080"));
-    Ok(())
-}
-
-// @todo #82:30min Enable runs_in_verbose_mode test.
-//  We should enable this test right after we find out how to shutdown the server
-//  in test. This problem is similar to
-//  https://github.com/h1alexbel/fakehub/issues/76.
-#[test]
-#[ignore]
-fn runs_in_verbose_mode() -> Result<()> {
-    let assertion = Command::cargo_bin("cli")?
-        .arg("start")
-        .arg("--verbose")
-        .assert();
-    let bytes = assertion.get_output().stdout.as_slice();
-    let output = str::from_utf8(bytes)?;
-    assert!(output.contains("DEBUG"));
-    Ok(())
+    // @todo #82:30min Enable runs_in_verbose_mode test.
+    //  We should enable this test right after we find out how to shutdown the server
+    //  in test. This problem is similar to
+    //  https://github.com/h1alexbel/fakehub/issues/76.
+    #[test]
+    #[ignore]
+    fn runs_in_verbose_mode() -> Result<()> {
+        let assertion = Command::cargo_bin("cli")?
+            .arg("start")
+            .arg("--verbose")
+            .assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(output.contains("DEBUG"));
+        Ok(())
+    }
 }
