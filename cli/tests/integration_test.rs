@@ -48,11 +48,15 @@ mod tests {
             .assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
+        assert!(output.contains("-p"));
         assert!(output.contains("--port"));
         assert!(output.contains("The port to run [default: 3000]"));
-        assert!(output.contains("--verbose"));
         assert!(output.contains("-v"));
+        assert!(output.contains("--verbose"));
         assert!(output.contains("Verbose output"));
+        assert!(output.contains("-d"));
+        assert!(output.contains("--detach"));
+        assert!(output.contains("Run in detach mode"));
         Ok(())
     }
 

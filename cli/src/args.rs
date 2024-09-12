@@ -50,4 +50,7 @@ pub(crate) struct StartArgs {
     /// Verbose output.
     #[arg(short, long, default_value = "false")]
     pub(crate) verbose: bool,
+    /// Run in detach mode.
+    #[arg(short, long, default_value = "false")]
+    pub(crate) detach: bool,
 }
