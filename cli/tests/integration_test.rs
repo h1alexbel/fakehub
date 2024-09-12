@@ -22,10 +22,11 @@
 #[allow(clippy::question_mark_used)]
 #[cfg(test)]
 mod tests {
-    use std::str;
-
     use anyhow::Result;
     use assert_cmd::Command;
+    use std::time::Duration;
+    use std::{str, thread};
+
     #[test]
     fn outputs_help() -> Result<()> {
         let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
@@ -50,7 +51,20 @@ mod tests {
         assert!(output.contains("--port"));
         assert!(output.contains("The port to run [default: 3000]"));
         assert!(output.contains("--verbose"));
+        assert!(output.contains("-v"));
         assert!(output.contains("Verbose output"));
+        Ok(())
+    }
+
+    #[test]
+    fn runs_in_detached_mode() -> Result<()> {
+        let mut command = std::process::Command::new("cli");
+        command.arg("start").arg("-d");
+        let child = command
+            .spawn()
+            .expect("Failed to start the detached process");
+        thread::sleep(Duration::from_secs(1));
+        assert!(child.id() > 0, "Detached process did not start correctly.");
         Ok(())
     }
 
