@@ -97,12 +97,13 @@ TBD..
 
 You can use the following options within `fakehub` command-line tool:
 
-| Name            | Value   | Default | Description                                                                                               |
-|-----------------|---------|---------|-----------------------------------------------------------------------------------------------------------|
-| `port`          | int     | `3000`  | Port to run fakehub server on.                                                                            |
-| `v`             | boolean | `false` | Verbose run output, i.e. debug logs, etc.                                                                 |
-| `report`        | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
-| `report-format` | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
+| Name              | Value   | Default | Description                                                                                               |
+|-------------------|---------|---------|-----------------------------------------------------------------------------------------------------------|
+| `-p`, `--port`    | int     | `3000`  | Port to run fakehub server on.                                                                            |
+| `-v`, `--verbose` | boolean | `false` | Verbose run output, i.e. debug logs, etc.                                                                 |
+| `-d`,  `--detach` | boolean | `false` | Run fakehub server in detached mode.                                                                      |
+| `report`          | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
+| `report-format`   | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
 
 ## How to contribute?
 
