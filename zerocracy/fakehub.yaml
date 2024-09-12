@@ -2,10 +2,10 @@
 - added: 8
   cycles: 1
   removed: 8
-  seconds: 9.900336226
+  seconds: 8.15317253
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-12 16:18:01.464628119 Z
+  when: 2024-09-12 17:13:28.239906736 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -1816,12 +1816,6 @@
   when: 2024-09-10 17:22:24.000000000 Z
   where: github
   who: 83453843
-- _id: 151
-  _job: 6607
-  _time: 2024-09-11 12:40:33.454010577 Z
-  _version: 0.4.0/0.26.1/0.0.51
-  what: learn-eva
-  when: 2024-09-11 12:40:33.446031788 Z
 - _id: 152
   _time: 2024-09-11 13:20:35.111580457 Z
   _version: 0.4.0/0.26.1/
@@ -2206,15 +2200,21 @@
   total_releases_published: 0
   what: quantity-of-deliverables
   when: 2024-09-12 13:22:42.757924859 Z
-- _id: 239
-  _time: 2024-09-12 16:17:54.600165682 Z
+- _id: 241
+  _job: 6724
+  _time: 2024-09-12 16:18:58.371545411 Z
+  _version: 0.4.0/0.26.1/0.0.51
+  what: learn-eva
+  when: 2024-09-12 16:18:58.364216865 Z
+- _id: 242
+  _time: 2024-09-12 17:13:22.606035938 Z
   _version: 0.4.0/0.26.1/
-  latest: 41872761982
+  latest: 41875192781
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 240
-  _time: 2024-09-12 16:18:01.452536332 Z
+- _id: 243
+  _time: 2024-09-12 17:13:28.229980211 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
