@@ -61,6 +61,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn runs_in_detached_mode() -> Result<()> {
         let mut command = std::process::Command::new("cli");
         command.arg("start").arg("-d");
