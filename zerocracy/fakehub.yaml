@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 6.916641647
+  seconds: 18.204959107
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-14 06:20:01.661457988 Z
+  when: 2024-09-14 07:13:59.310740608 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2215,15 +2215,29 @@
   _version: 0.4.0/0.26.1/0.0.51
   what: learn-eva
   when: 2024-09-14 04:17:34.057598223 Z
-- _id: 318
-  _time: 2024-09-14 06:19:56.944849949 Z
+- _id: 320
+  _time: 2024-09-14 07:13:44.073181809 Z
   _version: 0.4.0/0.26.1/
-  latest: 41925476114
+  branch: renovate/zerocracy-judges-action-0.x
+  details: The pull request h1alexbel/fakehub#155 has been opened by @renovate[bot].
+  event_id: 41926055860
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 155
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-14 06:20:27.000000000 Z
+  where: github
+  who: 29139614
+- _id: 323
+  _time: 2024-09-14 07:13:52.967389730 Z
+  _version: 0.4.0/0.26.1/
+  latest: 41926078559
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 319
-  _time: 2024-09-14 06:20:01.650337296 Z
+- _id: 324
+  _time: 2024-09-14 07:13:59.301319213 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
