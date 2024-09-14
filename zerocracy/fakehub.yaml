@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 3
+  cycles: 1
   removed: 8
-  seconds: 143.140025133
+  seconds: 9.299213481
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-14 14:14:41.387474945 Z
+  when: 2024-09-14 15:14:04.877989779 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2243,12 +2243,16 @@
   average_pull_rejection_rate: 0.0
   average_release_interval: 0
   average_review_time: 0
+  composite: 0.45
+  ffact: 84
   since: 2024-09-07 14:12:27.784660397 Z
   what: quality-of-service
   when: 2024-09-14 14:12:27.784581480 Z
 - _id: 340
   _time: 2024-09-14 14:14:19.227567036 Z
   _version: 0.4.0/0.26.1/
+  composite: 9.377
+  ffact: 85
   since: 2024-09-07 14:14:19.227778501 Z
   total_commits_pushed: 19
   total_hoc_committed: 1181
@@ -2266,15 +2270,15 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-09-14 14:14:24.422310591 Z
-- _id: 344
-  _time: 2024-09-14 14:14:34.704666463 Z
+- _id: 346
+  _time: 2024-09-14 15:13:58.209562610 Z
   _version: 0.4.0/0.26.1/
-  latest: 41929726737
+  latest: 41930242506
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 345
-  _time: 2024-09-14 14:14:41.375942525 Z
+- _id: 347
+  _time: 2024-09-14 15:14:04.866151569 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459

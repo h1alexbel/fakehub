@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="64644">
+<fb version="0.4.0" size="64682">
   <f>
     <added t="I">8</added>
-    <cycles t="I">3</cycles>
+    <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">143.140025133</seconds>
+    <seconds t="F">9.299213481</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-14T14:14:41Z</when>
+    <when t="T">2024-09-14T15:14:04Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2353,6 +2353,8 @@
     <average_pull_rejection_rate t="F">0.0</average_pull_rejection_rate>
     <average_release_interval t="I">0</average_release_interval>
     <average_review_time t="I">0</average_review_time>
+    <composite t="F">0.45</composite>
+    <ffact t="I">84</ffact>
     <since t="T">2024-09-07T14:12:27Z</since>
     <what t="S">quality-of-service</what>
     <when t="T">2024-09-14T14:12:27Z</when>
@@ -2361,6 +2363,8 @@
     <_id t="I">340</_id>
     <_time t="T">2024-09-14T14:14:19Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
+    <composite t="F">9.377</composite>
+    <ffact t="I">85</ffact>
     <since t="T">2024-09-07T14:14:19Z</since>
     <total_commits_pushed t="I">19</total_commits_pushed>
     <total_hoc_committed t="I">1181</total_hoc_committed>
@@ -2382,17 +2386,17 @@
     <when t="T">2024-09-14T14:14:24Z</when>
   </f>
   <f>
-    <_id t="I">344</_id>
-    <_time t="T">2024-09-14T14:14:34Z</_time>
+    <_id t="I">346</_id>
+    <_time t="T">2024-09-14T15:13:58Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">41929726737</latest>
+    <latest t="I">41930242506</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">345</_id>
-    <_time t="T">2024-09-14T14:14:41Z</_time>
+    <_id t="I">347</_id>
+    <_time t="T">2024-09-14T15:14:04Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
