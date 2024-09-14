@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 3
   removed: 8
-  seconds: 9.428571466
+  seconds: 143.140025133
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-14 13:17:24.128706006 Z
+  when: 2024-09-14 14:14:41.387474945 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2229,15 +2229,52 @@
   when: 2024-09-14 06:20:27.000000000 Z
   where: github
   who: 29139614
-- _id: 335
-  _time: 2024-09-14 13:17:17.449877405 Z
+- _id: 339
+  _time: 2024-09-14 14:12:27.784478017 Z
   _version: 0.4.0/0.26.1/
-  latest: 41929221634
+  average_backlog_size: 0.75
+  average_build_duration: 135.8287841191067
+  average_build_mttr: -2974
+  average_build_success_rate: 0.8387096774193549
+  average_issue_lifetime: 1232803.4
+  average_pull_files_size: 4.5
+  average_pull_hoc_size: 89.75
+  average_pull_lifetime: 22253.5
+  average_pull_rejection_rate: 0.0
+  average_release_interval: 0
+  average_review_time: 0
+  since: 2024-09-07 14:12:27.784660397 Z
+  what: quality-of-service
+  when: 2024-09-14 14:12:27.784581480 Z
+- _id: 340
+  _time: 2024-09-14 14:14:19.227567036 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-09-07 14:14:19.227778501 Z
+  total_commits_pushed: 19
+  total_hoc_committed: 1181
+  total_issues_created: 4
+  total_pulls_submitted: 1
+  total_releases_published: 0
+  what: quantity-of-deliverables
+  when: 2024-09-14 14:14:19.227699053 Z
+- _id: 341
+  _time: 2024-09-14 14:14:24.422165179 Z
+  _version: 0.4.0/0.26.1/
+  total_forks: 0
+  total_releases: 0
+  total_repositories: 1
+  total_stars: 5
+  what: dimensions-of-terrain
+  when: 2024-09-14 14:14:24.422310591 Z
+- _id: 344
+  _time: 2024-09-14 14:14:34.704666463 Z
+  _version: 0.4.0/0.26.1/
+  latest: 41929726737
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 336
-  _time: 2024-09-14 13:17:24.118760626 Z
+- _id: 345
+  _time: 2024-09-14 14:14:41.375942525 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
