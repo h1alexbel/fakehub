@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="65988">
+<fb version="0.4.0" size="67673">
   <f>
     <added t="I">8</added>
-    <cycles t="I">2</cycles>
+    <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">26.333386595</seconds>
+    <seconds t="F">10.383419651</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-16T08:20:35Z</when>
+    <when t="T">2024-09-16T09:18:17Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2459,17 +2459,55 @@
     <who t="I">8086956</who>
   </f>
   <f>
-    <_id t="I">436</_id>
-    <_time t="T">2024-09-16T08:20:30Z</_time>
+    <_id t="I">438</_id>
+    <_job t="I">7087</_job>
+    <_time t="T">2024-09-16T08:21:21Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.52</_version>
+    <award t="I">4</award>
+    <details t="S">It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#155, the reward amount is 4.</details>
+    <greeting t="S">Hey there! 👋 Thanks for your code review contribution! You've earned +4 points, which is our minimum reward. Here's the breakdown: +4 base points, -10 for having only 3 comments (we aim for at least 6), -8 for just 2 [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html) (we prefer 16+), and +18 to keep you at the minimum. Keep in mind, more comments and code can boost your points next time! Your current balance stands at [+32](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). Keep up the good work! 💪
+
+&lt;!-- Thanks for the review! You've earned +4 points for this: +4 as a basis; -10 for very few (3) comments; -8 for too few (2) hits-of-code; +18 to give you at least something.  Your running balance is [+32](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  --&gt;</greeting>
+    <href t="S">https://github.com/h1alexbel/fakehub/issues/155/#issuecomment-2352283450</href>
+    <is_human t="I">1</is_human>
+    <issue t="I">155</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-review-was-rewarded</what>
+    <when t="T">2024-09-16T08:21:21Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Reviewed code in h1alexbel/fakehub#155</why>
+  </f>
+  <f>
+    <_id t="I">439</_id>
+    <_job t="I">7087</_job>
+    <_time t="T">2024-09-16T08:21:25Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.52</_version>
+    <comments t="I">3</comments>
+    <details t="S">The pull request h1alexbel/fakehub#155 with 2 HoC created by @renovate[bot] was merged by @rultor after 2 days of being in review and 3 comments.</details>
+    <hoc t="I">2</hoc>
+    <is_human t="I">0</is_human>
+    <issue t="I">155</issue>
+    <merger t="I">8086956</merger>
+    <repository t="I">807802459</repository>
+    <seconds t="I">178219</seconds>
+    <what t="S">code-was-contributed</what>
+    <when t="T">2024-09-16T07:50:46Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">440</_id>
+    <_time t="T">2024-09-16T09:18:10Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">41954160129</latest>
+    <latest t="I">41955021823</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">437</_id>
-    <_time t="T">2024-09-16T08:20:35Z</_time>
+    <_id t="I">441</_id>
+    <_time t="T">2024-09-16T09:18:17Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>

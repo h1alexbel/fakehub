@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 1
   removed: 8
-  seconds: 26.333386595
+  seconds: 10.383419651
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-16 08:20:35.111268768 Z
+  when: 2024-09-16 09:18:17.978321874 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2338,15 +2338,57 @@
   when: 2024-09-16 07:50:46.000000000 Z
   where: github
   who: 8086956
-- _id: 436
-  _time: 2024-09-16 08:20:30.055032312 Z
+- _id: 438
+  _job: 7087
+  _time: 2024-09-16 08:21:21.677238482 Z
+  _version: 0.4.0/0.26.1/0.0.52
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#155,
+    the reward amount is 4.
+  greeting: "Hey there! \U0001F44B Thanks for your code review contribution! You've
+    earned +4 points, which is our minimum reward. Here's the breakdown: +4 base points,
+    -10 for having only 3 comments (we aim for at least 6), -8 for just 2 [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html)
+    (we prefer 16+), and +18 to keep you at the minimum. Keep in mind, more comments
+    and code can boost your points next time! Your current balance stands at [+32](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Keep up the good work! \U0001F4AA\n\n<!-- Thanks for the review! You've earned
+    +4 points for this: +4 as a basis; -10 for very few (3) comments; -8 for too few
+    (2) hits-of-code; +18 to give you at least something.  Your running balance is
+    [+32](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  -->"
+  href: https://github.com/h1alexbel/fakehub/issues/155/#issuecomment-2352283450
+  is_human: 1
+  issue: 155
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-16 08:21:21.681168014 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#155
+- _id: 439
+  _job: 7087
+  _time: 2024-09-16 08:21:25.517529886 Z
+  _version: 0.4.0/0.26.1/0.0.52
+  comments: 3
+  details: The pull request h1alexbel/fakehub#155 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 2 days of being in review and 3 comments.
+  hoc: 2
+  is_human: 0
+  issue: 155
+  merger: 8086956
+  repository: 807802459
+  seconds: 178219
+  what: code-was-contributed
+  when: 2024-09-16 07:50:46.000000000 Z
+  where: github
+  who: 29139614
+- _id: 440
+  _time: 2024-09-16 09:18:10.627655865 Z
   _version: 0.4.0/0.26.1/
-  latest: 41954160129
+  latest: 41955021823
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 437
-  _time: 2024-09-16 08:20:35.100375119 Z
+- _id: 441
+  _time: 2024-09-16 09:18:17.966823127 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
