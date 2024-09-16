@@ -1,12 +1,11 @@
 ---
 - added: 8
   cycles: 2
-  error: undefined method `-' for nil
   removed: 8
-  seconds: 113.234180955
+  seconds: 18.544337494
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-16 14:16:47.517910367 Z
+  when: 2024-09-16 15:16:45.543816909 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2394,12 +2393,16 @@
   average_pull_lifetime: 53446.8
   average_pull_rejection_rate: 0.0
   average_release_interval: 0
+  composite: 0.454
+  ffact: 84
   since: 2024-09-09 14:15:02.909490234 Z
   what: quality-of-service
   when: 2024-09-16 14:15:02.909349841 Z
 - _id: 453
   _time: 2024-09-16 14:16:36.034232656 Z
   _version: 0.4.0/0.26.1/
+  composite: 8.497
+  ffact: 85
   since: 2024-09-09 14:16:36.035105885 Z
   total_commits_pushed: 20
   total_hoc_committed: 1183
@@ -2408,15 +2411,24 @@
   total_releases_published: 0
   what: quantity-of-deliverables
   when: 2024-09-16 14:16:36.035039470 Z
-- _id: 454
-  _time: 2024-09-16 14:16:41.666373579 Z
+- _id: 456
+  _time: 2024-09-16 15:16:27.331774533 Z
   _version: 0.4.0/0.26.1/
-  latest: 41962918700
+  total_forks: 0
+  total_releases: 0
+  total_repositories: 1
+  total_stars: 5
+  what: dimensions-of-terrain
+  when: 2024-09-16 15:16:27.331967764 Z
+- _id: 459
+  _time: 2024-09-16 15:16:38.343612049 Z
+  _version: 0.4.0/0.26.1/
+  latest: 41964924996
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 455
-  _time: 2024-09-16 14:16:47.504900106 Z
+- _id: 460
+  _time: 2024-09-16 15:16:45.533435499 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
