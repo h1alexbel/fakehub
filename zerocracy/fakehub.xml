@@ -4,10 +4,10 @@
     <added t="I">8</added>
     <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">7.678532519</seconds>
+    <seconds t="F">11.212582487</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-18T09:16:54Z</when>
+    <when t="T">2024-09-18T10:16:00Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -2378,14 +2378,6 @@
     <when t="T">2024-09-14T14:14:24Z</when>
   </f>
   <f>
-    <_id t="I">367</_id>
-    <_job t="I">6958</_job>
-    <_time t="T">2024-09-15T01:13:52Z</_time>
-    <_version t="S">0.4.0/0.26.1/0.0.51!0.0.52</_version>
-    <what t="S">learn-eva</what>
-    <when t="T">2024-09-15T01:13:52Z</when>
-  </f>
-  <f>
     <_id t="I">394</_id>
     <_time t="T">2024-09-15T15:13:35Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
@@ -2554,17 +2546,25 @@
     <when t="T">2024-09-17T16:18:45Z</when>
   </f>
   <f>
-    <_id t="I">544</_id>
-    <_time t="T">2024-09-18T09:16:48Z</_time>
+    <_id t="I">546</_id>
+    <_job t="I">7324</_job>
+    <_time t="T">2024-09-18T09:36:07Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.52</_version>
+    <what t="S">learn-eva</what>
+    <when t="T">2024-09-18T09:36:07Z</when>
+  </f>
+  <f>
+    <_id t="I">547</_id>
+    <_time t="T">2024-09-18T10:15:52Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42031064189</latest>
+    <latest t="I">42033263892</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">545</_id>
-    <_time t="T">2024-09-18T09:16:54Z</_time>
+    <_id t="I">548</_id>
+    <_time t="T">2024-09-18T10:16:00Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
