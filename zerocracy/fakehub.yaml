@@ -1,12 +1,11 @@
 ---
 - added: 8
-  cycles: 2
-  error: undefined method `-' for nil
+  cycles: 1
   removed: 8
-  seconds: 117.48509863
+  seconds: 7.663772092
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-18 15:18:12.466987595 Z
+  when: 2024-09-18 16:18:11.903047143 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2443,12 +2442,16 @@
   average_pull_lifetime: 178220.0
   average_pull_rejection_rate: 0.0
   average_release_interval: 0
+  composite: 0.359
+  ffact: 84
   since: 2024-09-11 15:16:25.549719995 Z
   what: quality-of-service
   when: 2024-09-18 15:16:25.549629626 Z
 - _id: 558
   _time: 2024-09-18 15:18:02.379091218 Z
   _version: 0.4.0/0.26.1/
+  composite: 0.901
+  ffact: 85
   since: 2024-09-11 15:18:02.379350733 Z
   total_commits_pushed: 1
   total_hoc_committed: 2
@@ -2457,15 +2460,15 @@
   total_releases_published: 0
   what: quantity-of-deliverables
   when: 2024-09-18 15:18:02.379259983 Z
-- _id: 559
-  _time: 2024-09-18 15:18:05.023154145 Z
+- _id: 561
+  _time: 2024-09-18 16:18:06.437215638 Z
   _version: 0.4.0/0.26.1/
   latest: 42041953348
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 560
-  _time: 2024-09-18 15:18:12.456365941 Z
+- _id: 562
+  _time: 2024-09-18 16:18:11.891742171 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
