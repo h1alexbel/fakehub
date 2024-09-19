@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 1
   removed: 8
-  seconds: 16.665569681
+  seconds: 10.516030727
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-19 20:15:50.052880347 Z
+  when: 2024-09-19 21:14:15.877929399 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2512,15 +2512,32 @@
   when: 2024-09-19 17:30:15.000000000 Z
   where: github
   who: 46355873
-- _id: 600
-  _time: 2024-09-19 20:15:43.826852149 Z
+- _id: 602
+  _job: 7415
+  _time: 2024-09-19 20:16:03.853167186 Z
+  _version: 0.4.0/0.26.1/0.0.52
+  author: 83453843
+  comments: 17
+  details: The pull request h1alexbel/fakehub#156 with 134 HoC created by @h1alexbel
+    was reviewed by @l3r8yJ after 7 hours and 17 comments.
+  hoc: 134
+  is_human: 1
+  issue: 156
+  repository: 807802459
+  seconds: 28024
+  what: code-was-reviewed
+  when: 2024-09-19 17:30:15.000000000 Z
+  where: github
+  who: 46355873
+- _id: 603
+  _time: 2024-09-19 21:14:08.346974828 Z
   _version: 0.4.0/0.26.1/
-  latest: 42092034296
+  latest: 42093439129
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 601
-  _time: 2024-09-19 20:15:50.043290359 Z
+- _id: 604
+  _time: 2024-09-19 21:14:15.865824486 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
