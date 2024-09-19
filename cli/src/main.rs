@@ -35,21 +35,55 @@ mod args;
 async fn main() {
     let args = Args::parse();
     match args.command {
-        Command::Start(start_args) => {
-            if start_args.verbose {
+        Command::Start(start) => {
+            if start.verbose {
                 tracing_subscriber::fmt()
                     .with_max_level(tracing::Level::DEBUG)
                     .init()
             } else {
                 tracing_subscriber::fmt::init();
             }
-            info!("Starting server on port {}", start_args.port);
-            let server = Server::new(start_args.port);
+            info!("Starting server on port {}", start.port);
+            if start.detach {
+                match std::env::current_exe() {
+                    Ok(buf) => {
+                        let mut command = std::process::Command::new(buf);
+                        command
+                            .arg("start")
+                            .arg("--port")
+                            .arg(start.port.to_string())
+                            .stdout(std::process::Stdio::null())
+                            .stderr(std::process::Stdio::null())
+                            .stdin(std::process::Stdio::null());
+                        if start.verbose {
+                            command.arg("--verbose");
+                        }
+                        #[cfg(target_os = "windows")]
+                        use std::os::windows::process::CommandExt;
+                        #[cfg(target_os = "windows")]
+                        command.creation_flags(0x00000008);
+                        match command.spawn() {
+                            Ok(_) => println!(
+                                "Server is running in detached mode on port {}",
+                                start.port
+                            ),
+                            Err(err) => {
+                                panic!("Failed to spawn detached process: {}", err)
+                            }
+                        }
+                        return;
+                    }
+                    Err(err) => {
+                        panic!("Failed to start fakehub server in detached mode: {}", err)
+                    }
+                };
+            }
+            let server = Server::new(start.port);
             match server.start().await {
-                Ok(_) => info!("Server started successfully on port {}", start_args.port),
+                Ok(_) => info!("Server started successfully on port {}", start.port),
                 Err(e) => panic!(
                     "{}",
-                    format!("Failed to start server on port {}: {}", start_args.port, e)
+                    format!("Failed to start server on port {}: {}", start.port, e)
                 ),
             }
         }
