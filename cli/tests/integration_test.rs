@@ -24,6 +24,7 @@
 mod tests {
     use anyhow::Result;
     use assert_cmd::Command;
+    #[cfg_attr(target_os = "windows", allow(unused_imports))]
     use defer::defer;
     use std::str;
     #[cfg_attr(target_os = "windows", allow(unused_imports))]
