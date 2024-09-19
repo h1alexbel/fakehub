@@ -24,8 +24,8 @@
 mod tests {
     use anyhow::Result;
     use assert_cmd::Command;
-    use std::time::Duration;
     use std::str;
+    use std::time::Duration;
 
     #[test]
     fn outputs_help() -> Result<()> {
