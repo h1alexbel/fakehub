@@ -60,6 +60,13 @@ mod tests {
         Ok(())
     }
 
+    // @todo #129:35min Find a way to run slow tests separately from fast tests.
+    //  This test `accepts_request_in_detached_mode` runs a way longer than
+    //  other unit tests. Let's mark such long tests as slow and run them
+    //  separately from fast test. Locally, developers will run only fast
+    //  tests, while CI server will run both. Check
+    //  <a href="https://www.yegor256.com/2023/08/22/fast-vs-deep-testing.html">this link<a>
+    //  for more information about this idea.
     #[tokio::test]
     #[cfg(not(target_os = "windows"))]
     // @todo #129:60min Create similar integration test for windows platform.
