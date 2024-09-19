@@ -75,7 +75,7 @@ mod tests {
     //  Now we have test for linux and macos. However, we need to maintain
     //  similar test case for windows as well.
     async fn accepts_request_in_detached_mode() -> Result<()> {
-        let _kill = defer(|| kill(3000));
+        let _defer = defer(|| kill(3000));
         let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
