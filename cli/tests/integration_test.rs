@@ -25,6 +25,7 @@ mod tests {
     use anyhow::Result;
     use assert_cmd::Command;
     use std::str;
+    #[cfg_attr(target_os = "windows", allow(unused_imports))]
     use std::time::Duration;
 
     #[test]
