@@ -61,6 +61,7 @@ async fn main() {
                             command.arg("--verbose");
                         }
                         #[cfg(target_os = "windows")]
+                        /// Detached windows process flag.
                         command.creation_flags(0x00000008);
                         match command.spawn() {
                             Ok(_) => println!(
