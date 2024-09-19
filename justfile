@@ -23,6 +23,7 @@
 # Install required tools
 install:
   cargo install cargo-machete
+  cargo install killport
 
 # Full build.
 full:
