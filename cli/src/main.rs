@@ -33,10 +33,6 @@ use std::os::windows::process::CommandExt;
 
 mod args;
 
-#[cfg_attr(target_os = "macos", allow(dead_code))]
-#[cfg_attr(target_os = "linux", allow(dead_code))]
-const DETACHED_FLAG_CODE: i32 = 0x00000008;
-
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
@@ -65,7 +61,7 @@ async fn main() {
                             command.arg("--verbose");
                         }
                         #[cfg(target_os = "windows")]
-                        command.creation_flags(DETACHED_FLAG_CODE);
+                        command.creation_flags(0x00000008);
                         match command.spawn() {
                             Ok(_) => println!(
                                 "Server is running in detached mode on port {}",
