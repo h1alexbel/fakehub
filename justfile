@@ -23,6 +23,7 @@
 # Install required tools
 install:
   cargo install cargo-machete
+  cargo install killport
 
 # Full build.
 full:
@@ -31,9 +32,10 @@ full:
 
 # Generate code.
 gen:
+  node --version
   npm --version
   cd github-mirror && \
-   npm install @openapitools/openapi-generator-cli -g && \
+   npm install @openapitools/openapi-generator-cli@2.13.7 -g && \
     openapi-generator-cli generate -i github.yml -g rust -o .
 
 # Build the project.

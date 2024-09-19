@@ -22,10 +22,14 @@
 #[allow(clippy::question_mark_used)]
 #[cfg(test)]
 mod tests {
-    use std::str;
-
     use anyhow::Result;
     use assert_cmd::Command;
+    #[cfg_attr(target_os = "windows", allow(unused_imports))]
+    use defer::defer;
+    use std::str;
+    #[cfg_attr(target_os = "windows", allow(unused_imports))]
+    use std::time::Duration;
+
     #[test]
     fn outputs_help() -> Result<()> {
         let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
@@ -47,11 +51,65 @@ mod tests {
             .assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
+        assert!(output.contains("-p"));
         assert!(output.contains("--port"));
         assert!(output.contains("The port to run [default: 3000]"));
+        assert!(output.contains("-v"));
         assert!(output.contains("--verbose"));
         assert!(output.contains("Verbose output"));
+        assert!(output.contains("-d"));
+        assert!(output.contains("--detach"));
+        assert!(output.contains("Run in detach mode"));
         Ok(())
+    }
+
+    // @todo #129:35min Find a way to run slow tests separately from fast tests.
+    //  This test `accepts_request_in_detached_mode` runs a way longer than
+    //  other unit tests. Let's mark such long tests as slow and run them
+    //  separately from fast test. Locally, developers will run only fast
+    //  tests, while CI server will run both. Check
+    //  <a href="https://www.yegor256.com/2023/08/22/fast-vs-deep-testing.html">this link<a>
+    //  for more information about this idea.
+    #[tokio::test]
+    #[cfg(not(target_os = "windows"))]
+    // @todo #129:60min Create similar integration test for windows platform.
+    //  Now we have test for linux and macos. However, we need to maintain
+    //  similar test case for windows as well.
+    async fn accepts_request_in_detached_mode() -> Result<()> {
+        let _defer = defer(|| kill(3000));
+        let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(
+            output.contains("Server is running in detached mode on port 3000"),
+            "Output should contain logs that server started in detached mode"
+        );
+        let request = reqwest::Client::new();
+        let mut retries = 10;
+        let mut status = None;
+        while retries > 0 {
+            tokio::time::sleep(Duration::from_secs(1)).await;
+            match request.get("http://localhost:3000").send().await {
+                Ok(home) => {
+                    status = Some(home.status());
+                    break;
+                }
+                Err(_) => {
+                    retries -= 1;
+                }
+            }
+        }
+        assert_eq!(status.expect("Failed to retrieve status"), 200);
+        Ok(())
+    }
+
+    #[cfg_attr(target_os = "windows", allow(dead_code))]
+    fn kill(port: usize) {
+        std::process::Command::new("sh")
+            .arg("-c")
+            .arg(format!("killport {}", port))
+            .output()
+            .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
     }
 
     // @todo #43:30min Enable starts_server integration test.
