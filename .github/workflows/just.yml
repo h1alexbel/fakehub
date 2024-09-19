@@ -44,16 +44,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: ${{ matrix.java }}
-      - uses: extractions/setup-just@v2
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm install @openapitools/openapi-generator-cli@2.13.7 -g
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java }}
+      - uses: extractions/setup-just@v2
         with:
           just-version: ${{ matrix.just-version }}
         name: Install toolchain
