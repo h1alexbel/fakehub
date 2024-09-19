@@ -32,6 +32,7 @@ full:
 
 # Generate code.
 gen:
+  node --version
   npm --version
   cd github-mirror && \
    npm install @openapitools/openapi-generator-cli -g && \
