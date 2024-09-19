@@ -60,17 +60,45 @@ mod tests {
         Ok(())
     }
 
-    #[test]
-    #[ignore]
-    fn runs_in_detached_mode() -> Result<()> {
-        let mut command = std::process::Command::new("cli");
-        command.arg("start").arg("-d");
-        let child = command
-            .spawn()
-            .expect("Failed to start the detached process");
-        thread::sleep(Duration::from_secs(1));
-        assert!(child.id() > 0, "Detached process did not start correctly.");
+    #[tokio::test]
+    #[cfg(not(target_os = "windows"))]
+    // @todo #129:60min Create similar integration test for windows platform.
+    //  Now we have test for linux and macos. However, we need to maintain
+    //  similar test case for windows as well.
+    async fn accepts_request_in_detached_mode() -> Result<()> {
+        let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(
+            output.contains("Server is running in detached mode on port 3000"),
+            "Output should contain logs that server started in detached mode"
+        );
+        let request = reqwest::Client::new();
+        let mut retries = 10;
+        let mut status = None;
+        while retries > 0 {
+            tokio::time::sleep(Duration::from_secs(1)).await;
+            match request.get("http://localhost:3000").send().await {
+                Ok(home) => {
+                    status = Some(home.status());
+                    break;
+                }
+                Err(_) => {
+                    retries -= 1;
+                }
+            }
+        }
+        assert_eq!(status.expect("Failed to retrieve status"), 200);
+        kill(3000);
         Ok(())
+    }
+
+    fn kill(port: usize) {
+        std::process::Command::new("sh")
+            .arg("-c")
+            .arg("killport 3000")
+            .output()
+            .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
     }
 
     // @todo #43:30min Enable starts_server integration test.
