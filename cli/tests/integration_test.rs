@@ -25,7 +25,7 @@ mod tests {
     use anyhow::Result;
     use assert_cmd::Command;
     use std::time::Duration;
-    use std::{str, thread};
+    use std::str;
 
     #[test]
     fn outputs_help() -> Result<()> {
@@ -103,7 +103,7 @@ mod tests {
     fn kill(port: usize) {
         std::process::Command::new("sh")
             .arg("-c")
-            .arg("killport 3000")
+            .arg(format!("killport {}", port))
             .output()
             .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
     }
