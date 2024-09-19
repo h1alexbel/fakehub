@@ -24,10 +24,10 @@
 mod tests {
     use anyhow::Result;
     use assert_cmd::Command;
+    use defer::defer;
     use std::str;
     #[cfg_attr(target_os = "windows", allow(unused_imports))]
     use std::time::Duration;
-    use defer::defer;
 
     #[test]
     fn outputs_help() -> Result<()> {
@@ -75,12 +75,7 @@ mod tests {
     //  Now we have test for linux and macos. However, we need to maintain
     //  similar test case for windows as well.
     async fn accepts_request_in_detached_mode() -> Result<()> {
-        let _kill = defer(
-            ||
-            {
-                kill(3000)
-            }
-        );
+        let _kill = defer(|| kill(3000));
         let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
@@ -106,7 +101,7 @@ mod tests {
         assert_eq!(status.expect("Failed to retrieve status"), 200);
         Ok(())
     }
-    
+
     #[cfg_attr(target_os = "windows", allow(dead_code))]
     fn kill(port: usize) {
         std::process::Command::new("sh")
