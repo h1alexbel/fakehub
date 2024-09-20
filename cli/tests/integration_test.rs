@@ -112,9 +112,7 @@ mod tests {
 
     #[cfg(target_os = "windows")]
     fn kill(port: usize) {
-        Command::new("cmd")
-            .arg("/C")
-            .arg(format!("npx kill-port {}", port))
+        Command::new(format!("npx kill-port {}", port))
             .output()
             .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
     }
