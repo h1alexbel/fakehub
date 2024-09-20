@@ -76,6 +76,7 @@ mod tests {
         let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
+        eprintln!("Output: {}", output);
         assert!(
             output.contains("Server is running in detached mode on port 3000"),
             "Output should contain logs that server started in detached mode"
