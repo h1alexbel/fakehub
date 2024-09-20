@@ -99,14 +99,14 @@ mod tests {
         Ok(())
     }
 
-    // #[cfg(not(target_os = "windows"))]
-    // fn kill(port: usize) {
-    //     std::process::Command::new("sh")
-    //         .arg("-c")
-    //         .arg(format!("killport {}", port))
-    //         .output()
-    //         .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
-    // }
+    #[cfg(not(target_os = "windows"))]
+    fn kill(port: usize) {
+        std::process::Command::new("sh")
+            .arg("-c")
+            .arg(format!("killport {}", port))
+            .output()
+            .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
+    }
 
     #[cfg(target_os = "windows")]
     fn kill(port: usize) {
