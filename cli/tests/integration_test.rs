@@ -90,7 +90,8 @@ mod tests {
                     status = Some(home.status());
                     break;
                 }
-                Err(_) => {
+                Err(err) => {
+                    eprintln!("Error occurred: {}", err);
                     retries -= 1;
                 }
             }
