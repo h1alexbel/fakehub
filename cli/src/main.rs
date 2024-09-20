@@ -62,7 +62,7 @@ async fn main() {
                         }
                         #[cfg(target_os = "windows")]
                         // Detached windows process flag.
-                        command.creation_flags(0x00000008);
+                        command.creation_flags(0x00000008 | 0x00000200 | 0x08000000);
                         match command.spawn() {
                             Ok(_) => println!(
                                 "Server is running in detached mode on port {}",
