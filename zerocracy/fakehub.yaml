@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 9.90017583
+  seconds: 29.278763592
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-19 23:15:31.946068891 Z
+  when: 2024-09-20 01:08:00.893355031 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2463,14 +2463,6 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-09-18 18:19:27.440034732 Z
-- _id: 568
-  _job: 7352
-  _time: 2024-09-18 19:09:50.208614494 Z
-  _version: 0.4.0/0.26.1/0.0.52
-  cost_of_qod: 13.318534961154272
-  qod_per_day: 0.12871428573359928
-  what: learn-eva
-  when: 2024-09-18 19:09:50.180827637 Z
 - _id: 575
   _time: 2024-09-19 12:28:51.281781542 Z
   _version: 0.4.0/0.26.1/
@@ -2529,15 +2521,110 @@
   when: 2024-09-19 17:30:15.000000000 Z
   where: github
   who: 46355873
-- _id: 607
-  _time: 2024-09-19 23:15:24.795523728 Z
+- _id: 609
+  _job: 7426
+  _time: 2024-09-19 23:15:50.253370974 Z
+  _version: 0.4.0/0.26.1/0.0.52!null
+  cost_of_qod: 13.318534961154272
+  qod_per_day: 0.12871428573359928
+  what: learn-eva
+  when: 2024-09-19 23:15:50.240438598 Z
+- _id: 610
+  _time: 2024-09-20 01:07:34.650320457 Z
   _version: 0.4.0/0.26.1/
-  latest: 42096592396
+  details: The issue h1alexbel/fakehub#158 has been opened by @0pdd.
+  event_id: 42096901596
+  event_type: IssuesEvent
+  is_human: 0
+  issue: 158
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-09-19 21:28:16.000000000 Z
+  where: github
+  who: 24456188
+- _id: 611
+  _time: 2024-09-20 01:07:34.674870646 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#157 has been opened by @0pdd.
+  event_id: 42096901234
+  event_type: IssuesEvent
+  is_human: 0
+  issue: 157
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-09-19 21:28:15.000000000 Z
+  where: github
+  who: 24456188
+- _id: 612
+  _time: 2024-09-20 01:07:34.742120501 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#129 has been closed by @h1alexbel.
+  event_id: 42096899873
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 129
+  repository: 807802459
+  what: issue-was-closed
+  when: 2024-09-19 21:28:11.000000000 Z
+  where: github
+  who: 83453843
+- _id: 613
+  _time: 2024-09-20 01:07:35.372263448 Z
+  _version: 0.4.0/0.26.1/
+  branch: '129'
+  comments: 17
+  comments_appreciated: 6
+  comments_by_author: 8
+  comments_by_reviewers: 9
+  comments_resolved: 1
+  comments_to_code: 11
+  details: The pull request h1alexbel/fakehub#156 has been closed by @h1alexbel, with
+    134 HoC and 17 comments.
+  event_id: 42096899689
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 134
+  is_human: 1
+  issue: 156
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-19 21:28:11.000000000 Z
+  where: github
+  who: 83453843
+- _id: 615
+  _time: 2024-09-20 01:07:58.426073428 Z
+  _version: 0.4.0/0.26.1/
+  details: The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#157.
+  is_human: 0
+  issue: 157
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-09-19 21:28:14.000000000 Z
+  where: github
+  who: 24456188
+- _id: 616
+  _time: 2024-09-20 01:07:58.778052453 Z
+  _version: 0.4.0/0.26.1/
+  details: The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#158.
+  is_human: 0
+  issue: 158
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-09-19 21:28:15.000000000 Z
+  where: github
+  who: 24456188
+- _id: 618
+  _time: 2024-09-20 01:08:00.644678587 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42098857584
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 608
-  _time: 2024-09-19 23:15:31.934739831 Z
+- _id: 619
+  _time: 2024-09-20 01:08:00.881478730 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
