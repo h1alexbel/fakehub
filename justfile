@@ -24,6 +24,7 @@
 install:
   cargo install cargo-machete
   cargo install killport
+  npm install kill-port
 
 # Full build.
 full:

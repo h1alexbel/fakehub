@@ -114,12 +114,7 @@ mod tests {
     fn kill(port: usize) {
         Command::new("cmd")
             .arg("/C")
-            .arg(
-                format!(
-                "for /f \"tokens=5\" %a in ('netstat -aon ^| findstr :{}') do taskkill /F /PID %a",
-                port
-                )
-            )
+            .arg(format!("npx kill-port {}", port))
             .output()
             .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
     }
