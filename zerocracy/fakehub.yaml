@@ -1,12 +1,11 @@
 ---
 - added: 8
   cycles: 2
-  error: undefined method `-' for nil
   removed: 8
-  seconds: 146.844305265
+  seconds: 11.329005018
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-20 16:20:36.026403509 Z
+  when: 2024-09-20 17:13:03.688738647 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2702,12 +2701,16 @@
   average_pull_lifetime: 110260.5
   average_pull_rejection_rate: 0.0
   average_release_interval: 0
+  composite: 0.39
+  ffact: 84
   since: 2024-09-13 16:18:11.701242953 Z
   what: quality-of-service
   when: 2024-09-20 16:18:11.701151132 Z
 - _id: 657
   _time: 2024-09-20 16:20:21.316826190 Z
   _version: 0.4.0/0.26.1/
+  composite: 6.77
+  ffact: 85
   since: 2024-09-13 16:20:21.318285148 Z
   total_commits_pushed: 24
   total_hoc_committed: 313
@@ -2716,15 +2719,53 @@
   total_releases_published: 0
   what: quantity-of-deliverables
   when: 2024-09-20 16:20:21.318228612 Z
-- _id: 658
-  _time: 2024-09-20 16:20:29.088637157 Z
+- _id: 660
+  _time: 2024-09-20 17:12:54.871559620 Z
   _version: 0.4.0/0.26.1/
-  latest: 42123211284
+  details: The issue h1alexbel/fakehub#11 has been closed by @h1alexbel.
+  event_id: 42124564772
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 11
+  repository: 807802459
+  what: issue-was-closed
+  when: 2024-09-20 16:22:01.000000000 Z
+  where: github
+  who: 83453843
+- _id: 661
+  _time: 2024-09-20 17:12:54.930168884 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#160 has been opened by @h1alexbel.
+  event_id: 42123948406
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 160
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-09-20 16:00:07.000000000 Z
+  where: github
+  who: 83453843
+- _id: 663
+  _time: 2024-09-20 17:12:55.259787787 Z
+  _version: 0.4.0/0.26.1/
+  details: The '#enhancement' label was attached by @h1alexbel to the issue h1alexbel/fakehub#160.
+  is_human: 1
+  issue: 160
+  label: enhancement
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-09-20 16:00:06.000000000 Z
+  where: github
+  who: 83453843
+- _id: 665
+  _time: 2024-09-20 17:12:56.733552878 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42124655267
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 659
-  _time: 2024-09-20 16:20:36.014718942 Z
+- _id: 666
+  _time: 2024-09-20 17:13:03.677695119 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
