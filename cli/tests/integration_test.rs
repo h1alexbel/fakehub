@@ -71,10 +71,6 @@ mod tests {
     //  <a href="https://www.yegor256.com/2023/08/22/fast-vs-deep-testing.html">this link<a>
     //  for more information about this idea.
     #[tokio::test]
-    #[cfg(not(target_os = "windows"))]
-    // @todo #129:60min Create similar integration test for windows platform.
-    //  Now we have test for linux and macos. However, we need to maintain
-    //  similar test case for windows as well.
     async fn accepts_request_in_detached_mode() -> Result<()> {
         let _defer = defer(|| kill(3000));
         let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
@@ -103,10 +99,19 @@ mod tests {
         Ok(())
     }
 
-    #[cfg_attr(target_os = "windows", allow(dead_code))]
+    #[cfg(not(target_os = "windows"))]
     fn kill(port: usize) {
         std::process::Command::new("sh")
             .arg("-c")
+            .arg(format!("killport {}", port))
+            .output()
+            .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
+    }
+
+    #[cfg(target_os = "windows")]
+    fn kill(port: usize) {
+        Command::new("cmd")
+            .arg("/C")
             .arg(format!("killport {}", port))
             .output()
             .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
