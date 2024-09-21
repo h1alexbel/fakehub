@@ -24,7 +24,7 @@
 mod tests {
     use anyhow::Result;
     use assert_cmd::Command;
-    use defer::defer;
+    // use defer::defer;
     use std::str;
     use std::time::Duration;
 
@@ -70,7 +70,7 @@ mod tests {
     //  for more information about this idea.
     #[tokio::test]
     async fn accepts_request_in_detached_mode() -> Result<()> {
-        let _defer = defer(|| kill(3000));
+        // let _defer = defer(|| kill(3000));
         let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
@@ -96,6 +96,7 @@ mod tests {
             }
         }
         assert_eq!(status.expect("Failed to retrieve status"), 200);
+        kill(3000);
         Ok(())
     }
 
