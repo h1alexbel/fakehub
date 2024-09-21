@@ -24,5 +24,3 @@ github-mirror/Cargo.toml
 github-mirror/git_push.sh
 github-mirror/README.md
 github-mirror/.openapi-generator-ignore
-
-/node_modules
