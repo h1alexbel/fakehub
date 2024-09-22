@@ -20,7 +20,6 @@ github-mirror/.openapi-generator/
 github-mirror/.travis.yml
 github-mirror/openapitools.json
 github-mirror/.gitignore
-github-mirror/Cargo.toml
 github-mirror/git_push.sh
 github-mirror/README.md
 github-mirror/.openapi-generator-ignore
