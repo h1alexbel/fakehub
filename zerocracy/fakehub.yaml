@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 13.412665427
+  seconds: 9.882930995
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-22 10:14:52.046580160 Z
+  when: 2024-09-22 11:11:38.252915963 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2793,15 +2793,56 @@
   when: 2024-09-22 09:51:36.000000000 Z
   where: github
   who: 83453843
-- _id: 752
-  _time: 2024-09-22 10:14:44.073037722 Z
+- _id: 754
+  _job: 7657
+  _time: 2024-09-22 10:15:00.757939215 Z
+  _version: 0.4.0/0.26.1/0.0.52
+  award: -16
+  commit: eaced5d785371103d27a49f7ca52c050f21c246b
+  default_branch: master
+  details: It's time to punish @h1alexbel for pushing to the default branch 'master'
+    in h1alexbel/fakehub, the penalty amount is -16.
+  greeting: 'It is [not a good idea](https://www.yegor256.com/2014/07/21/read-only-master-branch.html)
+    to push directly to the default branch `master`. You''ve earned -16 points. Next
+    time, create a new branch, push your changes over there, then make a pull request
+    and merge it. Even if you are flying solo, contributing via pull requests is a
+    [good practice](https://www.yegor256.com/2020/07/29/open-source-etiquette.html).
+    Your running balance is [+47](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). '
+  href: https://github.com/h1alexbel/fakehub/commit/eaced5d785371103d27a49f7ca52c050f21c246b/#commitcomment-147036775
+  is_human: 1
+  repository: 807802459
+  what: push-to-master-was-punished
+  when: 2024-09-22 10:15:00.759648288 Z
+  where: github
+  who: 83453843
+  why: Pushed eaced5d78 to the default branch 'master' in h1alexbel/fakehub
+- _id: 755
+  _time: 2024-09-22 11:11:30.808514694 Z
   _version: 0.4.0/0.26.1/
-  latest: 42150700833
+  commit: 10078c94c08cd2aebfbf8b6379da5ffe51512e22
+  default_branch: master
+  details: 'A new Git push #20352896850 has arrived to h1alexbel/fakehub, made by
+    @h1alexbel (default branch is ''master''), not associated with any pull request.'
+  event_id: 42151200633
+  event_type: PushEvent
+  is_human: 1
+  push_id: 20352896850
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-22 10:41:38.000000000 Z
+  where: github
+  who: 83453843
+- _id: 758
+  _time: 2024-09-22 11:11:32.402473043 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42151222566
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 753
-  _time: 2024-09-22 10:14:52.034994472 Z
+- _id: 759
+  _time: 2024-09-22 11:11:38.242035997 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
