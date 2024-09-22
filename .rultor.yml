@@ -39,6 +39,8 @@ release:
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
     sudo npm install @openapitools/openapi-generator-cli -g
+    cd github-mirror
+    ls
     sudo openapi-generator-cli generate -i github-mirror/github.yml -g rust -o .
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" github-mirror/Cargo.toml
     cargo --color=never test
