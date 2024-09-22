@@ -39,6 +39,7 @@ release:
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
     just rultor
+    sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" github-mirror/Cargo.toml
     git commit -am "${tag}"
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
