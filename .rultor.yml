@@ -43,5 +43,6 @@ release:
     git commit -am "${tag}"
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
+    cargo --color=never publish -p github-mirror
     cargo --color=never publish -p server
     cargo --color=never publish -p cli
