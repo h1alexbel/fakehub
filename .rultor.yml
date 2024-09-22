@@ -37,7 +37,8 @@ merge:
 release:
   script: |-
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
-    sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" Cargo.toml
+    cd cli && sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" Cargo.toml
+    cd server && sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" Cargo.toml
     just rultor
     git commit -am "${tag}"
     ls -a ../
