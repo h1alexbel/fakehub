@@ -1,11 +1,12 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
+  error: undefined method `-' for nil
   removed: 8
-  seconds: 2.812084876
+  seconds: 170.025791928
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-22 16:16:41.594701674 Z
+  when: 2024-09-22 17:16:00.251160735 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2942,15 +2943,60 @@
   when: 2024-09-22 14:53:39.000000000 Z
   where: github
   who: 83453843
-- _id: 782
-  _time: 2024-09-22 16:16:41.349696935 Z
+- _id: 784
+  _time: 2024-09-22 17:13:13.062330962 Z
   _version: 0.4.0/0.26.1/
-  latest: 42154302225
+  commit: e67f5d1fe90ca9ff52c7f3f82bebcab3a4064d54
+  default_branch: master
+  details: 'A new Git push #20355253473 has arrived to h1alexbel/fakehub, made by
+    @h1alexbel (default branch is ''master''), not associated with any pull request.'
+  event_id: 42154750532
+  event_type: PushEvent
+  is_human: 1
+  push_id: 20355253473
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-22 16:35:33.000000000 Z
+  where: github
+  who: 83453843
+- _id: 787
+  _time: 2024-09-22 17:13:20.021509109 Z
+  _version: 0.4.0/0.26.1/
+  average_backlog_size: 1.375
+  average_build_duration: 167.16448326055314
+  average_build_mttr: -64112
+  average_build_success_rate: 0.9112081513828238
+  average_issue_lifetime: 5639660.5
+  average_pull_files_size: 4.0
+  average_pull_hoc_size: 68.0
+  average_pull_lifetime: 110260.5
+  average_pull_rejection_rate: 0.0
+  average_release_interval: 0
+  since: 2024-09-15 17:13:20.021656795 Z
+  what: quality-of-service
+  when: 2024-09-22 17:13:20.021599197 Z
+- _id: 788
+  _time: 2024-09-22 17:15:50.306400545 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-09-15 17:15:50.306617722 Z
+  total_commits_pushed: 34
+  total_hoc_committed: 353
+  total_issues_created: 8
+  total_pulls_submitted: 1
+  total_releases_published: 0
+  what: quantity-of-deliverables
+  when: 2024-09-22 17:15:50.306539866 Z
+- _id: 789
+  _time: 2024-09-22 17:15:59.920980372 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42155103156
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 783
-  _time: 2024-09-22 16:16:41.573982357 Z
+- _id: 790
+  _time: 2024-09-22 17:16:00.229385981 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
