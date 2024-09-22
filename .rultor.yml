@@ -23,13 +23,12 @@
 architect:
   - h1alexbel
 docker:
-  image: h1alexbel/rultor-rust-image:0.0.2
+  image: h1alexbel/rultor-rust-image:0.0.4
 assets:
   credentials: l3r8yJ/home#assets/crates-credentials
 install: |
   rustup install nightly-x86_64-unknown-linux-gnu
   rustup component add --toolchain nightly-x86_64-unknown-linux-gnu rustfmt
-  cargo install --version 1.30.1 just
   just install
 merge:
   script: |
@@ -37,8 +36,8 @@ merge:
 release:
   script: |-
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
-    cd cli && sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" Cargo.toml
-    cd server && sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" Cargo.toml
+    sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
+    sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
     just rultor
     git commit -am "${tag}"
     ls -a ../
