@@ -38,8 +38,15 @@ release:
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
-    just rultor
+    cd github-mirror && \
+      sudo npm install @openapitools/openapi-generator-cli -g && \
+        sudo openapi-generator-cli generate -i github.yml -g rust -o .
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" github-mirror/Cargo.toml
+    cargo --color=never test
+    cargo +nightly fmt --check -- --color=never
+    cargo machete
+    cargo doc --no-deps
+    cargo clippy
     git commit -am "${tag}"
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
