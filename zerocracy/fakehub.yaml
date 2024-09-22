@@ -1,12 +1,11 @@
 ---
 - added: 8
   cycles: 2
-  error: undefined method `-' for nil
   removed: 8
-  seconds: 170.025791928
+  seconds: 9.605152343
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-22 17:16:00.251160735 Z
+  when: 2024-09-22 18:18:22.396401951 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2974,12 +2973,16 @@
   average_pull_lifetime: 110260.5
   average_pull_rejection_rate: 0.0
   average_release_interval: 0
+  composite: 0.375
+  ffact: 84
   since: 2024-09-15 17:13:20.021656795 Z
   what: quality-of-service
   when: 2024-09-22 17:13:20.021599197 Z
 - _id: 788
   _time: 2024-09-22 17:15:50.306400545 Z
   _version: 0.4.0/0.26.1/
+  composite: 7.503
+  ffact: 85
   since: 2024-09-15 17:15:50.306617722 Z
   total_commits_pushed: 34
   total_hoc_committed: 353
@@ -2988,15 +2991,33 @@
   total_releases_published: 0
   what: quantity-of-deliverables
   when: 2024-09-22 17:15:50.306539866 Z
-- _id: 789
-  _time: 2024-09-22 17:15:59.920980372 Z
+- _id: 791
+  _time: 2024-09-22 18:18:15.004663401 Z
   _version: 0.4.0/0.26.1/
-  latest: 42155103156
+  commit: b279082c6b6ad576778d2a34e512f1b732ec9823
+  default_branch: master
+  details: 'A new Git push #20355591851 has arrived to h1alexbel/fakehub, made by
+    @h1alexbel (default branch is ''master''), not associated with any pull request.'
+  event_id: 42155249435
+  event_type: PushEvent
+  is_human: 1
+  push_id: 20355591851
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-22 17:26:32.000000000 Z
+  where: github
+  who: 83453843
+- _id: 794
+  _time: 2024-09-22 18:18:22.190747672 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42155273467
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 790
-  _time: 2024-09-22 17:16:00.229385981 Z
+- _id: 795
+  _time: 2024-09-22 18:18:22.384462015 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
