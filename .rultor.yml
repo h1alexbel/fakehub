@@ -42,4 +42,4 @@ release:
     git commit -am "${tag}"
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
-    cargo --color=never publish
+    cargo --color=never publish --all
