@@ -26,6 +26,13 @@ use log::debug;
 
 use crate::handlers::coordinates::Coordinates;
 use crate::ServerConfig;
+
+#[cfg(not(feature = "mirror_release"))]
+pub use openapi;
+
+#[cfg(feature = "mirror_release")]
+pub use github_mirror as openapi;
+
 use openapi::models::MetaRoot200Response;
 
 /// Home handler.

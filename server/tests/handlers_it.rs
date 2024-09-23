@@ -23,13 +23,13 @@
 #[cfg(test)]
 mod routes_its {
     use anyhow::Result;
+    use fakehub_server::Server;
     #[allow(deprecated)]
     // @todo #79:25min Import assert_that!() macro like in lib.rs instead of assert_that.
     //  For some reason we can't use '#[macro_use] extern crate hamcrest;'
     //  inside this mod. We should figure out why and replace deprecated import
     //  with required macro.
     use hamcrest::{assert_that, equal_to, is, HamcrestMatcher};
-    use fakehub_server::Server;
 
     #[tokio::test]
     #[ignore]
