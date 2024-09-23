@@ -49,7 +49,7 @@ release:
     cargo machete
     cargo doc --no-deps --features "mirror_release"
     cargo clippy --features "mirror_release"
-    git commit -am "${tag}"
+    git commit -am "${tag}" --allow-dirty
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
     cargo --color=never publish -p github_mirror
