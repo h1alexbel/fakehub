@@ -40,6 +40,7 @@ release:
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
     cd github-mirror
+    ls
     sudo openapi-generator-cli generate -i github.yml -g rust -o .
     cd ..
     sed -i -e "s/^version = \".*\"/version = \"${tag}\"/" github-mirror/Cargo.toml
