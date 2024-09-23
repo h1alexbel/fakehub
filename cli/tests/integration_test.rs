@@ -32,7 +32,7 @@ mod tests {
 
     #[test]
     fn outputs_help() -> Result<()> {
-        let assertion = Command::cargo_bin("cli")?.arg("--help").assert();
+        let assertion = Command::cargo_bin("fakehub")?.arg("--help").assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
         assert!(output.contains("help"));
@@ -45,7 +45,7 @@ mod tests {
 
     #[test]
     fn outputs_start_opts() -> Result<()> {
-        let assertion = Command::cargo_bin("cli")?
+        let assertion = Command::cargo_bin("fakehub")?
             .arg("start")
             .arg("--help")
             .assert();
@@ -77,7 +77,7 @@ mod tests {
     //  similar test case for windows as well.
     async fn accepts_request_in_detached_mode() -> Result<()> {
         let _defer = defer(|| kill(3000));
-        let assertion = Command::cargo_bin("cli")?.arg("start").arg("-d").assert();
+        let assertion = Command::cargo_bin("fakehub")?.arg("start").arg("-d").assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
         assert!(
@@ -120,7 +120,7 @@ mod tests {
     #[test]
     #[ignore]
     fn starts_server() -> Result<()> {
-        let assertion = Command::cargo_bin("cli")?
+        let assertion = Command::cargo_bin("fakehub")?
             .arg("start")
             .arg("--port 8080")
             .assert();
@@ -137,7 +137,7 @@ mod tests {
     #[test]
     #[ignore]
     fn runs_in_verbose_mode() -> Result<()> {
-        let assertion = Command::cargo_bin("cli")?
+        let assertion = Command::cargo_bin("fakehub")?
             .arg("start")
             .arg("--verbose")
             .assert();
