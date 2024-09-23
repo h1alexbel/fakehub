@@ -25,7 +25,7 @@ version = "0.0.0"
 edition = "2021"
 
 [[bin]]
-name = "cli"
+name = "fakehub"
 path = "src/main.rs"
 
 [lints]
