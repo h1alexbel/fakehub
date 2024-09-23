@@ -41,7 +41,7 @@ release:
     cd github-mirror
     sudo openapi-generator-cli generate -i github.yml -g rust -o .
     cd ..
-    sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" github-mirror/Cargo.toml
+    sed -i -e "s/^version = \".*\"/version = \"${tag}\"/" github-mirror/Cargo.toml
     cargo --color=never test
     cargo +nightly fmt --check -- --color=never
     cargo machete
