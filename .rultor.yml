@@ -29,7 +29,7 @@ assets:
 install: |
   rustup install nightly-x86_64-unknown-linux-gnu
   rustup component add --toolchain nightly-x86_64-unknown-linux-gnu rustfmt
-  sudo just install
+  just install
 merge:
   script: |
     just rultor

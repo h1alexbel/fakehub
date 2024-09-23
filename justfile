@@ -22,7 +22,7 @@
 
 # Install required tools
 install:
-  npm install @openapitools/openapi-generator-cli@2.13.7 -g
+  sudo npm install @openapitools/openapi-generator-cli@2.13.7 -g
   cargo install cargo-machete
   cargo install killport
 
