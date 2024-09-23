@@ -14,7 +14,6 @@ Cargo.lock
 *.pdb
 **/.DS_Store
 .idea
-github-mirror/src/
 github-mirror/docs/
 github-mirror/.openapi-generator/
 github-mirror/.travis.yml
