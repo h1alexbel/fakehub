@@ -22,7 +22,6 @@
 
 # Install required tools
 install:
-  sudo npm install @openapitools/openapi-generator-cli@2.13.7 -g
   cargo install cargo-machete
   cargo install killport
 
@@ -36,7 +35,8 @@ gen:
   node --version
   npm --version
   cd github-mirror && \
-    openapi-generator-cli generate -i github.yml -g rust -o .
+    npm install @openapitools/openapi-generator-cli@2.13.7 -g && \
+      openapi-generator-cli generate -i github.yml -g rust -o .
 
 # Build the project.
 build:
@@ -59,7 +59,8 @@ check:
 rultor:
   npm --version
   cd github-mirror && \
-    sudo openapi-generator-cli generate -i github.yml -g rust -o .
+    sudo npm install @openapitools/openapi-generator-cli@2.13.7 -g && \
+      sudo openapi-generator-cli generate -i github.yml -g rust -o .
   cargo --color=never test
   cargo +nightly fmt --check -- --color=never
   cargo machete
