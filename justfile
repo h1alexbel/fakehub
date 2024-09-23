@@ -51,7 +51,7 @@ test:
 
 # Check the quality of code.
 check:
-  cargo clippy --all-targets --all-features
+  cargo clippy --all-targets
   cargo +nightly fmt --check
   cargo machete
 
