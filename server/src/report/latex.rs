@@ -35,7 +35,7 @@ use std::path::Path;
 /// # Examples
 ///
 /// ```
-/// use crate::server::report::latex::template;
+/// use crate::fakehub_server::report::latex::template;
 /// let content = template("resources/report.tex");
 /// print!("{content}")
 /// ```

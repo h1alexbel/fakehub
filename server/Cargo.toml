@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 [package]
-name = "server"
+name = "fakehub-server"
 version = "0.0.0"
 edition = "2021"
 license = "MIT"

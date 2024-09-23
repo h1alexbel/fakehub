@@ -25,7 +25,7 @@ Fakehub server and storage.
 use clap::Parser;
 use log::info;
 
-use server::Server;
+use fakehub_server::Server;
 
 use crate::args::{Args, Command};
 #[cfg(target_os = "windows")]

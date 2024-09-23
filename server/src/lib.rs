@@ -62,7 +62,7 @@ impl Server {
     /// Examples:
     ///
     /// ```
-    /// use server::Server;
+    /// use fakehub_server::Server;
     /// let server = Server::new(1234);
     /// ```
     pub fn new(port: usize) -> Server {

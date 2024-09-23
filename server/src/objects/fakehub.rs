@@ -33,7 +33,7 @@ use uuid::Uuid;
 /// ```
 /// use hamcrest::assert_that;
 /// use hamcrest::{equal_to, is, HamcrestMatcher};
-/// use server::objects::fakehub::FakeHub;
+/// use fakehub_server::objects::fakehub::FakeHub;
 ///
 /// let fakehub = FakeHub::default();
 /// let github = fakehub.main();

@@ -52,7 +52,7 @@ impl User {
     /// # Examples
     ///
     /// ```
-    /// use server::objects::user::User;
+    /// use fakehub_server::objects::user::User;
     /// let jeff = User::new(String::from("jeff123"));
     /// ```
     pub fn new(username: String) -> User {
@@ -68,8 +68,8 @@ impl User {
     /// `instance` FakeHub instance
     /// /// Register user in GitHub.
     ///```
-    /// use server::objects::fakehub::FakeHub;
-    /// use server::objects::user::User;
+    /// use fakehub_server::objects::fakehub::FakeHub;
+    /// use fakehub_server::objects::user::User;
     ///
     /// let fakehub = FakeHub::default();
     /// let mut github = fakehub.clone().main().clone();

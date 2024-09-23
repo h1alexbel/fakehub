@@ -29,7 +29,7 @@ mod routes_its {
     //  inside this mod. We should figure out why and replace deprecated import
     //  with required macro.
     use hamcrest::{assert_that, equal_to, is, HamcrestMatcher};
-    use server::Server;
+    use fakehub_server::Server;
 
     #[tokio::test]
     #[ignore]

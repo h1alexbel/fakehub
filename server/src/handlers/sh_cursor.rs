@@ -25,8 +25,8 @@ use crate::handlers::cursor::Cursor;
 /// ```
 /// use hamcrest::assert_that;
 /// use hamcrest::{equal_to, is, HamcrestMatcher};
-/// use server::handlers::cursor::Cursor;
-/// use server::handlers::sh_cursor::ShCursor;
+/// use fakehub_server::handlers::cursor::Cursor;
+/// use fakehub_server::handlers::sh_cursor::ShCursor;
 ///
 /// let url = ShCursor::new(
 ///     Cursor {base: String::from("http://localhost:3000") },
