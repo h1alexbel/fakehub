@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="94833">
+<fb version="0.4.0" size="95110">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">2.823721507</seconds>
+    <seconds t="F">12.660378971</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-23T20:17:41Z</when>
+    <when t="T">2024-09-23T21:14:10Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -3657,17 +3657,32 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">888</_id>
-    <_time t="T">2024-09-23T20:17:40Z</_time>
+    <_id t="I">890</_id>
+    <_time t="T">2024-09-23T21:14:00Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42184449974</latest>
+    <details t="S">The issue h1alexbel/fakehub#162 has been opened by @l3r8yJ.</details>
+    <event_id t="I">42184985072</event_id>
+    <event_type t="S">IssuesEvent</event_type>
+    <is_human t="I">1</is_human>
+    <issue t="I">162</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">issue-was-opened</what>
+    <when t="T">2024-09-23T16:15:45Z</when>
+    <where t="S">github</where>
+    <who t="I">46355873</who>
+  </f>
+  <f>
+    <_id t="I">893</_id>
+    <_time t="T">2024-09-23T21:14:09Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">42185484947</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">889</_id>
-    <_time t="T">2024-09-23T20:17:41Z</_time>
+    <_id t="I">894</_id>
+    <_time t="T">2024-09-23T21:14:10Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
