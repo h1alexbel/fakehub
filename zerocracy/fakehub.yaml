@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 12.369989456
+  seconds: 11.386973901
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-23 05:15:22.198567889 Z
+  when: 2024-09-23 06:22:08.204424538 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3072,15 +3072,29 @@
   when: 2024-09-22 18:08:03.000000000 Z
   where: github
   who: 83453843
-- _id: 820
-  _time: 2024-09-23 05:15:13.269176984 Z
+- _id: 822
+  _time: 2024-09-23 06:21:59.432600570 Z
   _version: 0.4.0/0.26.1/
-  latest: 42161921218
+  branch: renovate/zerocracy-pages-action-0.x
+  details: The pull request h1alexbel/fakehub#161 has been opened by @renovate[bot].
+  event_id: 42162805013
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 161
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-23 05:15:59.000000000 Z
+  where: github
+  who: 29139614
+- _id: 825
+  _time: 2024-09-23 06:22:01.499233239 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42162846871
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 821
-  _time: 2024-09-23 05:15:22.185928281 Z
+- _id: 826
+  _time: 2024-09-23 06:22:08.187734095 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
