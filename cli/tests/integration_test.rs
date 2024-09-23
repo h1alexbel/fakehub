@@ -77,7 +77,10 @@ mod tests {
     //  similar test case for windows as well.
     async fn accepts_request_in_detached_mode() -> Result<()> {
         let _defer = defer(|| kill(3000));
-        let assertion = Command::cargo_bin("fakehub")?.arg("start").arg("-d").assert();
+        let assertion = Command::cargo_bin("fakehub")?
+            .arg("start")
+            .arg("-d")
+            .assert();
         let bytes = assertion.get_output().stdout.as_slice();
         let output = str::from_utf8(bytes)?;
         assert!(
