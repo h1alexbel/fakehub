@@ -54,5 +54,5 @@ release:
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
     cargo --color=never publish -p github-mirror
-    cargo --color=never publish -p fakehub-server
-    cargo --color=never publish -p fakehub
+    cargo --color=never publish -p fakehub-server --features "mirror_release"
+    cargo --color=never publish -p fakehub --features "mirror_release"
