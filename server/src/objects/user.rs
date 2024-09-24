@@ -24,12 +24,12 @@ use crate::handlers::cursor::Cursor;
 use crate::handlers::sh_cursor::ShCursor;
 use crate::objects::fakehub::FakeHub;
 use crate::objects::github::GitHub;
-use crate::objects::repo::Repo;
 use anyhow::Result;
 use log::info;
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Number, Value};
+use types::types::repo::Repo;
 
 /// GitHub user.
 #[derive(Clone, Debug, Serialize, Deserialize)]

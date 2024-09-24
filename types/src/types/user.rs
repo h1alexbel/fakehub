@@ -19,13 +19,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// FakeHub.
-pub mod fakehub;
-/// GitHub.
-pub mod github;
-/// JSON objects.
-pub mod json;
-/// GitHub repository.
-pub mod repo_ops;
+use crate::types::repo::Repo;
+use serde::{Deserialize, Serialize};
+use serde_json::{Map, Value};
+
 /// GitHub user.
-pub mod user;
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct User {
+    /// Login, a.k.a. username.
+    pub login: String,
+    /// Repos.
+    pub repos: Vec<Repo>,
+    /// Extra information.
+    pub extra: Map<String, Value>,
+}

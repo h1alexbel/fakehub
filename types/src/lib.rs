@@ -19,13 +19,12 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// FakeHub.
-pub mod fakehub;
-/// GitHub.
-pub mod github;
-/// JSON objects.
-pub mod json;
-/// GitHub repository.
-pub mod repo_ops;
-/// GitHub user.
-pub mod user;
+/*!
+The types.
+*/
+/// The types.
+pub mod types;
+// @todo #162:25min Remove dumb documentation.
+//  Let's remove this ugly docs. Looks like there is
+//  some bug with linting the module docs. Do not
+// forget to remove this puzzle.
