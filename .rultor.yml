@@ -42,7 +42,7 @@ release:
     just rultor
     sed -i -e "s/^name = \"openapi\"/name = \"github-mirror\"/" github-mirror/Cargo.toml
     sed -i -e "s/^version = \".*\"/version = \"${tag}\"/" github-mirror/Cargo.toml
-    sed -i -e "s/^openapi = { path = \"..\/github-mirror\", version = \"1.1.4\" }/github-mirror = { path = \"..\/github-mirror\", version = \"$tag\" }/" server/Cargo.toml
+    sed -i -e "s/^openapi = { path = \"..\/github-mirror\", version = \"1.1.4\" }/github-mirror = { path = \"..\/github-mirror\", version = \"${tag}\" }/" server/Cargo.toml
     cargo build --features "mirror_release"
     cargo --color=never test --features "mirror_release"
     cargo +nightly fmt --check -- --color=never
