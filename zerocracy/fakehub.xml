@@ -5,10 +5,10 @@
     <cycles t="I">5</cycles>
     <error t="S">undefined method `[]' for nil</error>
     <removed t="I">8</removed>
-    <seconds t="F">64.422251124</seconds>
+    <seconds t="F">54.982661132</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-24T11:13:29Z</when>
+    <when t="T">2024-09-24T12:31:12Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -3674,9 +3674,9 @@
   </f>
   <f>
     <_id t="I">891</_id>
-    <_time t="T">2024-09-24T11:13:29Z</_time>
+    <_time t="T">2024-09-24T12:31:12Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">158</latest>
+    <latest t="I">0</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
