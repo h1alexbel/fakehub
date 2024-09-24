@@ -1,12 +1,14 @@
 ---
 - added: 8
   cycles: 5
-  error: undefined method `[]' for nil
+  error:
+  - undefined method `[]' for nil
+  - undefined method `-' for nil
   removed: 8
-  seconds: 55.654957861
+  seconds: 247.828078251
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-24 16:19:37.823555428 Z
+  when: 2024-09-24 17:17:48.768688029 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3500,10 +3502,37 @@
   when: 2024-09-24 13:23:18.000000000 Z
   where: github
   who: 83453843
-- _id: 894
-  _time: 2024-09-24 16:19:37.810489867 Z
+- _id: 895
+  _time: 2024-09-24 17:13:56.674301534 Z
   _version: 0.4.0/0.26.1/
-  latest: 0
+  average_backlog_size: 2.375
+  average_build_duration: 138.36194415718717
+  average_build_mttr: -21998
+  average_build_success_rate: 0.9338159255429163
+  average_issue_lifetime: 5639660.5
+  average_pull_files_size: 4.0
+  average_pull_hoc_size: 68.0
+  average_pull_lifetime: 68579.0
+  average_pull_rejection_rate: 0.0
+  average_release_interval: 0
+  since: 2024-09-17 17:13:56.674455521 Z
+  what: quality-of-service
+  when: 2024-09-24 17:13:56.674389718 Z
+- _id: 896
+  _time: 2024-09-24 17:16:53.185066739 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-09-17 17:16:53.185254389 Z
+  total_commits_pushed: 64
+  total_hoc_committed: 510
+  total_issues_created: 11
+  total_pulls_submitted: 3
+  total_releases_published: 0
+  what: quantity-of-deliverables
+  when: 2024-09-24 17:16:53.185175833 Z
+- _id: 897
+  _time: 2024-09-24 17:17:48.756386384 Z
+  _version: 0.4.0/0.26.1/
+  latest: 158
   repository: 807802459
   what: labels-were-scanned
   where: github
