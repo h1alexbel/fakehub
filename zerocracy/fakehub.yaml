@@ -3,10 +3,10 @@
   cycles: 5
   error: undefined method `[]' for nil
   removed: 8
-  seconds: 57.911963699
+  seconds: 55.867286256
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-24 13:23:51.172078210 Z
+  when: 2024-09-24 14:14:02.046952054 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3469,9 +3469,9 @@
   where: github
   who: 46355873
 - _id: 891
-  _time: 2024-09-24 13:23:51.158626565 Z
+  _time: 2024-09-24 14:14:02.032062060 Z
   _version: 0.4.0/0.26.1/
-  latest: 158
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
