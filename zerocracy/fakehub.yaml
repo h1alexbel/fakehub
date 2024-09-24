@@ -3,10 +3,10 @@
   cycles: 5
   error: undefined method `[]' for nil
   removed: 8
-  seconds: 61.529357807
+  seconds: 55.654957861
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-24 15:16:49.988682998 Z
+  when: 2024-09-24 16:19:37.823555428 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3468,10 +3468,42 @@
   when: 2024-09-23 16:15:45.000000000 Z
   where: github
   who: 46355873
-- _id: 891
-  _time: 2024-09-24 15:16:49.970965915 Z
+- _id: 892
+  _time: 2024-09-24 16:18:44.721636539 Z
   _version: 0.4.0/0.26.1/
-  latest: 158
+  branch: renovate/zerocracy-judges-action-0.x
+  details: The pull request h1alexbel/fakehub#163 has been opened by @renovate[bot].
+  event_id: 42218678871
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 163
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-24 13:23:33.000000000 Z
+  where: github
+  who: 29139614
+- _id: 893
+  _time: 2024-09-24 16:18:44.869508371 Z
+  _version: 0.4.0/0.26.1/
+  commit: baafef35e6219562f6eb3940a9c3e10ff46d6ba9
+  default_branch: master
+  details: 'A new Git push #20387440953 has arrived to h1alexbel/fakehub, made by
+    @h1alexbel (default branch is ''master''), not associated with any pull request.'
+  event_id: 42218669087
+  event_type: PushEvent
+  is_human: 1
+  push_id: 20387440953
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-24 13:23:18.000000000 Z
+  where: github
+  who: 83453843
+- _id: 894
+  _time: 2024-09-24 16:19:37.810489867 Z
+  _version: 0.4.0/0.26.1/
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
