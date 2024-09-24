@@ -1,11 +1,12 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 5
+  error: undefined method `[]' for nil
   removed: 8
-  seconds: 3.053080238
+  seconds: 53.9434389
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-24 08:20:01.051564611 Z
+  when: 2024-09-24 09:17:21.120239138 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3467,17 +3468,10 @@
   when: 2024-09-23 16:15:45.000000000 Z
   where: github
   who: 46355873
-- _id: 913
-  _time: 2024-09-24 08:20:00.552810914 Z
+- _id: 891
+  _time: 2024-09-24 09:17:21.106595963 Z
   _version: 0.4.0/0.26.1/
-  latest: 42205388815
-  repository: 807802459
-  what: events-were-scanned
-  where: github
-- _id: 914
-  _time: 2024-09-24 08:20:01.037295365 Z
-  _version: 0.4.0/0.26.1/
-  latest: 0
+  latest: 158
   repository: 807802459
   what: labels-were-scanned
   where: github
