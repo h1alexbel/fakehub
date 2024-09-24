@@ -1,14 +1,12 @@
 ---
 - added: 8
   cycles: 5
-  error:
-  - undefined method `[]' for nil
-  - undefined method `-' for nil
+  error: undefined method `[]' for nil
   removed: 8
-  seconds: 247.828078251
+  seconds: 68.543383211
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-24 17:17:48.768688029 Z
+  when: 2024-09-24 18:21:16.411500789 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3515,12 +3513,16 @@
   average_pull_lifetime: 68579.0
   average_pull_rejection_rate: 0.0
   average_release_interval: 0
+  composite: 0.406
+  ffact: 84
   since: 2024-09-17 17:13:56.674455521 Z
   what: quality-of-service
   when: 2024-09-24 17:13:56.674389718 Z
 - _id: 896
   _time: 2024-09-24 17:16:53.185066739 Z
   _version: 0.4.0/0.26.1/
+  composite: 12.199
+  ffact: 85
   since: 2024-09-17 17:16:53.185254389 Z
   total_commits_pushed: 64
   total_hoc_committed: 510
@@ -3529,10 +3531,60 @@
   total_releases_published: 0
   what: quantity-of-deliverables
   when: 2024-09-24 17:16:53.185175833 Z
-- _id: 897
-  _time: 2024-09-24 17:17:48.756386384 Z
+- _id: 898
+  _time: 2024-09-24 18:20:10.799436249 Z
   _version: 0.4.0/0.26.1/
-  latest: 158
+  branch: '162'
+  details: The pull request h1alexbel/fakehub#164 has been opened by @l3r8yJ.
+  event_id: 42223555581
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 164
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-24 15:20:58.000000000 Z
+  where: github
+  who: 46355873
+- _id: 899
+  _time: 2024-09-24 18:20:11.571833676 Z
+  _version: 0.4.0/0.26.1/
+  commit: febccfb097da2a6918f41e730d28fc8a371b7102
+  default_branch: master
+  details: 'A new Git push #20389122685 has arrived to h1alexbel/fakehub, made by
+    @h1alexbel (default branch is ''master''), not associated with any pull request.'
+  event_id: 42222216796
+  event_type: PushEvent
+  is_human: 1
+  push_id: 20389122685
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-24 14:47:42.000000000 Z
+  where: github
+  who: 83453843
+- _id: 900
+  _time: 2024-09-24 18:20:11.874791586 Z
+  _version: 0.4.0/0.26.1/
+  commit: 4fd7a1a21605175f101bf3359eb2dad60a92c0e7
+  default_branch: master
+  details: 'A new Git push #20389096395 has arrived to h1alexbel/fakehub, made by
+    @h1alexbel (default branch is ''master''), not associated with any pull request.'
+  event_id: 42222161394
+  event_type: PushEvent
+  is_human: 1
+  push_id: 20389096395
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-24 14:46:21.000000000 Z
+  where: github
+  who: 83453843
+- _id: 901
+  _time: 2024-09-24 18:21:16.396236103 Z
+  _version: 0.4.0/0.26.1/
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
