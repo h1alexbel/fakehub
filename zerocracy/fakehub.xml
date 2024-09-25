@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="100905">
+<fb version="0.4.0" size="100903">
   <f>
     <added t="I">8</added>
     <cycles t="I">5</cycles>
     <error t="S">undefined method `[]' for nil</error>
     <removed t="I">8</removed>
-    <seconds t="F">70.593266717</seconds>
+    <seconds t="F">70.610956767</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-25T20:17:53Z</when>
+    <when t="T">2024-09-25T21:15:45Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -3934,9 +3934,9 @@
   </f>
   <f>
     <_id t="I">915</_id>
-    <_time t="T">2024-09-25T20:17:53Z</_time>
+    <_time t="T">2024-09-25T21:15:45Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">158</latest>
+    <latest t="I">0</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
