@@ -23,6 +23,10 @@
 name = "fakehub"
 version = "0.0.0"
 edition = "2021"
+license = "MIT"
+description = """
+Portable command-line tool for running and configuring fake GitHub API for testing.
+"""
 
 [[bin]]
 name = "fakehub"
