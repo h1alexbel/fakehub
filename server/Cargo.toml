@@ -21,7 +21,7 @@
 # SOFTWARE.
 [package]
 name = "fakehub-server"
-version = "0.0.0"
+version = "0.0.7"
 edition = "2021"
 license = "MIT"
 description = """
@@ -38,7 +38,7 @@ path = "src/lib.rs"
 workspace = true
 
 [dependencies]
-openapi = { path = "../github-mirror", version = "1.1.4" }
+github-mirror = { path = "../github-mirror", version = "0.0.7" }
 anyhow = "1.0.86"
 serde = { version = "1.0.203", features = ["derive"] }
 serde_json = "1.0.117"
