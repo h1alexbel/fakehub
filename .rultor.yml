@@ -39,11 +39,11 @@ release:
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
+    sed -i -e "s/^fakehub-server = { path = \"..\/server\", version = \"0.0.0\" }/fakehub-server = { path = \"..\/server\", version = \"${tag}\" }/" cli/Cargo.toml
     just rultor
     sed -i -e "s/^name = \"openapi\"/name = \"github-mirror\"/" github-mirror/Cargo.toml
     sed -i -e "s/^version = \".*\"/version = \"${tag}\"/" github-mirror/Cargo.toml
     sed -i -e "s/^openapi = { path = \"..\/github-mirror\", version = \"1.1.4\" }/github-mirror = { path = \"..\/github-mirror\", version = \"${tag}\" }/" server/Cargo.toml
-    sed -i -e "s/^fakehub-server = { path = \"..\/server\", version = \"0.0.0\" }/fakehub-server = { path = \"..\/server\", version = \"${tag}\" }/" cli/Cargo.toml
     cargo build --features "mirror_release"
     cargo --color=never test --features "mirror_release"
     cargo +nightly fmt --check -- --color=never
