@@ -55,6 +55,10 @@ release:
     git commit -am "${tag}"
     ls -a ../
     mkdir -p ~/.cargo && cp ../credentials ~/.cargo
+    cargo --color=never publish -p github-mirror --dry-run
+    cargo --color=never publish -p fakehub-server --features "mirror_release" --dry-run
+    cargo --color=never publish -p fakehub --dry-run
+    echo "Packages ready for upload to crates.io"
     cargo --color=never publish -p github-mirror
     cargo --color=never publish -p fakehub-server --features "mirror_release"
     cargo --color=never publish -p fakehub
