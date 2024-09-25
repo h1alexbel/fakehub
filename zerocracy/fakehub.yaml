@@ -1,12 +1,11 @@
 ---
 - added: 8
-  cycles: 5
-  error: undefined method `[]' for nil
+  cycles: 2
   removed: 8
-  seconds: 70.610956767
+  seconds: 26.97188013
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-25 21:15:45.531424660 Z
+  when: 2024-09-25 22:14:20.396794796 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -3707,8 +3706,39 @@
   when: 2024-09-25 15:01:05.000000000 Z
   where: github
   who: 83453843
-- _id: 915
-  _time: 2024-09-25 21:15:45.484987891 Z
+- _id: 916
+  _time: 2024-09-25 22:13:58.691877227 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/zerocracy-pages-action-0.x
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#161 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 42206179560
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 161
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-24 07:36:55.000000000 Z
+  where: github
+  who: 8086956
+- _id: 919
+  _time: 2024-09-25 22:14:19.872088446 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42263307727
+  repository: 807802459
+  what: events-were-scanned
+  where: github
+- _id: 920
+  _time: 2024-09-25 22:14:20.381686286 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
