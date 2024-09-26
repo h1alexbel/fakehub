@@ -262,14 +262,15 @@ mod tests {
 
     #[test]
     fn registers_in_github() -> Result<()> {
-        let mut fakehub = FakeHub::default();
+        let fakehub = FakeHub::default();
         let github = fakehub.main();
+        let mut github = github.lock().expect("Failed to lock");
         let foo = String::from("foo");
-        // User::new(foo.clone())
-        //     .register_in(github, fakehub)
-        //     .expect("Failed to register user");
-        // let pulled = github.users.get(&foo).expect("Failed to get user");
-        // assert_that!(pulled.clone().login, is(equal_to(foo)));
+        User::new(foo.clone())
+            .register_in(&mut github, &fakehub)
+            .expect("Failed to register user");
+        let pulled = github.users.get(&foo).expect("Failed to get user");
+        assert_that!(pulled.clone().login, is(equal_to(foo)));
         Ok(())
     }
 
@@ -277,40 +278,43 @@ mod tests {
     #[test]
     fn panics_when_already_registered() {
         let fakehub = FakeHub::default();
-        // let mut github = fakehub.clone().main();
-        // User::new(String::from("jeff"))
-        //     .register_in(&mut github, fakehub)
-        //     .expect("Failed to register user");
+        let github = fakehub.main();
+        let mut github = github.lock().expect("Failed to lock");
+        User::new(String::from("jeff"))
+            .register_in(&mut github, &fakehub)
+            .expect("Failed to register user");
     }
 
     #[test]
     fn registers_with_extra() -> Result<()> {
         let fakehub = FakeHub::default();
-        // let mut github = fakehub.clone().main();
-        // User::new(String::from("foo"))
-        //     .register_in(&mut github, fakehub)
-        //     .expect("Failed to register user");
-        // let user = github.users.get("foo").expect("Failed to get user");
-        // let url = user.extra.get("url").expect("Failed to read property");
-        // assert_that!(url.as_str(), is(equal_to(Some("localhost/users/foo"))));
-        // assert_that!(user.extra.len(), is(equal_to(31)));
+        let github = fakehub.main();
+        let mut github = github.lock().expect("Failed to lock");
+        User::new(String::from("foo"))
+            .register_in(&mut github, &fakehub)
+            .expect("Failed to register user");
+        let user = github.users.get("foo").expect("Failed to get user");
+        let url = user.extra.get("url").expect("Failed to read property");
+        assert_that!(url.as_str(), is(equal_to(Some("localhost/users/foo"))));
+        assert_that!(user.extra.len(), is(equal_to(31)));
         Ok(())
     }
 
     #[test]
     #[allow(clippy::unwrap_used)]
     fn registers_on_instance_with_predefined_start() -> Result<()> {
-        // let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
-        // let mut github = fakehub.clone().main();
-        // User::new(String::from("foo"))
-        //     .register_in(&mut github, fakehub)
-        //     .expect("Failed to register user");
-        // let user = github.users.get("foo").expect("Failed to get user");
-        // let id = user.extra.get("node_id").expect("Failed to read property");
-        // assert_that!(
-        //     id.as_str(),
-        //     is(equal_to(Some("305be946d516494d20c7c10f6d0020f9")))
-        // );
+        let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
+        let github = fakehub.main();
+        let mut github = github.lock().expect("Failed to lock");
+        User::new(String::from("foo"))
+            .register_in(&mut github, &fakehub)
+            .expect("Failed to register user");
+        let user = github.users.get("foo").expect("Failed to get user");
+        let id = user.extra.get("node_id").expect("Failed to read property");
+        assert_that!(
+            id.as_str(),
+            is(equal_to(Some("305be946d516494d20c7c10f6d0020f9")))
+        );
         Ok(())
     }
 }

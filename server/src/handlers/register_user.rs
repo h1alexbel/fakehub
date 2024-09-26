@@ -32,16 +32,16 @@ use log::info;
 ///
 /// * `payload`: JSON payload
 pub async fn register_user(
-    State(mut config): State<ServerConfig>,
+    State(config): State<ServerConfig>,
     Json(payload): Json<User>,
 ) -> Result<StatusCode, String> {
     let mut newcomer = User::new(payload.login.clone());
     let fakehub = &config.fakehub;
-    let mut github = fakehub.main();
+    let github = fakehub.main();
     let mut github = github
         .lock()
         .map_err(|e| format!("Mutex lock failed: {}", e))
-        .expect("Failed to lock GitHub");
+        .expect("Failed to get GitHub");
     match newcomer.register_in(&mut github, fakehub) {
         Ok(_) => {
             info!("New user is here. Hello @{}", newcomer.login);
