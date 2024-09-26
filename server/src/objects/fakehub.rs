@@ -19,7 +19,6 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use std::cell::{RefCell, RefMut};
 use crate::handlers::node_id::NodeId;
 use crate::objects::github::GitHub;
 use crate::objects::user::User;
@@ -39,8 +38,9 @@ use uuid::Uuid;
 ///
 /// let mut fakehub = FakeHub::default();
 /// let github = fakehub.main();
-/// // let jeff = github.user("jeff").expect("Failed to get user");
-/// // assert_that!(&jeff.login, is(equal_to("jeff")));
+/// let locked = github.lock().expect("Failed to lock GitHub");
+/// let jeff = locked.user("jeff").expect("Failed to get user");
+/// assert_that!(&jeff.login, is(equal_to("jeff")));
 /// ```
 #[derive(Clone)]
 pub struct FakeHub {
@@ -130,19 +130,21 @@ mod tests {
 
     #[test]
     fn returns_default_fakehub_instance() -> Result<()> {
-        let mut fakehub = FakeHub::default();
-        let default = fakehub.main();
-        // assert_that!(default.id.is_nil(), is(equal_to(false)));
+        let fakehub = FakeHub::default();
+        let github = fakehub.main();
+        let locked = github.lock().expect("Failed to lock");
+        assert_that!(locked.id.is_nil(), is(equal_to(false)));
         Ok(())
     }
 
     #[test]
     fn returns_default_github() -> Result<()> {
-        let mut fakehub = FakeHub::default();
+        let fakehub = FakeHub::default();
         let github = fakehub.main();
-        // let users = github.clone().users();
-        // assert_that!(&github.name, is(equal_to("main")));
-        // assert_that!(users.len(), is(equal_to(2)));
+        let locked = github.lock().expect("Failed to lock"); 
+        let users = locked.clone().users();
+        assert_that!(&locked.name, is(equal_to("main")));
+        assert_that!(users.len(), is(equal_to(2)));
         Ok(())
     }
 
