@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 1
   removed: 8
-  seconds: 29.700591477
+  seconds: 4.058372234
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-26 04:18:59.648294995 Z
+  when: 2024-09-26 05:14:43.106409766 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4145,17 +4145,95 @@
   when: 2024-09-25 20:19:21.000000000 Z
   where: github
   who: 8086956
-- _id: 962
-  _time: 2024-09-26 04:18:53.840846574 Z
+- _id: 964
+  _job: 8024
+  _time: 2024-09-26 04:19:06.751045198 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#163,
+    the reward amount is 4.
+  greeting: "Hey there! \U0001F44B Thanks for your code review! While it was a bit
+    short (only 2 hits-of-code), we appreciate your effort. You earned 4 points as
+    a base, but we had to deduct some due to the low code volume and only 4 comments.
+    To keep you motivated, we bumped it up to +4 points total. Remember, more code
+    and comments can lead to bigger bonuses next time! Your current balance is [+39](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Keep up the good work! \U0001F4AA\n\n<!-- Thanks for the review! You've earned
+    +4 points for this: +4 as a basis; -10 for very few (4) comments; -8 for too few
+    (2) hits-of-code; +18 to give you at least something.  Your running balance is
+    [+39](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  -->"
+  href: https://github.com/h1alexbel/fakehub/issues/163/#issuecomment-2375838466
+  is_human: 1
+  issue: 163
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-26 04:19:06.755507241 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#163
+- _id: 965
+  _job: 8024
+  _time: 2024-09-26 04:19:10.060416616 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#170,
+    the reward amount is 4.
+  greeting: 'Thanks for the review! You''ve earned +4 points for this: +4 as a basis;
+    -10 for very few (4) comments; -8 for too few (2) hits-of-code; +18 to give you
+    at least something.  Your running balance is [+39](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). '
+  href: https://github.com/h1alexbel/fakehub/issues/170/#issuecomment-2375838491
+  is_human: 1
+  issue: 170
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-26 04:19:10.071452125 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#170
+- _id: 966
+  _job: 8024
+  _time: 2024-09-26 04:19:13.073926745 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  comments: 3
+  details: The pull request h1alexbel/fakehub#163 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 1 days of being in review and 3 comments.
+  hoc: 2
+  is_human: 0
+  issue: 163
+  merger: 8086956
+  repository: 807802459
+  seconds: 114812
+  what: code-was-contributed
+  when: 2024-09-25 21:17:05.000000000 Z
+  where: github
+  who: 29139614
+- _id: 967
+  _job: 8024
+  _time: 2024-09-26 04:19:13.241210735 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  comments: 3
+  details: The pull request h1alexbel/fakehub#170 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 1 hours of being in review and 3 comments.
+  hoc: 2
+  is_human: 0
+  issue: 170
+  merger: 8086956
+  repository: 807802459
+  seconds: 7057
+  what: code-was-contributed
+  when: 2024-09-25 20:19:21.000000000 Z
+  where: github
+  who: 29139614
+- _id: 968
+  _time: 2024-09-26 05:14:41.462320634 Z
   _version: 0.4.0/0.26.1/
-  latest: 42274106255
+  latest: 42275311127
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 963
-  _time: 2024-09-26 04:18:59.634373910 Z
+- _id: 969
+  _time: 2024-09-26 05:14:43.090669160 Z
   _version: 0.4.0/0.26.1/
-  latest: 158
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
