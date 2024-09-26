@@ -38,7 +38,9 @@ pub async fn user(
 ) -> Json<Value> {
     let login = params.get("login").expect("Failed to get login");
     let github = config.fakehub.main();
-    match github.user(login) {
+    let clone = github.clone();
+    let lock = clone.lock().expect("Failed to lock");
+    match lock.user(login) {
         Some(user) => Json(JsonUser::new(user.clone()).as_json()),
         None => {
             let mut response = Map::new();
