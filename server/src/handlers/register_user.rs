@@ -55,6 +55,7 @@ pub async fn register_user(
 mod tests {
     use crate::handlers::register_user::register_user;
     use crate::objects::fakehub::FakeHub;
+    use crate::objects::json::json_user::JsonUser;
     use crate::objects::user::User;
     use crate::ServerConfig;
     use anyhow::Result;
@@ -69,17 +70,45 @@ mod tests {
         };
         let state = State(server.clone());
         let registration = "new1234";
-        let status = register_user(state, Json::from(User::new(String::from(registration))))
+        let status =
+            register_user(state, Json::from(User::new(String::from(registration))))
+                .await
+                .expect("Failed to register user");
+        let fakehub = server.fakehub;
+        let github = fakehub.main();
+        let locked = github.lock().expect("Failed to lock GitHub");
+        let users = locked.clone().users();
+        let created = locked.user(registration).expect("Failed to get user");
+        assert_that!(created.login.as_str(), is(equal_to(registration)));
+        assert_that!(users.len(), is(equal_to(3)));
+        assert_that!(status.as_u16(), is(equal_to(201)));
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn registers_with_extra_fields() -> Result<()> {
+        let server = ServerConfig {
+            fakehub: FakeHub::default(),
+        };
+        let state = State(server.clone());
+        let registration = "new1234";
+        register_user(state, Json::from(User::new(String::from(registration))))
             .await
             .expect("Failed to register user");
         let fakehub = server.fakehub;
         let github = fakehub.main();
         let locked = github.lock().expect("Failed to lock GitHub");
-        let users = locked.clone().users();
-        let created =  locked.user(registration).expect("Failed to get user");
-        assert_that!(created.login.as_str(), is(equal_to(registration)));
-        assert_that!(users.len(), is(equal_to(3)));
-        assert_that!(status.as_u16(), is(equal_to(201)));
+        let created = locked.user(registration).expect("Failed to get user");
+        let expected = format!("localhost/users/{}", registration);
+        assert_that!(
+            created
+                .extra
+                .get("url")
+                .expect("Failed to get url")
+                .as_str(),
+            is(equal_to(Some(expected.as_str())))
+        );
+        assert_that!(created.extra.len(), is(equal_to(31)));
         Ok(())
     }
 
