@@ -141,7 +141,7 @@ mod tests {
     fn returns_default_github() -> Result<()> {
         let fakehub = FakeHub::default();
         let github = fakehub.main();
-        let locked = github.lock().expect("Failed to lock"); 
+        let locked = github.lock().expect("Failed to lock");
         let users = locked.clone().users();
         assert_that!(&locked.name, is(equal_to("main")));
         assert_that!(users.len(), is(equal_to(2)));
