@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 4.791396875
+  seconds: 270.00804679
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-26 16:18:50.885536451 Z
+  when: 2024-09-26 17:19:23.149636277 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4413,15 +4413,64 @@
   when: 2024-09-26 09:08:13.000000000 Z
   where: github
   who: 83453843
-- _id: 1012
-  _time: 2024-09-26 16:18:48.380343202 Z
+- _id: 1014
+  _time: 2024-09-26 17:14:55.506720606 Z
   _version: 0.4.0/0.26.1/
-  latest: 42292247046
+  branch: renovate/zerocracy-pages-action-0.x
+  details: The pull request h1alexbel/fakehub#175 has been opened by @renovate[bot].
+  event_id: 42293418724
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 175
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-26 11:13:09.000000000 Z
+  where: github
+  who: 29139614
+- _id: 1017
+  _time: 2024-09-26 17:15:02.525332627 Z
+  _version: 0.4.0/0.26.1/
+  average_backlog_size: 4.625
+  average_build_duration: 147.375
+  average_build_mttr: -14286
+  average_build_success_rate: 0.9548319327731093
+  average_issue_lifetime: 6596934.0
+  average_pull_files_size: 1.0
+  average_pull_hoc_size: 2.4
+  average_pull_lifetime: 45698.6
+  average_pull_rejection_rate: 0.0
+  average_release_commits_size: 0
+  average_release_hoc_size: 0
+  average_release_interval: 0
+  average_review_size: 0.0
+  average_review_time: 24847.5
+  average_reviewers_per_pull: 0.8
+  average_reviews_per_pull: 0.8
+  since: 2024-09-19 17:15:02.525504992 Z
+  what: quality-of-service
+  when: 2024-09-26 17:15:02.525434268 Z
+- _id: 1018
+  _time: 2024-09-26 17:18:25.550649100 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-09-19 17:18:25.553270707 Z
+  total_builds_ran: 952
+  total_commits_pushed: 58
+  total_hoc_committed: 379
+  total_issues_created: 17
+  total_pulls_submitted: 4
+  total_releases_published: 1
+  total_reviews_submitted: 7
+  what: quantity-of-deliverables
+  when: 2024-09-26 17:18:25.553182130 Z
+- _id: 1019
+  _time: 2024-09-26 17:19:20.752695080 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42293418724
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1013
-  _time: 2024-09-26 16:18:50.870645871 Z
+- _id: 1020
+  _time: 2024-09-26 17:19:23.134157866 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
