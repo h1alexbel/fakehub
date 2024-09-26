@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 3
   removed: 8
-  seconds: 29.199715778
+  seconds: 21.674316764
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-26 12:30:51.347380099 Z
+  when: 2024-09-26 13:23:30.734959394 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4296,17 +4296,134 @@
   when: 2024-09-26 07:21:49.000000000 Z
   where: github
   who: 8086956
-- _id: 992
-  _time: 2024-09-26 12:30:49.724716494 Z
+- _id: 994
+  _job: 8060
+  _time: 2024-09-26 12:30:58.204836695 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#171,
+    the reward amount is 4.
+  greeting: "Thanks for your code review! Here's how your +4 points were calculated:
+    +4 base points, -24 for self-review, +0.02 for 2 hits-of-code, -16 for no comments,
+    -8 for <16 hits-of-code, then adjusted to the minimum 4 points. Your running balance
+    is now [+47](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Keep up the good work, but remember to add more comments and increase your hits-of-code
+    for better rewards next time! \U0001F4BB\n\n<!-- Thanks for the review! You've
+    earned +4 points for this: +4 as a basis; -10 for very few (4) comments; -8 for
+    too few (2) hits-of-code; +18 to give you at least something.  Your running balance
+    is [+47](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  -->"
+  href: https://github.com/h1alexbel/fakehub/issues/171/#issuecomment-2376822295
+  is_human: 1
+  issue: 171
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-09-26 12:30:58.208387267 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#171
+- _id: 995
+  _job: 8060
+  _time: 2024-09-26 12:31:01.363736969 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  comments: 3
+  details: The pull request h1alexbel/fakehub#171 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 3 hours of being in review and 3 comments.
+  hoc: 2
+  is_human: 0
+  issue: 171
+  merger: 8086956
+  repository: 807802459
+  seconds: 10943
+  what: code-was-contributed
+  when: 2024-09-26 07:21:49.000000000 Z
+  where: github
+  who: 29139614
+- _id: 996
+  _time: 2024-09-26 13:23:11.360479105 Z
   _version: 0.4.0/0.26.1/
-  latest: 42287284698
+  details: The issue h1alexbel/fakehub#174 has been opened by @h1alexbel.
+  event_id: 42289012677
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 174
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-09-26 09:07:29.000000000 Z
+  where: github
+  who: 83453843
+- _id: 997
+  _time: 2024-09-26 13:23:11.681358307 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#173 has been opened by @h1alexbel.
+  event_id: 42288731638
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 173
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-09-26 09:00:01.000000000 Z
+  where: github
+  who: 83453843
+- _id: 998
+  _time: 2024-09-26 13:23:11.767453682 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#172 has been opened by @h1alexbel.
+  event_id: 42288331671
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 172
+  repository: 807802459
+  what: issue-was-opened
+  when: 2024-09-26 08:49:14.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1002
+  _time: 2024-09-26 13:23:21.689353303 Z
+  _version: 0.4.0/0.26.1/
+  details: The '#bug' label was attached by @h1alexbel to the issue h1alexbel/fakehub#172.
+  is_human: 1
+  issue: 172
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-09-26 08:49:12.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1003
+  _time: 2024-09-26 13:23:21.903220145 Z
+  _version: 0.4.0/0.26.1/
+  details: The '#bug' label was attached by @h1alexbel to the issue h1alexbel/fakehub#173.
+  is_human: 1
+  issue: 173
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-09-26 09:00:16.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1004
+  _time: 2024-09-26 13:23:22.168115659 Z
+  _version: 0.4.0/0.26.1/
+  details: The '#bug' label was attached by @h1alexbel to the issue h1alexbel/fakehub#174.
+  is_human: 1
+  issue: 174
+  label: bug
+  repository: 807802459
+  what: label-was-attached
+  when: 2024-09-26 09:08:13.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1006
+  _time: 2024-09-26 13:23:23.704653759 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42289012677
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 993
-  _time: 2024-09-26 12:30:51.331108410 Z
+- _id: 1007
+  _time: 2024-09-26 13:23:30.719016223 Z
   _version: 0.4.0/0.26.1/
-  latest: 0
+  latest: 158
   repository: 807802459
   what: labels-were-scanned
   where: github
