@@ -50,6 +50,9 @@ async fn main() {
                 match std::env::current_exe() {
                     Ok(buf) => {
                         let mut command = std::process::Command::new(buf);
+                        #[cfg(target_os = "windows")]
+                        // Detached windows process flag.
+                        command.creation_flags(0x00000008 | 0x00000200 | 0x08000000);
                         command
                             .arg("start")
                             .arg("--port")
@@ -60,9 +63,6 @@ async fn main() {
                         if start.verbose {
                             command.arg("--verbose");
                         }
-                        #[cfg(target_os = "windows")]
-                        // Detached windows process flag.
-                        command.creation_flags(0x00000008);
                         match command.spawn() {
                             Ok(_) => println!(
                                 "Server is running in detached mode on port {}",
