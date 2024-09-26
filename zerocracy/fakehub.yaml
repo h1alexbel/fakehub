@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 13.11780225
+  seconds: 29.199715778
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-26 11:12:45.852643724 Z
+  when: 2024-09-26 12:30:51.347380099 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4255,15 +4255,56 @@
   when: 2024-09-26 06:25:49.000000000 Z
   where: github
   who: 83453843
-- _id: 986
-  _time: 2024-09-26 11:12:44.385589966 Z
+- _id: 988
+  _job: 8056
+  _time: 2024-09-26 11:12:53.651045207 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  author: 29139614
+  comments: 4
+  details: The pull request h1alexbel/fakehub#171 with 2 HoC created by @renovate[bot]
+    was reviewed by @h1alexbel after 2 hours and 4 comments.
+  hoc: 2
+  is_human: 1
+  issue: 171
+  repository: 807802459
+  seconds: 7583
+  what: code-was-reviewed
+  when: 2024-09-26 06:25:49.000000000 Z
+  where: github
+  who: 83453843
+- _id: 989
+  _time: 2024-09-26 12:30:25.088908095 Z
   _version: 0.4.0/0.26.1/
-  latest: 42285097540
+  branch: renovate/zerocracy-pages-action-0.x
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#171 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 42285319977
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 171
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-26 07:21:49.000000000 Z
+  where: github
+  who: 8086956
+- _id: 992
+  _time: 2024-09-26 12:30:49.724716494 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42287284698
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 987
-  _time: 2024-09-26 11:12:45.839189457 Z
+- _id: 993
+  _time: 2024-09-26 12:30:51.331108410 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
