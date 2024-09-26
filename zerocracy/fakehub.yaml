@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 12.591339603
+  seconds: 29.700591477
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-26 02:46:31.599055698 Z
+  when: 2024-09-26 04:18:59.648294995 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4063,15 +4063,97 @@
   when: 2024-09-25 19:24:09.000000000 Z
   where: github
   who: 83453843
-- _id: 954
-  _time: 2024-09-26 02:46:25.273425680 Z
+- _id: 956
+  _job: 8020
+  _time: 2024-09-26 02:49:35.356736935 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  author: 29139614
+  comments: 4
+  details: The pull request h1alexbel/fakehub#163 with 2 HoC created by @renovate[bot]
+    was reviewed by @h1alexbel after 1 days and 4 comments.
+  hoc: 2
+  is_human: 1
+  issue: 163
+  repository: 807802459
+  seconds: 108080
+  what: code-was-reviewed
+  when: 2024-09-25 19:24:53.000000000 Z
+  where: github
+  who: 83453843
+- _id: 957
+  _job: 8020
+  _time: 2024-09-26 02:49:35.621150133 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  author: 29139614
+  comments: 4
+  details: The pull request h1alexbel/fakehub#170 with 2 HoC created by @renovate[bot]
+    was reviewed by @h1alexbel after 1 hours and 4 comments.
+  hoc: 2
+  is_human: 1
+  issue: 170
+  repository: 807802459
+  seconds: 3745
+  what: code-was-reviewed
+  when: 2024-09-25 19:24:09.000000000 Z
+  where: github
+  who: 83453843
+- _id: 958
+  _time: 2024-09-26 04:18:32.267897436 Z
   _version: 0.4.0/0.26.1/
-  latest: 42271166685
+  branch: renovate/zerocracy-judges-action-0.x
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#163 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 42274101521
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 163
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-25 21:17:05.000000000 Z
+  where: github
+  who: 8086956
+- _id: 959
+  _time: 2024-09-26 04:18:42.401233137 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/actions-checkout-digest
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#170 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 42272612232
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 170
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-25 20:19:21.000000000 Z
+  where: github
+  who: 8086956
+- _id: 962
+  _time: 2024-09-26 04:18:53.840846574 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42274106255
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 955
-  _time: 2024-09-26 02:46:31.584453841 Z
+- _id: 963
+  _time: 2024-09-26 04:18:59.634373910 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
