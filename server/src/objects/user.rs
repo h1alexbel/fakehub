@@ -73,7 +73,8 @@ impl User {
     ///
     /// let fakehub = &mut FakeHub::default();
     /// let github = fakehub.main();
-    /// // User::new(String::from("foo")).register_in(github, fakehub).expect("Failed to register user");
+    /// let mut locked = github.lock().expect("Failed to lock GitHub");
+    /// User::new(String::from("foo")).register_in(&mut locked, fakehub).expect("Failed to register user");
     ///```
     pub fn register_in(
         &mut self,
