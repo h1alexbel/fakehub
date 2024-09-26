@@ -55,7 +55,6 @@ pub async fn register_user(
 mod tests {
     use crate::handlers::register_user::register_user;
     use crate::objects::fakehub::FakeHub;
-    use crate::objects::json::json_user::JsonUser;
     use crate::objects::user::User;
     use crate::ServerConfig;
     use anyhow::Result;
