@@ -67,10 +67,18 @@ mod tests {
         let server = ServerConfig {
             fakehub: FakeHub::default(),
         };
-        let state = State(server);
-        let status = register_user(state, Json::from(User::new(String::from("new1234"))))
+        let state = State(server.clone());
+        let registration = "new1234";
+        let status = register_user(state, Json::from(User::new(String::from(registration))))
             .await
             .expect("Failed to register user");
+        let fakehub = server.fakehub;
+        let github = fakehub.main();
+        let locked = github.lock().expect("Failed to lock GitHub");
+        let users = locked.clone().users();
+        let created =  locked.user(registration).expect("Failed to get user");
+        assert_that!(created.login.as_str(), is(equal_to(registration)));
+        assert_that!(users.len(), is(equal_to(3)));
         assert_that!(status.as_u16(), is(equal_to(201)));
         Ok(())
     }
