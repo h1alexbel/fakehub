@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 11.969480873
+  seconds: 13.521184524
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-27 01:09:45.498180486 Z
+  when: 2024-09-27 04:18:18.659306720 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4491,15 +4491,29 @@
   when: 2024-09-26 15:32:14.000000000 Z
   where: github
   who: 83453843
-- _id: 1039
-  _time: 2024-09-27 01:09:36.416056342 Z
+- _id: 1041
+  _time: 2024-09-27 04:18:07.758256998 Z
   _version: 0.4.0/0.26.1/
-  latest: 42306850545
+  branch: renovate/ubuntu-24.x
+  details: The pull request h1alexbel/fakehub#177 has been opened by @renovate[bot].
+  event_id: 42310203684
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 177
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-09-26 19:12:24.000000000 Z
+  where: github
+  who: 29139614
+- _id: 1044
+  _time: 2024-09-27 04:18:12.017643904 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42311961942
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1040
-  _time: 2024-09-27 01:09:45.482690192 Z
+- _id: 1045
+  _time: 2024-09-27 04:18:18.638575900 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
