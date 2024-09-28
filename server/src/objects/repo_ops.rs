@@ -20,36 +20,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 use crate::objects::user::User;
-use serde::{Deserialize, Serialize};
+use types::types::repo::Repo;
 
-/// Repo.
-#[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct Repo {
-    /// Repo name.
-    pub name: String,
-    /// Private or not?
-    pub private: bool,
-}
-
-impl Repo {
+#[allow(dead_code)]
+// @todo #162:25min Remove allow dead code.
+//  Let's remove this suppression. Suggestion is
+//  write a test that will use public function.
+//  There is something with trait usage
+//  Do not forget to remove this puzzle.
+pub(crate) trait RepoOperations {
     /// New repo.
     /// `name` Repo name
     /// `private` Private repo or not
-    pub fn new(name: String, private: bool) -> Repo {
-        Repo { name, private }
-    }
+    fn new(name: String, private: bool) -> Self;
 
     /// New public repo.
     /// `name` Repo name
-    pub fn public(name: String) -> Repo {
+    fn public(name: String) -> Self;
+
+    /// Create for.
+    fn create_for(self, owner: &mut User);
+}
+
+impl RepoOperations for Repo {
+    fn new(name: String, private: bool) -> Self {
+        Repo { name, private }
+    }
+
+    fn public(name: String) -> Self {
         Repo {
             name,
             private: false,
         }
     }
 
-    /// Create for.
-    pub fn create_for(self, owner: &mut User) {
+    fn create_for(self, owner: &mut User) {
         owner.repos.push(self)
     }
 }
@@ -57,7 +62,7 @@ impl Repo {
 #[cfg(test)]
 mod tests {
     use crate::objects::fakehub::FakeHub;
-    use crate::objects::repo::Repo;
+    use crate::objects::repo_ops::{Repo, RepoOperations};
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
 

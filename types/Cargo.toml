@@ -20,39 +20,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 [package]
-name = "fakehub-server"
-version = "0.0.0"
+name = "types"
+version = "0.1.0"
 edition = "2021"
-license = "MIT"
-description = """
-GitHub API Server Stub. Fully functional fake version of a GitHub API that
-supports all the features and works locally, with no connection to GitHub at
-all.
-"""
-authors = ["Aliaksei Bialíauski <aliaksei.bialiauski@hey.com>", "Ivanchuk Ivan <l3r8y@duck.com>"]
 
-[lib]
-path = "src/lib.rs"
+[dependencies]
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+uuid = { version = "1.10.0", features = ["v4"] }
 
 [lints]
 workspace = true
 
-[dependencies]
-openapi = { path = "../github-mirror" }
-types = { path = "../types" }
-anyhow = "1.0.86"
-serde = { version = "1.0.203", features = ["derive"] }
-serde_json = "1.0.117"
-tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros", "fs"] }
-axum = "0.7.5"
-log = { version = "0.4.21", features = [] }
-hamcrest = "0.1.5"
-reqwest = "0.12.5"
-uuid = { version = "1.10.0", features = ["v4", "fast-rng", "macro-diagnostics", ] }
-md5 = "0.7.0"
-chrono = "0.4.38"
-rand = "0.8.5"
-regex = "1.10.6"
-
-[features]
-mirror_release = []
+[lib]
+path = "src/lib.rs"

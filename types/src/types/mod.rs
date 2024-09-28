@@ -19,13 +19,9 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// FakeHub.
-pub mod fakehub;
-/// GitHub.
+/// The GitHub.
 pub mod github;
-/// JSON objects.
-pub mod json;
-/// GitHub repository.
-pub mod repo_ops;
-/// GitHub user.
+/// The Repo.
+pub mod repo;
+/// The User.
 pub mod user;

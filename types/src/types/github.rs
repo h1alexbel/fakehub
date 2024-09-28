@@ -19,13 +19,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// FakeHub.
-pub mod fakehub;
+use crate::types::user::User;
+use std::collections::HashMap;
+use uuid::Uuid;
+
 /// GitHub.
-pub mod github;
-/// JSON objects.
-pub mod json;
-/// GitHub repository.
-pub mod repo_ops;
-/// GitHub user.
-pub mod user;
+#[derive(Clone)]
+pub struct GitHub {
+    /// GitHub ID.
+    pub id: Uuid,
+    /// GitHub URL.
+    pub name: String,
+    /// Users inside.
+    pub users: HashMap<String, User>,
+}

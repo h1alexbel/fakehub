@@ -22,3 +22,5 @@ github-mirror/.gitignore
 github-mirror/git_push.sh
 github-mirror/README.md
 github-mirror/.openapi-generator-ignore
+github-mirror/**/src
+node_modules

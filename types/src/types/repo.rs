@@ -19,13 +19,13 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// FakeHub.
-pub mod fakehub;
-/// GitHub.
-pub mod github;
-/// JSON objects.
-pub mod json;
-/// GitHub repository.
-pub mod repo_ops;
-/// GitHub user.
-pub mod user;
+use serde::{Deserialize, Serialize};
+
+/// Repo.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct Repo {
+    /// Repo name.
+    pub name: String,
+    /// Private or not?
+    pub private: bool,
+}
