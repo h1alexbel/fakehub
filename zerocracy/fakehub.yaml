@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 10.124165675
+  seconds: 347.314310589
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-28 12:27:24.774670863 Z
+  when: 2024-09-28 18:24:13.121583257 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4554,15 +4554,92 @@
   when: 2024-09-27 16:19:04.000000000 Z
   where: github
   who: 29139614
-- _id: 1111
-  _time: 2024-09-28 12:27:17.495628718 Z
+- _id: 1113
+  _time: 2024-09-28 13:18:22.469266392 Z
   _version: 0.4.0/0.26.1/
-  latest: 42356816083
+  commit: f4378d2db8dc6bfcb2cff9d8e62dc3339d1e6da9
+  default_branch: master
+  details: 'A new Git push #20457395368 has arrived to h1alexbel/fakehub, made by
+    @rultor (default branch is ''master''), not associated with any pull request.'
+  event_id: 42357338024
+  event_type: PushEvent
+  is_human: 0
+  push_id: 20457395368
+  ref: refs/heads/master
+  repository: 807802459
+  to_master: 1
+  what: git-was-pushed
+  when: 2024-09-28 12:37:07.000000000 Z
+  where: github
+  who: 8086956
+- _id: 1126
+  _time: 2024-09-28 18:18:28.813809349 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/jamesives-github-pages-deploy-action-4.x
+  comments: 6
+  comments_appreciated: 2
+  comments_by_author: 0
+  comments_by_reviewers: 7
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#178 has been closed by @rultor, with
+    2 HoC and 6 comments.
+  event_id: 42360585727
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 178
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-28 18:16:36.000000000 Z
+  where: github
+  who: 8086956
+- _id: 1129
+  _time: 2024-09-28 18:18:51.080490430 Z
+  _version: 0.4.0/0.26.1/
+  average_backlog_size: 3.5
+  average_build_duration: 77.67610419026047
+  average_build_mttr: -8699
+  average_build_success_rate: 0.956964892412231
+  average_issue_lifetime: 5104733.5
+  average_pull_files_size: 1.0
+  average_pull_hoc_size: 2.3333333333333335
+  average_pull_lifetime: 52874.71428571428
+  average_pull_rejection_rate: 0.14285714285714285
+  average_release_commits_size: 0
+  average_release_hoc_size: 0
+  average_release_interval: 0
+  average_review_size: 0.0
+  average_review_time: 24847.5
+  average_reviewers_per_pull: 0.6666666666666666
+  average_reviews_per_pull: 0.6666666666666666
+  since: 2024-09-21 18:18:51.080655249 Z
+  what: quality-of-service
+  when: 2024-09-28 18:18:51.080582563 Z
+- _id: 1130
+  _time: 2024-09-28 18:22:57.073352192 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-09-21 18:22:57.073567105 Z
+  total_builds_ran: 883
+  total_commits_pushed: 54
+  total_hoc_committed: 231
+  total_issues_created: 12
+  total_pulls_submitted: 4
+  total_releases_published: 1
+  total_reviews_submitted: 5
+  what: quantity-of-deliverables
+  when: 2024-09-28 18:22:57.073486764 Z
+- _id: 1131
+  _time: 2024-09-28 18:24:04.592489985 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42360588504
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1112
-  _time: 2024-09-28 12:27:24.758133742 Z
+- _id: 1132
+  _time: 2024-09-28 18:24:13.103088019 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
