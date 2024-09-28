@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 1
   removed: 8
-  seconds: 347.314310589
+  seconds: 4.751877586
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-28 18:24:13.121583257 Z
+  when: 2024-09-28 19:12:10.448262587 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4615,12 +4615,16 @@
   average_review_time: 24847.5
   average_reviewers_per_pull: 0.6666666666666666
   average_reviews_per_pull: 0.6666666666666666
+  composite: 0.432
+  ffact: 84
   since: 2024-09-21 18:18:51.080655249 Z
   what: quality-of-service
   when: 2024-09-28 18:18:51.080582563 Z
 - _id: 1130
   _time: 2024-09-28 18:22:57.073352192 Z
   _version: 0.4.0/0.26.1/
+  composite: 11.157
+  ffact: 85
   since: 2024-09-21 18:22:57.073567105 Z
   total_builds_ran: 883
   total_commits_pushed: 54
@@ -4631,17 +4635,34 @@
   total_reviews_submitted: 5
   what: quantity-of-deliverables
   when: 2024-09-28 18:22:57.073486764 Z
-- _id: 1131
-  _time: 2024-09-28 18:24:04.592489985 Z
+- _id: 1133
+  _job: 8278
+  _time: 2024-09-28 18:24:33.908843287 Z
+  _version: 0.4.0/0.26.1/0.0.53
+  comments: 6
+  details: The pull request h1alexbel/fakehub#178 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 1 days of being in review and 6 comments.
+  hoc: 2
+  is_human: 0
+  issue: 178
+  merger: 8086956
+  repository: 807802459
+  seconds: 93452
+  what: code-was-contributed
+  when: 2024-09-28 18:16:36.000000000 Z
+  where: github
+  who: 29139614
+- _id: 1134
+  _time: 2024-09-28 19:12:07.894518655 Z
   _version: 0.4.0/0.26.1/
-  latest: 42360588504
+  latest: 42360659040
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1132
-  _time: 2024-09-28 18:24:13.103088019 Z
+- _id: 1135
+  _time: 2024-09-28 19:12:10.432158472 Z
   _version: 0.4.0/0.26.1/
-  latest: 158
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
