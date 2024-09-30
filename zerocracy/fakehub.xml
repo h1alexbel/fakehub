@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="125554">
+<fb version="0.4.0" size="125932">
   <f>
     <added t="I">8</added>
-    <cycles t="I">2</cycles>
+    <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">22.666940266</seconds>
+    <seconds t="F">7.550393971</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-30T09:18:26Z</when>
+    <when t="T">2024-09-30T10:17:27Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -5050,19 +5050,37 @@
     <who t="I">8086956</who>
   </f>
   <f>
-    <_id t="I">1222</_id>
-    <_time t="T">2024-09-30T09:18:19Z</_time>
+    <_id t="I">1224</_id>
+    <_job t="I">8435</_job>
+    <_time t="T">2024-09-30T09:18:30Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.53</_version>
+    <comments t="I">3</comments>
+    <details t="S">The pull request h1alexbel/fakehub#175 with 2 HoC created by @renovate[bot] was merged by @rultor after 3 days of being in review and 3 comments.</details>
+    <hoc t="I">2</hoc>
+    <is_human t="I">0</is_human>
+    <issue t="I">175</issue>
+    <merger t="I">8086956</merger>
+    <repository t="I">807802459</repository>
+    <seconds t="I">335611</seconds>
+    <what t="S">code-was-contributed</what>
+    <when t="T">2024-09-30T08:26:40Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">1225</_id>
+    <_time t="T">2024-09-30T10:17:22Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42386722630</latest>
+    <latest t="I">42388623948</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1223</_id>
-    <_time t="T">2024-09-30T09:18:26Z</_time>
+    <_id t="I">1226</_id>
+    <_time t="T">2024-09-30T10:17:27Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">158</latest>
+    <latest t="I">0</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
