@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="126333">
+<fb version="0.4.0" size="126593">
   <f>
     <added t="I">8</added>
     <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">163.583899192</seconds>
+    <seconds t="F">53.915909194</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-09-30T18:22:47Z</when>
+    <when t="T">2024-09-30T19:11:23Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -5087,22 +5087,39 @@
     <average_review_time t="F">24847.5</average_review_time>
     <average_reviewers_per_pull t="F">0.5</average_reviewers_per_pull>
     <average_reviews_per_pull t="F">0.5</average_reviews_per_pull>
+    <composite t="F">0.398</composite>
+    <ffact t="I">84</ffact>
     <since t="T">2024-09-23T18:20:09Z</since>
     <what t="S">quality-of-service</what>
     <when t="T">2024-09-30T18:20:09Z</when>
   </f>
   <f>
-    <_id t="I">1244</_id>
-    <_time t="T">2024-09-30T18:22:39Z</_time>
+    <_id t="I">1248</_id>
+    <_time t="T">2024-09-30T19:10:34Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42399536942</latest>
+    <since t="T">2024-09-23T19:10:34Z</since>
+    <total_builds_ran t="I">622</total_builds_ran>
+    <total_commits_pushed t="I">22</total_commits_pushed>
+    <total_hoc_committed t="I">54</total_hoc_committed>
+    <total_issues_created t="I">12</total_issues_created>
+    <total_pulls_submitted t="I">3</total_pulls_submitted>
+    <total_releases_published t="I">1</total_releases_published>
+    <total_reviews_submitted t="I">4</total_reviews_submitted>
+    <what t="S">quantity-of-deliverables</what>
+    <when t="T">2024-09-30T19:10:34Z</when>
+  </f>
+  <f>
+    <_id t="I">1249</_id>
+    <_time t="T">2024-09-30T19:11:16Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">42402042534</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1245</_id>
-    <_time t="T">2024-09-30T18:22:47Z</_time>
+    <_id t="I">1250</_id>
+    <_time t="T">2024-09-30T19:11:23Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">158</latest>
     <repository t="I">807802459</repository>
