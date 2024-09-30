@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 12.899930511
+  seconds: 30.625558831
   version: 0.26.1
   what: judges-summary
-  when: 2024-09-30 07:15:52.664228201 Z
+  when: 2024-09-30 08:21:36.125623942 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4688,15 +4688,39 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-09-30 01:11:58.190314331 Z
-- _id: 1211
-  _time: 2024-09-30 07:15:43.591192298 Z
+- _id: 1213
+  _time: 2024-09-30 08:21:08.329121321 Z
   _version: 0.4.0/0.26.1/
-  latest: 42383227795
+  branch: renovate/jamesives-github-pages-deploy-action-4.x
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#179 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 42384664873
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 179
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-09-30 07:27:36.000000000 Z
+  where: github
+  who: 8086956
+- _id: 1216
+  _time: 2024-09-30 08:21:28.619979434 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42384785230
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1212
-  _time: 2024-09-30 07:15:52.646734059 Z
+- _id: 1217
+  _time: 2024-09-30 08:21:36.108928468 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
