@@ -35,27 +35,30 @@ use std::path::Path;
 /// # Examples
 ///
 /// ```
+/// use std::path::Path;
 /// use crate::fakehub_server::report::latex::template;
-/// let content = template("resources/report.tex");
+/// let content = template(Path::new("resources/report.tex"));
 /// print!("{content}")
 /// ```
-pub fn template(path: &str) -> String {
-    return fs::read_to_string(Path::new(path)).expect("template should be read from");
+pub fn template(path: &Path) -> String {
+    fs::read_to_string(path).expect("template should be read from")
 }
 
 #[cfg(test)]
 mod tests {
+    use std::path::Path;
     use crate::report::latex::template;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
+    use parameterized::parameterized;
 
-    #[test]
-    // @todo #41:60min Add support of @ExtendsWith from JUnit in order to pass expected as test parameter.
-    //  We should use extensions in order to pass expected as parameters into
-    //  test. If there is no crate with such functionality - let's develop and
-    //  release one.
-    fn returns_template_content() -> Result<()> {
-        let content = template("resources/report.tex");
+    #[parameterized(
+        path = {
+            &Path::new("resources/report.tex")
+        }
+    )]
+    fn returns_template_content(path: &Path) -> Result<()> {
+        let content = template(path);
         let expected = r"\usepackage{to-be-determined}
 \documentclass[12pt]{article}
 \begin{document}
