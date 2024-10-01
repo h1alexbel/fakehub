@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 13.631419894
+  seconds: 24.207611405
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-01 17:13:46.535197071 Z
+  when: 2024-10-01 18:20:38.758870884 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -4834,15 +4834,53 @@
   when: 2024-10-01 12:46:38.000000000 Z
   where: github
   who: 83453843
-- _id: 1297
-  _time: 2024-10-01 17:13:43.727502165 Z
+- _id: 1299
+  _time: 2024-10-01 18:20:17.291376077 Z
   _version: 0.4.0/0.26.1/
-  latest: 42435686082
+  branch: '54'
+  details: The pull request h1alexbel/fakehub#181 has been opened by @h1alexbel.
+  event_id: 42436259730
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 181
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-10-01 13:02:25.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1300
+  _time: 2024-10-01 18:20:17.724586240 Z
+  _version: 0.4.0/0.26.1/
+  branch: '168'
+  comments: 1
+  comments_appreciated: 0
+  comments_by_author: 0
+  comments_by_reviewers: 1
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#180 has been closed by @h1alexbel, with
+    21 HoC and 1 comments.
+  event_id: 42436079342
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 21
+  is_human: 1
+  issue: 180
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-10-01 12:58:08.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1303
+  _time: 2024-10-01 18:20:36.308888034 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42437809892
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1298
-  _time: 2024-10-01 17:13:46.514170721 Z
+- _id: 1304
+  _time: 2024-10-01 18:20:38.741546232 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
