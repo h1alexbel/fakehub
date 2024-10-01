@@ -29,8 +29,10 @@ assets:
 install: |
   rustup install nightly-x86_64-unknown-linux-gnu
   rustup component add --toolchain nightly-x86_64-unknown-linux-gnu rustfmt
-  just install
   sudo npm install @openapitools/openapi-generator-cli@2.13.7 -g
+  cargo install cargo-machete
+  cargo install killport
+  export RULTOR=true
 merge:
   script: |
     just rultor
@@ -40,7 +42,7 @@ release:
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" server/Cargo.toml
     sed -i -e "s/^version = \"0.0.0\"/version = \"${tag}\"/" cli/Cargo.toml
     sed -i -e "s/^fakehub-server = { path = \"..\/server\", version = \"0.0.0\" }/fakehub-server = { path = \"..\/server\", version = \"${tag}\" }/" cli/Cargo.toml
-    just rultor
+    just gen
     sed -i -e "s/^name = \"openapi\"/name = \"github-mirror\"/" github-mirror/Cargo.toml
     sed -i -e "s/^version = \".*\"/version = \"${tag}\"/" github-mirror/Cargo.toml
     sed -i -e "s/^openapi = { path = \"..\/github-mirror\", version = \"1.1.4\" }/github-mirror = { path = \"..\/github-mirror\", version = \"${tag}\" }/" server/Cargo.toml
