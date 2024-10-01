@@ -46,11 +46,11 @@ pub fn template(path: &Path) -> String {
 
 #[cfg(test)]
 mod tests {
-    use std::path::Path;
     use crate::report::latex::template;
     use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
     use parameterized::parameterized;
+    use std::path::Path;
 
     #[parameterized(
         path = {
