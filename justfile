@@ -26,9 +26,9 @@ install:
   cargo install killport
 
 # Full build.
-full:
+full tests="fast":
   just gen
-  just build
+  just build "{{tests}}"
 
 # Generate code.
 gen:
@@ -39,15 +39,15 @@ gen:
       openapi-generator-cli generate -i github.yml -g rust -o .
 
 # Build the project.
-build:
-  cargo clean
-  just test
+build tests="fast":
+  just test "{{tests}}"
   just check
   cargo build
 
 # Run tests.
-test:
-  cargo test
+test which="fast":
+  cargo clean
+  TTAG="{{which}}" cargo test
 
 # Check the quality of code.
 check:
@@ -61,7 +61,7 @@ rultor:
   cd github-mirror && \
     sudo npm install @openapitools/openapi-generator-cli@2.13.7 -g && \
       sudo openapi-generator-cli generate -i github.yml -g rust -o .
-  cargo --color=never test
+  TTAG="deep,fast" cargo --color=never test
   cargo +nightly fmt --check -- --color=never
   cargo machete
   cargo doc --no-deps

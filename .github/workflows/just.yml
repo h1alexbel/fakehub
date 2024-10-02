@@ -67,4 +67,4 @@ jobs:
         if: ${{ runner.os == 'macOS' }}
         run: rustup component add --toolchain nightly-x86_64-apple-darwin rustfmt
       - run: just install
-      - run: just full
+      - run: just full "deep,fast"
