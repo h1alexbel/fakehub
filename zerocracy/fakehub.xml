@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="132854">
+<fb version="0.4.0" size="133287">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">6.190030442</seconds>
+    <seconds t="F">152.060679766</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-02T17:13:15Z</when>
+    <when t="T">2024-10-02T18:23:24Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -5351,17 +5351,41 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">1364</_id>
-    <_time t="T">2024-10-02T17:13:12Z</_time>
+    <_id t="I">1368</_id>
+    <_time t="T">2024-10-02T18:21:02Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42472060382</latest>
+    <average_backlog_size t="F">5.75</average_backlog_size>
+    <average_build_duration t="F">75.35135135135135</average_build_duration>
+    <average_build_mttr t="I">-20752</average_build_mttr>
+    <average_build_success_rate t="F">0.9711711711711711</average_build_success_rate>
+    <average_issue_lifetime t="F">4749085.5</average_issue_lifetime>
+    <average_pull_files_size t="F">1.8571428571428572</average_pull_files_size>
+    <average_pull_hoc_size t="F">10.714285714285714</average_pull_hoc_size>
+    <average_pull_lifetime t="F">63860.0</average_pull_lifetime>
+    <average_pull_rejection_rate t="F">0.2222222222222222</average_pull_rejection_rate>
+    <average_release_commits_size t="I">0</average_release_commits_size>
+    <average_release_hoc_size t="I">0</average_release_hoc_size>
+    <average_release_interval t="I">0</average_release_interval>
+    <average_review_size t="F">0.0</average_review_size>
+    <average_review_time t="F">3360.0</average_review_time>
+    <average_reviewers_per_pull t="F">0.14285714285714285</average_reviewers_per_pull>
+    <average_reviews_per_pull t="F">0.14285714285714285</average_reviews_per_pull>
+    <since t="T">2024-09-25T18:21:02Z</since>
+    <what t="S">quality-of-service</what>
+    <when t="T">2024-10-02T18:21:02Z</when>
+  </f>
+  <f>
+    <_id t="I">1369</_id>
+    <_time t="T">2024-10-02T18:23:21Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">42473929921</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1365</_id>
-    <_time t="T">2024-10-02T17:13:15Z</_time>
+    <_id t="I">1370</_id>
+    <_time t="T">2024-10-02T18:23:24Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>
