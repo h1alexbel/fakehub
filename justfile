@@ -24,6 +24,7 @@
 install:
   cargo install cargo-machete
   cargo install killport
+  npm install @openapitools/openapi-generator-cli@2.13.7 -g
 
 # Full build.
 full tests="fast":
@@ -32,11 +33,8 @@ full tests="fast":
 
 # Generate code.
 gen:
-  node --version
-  npm --version
   cd github-mirror && \
-    npm install @openapitools/openapi-generator-cli@2.13.7 -g && \
-      openapi-generator-cli generate -i github.yml -g rust -o .
+    ${RULTOR:+sudo} openapi-generator-cli generate -i github.yml -g rust -o .
 
 # Build the project.
 build tests="fast":
@@ -57,10 +55,7 @@ check:
 
 # Rultor merge script.
 rultor:
-  npm --version
-  cd github-mirror && \
-    sudo npm install @openapitools/openapi-generator-cli@2.13.7 -g && \
-      sudo openapi-generator-cli generate -i github.yml -g rust -o .
+  just gen
   TTAG="deep,fast" cargo --color=never test
   cargo +nightly fmt --check -- --color=never
   cargo machete
