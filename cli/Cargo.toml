@@ -51,6 +51,7 @@ tracing-subscriber = "0.3.18"
 tracing = "0.1.40"
 reqwest = "0.12.7"
 defer = "0.2.1"
+tagrs = "0.0.2"
 
 [features]
 default = ["cli"]

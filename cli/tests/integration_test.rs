@@ -29,7 +29,9 @@ mod tests {
     use std::str;
     #[cfg_attr(target_os = "windows", allow(unused_imports))]
     use std::time::Duration;
+    use tagrs::tag;
 
+    #[tag("deep")]
     #[test]
     fn outputs_help() -> Result<()> {
         let assertion = Command::cargo_bin("fakehub")?.arg("--help").assert();
@@ -43,6 +45,7 @@ mod tests {
         Ok(())
     }
 
+    #[tag("deep")]
     #[test]
     fn outputs_start_opts() -> Result<()> {
         let assertion = Command::cargo_bin("fakehub")?
