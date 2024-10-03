@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 8.890725697
+  seconds: 27.578790811
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-03 10:16:12.676178812 Z
+  when: 2024-10-03 11:12:54.362217836 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5176,15 +5176,65 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-10-03 02:47:34.897451378 Z
-- _id: 1414
-  _time: 2024-10-03 10:16:05.903003901 Z
+- _id: 1416
+  _time: 2024-10-03 11:12:29.532150705 Z
   _version: 0.4.0/0.26.1/
-  latest: 42497640469
+  details: The issue h1alexbel/fakehub#51 has been closed by @h1alexbel.
+  event_id: 42498608139
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 51
+  repository: 807802459
+  what: issue-was-closed
+  when: 2024-10-03 07:02:03.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1417
+  _time: 2024-10-03 11:12:29.631566256 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#174 has been closed by @h1alexbel.
+  event_id: 42498568257
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 174
+  repository: 807802459
+  what: issue-was-closed
+  when: 2024-10-03 07:00:38.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1418
+  _time: 2024-10-03 11:12:30.012743487 Z
+  _version: 0.4.0/0.26.1/
+  branch: '174'
+  comments: 6
+  comments_appreciated: 0
+  comments_by_author: 4
+  comments_by_reviewers: 2
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#176 has been closed by @h1alexbel, with
+    139 HoC and 6 comments.
+  event_id: 42498567886
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 139
+  is_human: 1
+  issue: 176
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-10-03 07:00:37.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1421
+  _time: 2024-10-03 11:12:46.738991001 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42498972071
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1415
-  _time: 2024-10-03 10:16:12.654838234 Z
+- _id: 1422
+  _time: 2024-10-03 11:12:54.345931256 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
