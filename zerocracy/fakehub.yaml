@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 18.604179708
+  seconds: 22.972293972
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-03 13:23:08.001953536 Z
+  when: 2024-10-03 14:15:01.070468977 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5285,15 +5285,39 @@
   when: 2024-10-03 09:05:09.000000000 Z
   where: github
   who: 29139614
-- _id: 1430
-  _time: 2024-10-03 13:23:04.298610935 Z
+- _id: 1432
+  _time: 2024-10-03 14:14:40.379949075 Z
   _version: 0.4.0/0.26.1/
-  latest: 42502636826
+  branch: renovate/actions-checkout-digest
+  comments: 1
+  comments_appreciated: 0
+  comments_by_author: 1
+  comments_by_reviewers: 1
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#184 has been closed by @h1alexbel, with
+    2 HoC and 1 comments.
+  event_id: 42504169466
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 1
+  issue: 184
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-closed
+  when: 2024-10-03 10:03:04.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1435
+  _time: 2024-10-03 14:14:58.315005282 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42504600252
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1431
-  _time: 2024-10-03 13:23:07.984937175 Z
+- _id: 1436
+  _time: 2024-10-03 14:15:01.053517881 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
