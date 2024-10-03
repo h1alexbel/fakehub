@@ -37,7 +37,7 @@ use openapi::models::MetaRoot200Response;
 
 /// Home handler.
 pub async fn home(State(config): State<ServerConfig>) -> impl IntoResponse {
-    let address = Coordinates::new(config.fakehub).address();
+    let address = Coordinates::new(&config.fakehub).address();
     let response = Json(
         MetaRoot200Response::new(
             format!("{}/user", address),

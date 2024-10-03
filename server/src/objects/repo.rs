@@ -65,6 +65,7 @@ mod tests {
     fn creates_repo() -> Result<()> {
         let fakehub = FakeHub::default();
         let github = fakehub.main();
+        let github = github.lock().expect("Failed to lock");
         let mut jeff = github.user("jeff").expect("Failed to get user").clone();
         let foo = String::from("foo");
         Repo::new(foo.clone(), false).create_for(&mut jeff);

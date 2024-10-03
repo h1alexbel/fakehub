@@ -24,14 +24,14 @@ use regex::Regex;
 
 /// Coordinates.
 #[derive(Clone)]
-pub struct Coordinates {
-    fakehub: FakeHub,
+pub struct Coordinates<'a> {
+    fakehub: &'a FakeHub,
     regex: Regex,
 }
 
-impl Coordinates {
+impl<'a> Coordinates<'a> {
     /// New.
-    pub fn new(fakehub: FakeHub) -> Coordinates {
+    pub fn new(fakehub: &'a FakeHub) -> Coordinates<'a> {
         Coordinates {
             fakehub,
             regex: Regex::new(r"([^;]+);node:([a-f0-9]+)")
@@ -40,7 +40,7 @@ impl Coordinates {
     }
 
     /// Address.
-    pub fn address(self) -> String {
+    pub fn address(&self) -> String {
         let coords = self.fakehub.coords();
         let captures = self
             .regex
@@ -50,7 +50,7 @@ impl Coordinates {
     }
 
     /// Node ID.
-    pub fn node_id(self) -> String {
+    pub fn node_id(&self) -> String {
         let coords = self.fakehub.coords();
         let captures = self
             .regex
@@ -71,7 +71,7 @@ mod tests {
     #[test]
     fn returns_default_address() -> Result<()> {
         let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
-        let coordinates = Coordinates::new(fakehub);
+        let coordinates = Coordinates::new(&fakehub);
         let address = coordinates.address();
         assert_that!(address, is(equal_to(String::from("localhost"))));
         Ok(())
@@ -81,7 +81,7 @@ mod tests {
     fn returns_bind_address() -> Result<()> {
         let expected = String::from("localhost:1234");
         let fakehub = FakeHub::with_addr(expected.clone());
-        let coordinates = Coordinates::new(fakehub);
+        let coordinates = Coordinates::new(&fakehub);
         let address = coordinates.address();
         assert_that!(address, is(equal_to(expected)));
         Ok(())
@@ -91,7 +91,7 @@ mod tests {
     #[allow(clippy::unwrap_used)]
     fn returns_node_id() -> Result<()> {
         let fakehub = FakeHub::new(Utc.with_ymd_and_hms(2024, 9, 1, 9, 10, 11).unwrap());
-        let coordinates = Coordinates::new(fakehub);
+        let coordinates = Coordinates::new(&fakehub);
         let id = coordinates.node_id();
         assert_that!(
             id,

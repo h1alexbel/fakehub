@@ -36,9 +36,13 @@ pub async fn register_user(
     Json(payload): Json<User>,
 ) -> Result<StatusCode, String> {
     let mut newcomer = User::new(payload.login.clone());
-    let fakehub = config.fakehub;
-    let github = fakehub.clone().main();
-    match newcomer.register_in(&mut github.clone(), fakehub) {
+    let fakehub = &config.fakehub;
+    let github = fakehub.main();
+    let mut github = github
+        .lock()
+        .map_err(|e| format!("Mutex lock failed: {}", e))
+        .expect("Failed to get GitHub");
+    match newcomer.register_in(&mut github, fakehub) {
         Ok(_) => {
             info!("New user is here. Hello @{}", newcomer.login);
             Ok(StatusCode::CREATED)
@@ -63,11 +67,47 @@ mod tests {
         let server = ServerConfig {
             fakehub: FakeHub::default(),
         };
-        let state = State(server);
-        let status = register_user(state, Json::from(User::new(String::from("new1234"))))
+        let state = State(server.clone());
+        let registration = "new1234";
+        let status =
+            register_user(state, Json::from(User::new(String::from(registration))))
+                .await
+                .expect("Failed to register user");
+        let fakehub = server.fakehub;
+        let github = fakehub.main();
+        let locked = github.lock().expect("Failed to lock GitHub");
+        let users = locked.clone().users();
+        let created = locked.user(registration).expect("Failed to get user");
+        assert_that!(created.login.as_str(), is(equal_to(registration)));
+        assert_that!(users.len(), is(equal_to(3)));
+        assert_that!(status.as_u16(), is(equal_to(201)));
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn registers_with_extra_fields() -> Result<()> {
+        let server = ServerConfig {
+            fakehub: FakeHub::default(),
+        };
+        let state = State(server.clone());
+        let registration = "new1234";
+        register_user(state, Json::from(User::new(String::from(registration))))
             .await
             .expect("Failed to register user");
-        assert_that!(status.as_u16(), is(equal_to(201)));
+        let fakehub = server.fakehub;
+        let github = fakehub.main();
+        let locked = github.lock().expect("Failed to lock GitHub");
+        let created = locked.user(registration).expect("Failed to get user");
+        let expected = format!("localhost/users/{}", registration);
+        assert_that!(
+            created
+                .extra
+                .get("url")
+                .expect("Failed to get url")
+                .as_str(),
+            is(equal_to(Some(expected.as_str())))
+        );
+        assert_that!(created.extra.len(), is(equal_to(31)));
         Ok(())
     }
 

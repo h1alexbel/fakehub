@@ -31,6 +31,9 @@ pub async fn users(State(config): State<ServerConfig>) -> Json<Vec<Value>> {
     let fakehub = config.fakehub;
     let github = fakehub.main();
     let mut users: Vec<Value> = github
+        .lock()
+        .expect("Failed to lock")
+        .clone()
         .users()
         .iter()
         .map(|u| JsonUser::new(u.clone()).as_json())
