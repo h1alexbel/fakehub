@@ -34,7 +34,7 @@ use log::info;
 pub async fn register_user(
     State(config): State<ServerConfig>,
     Json(payload): Json<User>,
-) -> Result<StatusCode, String> {
+) -> Result<StatusCode, (StatusCode, String)> {
     let mut newcomer = User::new(payload.login.clone());
     let fakehub = &config.fakehub;
     let github = fakehub.main();
@@ -47,7 +47,10 @@ pub async fn register_user(
             info!("New user is here. Hello @{}", newcomer.login);
             Ok(StatusCode::CREATED)
         }
-        Err(e) => Err(format!("Can't register user @{}: {}", newcomer.login, e)),
+        Err(e) => Err((
+            StatusCode::CONFLICT,
+            format!("Can't register user @{}: {}", newcomer.login, e),
+        )),
     }
 }
 
@@ -59,6 +62,7 @@ mod tests {
     use crate::ServerConfig;
     use anyhow::Result;
     use axum::extract::State;
+    use axum::http::StatusCode;
     use axum::Json;
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
@@ -121,5 +125,21 @@ mod tests {
         register_user(state, Json::from(User::new(String::from("jeff"))))
             .await
             .expect("Failed to register user");
+    }
+
+    #[tokio::test]
+    async fn returns_409_when_user_exists() -> Result<()> {
+        let server = ServerConfig {
+            fakehub: FakeHub::default(),
+        };
+        let state = State(server);
+        let result = register_user(state, Json(User::new(String::from("jeff")))).await;
+        match result {
+            Err((status, _)) => {
+                assert_that!(status, is(equal_to(StatusCode::CONFLICT)));
+                Ok(())
+            }
+            Ok(_) => panic!("Expected conflict but got success"),
+        }
     }
 }
