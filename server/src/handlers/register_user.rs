@@ -25,6 +25,14 @@ use axum::extract::State;
 use axum::http::StatusCode;
 use axum::Json;
 use log::info;
+use serde::Deserialize;
+
+/// Rq Login.
+#[derive(Deserialize)]
+pub struct RqLogin {
+    /// Login.
+    login: String,
+}
 
 /// Register user.
 ///
@@ -33,9 +41,9 @@ use log::info;
 /// * `payload`: JSON payload
 pub async fn register_user(
     State(config): State<ServerConfig>,
-    Json(payload): Json<User>,
+    Json(payload): Json<RqLogin>,
 ) -> Result<StatusCode, (StatusCode, String)> {
-    let mut newcomer = User::new(payload.login.clone());
+    let mut newcomer = User::new(payload.login);
     let fakehub = &config.fakehub;
     let github = fakehub.main();
     let mut github = github
@@ -56,9 +64,8 @@ pub async fn register_user(
 
 #[cfg(test)]
 mod tests {
-    use crate::handlers::register_user::register_user;
+    use crate::handlers::register_user::{register_user, RqLogin};
     use crate::objects::fakehub::FakeHub;
-    use crate::objects::user::User;
     use crate::ServerConfig;
     use anyhow::Result;
     use axum::extract::State;
@@ -73,10 +80,14 @@ mod tests {
         };
         let state = State(server.clone());
         let registration = "new1234";
-        let status =
-            register_user(state, Json::from(User::new(String::from(registration))))
-                .await
-                .expect("Failed to register user");
+        let status = register_user(
+            state,
+            Json::from(RqLogin {
+                login: String::from(registration),
+            }),
+        )
+        .await
+        .expect("Failed to register user");
         let fakehub = server.fakehub;
         let github = fakehub.main();
         let locked = github.lock().expect("Failed to lock GitHub");
@@ -95,9 +106,14 @@ mod tests {
         };
         let state = State(server.clone());
         let registration = "new1234";
-        register_user(state, Json::from(User::new(String::from(registration))))
-            .await
-            .expect("Failed to register user");
+        register_user(
+            state,
+            Json::from(RqLogin {
+                login: String::from(registration),
+            }),
+        )
+        .await
+        .expect("Failed to register user");
         let fakehub = server.fakehub;
         let github = fakehub.main();
         let locked = github.lock().expect("Failed to lock GitHub");
@@ -122,9 +138,14 @@ mod tests {
             fakehub: FakeHub::default(),
         };
         let state = State(server);
-        register_user(state, Json::from(User::new(String::from("jeff"))))
-            .await
-            .expect("Failed to register user");
+        register_user(
+            state,
+            Json::from(RqLogin {
+                login: String::from("jeff"),
+            }),
+        )
+        .await
+        .expect("Failed to register user");
     }
 
     #[tokio::test]
@@ -133,7 +154,13 @@ mod tests {
             fakehub: FakeHub::default(),
         };
         let state = State(server);
-        let result = register_user(state, Json(User::new(String::from("jeff")))).await;
+        let result = register_user(
+            state,
+            Json::from(RqLogin {
+                login: String::from("jeff"),
+            }),
+        )
+        .await;
         match result {
             Err((status, _)) => {
                 assert_that!(status, is(equal_to(StatusCode::CONFLICT)));
