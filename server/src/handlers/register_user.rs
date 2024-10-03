@@ -159,7 +159,8 @@ mod tests {
             Json::from(RqLogin {
                 login: String::from("jeff"),
             }),
-        ).await;
+        )
+        .await;
         match result {
             Err((status, _)) => {
                 assert_that!(status, is(equal_to(StatusCode::CONFLICT)));
