@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 5.010831806
+  seconds: 153.397553957
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-04 17:13:14.826215051 Z
+  when: 2024-10-04 19:14:48.325577246 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5526,17 +5526,52 @@
   when: 2024-10-04 08:37:52.000000000 Z
   where: github
   who: 83453843
-- _id: 1508
-  _time: 2024-10-04 17:13:11.897488229 Z
+- _id: 1514
+  _time: 2024-10-04 19:12:19.984324811 Z
   _version: 0.4.0/0.26.1/
-  latest: 42548922245
+  average_backlog_size: 0.125
+  average_build_duration: 68.97402597402598
+  average_build_mttr: -24796
+  average_build_success_rate: 0.9758812615955473
+  average_issue_lifetime: 3317258.6666666665
+  average_pull_files_size: 2.4444444444444446
+  average_pull_hoc_size: 32.55555555555556
+  average_pull_lifetime: 99697.81818181818
+  average_pull_rejection_rate: 0.18181818181818182
+  average_release_commits_size: 0
+  average_release_hoc_size: 0
+  average_release_interval: 0
+  average_review_size: 0.0
+  average_review_time: 0
+  average_reviewers_per_pull: 0.0
+  average_reviews_per_pull: 0.0
+  since: 2024-09-27 19:12:19.984491983 Z
+  what: quality-of-service
+  when: 2024-10-04 19:12:19.984420941 Z
+- _id: 1515
+  _time: 2024-10-04 19:14:04.847810034 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-09-27 19:14:04.847973178 Z
+  total_builds_ran: 539
+  total_commits_pushed: 18
+  total_hoc_committed: 441
+  total_issues_created: 8
+  total_pulls_submitted: 0
+  total_releases_published: 0
+  total_reviews_submitted: 0
+  what: quantity-of-deliverables
+  when: 2024-10-04 19:14:04.847915982 Z
+- _id: 1516
+  _time: 2024-10-04 19:14:41.245641975 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42552878224
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1509
-  _time: 2024-10-04 17:13:14.807171272 Z
+- _id: 1517
+  _time: 2024-10-04 19:14:48.307827169 Z
   _version: 0.4.0/0.26.1/
-  latest: 0
+  latest: 158
   repository: 807802459
   what: labels-were-scanned
   where: github
