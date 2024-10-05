@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="146924">
+<fb version="0.4.0" size="147261">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">5.444198969</seconds>
+    <seconds t="F">12.8276488</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-05T22:13:58Z</when>
+    <when t="T">2024-10-05T23:13:52Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -5921,17 +5921,33 @@
     <when t="T">2024-10-05T03:18:49Z</when>
   </f>
   <f>
-    <_id t="I">1571</_id>
-    <_time t="T">2024-10-05T22:13:55Z</_time>
+    <_id t="I">1573</_id>
+    <_time t="T">2024-10-05T23:13:42Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42573524869</latest>
+    <branch t="S">renovate/zerocracy-judges-action-0.x</branch>
+    <details t="S">The pull request h1alexbel/fakehub#188 has been opened by @renovate[bot].</details>
+    <event_id t="I">42573961965</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <is_human t="I">0</is_human>
+    <issue t="I">188</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-opened</what>
+    <when t="T">2024-10-05T22:14:25Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">1576</_id>
+    <_time t="T">2024-10-05T23:13:50Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">42573989584</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1572</_id>
-    <_time t="T">2024-10-05T22:13:58Z</_time>
+    <_id t="I">1577</_id>
+    <_time t="T">2024-10-05T23:13:52Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>

@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 5.444198969
+  seconds: 12.8276488
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-05 22:13:58.640127585 Z
+  when: 2024-10-05 23:13:52.946863453 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5576,15 +5576,29 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-10-05 03:18:49.267878300 Z
-- _id: 1571
-  _time: 2024-10-05 22:13:55.489388389 Z
+- _id: 1573
+  _time: 2024-10-05 23:13:42.232357214 Z
   _version: 0.4.0/0.26.1/
-  latest: 42573524869
+  branch: renovate/zerocracy-judges-action-0.x
+  details: The pull request h1alexbel/fakehub#188 has been opened by @renovate[bot].
+  event_id: 42573961965
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 188
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-10-05 22:14:25.000000000 Z
+  where: github
+  who: 29139614
+- _id: 1576
+  _time: 2024-10-05 23:13:50.168228098 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42573989584
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1572
-  _time: 2024-10-05 22:13:58.621210653 Z
+- _id: 1577
+  _time: 2024-10-05 23:13:52.929289512 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
