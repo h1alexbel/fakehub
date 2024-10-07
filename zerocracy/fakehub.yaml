@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 3
+  cycles: 2
   removed: 8
-  seconds: 25.405843067
+  seconds: 25.202841797
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-07 08:18:47.965624959 Z
+  when: 2024-10-07 09:17:20.697250355 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5690,15 +5690,39 @@
   when: 2024-10-07 07:48:47.000000000 Z
   where: github
   who: 83453843
-- _id: 1653
-  _time: 2024-10-07 08:18:40.087222329 Z
+- _id: 1655
+  _time: 2024-10-07 09:16:58.357732679 Z
   _version: 0.4.0/0.26.1/
-  latest: 42596162805
+  branch: '189'
+  comments: 1
+  comments_appreciated: 0
+  comments_by_author: 0
+  comments_by_reviewers: 1
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#190 has been closed by @h1alexbel, with
+    4 HoC and 1 comments.
+  event_id: 42596356726
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 4
+  is_human: 1
+  issue: 190
+  repository: 807802459
+  succeeded_builds: 11
+  what: pull-was-merged
+  when: 2024-10-07 08:14:16.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1658
+  _time: 2024-10-07 09:17:13.328557823 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42597066366
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1654
-  _time: 2024-10-07 08:18:47.947318819 Z
+- _id: 1659
+  _time: 2024-10-07 09:17:20.678301066 Z
   _version: 0.4.0/0.26.1/
   latest: 158
   repository: 807802459
