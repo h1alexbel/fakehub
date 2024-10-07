@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 6.29112495
+  seconds: 13.445011415
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-07 10:17:18.592728486 Z
+  when: 2024-10-07 11:14:58.574009693 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5731,15 +5731,57 @@
   when: 2024-10-07 08:14:16.000000000 Z
   where: github
   who: 83453843
-- _id: 1661
-  _time: 2024-10-07 10:17:14.785971454 Z
+- _id: 1663
+  _job: 9096
+  _time: 2024-10-07 10:17:27.175181942 Z
+  _version: 0.4.0/0.26.1/0.0.53!0.0.54
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#190,
+    the reward amount is 4.
+  greeting: "Hey there! \U0001F44B Thanks for your contribution, but it looks like
+    we've got some room for improvement. You've earned +4 points, but we had to deduct
+    some: -16 for no code review, -4 for only 1 comment, and -8 for just 4 [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html).
+    We bumped it up by 28 to give you something, though! Remember, more code, more
+    reviews, and more comments can boost your points next time. [Keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    them coming - we're looking for 20+ hits-of-code and at least 6 comments. Your
+    balance is now [+75](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Let's aim higher next time! \U0001F4AA\n\n<!-- Thanks for the contribution! You've
+    earned +4 points for this: +4 as a basis; -16 for the lack of code review; -4
+    for very few (1) comments; -8 for too few (4) hits-of-code; +28 to give you at
+    least something. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html)
+    them coming. Your running balance is [+75](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    \ -->"
+  href: https://github.com/h1alexbel/fakehub/issues/190/#issuecomment-2396511698
+  is_human: 1
+  issue: 190
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-10-07 10:17:27.181606394 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#190
+- _id: 1664
+  _time: 2024-10-07 11:14:47.297834438 Z
   _version: 0.4.0/0.26.1/
-  latest: 42598681738
+  details: A new tag '0.0.8' has been created in h1alexbel/fakehub by @rultor.
+  event_id: 42599954875
+  event_type: CreateEvent
+  is_human: 0
+  repository: 807802459
+  tag: 0.0.8
+  what: tag-was-created
+  when: 2024-10-07 09:52:05.000000000 Z
+  where: github
+  who: 8086956
+- _id: 1667
+  _time: 2024-10-07 11:14:55.263701238 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42599962037
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1662
-  _time: 2024-10-07 10:17:18.574794770 Z
+- _id: 1668
+  _time: 2024-10-07 11:14:58.552466485 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
