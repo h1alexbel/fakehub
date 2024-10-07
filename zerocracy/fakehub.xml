@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="151813">
+<fb version="0.4.0" size="152499">
   <f>
     <added t="I">8</added>
     <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">13.445011415</seconds>
+    <seconds t="F">15.413360609</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-07T11:14:58Z</when>
+    <when t="T">2024-10-07T12:31:16Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -6129,17 +6129,56 @@
     <who t="I">8086956</who>
   </f>
   <f>
-    <_id t="I">1667</_id>
-    <_time t="T">2024-10-07T11:14:55Z</_time>
+    <_id t="I">1669</_id>
+    <_time t="T">2024-10-07T12:31:04Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42599962037</latest>
+    <commits t="I">38</commits>
+    <contributors>
+      <v t="I">29139614</v>
+      <v t="I">83453843</v>
+      <v t="I">8086956</v>
+    </contributors>
+    <details t="S">A new release '0.0.8' has been published in h1alexbel/fakehub by @h1alexbel.</details>
+    <event_id t="I">42600416936</event_id>
+    <event_type t="S">ReleaseEvent</event_type>
+    <hoc t="I">641</hoc>
+    <is_human t="I">1</is_human>
+    <last_commit t="S">c14aa052a820c189ad0ddea4eb19a0d39331eb8c</last_commit>
+    <release t="I">178647708</release>
+    <repository t="I">807802459</repository>
+    <tag t="S">0.0.8</tag>
+    <what t="S">release-published</what>
+    <when t="T">2024-10-07T10:04:33Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">1670</_id>
+    <_time t="T">2024-10-07T12:31:04Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <details t="S">The issue h1alexbel/fakehub#189 has been closed by @h1alexbel.</details>
+    <event_id t="I">42600284253</event_id>
+    <event_type t="S">IssuesEvent</event_type>
+    <is_human t="I">1</is_human>
+    <issue t="I">189</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">issue-was-closed</what>
+    <when t="T">2024-10-07T10:00:58Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">1673</_id>
+    <_time t="T">2024-10-07T12:31:13Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">42600876992</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1668</_id>
-    <_time t="T">2024-10-07T11:14:58Z</_time>
+    <_id t="I">1674</_id>
+    <_time t="T">2024-10-07T12:31:16Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>

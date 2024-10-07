@@ -2,10 +2,10 @@
 - added: 8
   cycles: 2
   removed: 8
-  seconds: 13.445011415
+  seconds: 15.413360609
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-07 11:14:58.574009693 Z
+  when: 2024-10-07 12:31:16.787466532 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -5773,15 +5773,49 @@
   when: 2024-10-07 09:52:05.000000000 Z
   where: github
   who: 8086956
-- _id: 1667
-  _time: 2024-10-07 11:14:55.263701238 Z
+- _id: 1669
+  _time: 2024-10-07 12:31:04.103174793 Z
   _version: 0.4.0/0.26.1/
-  latest: 42599962037
+  commits: 38
+  contributors:
+  - 29139614
+  - 83453843
+  - 8086956
+  details: A new release '0.0.8' has been published in h1alexbel/fakehub by @h1alexbel.
+  event_id: 42600416936
+  event_type: ReleaseEvent
+  hoc: 641
+  is_human: 1
+  last_commit: c14aa052a820c189ad0ddea4eb19a0d39331eb8c
+  release: 178647708
+  repository: 807802459
+  tag: 0.0.8
+  what: release-published
+  when: 2024-10-07 10:04:33.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1670
+  _time: 2024-10-07 12:31:04.790487448 Z
+  _version: 0.4.0/0.26.1/
+  details: The issue h1alexbel/fakehub#189 has been closed by @h1alexbel.
+  event_id: 42600284253
+  event_type: IssuesEvent
+  is_human: 1
+  issue: 189
+  repository: 807802459
+  what: issue-was-closed
+  when: 2024-10-07 10:00:58.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1673
+  _time: 2024-10-07 12:31:13.336312038 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42600876992
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1668
-  _time: 2024-10-07 11:14:58.552466485 Z
+- _id: 1674
+  _time: 2024-10-07 12:31:16.767417696 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
