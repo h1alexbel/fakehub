@@ -27,7 +27,6 @@ use std::io;
 use anyhow::Result;
 use axum::routing::{get, post};
 use axum::Router;
-use log::{info, warn};
 use tokio::net::TcpListener;
 
 use crate::handlers::home;
@@ -35,8 +34,6 @@ use crate::handlers::register_user::register_user;
 use crate::handlers::user::user;
 use crate::handlers::users::users;
 use crate::objects::fakehub::FakeHub;
-use crate::sys::instance_os::instance_os;
-use crate::sys::kill_unix::kill_unix;
 use crate::sys::sys_info::sys_info;
 
 /// Handlers.

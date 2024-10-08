@@ -19,11 +19,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Instance OS.
-pub mod instance_os;
-/// Kill UNIX port.
-pub mod kill_unix;
-/// System information.
-pub mod sys_info;
+
 /// Current fakehub port.
-pub mod current_port;
+pub fn current_port() -> usize {
+    let output = std::process::Command::new("sh")
+        .arg("-c")
+        .arg("lsof -i -P -n | grep fakehub | awk '{print $9}' | cut -d ':' -f2")
+        .output()
+        .expect("failed to get fakehub current port");
+    let port = String::from_utf8(output.stdout).expect("failed to parse stdout");
+    let trimmed = port.trim();
+    trimmed
+        .parse::<usize>()
+        .expect("failed to convert port to usize")
+}

@@ -32,6 +32,7 @@ use fakehub_server::sys::instance_os::instance_os;
 use fakehub_server::sys::kill_unix::kill_unix;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
+use fakehub_server::sys::current_port::current_port;
 use fakehub_server::sys::sys_info::sys_info;
 
 mod args;
@@ -99,7 +100,7 @@ async fn main() {
         Command::Stop => {
             tracing_subscriber::fmt::init();
             info!("Stopping fakehub...");
-            let port = 3000;
+            let port = current_port();
             let result = match instance_os().as_str() {
                 "linux" | "macos" => kill_unix(port),
                 _ => {
