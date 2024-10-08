@@ -27,7 +27,6 @@ use std::io;
 use anyhow::Result;
 use axum::routing::{get, post};
 use axum::Router;
-use defer::defer;
 use log::info;
 use tokio::net::TcpListener;
 
@@ -36,6 +35,8 @@ use crate::handlers::register_user::register_user;
 use crate::handlers::user::user;
 use crate::handlers::users::users;
 use crate::objects::fakehub::FakeHub;
+use crate::sys::instance_os::instance_os;
+use crate::sys::kill_unix::kill_unix;
 
 /// Handlers.
 pub mod handlers;
@@ -88,7 +89,7 @@ impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
         let addr: String = format!("0.0.0.0:{}", self.port);
-        info!("Running on: {}", std::env::consts::OS);
+        info!("Running on: {}", instance_os());
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
             Ok(listener) => axum::serve(
@@ -110,17 +111,23 @@ impl Server {
         };
         Ok(())
     }
-    
+
     /// Stop a server.
+    // @todo #77:45min Implement kill_windows_port(id) for windows OS.
+    //  Currently, we don't support port killing on Windows. Check
+    //  <a href="https://github.com/h1alexbel/fakehub/pull/159">this</a> pull
+    //  request for more information.
     pub fn stop(self) -> Result<()> {
-        // run_system -> map.get(system) -> kill(self.port)
-        let _defer = defer(|| {
-            std::process::Command::new("sh")
-                .arg("-c")
-                .arg(format!("lsof -ti :{} | xargs kill", self.port))
-                .output()
-                .unwrap_or_else(|_| panic!("Failed to kill process on port {}", self.port));
-        });
+        match instance_os().as_str() {
+            "linux" | "macos" => kill_unix(self.port),
+            _ => {
+                panic!(
+                    "Cannot stop server on port {}, since we dont support {} platform",
+                    self.port,
+                    instance_os()
+                )
+            }
+        }
         Ok(())
     }
 }

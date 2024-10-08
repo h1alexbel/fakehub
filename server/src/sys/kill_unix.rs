@@ -19,7 +19,32 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Instance OS.
-pub mod instance_os;
+
 /// Kill UNIX port.
-pub mod kill_unix;
+pub fn kill_unix(port: usize) {
+    std::process::Command::new("sh")
+        .arg("-c")
+        .arg(format!("lsof -ti :{} | xargs kill", port))
+        .output()
+        .unwrap_or_else(|_| panic!("failed to kill process on port {}", port));
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::Server;
+    use anyhow::Result;
+    use crate::sys::kill_unix::kill_unix;
+
+    #[tokio::test]
+    #[cfg(not(target_os = "windows"))]
+    async fn kills_unix() -> Result<()> {
+        let port = 3000;
+        Server::new(port)
+            .start()
+            .await
+            .expect("failed to start server");
+        kill_unix(port);
+        // check that its removed
+        Ok(())
+    }
+}
