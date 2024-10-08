@@ -25,15 +25,18 @@ Fakehub server and storage.
 use clap::Parser;
 use log::{error, info};
 
+/// System calls.
+pub mod sys;
+
 use fakehub_server::Server;
 
 use crate::args::{Args, Command};
-use fakehub_server::sys::instance_os::instance_os;
-use fakehub_server::sys::kill_unix::kill_unix;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
-use fakehub_server::sys::current_port::current_port;
+use fakehub_server::sys::instance_os::instance_os;
 use fakehub_server::sys::sys_info::sys_info;
+use crate::sys::current_port::current_port;
+use crate::sys::kill_unix::kill_unix;
 
 mod args;
 

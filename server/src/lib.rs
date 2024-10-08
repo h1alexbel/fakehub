@@ -42,7 +42,7 @@ pub mod handlers;
 pub mod objects;
 /// Reports.
 pub mod report;
-/// System.
+/// System information.
 pub mod sys;
 #[allow(unused_imports)]
 #[macro_use]
