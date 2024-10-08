@@ -23,11 +23,13 @@
 Fakehub server and storage.
  */
 use clap::Parser;
-use log::info;
+use log::{error, info};
 
 use fakehub_server::Server;
 
 use crate::args::{Args, Command};
+use fakehub_server::sys::instance_os::instance_os;
+use fakehub_server::sys::kill_unix::kill_unix;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
 
@@ -86,6 +88,30 @@ async fn main() {
                     "{}",
                     format!("Failed to start server on port {}: {}", start.port, e)
                 ),
+            }
+        }
+        // @todo #77:45min Implement kill_windows_port(id) for windows OS.
+        //  Currently, we don't support port killing on Windows. Check
+        //  <a href="https://github.com/h1alexbel/fakehub/pull/159">this</a> pull
+        //  request for more information.
+        Command::Stop => {
+            tracing_subscriber::fmt::init();
+            info!("Stopping fakehub...");
+            let port = 3000;
+            let result = match instance_os().as_str() {
+                "linux" | "macos" => kill_unix(port),
+                _ => {
+                    error!(
+                        "Cannot stop server on port {}, since we probably don't support {} platform",
+                        port, instance_os()
+                    );
+                    false
+                }
+            };
+            if result {
+                info!("Fakehub stopped");
+            } else {
+                error!("Cannot stop fakehub on port: {}", port);
             }
         }
     }

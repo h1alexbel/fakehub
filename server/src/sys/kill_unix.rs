@@ -20,36 +20,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+use log::{error, info};
+
 /// Kill UNIX port.
-pub fn kill_unix(port: usize) {
-    std::process::Command::new("sh")
+pub fn kill_unix(port: usize) -> bool {
+    let output = std::process::Command::new("sh")
         .arg("-c")
-        // .arg(format!("killport {}", port))
         .arg(format!("lsof -ti :{} | xargs kill", port))
         .output()
-        .unwrap_or_else(|_| panic!("failed to kill process on port {}", port));
-}
-
-#[cfg(test)]
-mod tests {
-    use crate::sys::kill_unix::kill_unix;
-    use anyhow::Result;
-    use defer::defer;
-    use tokio::task;
-    use crate::Server;
-
-    #[tokio::test]
-    #[cfg(not(target_os = "windows"))]
-    async fn kills_unix() -> Result<()> {
-        let port = 3000;
-        let _defer = defer(|| kill_unix(port));
-        let server = task::spawn(async move {
-            Server::new(port)
-                .start()
-                .await
-                .expect("failed to start server");
-        });
-        // check that its removed
-        Ok(())
+        .expect("failed to kill process");
+    let result;
+    if !output.status.success() {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        if stderr.is_empty() {
+            error!("No process found running on port {}: unable to kill", port);
+            result = false;
+        } else {
+            error!("Failed to kill process on port {}: {}", port, stderr);
+            result = false;
+        }
+    } else {
+        result = true;
+        info!("Port {} killed", port);
     }
+    result
 }

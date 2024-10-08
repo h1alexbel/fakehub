@@ -111,25 +111,6 @@ impl Server {
         };
         Ok(())
     }
-
-    /// Stop a server.
-    // @todo #77:45min Implement kill_windows_port(id) for windows OS.
-    //  Currently, we don't support port killing on Windows. Check
-    //  <a href="https://github.com/h1alexbel/fakehub/pull/159">this</a> pull
-    //  request for more information.
-    pub fn stop(self) -> Result<()> {
-        match instance_os().as_str() {
-            "linux" | "macos" => kill_unix(self.port),
-            _ => {
-                panic!(
-                    "Cannot stop server on port {}, since we dont support {} platform",
-                    self.port,
-                    instance_os()
-                )
-            }
-        }
-        Ok(())
-    }
 }
 
 #[cfg(test)]
