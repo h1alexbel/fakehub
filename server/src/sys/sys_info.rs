@@ -19,9 +19,11 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-/// Instance OS.
-pub mod instance_os;
-/// Kill UNIX port.
-pub mod kill_unix;
+use crate::sys::instance_os::instance_os;
+use log::info;
+
 /// System information.
-pub mod sys_info;
+pub fn sys_info() {
+    info!("OS: {}", instance_os());
+    info!("PID: {}", std::process::id());
+}

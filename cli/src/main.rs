@@ -32,6 +32,7 @@ use fakehub_server::sys::instance_os::instance_os;
 use fakehub_server::sys::kill_unix::kill_unix;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
+use fakehub_server::sys::sys_info::sys_info;
 
 mod args;
 
@@ -74,7 +75,7 @@ async fn main() {
                                 error!("Failed to spawn detached process: {}", err)
                             }
                         }
-                        // sysinfo
+                        sys_info();
                         return;
                     }
                     Err(err) => {

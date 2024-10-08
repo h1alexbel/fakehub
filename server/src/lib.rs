@@ -37,6 +37,7 @@ use crate::handlers::users::users;
 use crate::objects::fakehub::FakeHub;
 use crate::sys::instance_os::instance_os;
 use crate::sys::kill_unix::kill_unix;
+use crate::sys::sys_info::sys_info;
 
 /// Handlers.
 pub mod handlers;
@@ -89,9 +90,7 @@ impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
         let addr: String = format!("0.0.0.0:{}", self.port);
-        info!("OS: {}", instance_os());
-        info!("PID: {}", std::process::id());
-        // sysinfo: PID, and so on
+        sys_info();
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
             Ok(listener) => axum::serve(
