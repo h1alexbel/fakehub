@@ -27,3 +27,53 @@ pub fn sys_info() {
     info!("OS: {}", instance_os());
     info!("PID: {}", std::process::id());
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::sys::sys_info::sys_info;
+    use anyhow::Result;
+    use hamcrest::{equal_to, is, HamcrestMatcher};
+    use log::Level::Info;
+
+    #[cfg(target_os = "macos")]
+    #[test]
+    fn logs_system_info_on_mac() -> Result<()> {
+        testing_logger::setup();
+        sys_info();
+        testing_logger::validate(|logs| {
+            assert_that!(logs.len(), is(equal_to(2)));
+            assert_that!(&logs[0].body, is(equal_to("OS: macos")));
+            assert_that!(logs[0].level, is(equal_to(Info)));
+            assert_that!(logs[1].level, is(equal_to(Info)));
+        });
+        Ok(())
+    }
+
+    #[cfg(target_os = "linux")]
+    #[test]
+    fn logs_system_info_on_linux() -> Result<()> {
+        testing_logger::setup();
+        sys_info();
+        testing_logger::validate(|logs| {
+            assert_that!(logs.len(), is(equal_to(2)));
+            assert_that!(&logs[0].body, is(equal_to("OS: linux")));
+            assert_that!(logs[0].level, is(equal_to(Info)));
+            assert_that!(logs[1].level, is(equal_to(Info)));
+        });
+        Ok(())
+    }
+
+    #[cfg(target_os = "windows")]
+    #[test]
+    fn logs_system_info_windows() -> Result<()> {
+        testing_logger::setup();
+        sys_info();
+        testing_logger::validate(|logs| {
+            assert_that!(logs.len(), is(equal_to(2)));
+            assert_that!(&logs[0].body, is(equal_to("OS: windows")));
+            assert_that!(logs[0].level, is(equal_to(Info)));
+            assert_that!(logs[1].level, is(equal_to(Info)));
+        });
+        Ok(())
+    }
+}
