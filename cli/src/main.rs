@@ -66,14 +66,15 @@ async fn main() {
                         // Detached windows process flag.
                         command.creation_flags(0x00000008);
                         match command.spawn() {
-                            Ok(_) => println!(
+                            Ok(_) => info!(
                                 "Server is running in detached mode on port {}",
                                 start.port
                             ),
                             Err(err) => {
-                                panic!("Failed to spawn detached process: {}", err)
+                                error!("Failed to spawn detached process: {}", err)
                             }
                         }
+                        // sysinfo
                         return;
                     }
                     Err(err) => {
