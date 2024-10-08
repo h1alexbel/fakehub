@@ -30,6 +30,7 @@ mod tests {
     #[cfg_attr(target_os = "windows", allow(unused_imports))]
     use std::time::Duration;
     use tagrs::tag;
+    use fakehub_server::sys::kill_unix::kill_unix;
 
     #[tag("deep")]
     #[test]
@@ -79,7 +80,7 @@ mod tests {
     //  Now we have test for linux and macos. However, we need to maintain
     //  similar test case for windows as well.
     async fn accepts_request_in_detached_mode() -> Result<()> {
-        let _defer = defer(|| kill(3000));
+        let _defer = defer(|| kill_unix(3000));
         let assertion = Command::cargo_bin("fakehub")?
             .arg("start")
             .arg("-d")
