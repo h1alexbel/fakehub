@@ -36,7 +36,7 @@ pub fn current_port() -> usize {
 
 #[cfg(test)]
 mod tests {
-    #[cfg_attr(target_os = "windows", allow(unused_imports))]a
+    #[cfg_attr(target_os = "windows", allow(unused_imports))]
     use crate::sys::current_port::current_port;
     use anyhow::Result;
     use assert_cmd::Command;
