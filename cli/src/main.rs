@@ -109,7 +109,7 @@ async fn main() {
                 }
             };
             if result {
-                info!("Fakehub stopped");
+                info!("fakehub stopped");
             } else {
                 error!("Cannot stop fakehub on port: {}", port);
             }
