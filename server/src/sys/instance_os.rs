@@ -26,9 +26,9 @@ pub fn instance_os() -> String {
 
 #[cfg(test)]
 mod tests {
-    
-    use anyhow::Result;
+
     use crate::sys::instance_os::instance_os;
+    use anyhow::Result;
     use hamcrest::{equal_to, is, HamcrestMatcher};
 
     #[cfg(target_os = "linux")]

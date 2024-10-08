@@ -31,12 +31,12 @@ pub mod sys;
 use fakehub_server::Server;
 
 use crate::args::{Args, Command};
-#[cfg(target_os = "windows")]
-use std::os::windows::process::CommandExt;
-use fakehub_server::sys::instance_os::instance_os;
-use fakehub_server::sys::sys_info::sys_info;
 use crate::sys::current_port::current_port;
 use crate::sys::kill_unix::kill_unix;
+use fakehub_server::sys::instance_os::instance_os;
+use fakehub_server::sys::sys_info::sys_info;
+#[cfg(target_os = "windows")]
+use std::os::windows::process::CommandExt;
 
 mod args;
 

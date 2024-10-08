@@ -53,8 +53,6 @@ chrono = "0.4.38"
 rand = "0.8.5"
 regex = "1.10.6"
 parameterized = "2.0.0"
-defer = "0.2.1"
-sysinfo = "0.32.0"
 testing_logger = "0.1.1"
 
 [features]
