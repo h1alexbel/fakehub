@@ -27,7 +27,7 @@ use std::io;
 use anyhow::Result;
 use axum::routing::{get, post};
 use axum::Router;
-use log::info;
+use log::{info, warn};
 use tokio::net::TcpListener;
 
 use crate::handlers::home;
@@ -89,7 +89,9 @@ impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
         let addr: String = format!("0.0.0.0:{}", self.port);
-        info!("Running on: {}", instance_os());
+        info!("OS: {}", instance_os());
+        info!("PID: {}", std::process::id());
+        // sysinfo: PID, and so on
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
             Ok(listener) => axum::serve(
