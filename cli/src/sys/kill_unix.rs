@@ -23,6 +23,10 @@
 use log::{error, info};
 
 /// Kill UNIX port.
+// @todo #77:60min Investigate why lsof does not work in tests, while
+//  killport tool kills port properly. Due to this problem, we can't create
+//  integration test case with fakehub start -d -> fakehub stop. Don't forget
+//  to remove this puzzle.
 pub fn kill_unix(port: usize) -> bool {
     let output = std::process::Command::new("sh")
         .arg("-c")
