@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 /*!
-Fakehub server and storage.
+Fakehub cli.
  */
 use clap::Parser;
 use log::{error, info};
