@@ -33,3 +33,33 @@ pub fn current_port() -> usize {
         .parse::<usize>()
         .expect("failed to convert port to usize")
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::sys::current_port::current_port;
+    use anyhow::Result;
+    use assert_cmd::Command;
+    use defer::defer;
+
+    #[cfg(not(target_os = "windows"))]
+    #[test]
+    #[allow(clippy::question_mark_used)]
+    fn returns_current_port_from_lsof() -> Result<()> {
+        let port = 3000;
+        let _defer = defer(|| kill(3000));
+        Command::cargo_bin("fakehub")?
+            .arg("start")
+            .arg("-d")
+            .assert();
+        assert_eq!(current_port(), port);
+        Ok(())
+    }
+
+    fn kill(port: usize) {
+        std::process::Command::new("sh")
+            .arg("-c")
+            .arg(format!("killport {}", port))
+            .output()
+            .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
+    }
+}
