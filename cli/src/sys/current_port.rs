@@ -59,6 +59,7 @@ mod tests {
         Ok(())
     }
 
+    #[cfg_attr(target_os = "windows", allow(dead_code))]
     fn kill(port: usize) {
         std::process::Command::new("sh")
             .arg("-c")
