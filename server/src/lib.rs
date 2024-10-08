@@ -27,6 +27,8 @@ use std::io;
 use anyhow::Result;
 use axum::routing::{get, post};
 use axum::Router;
+use defer::defer;
+use log::info;
 use tokio::net::TcpListener;
 
 use crate::handlers::home;
@@ -41,6 +43,8 @@ pub mod handlers;
 pub mod objects;
 /// Reports.
 pub mod report;
+/// System.
+pub mod sys;
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
@@ -84,6 +88,7 @@ impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
         let addr: String = format!("0.0.0.0:{}", self.port);
+        info!("Running on: {}", std::env::consts::OS);
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
             Ok(listener) => axum::serve(
@@ -103,6 +108,19 @@ impl Server {
                 panic!("Can't bind address {}: '{}'", addr.clone(), err)
             }
         };
+        Ok(())
+    }
+    
+    /// Stop a server.
+    pub fn stop(self) -> Result<()> {
+        // run_system -> map.get(system) -> kill(self.port)
+        let _defer = defer(|| {
+            std::process::Command::new("sh")
+                .arg("-c")
+                .arg(format!("lsof -ti :{} | xargs kill", self.port))
+                .output()
+                .unwrap_or_else(|_| panic!("Failed to kill process on port {}", self.port));
+        });
         Ok(())
     }
 }
