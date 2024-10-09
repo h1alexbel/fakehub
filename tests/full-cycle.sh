@@ -19,6 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+just gen
 {
   cargo run -- start -p 3000 -d
   out="$(curl -s -o /dev/null -I -w "%{http_code}" localhost:3000)"
