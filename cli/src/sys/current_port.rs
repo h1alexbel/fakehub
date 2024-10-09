@@ -55,6 +55,12 @@ mod tests {
             .arg("start")
             .arg("-d")
             .assert();
+        let output = std::process::Command::new("sh")
+            .arg("-c")
+            .arg("lsof -i -P -n | grep fakehub")
+            .output()
+            .expect("failed to get fakehub current port");
+        print!("{:?}", output);
         assert_eq!(current_port(), port);
         Ok(())
     }
