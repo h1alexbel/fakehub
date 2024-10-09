@@ -74,4 +74,3 @@ mod tests {
             .unwrap_or_else(|_| panic!("Failed to kill process on port {}", port));
     }
 }
-
