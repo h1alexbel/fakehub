@@ -47,6 +47,25 @@ mod tests {
 
     #[tag("deep")]
     #[test]
+    fn outputs_version() -> Result<()> {
+        let assertion = Command::cargo_bin("fakehub")?.arg("--version").assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(output.contains(env!("CARGO_PKG_VERSION")));
+        Ok(())
+    }
+    
+    #[test]
+    fn outputs_version_from_short() -> Result<()> {
+        let assertion = Command::cargo_bin("fakehub")?.arg("-v").assert();
+        let bytes = assertion.get_output().stdout.as_slice();
+        let output = str::from_utf8(bytes)?;
+        assert!(output.contains(env!("CARGO_PKG_VERSION")));
+        Ok(())
+    }
+
+    #[tag("deep")]
+    #[test]
     fn outputs_start_opts() -> Result<()> {
         let assertion = Command::cargo_bin("fakehub")?
             .arg("start")
