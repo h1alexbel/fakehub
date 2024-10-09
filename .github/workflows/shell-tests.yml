@@ -45,4 +45,3 @@ jobs:
           npm install @openapitools/openapi-generator-cli@2.13.7 -g
           just gen
           sh tests/full-cycle.sh
-
