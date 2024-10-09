@@ -21,7 +21,7 @@
 # SOFTWARE.
 [package]
 name = "fakehub"
-version = "0.0.0"
+version = "0.0.10"
 edition = "2021"
 license = "MIT"
 description = """
@@ -39,7 +39,7 @@ workspace = true
 assert_cmd = "2.0.14"
 
 [dependencies]
-fakehub-server = { path = "../server", version = "0.0.0" }
+fakehub-server = { path = "../server", version = "0.0.10", features = ["mirror_release"] }
 anyhow = "1.0.86"
 clap = { version = "4.5.7", optional = true, features = ["derive", "string"] }
 clap_complete = { version = "4.5.1", optional = true }
