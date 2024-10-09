@@ -40,6 +40,8 @@ pub(crate) enum Command {
     /// Start the server
     #[command(about = "Start the server")]
     Start(StartArgs),
+    #[command(about = "Stop the server")]
+    Stop,
 }
 
 #[derive(Parser, Debug)]

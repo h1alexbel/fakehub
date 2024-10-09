@@ -82,6 +82,12 @@ curl -X POST \
 
 This should generate you an access token to fakehub [API](#supported-api).
 
+To stop a server, run:
+
+```bash
+fakehub stop
+```
+
 ### Supported API
 
 We support the following list of "fake" versions of GitHub endpoints:

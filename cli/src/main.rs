@@ -20,14 +20,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 /*!
-Fakehub server and storage.
+Fakehub cli.
  */
 use clap::Parser;
-use log::info;
+use log::{error, info};
+
+/// System calls.
+pub mod sys;
 
 use fakehub_server::Server;
 
 use crate::args::{Args, Command};
+use crate::sys::current_port::current_port;
+use crate::sys::kill_unix::kill_unix;
+use fakehub_server::sys::instance_os::instance_os;
+use fakehub_server::sys::sys_info::sys_info;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
 
@@ -64,14 +71,15 @@ async fn main() {
                         // Detached windows process flag.
                         command.creation_flags(0x00000008);
                         match command.spawn() {
-                            Ok(_) => println!(
+                            Ok(_) => info!(
                                 "Server is running in detached mode on port {}",
                                 start.port
                             ),
                             Err(err) => {
-                                panic!("Failed to spawn detached process: {}", err)
+                                error!("Failed to spawn detached process: {}", err)
                             }
                         }
+                        sys_info();
                         return;
                     }
                     Err(err) => {
@@ -86,6 +94,30 @@ async fn main() {
                     "{}",
                     format!("Failed to start server on port {}: {}", start.port, e)
                 ),
+            }
+        }
+        // @todo #77:45min Implement kill_windows_port(id) for windows OS.
+        //  Currently, we don't support port killing on Windows. Check
+        //  <a href="https://github.com/h1alexbel/fakehub/pull/159">this</a> pull
+        //  request for more information.
+        Command::Stop => {
+            tracing_subscriber::fmt::init();
+            info!("Stopping fakehub...");
+            let port = current_port();
+            let result = match instance_os().as_str() {
+                "linux" | "macos" => kill_unix(port),
+                _ => {
+                    error!(
+                        "Cannot stop server on port {}, since we probably don't support {} platform",
+                        port, instance_os()
+                    );
+                    false
+                }
+            };
+            if result {
+                info!("fakehub stopped");
+            } else {
+                error!("Cannot stop fakehub on port: {}", port);
             }
         }
     }

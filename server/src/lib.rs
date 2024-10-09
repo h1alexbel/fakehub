@@ -34,6 +34,7 @@ use crate::handlers::register_user::register_user;
 use crate::handlers::user::user;
 use crate::handlers::users::users;
 use crate::objects::fakehub::FakeHub;
+use crate::sys::sys_info::sys_info;
 
 /// Handlers.
 pub mod handlers;
@@ -41,6 +42,8 @@ pub mod handlers;
 pub mod objects;
 /// Reports.
 pub mod report;
+/// System information.
+pub mod sys;
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
@@ -84,6 +87,7 @@ impl Server {
     /// Start a server.
     pub async fn start(self) -> Result<()> {
         let addr: String = format!("0.0.0.0:{}", self.port);
+        sys_info();
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
         match started {
             Ok(listener) => axum::serve(
