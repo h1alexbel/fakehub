@@ -54,7 +54,7 @@ mod tests {
         assert!(output.contains(env!("CARGO_PKG_VERSION")));
         Ok(())
     }
-    
+
     #[test]
     fn outputs_version_from_short() -> Result<()> {
         let assertion = Command::cargo_bin("fakehub")?.arg("-v").assert();
