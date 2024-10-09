@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="168213">
+<fb version="0.4.0" size="169696">
   <f>
     <added t="I">8</added>
     <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">7.564539783</seconds>
+    <seconds t="F">13.249474876</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-09T21:13:58Z</when>
+    <when t="T">2024-10-09T22:14:31Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -6866,8 +6866,28 @@
     <why t="S">Contributed code in h1alexbel/fakehub#198</why>
   </f>
   <f>
-    <_id t="I">1849</_id>
-    <_time t="T">2024-10-09T21:13:52Z</_time>
+    <_id t="I">1851</_id>
+    <_job t="I">9306</_job>
+    <_time t="T">2024-10-09T21:14:01Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.54</_version>
+    <award t="I">8</award>
+    <details t="S">It's time to reward @l3r8yJ for the bug reported in h1alexbel/fakehub#199, the reward amount is 8.</details>
+    <greeting t="S">🎉 Fantastic bug report! You've earned +8 points, boosting your balance to [+4](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). Your keen eye helps elevate our project's quality. Keep [spotting](https://www.yegor256.com/2018/02/06/where-to-find-more-bugs.html) and [reporting](https://www.yegor256.com/2018/04/24/right-way-to-report-bugs.html) any issues you find - [we welcome them](https://www.yegor256.com/2014/04/13/bugs-are-welcome.html)!
+
+&lt;!-- Thanks for reporting a new bug! You've earned +8 points. By reporting bugs, you help our project improve its quality. If you find anything else in the repository that [doesn't look](https://www.yegor256.com/2018/02/06/where-to-find-more-bugs.html) as good as you might expect, [do not hesitate](https://www.yegor256.com/2014/04/13/bugs-are-welcome.html) to [report](https://www.yegor256.com/2018/04/24/right-way-to-report-bugs.html) it. Your running balance is [+4](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  --&gt;</greeting>
+    <href t="S">https://github.com/h1alexbel/fakehub/issues/199/#issuecomment-2403440401</href>
+    <is_human t="I">1</is_human>
+    <issue t="I">199</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">bug-report-was-rewarded</what>
+    <when t="T">2024-10-09T21:14:01Z</when>
+    <where t="S">github</where>
+    <who t="I">46355873</who>
+    <why t="S">Reported bug in h1alexbel/fakehub#199</why>
+  </f>
+  <f>
+    <_id t="I">1852</_id>
+    <_time t="T">2024-10-09T22:14:21Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">42683603232</latest>
     <repository t="I">807802459</repository>
@@ -6875,10 +6895,10 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1850</_id>
-    <_time t="T">2024-10-09T21:13:58Z</_time>
+    <_id t="I">1853</_id>
+    <_time t="T">2024-10-09T22:14:31Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">0</latest>
+    <latest t="I">158</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
