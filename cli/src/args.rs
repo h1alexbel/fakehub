@@ -19,18 +19,17 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use clap::{Parser, Subcommand};
+use clap::{Parser, Subcommand, ArgAction};
 
 // @todo #41:15min Add --report argument.
 //  Let's add --report option for generating reports in desired formats:
 //  We should support following formats: xml, tex, and txt. User should have
 //  ability to generate report in multiple formats as well: --report tex,xml,txt.
-// @todo #79:25min Add --v option for verbose output.
-//  Let's add --v option for verbose output and debug logs. When this option is
-//  passed, we should show debug logs too.
 #[derive(Parser, Debug)]
-#[command(name = "fakehub")]
+#[command(name = "fakehub", version = env!("CARGO_PKG_VERSION"))]
 pub(crate) struct Args {
+    #[arg(short = 'v', action = ArgAction::Version)]
+    v: Option<bool>,
     #[command(subcommand)]
     pub(crate) command: Command,
 }
