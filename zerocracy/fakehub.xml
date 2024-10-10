@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="169695">
+<fb version="0.4.0" size="169999">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">7.411652041</seconds>
+    <seconds t="F">19.087213503</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-10T04:18:11Z</when>
+    <when t="T">2024-10-10T05:15:25Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -6886,17 +6886,33 @@
     <why t="S">Reported bug in h1alexbel/fakehub#199</why>
   </f>
   <f>
-    <_id t="I">1862</_id>
-    <_time t="T">2024-10-10T04:18:05Z</_time>
+    <_id t="I">1864</_id>
+    <_time t="T">2024-10-10T05:15:09Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42693152604</latest>
+    <branch t="S">196</branch>
+    <details t="S">The pull request h1alexbel/fakehub#200 has been opened by @h1alexbel.</details>
+    <event_id t="I">42694117632</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <is_human t="I">1</is_human>
+    <issue t="I">200</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-opened</what>
+    <when t="T">2024-10-09T15:40:50Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">1867</_id>
+    <_time t="T">2024-10-10T05:15:19Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <latest t="I">42695505463</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">1863</_id>
-    <_time t="T">2024-10-10T04:18:11Z</_time>
+    <_id t="I">1868</_id>
+    <_time t="T">2024-10-10T05:15:25Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">0</latest>
     <repository t="I">807802459</repository>

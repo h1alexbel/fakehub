@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 7.411652041
+  seconds: 19.087213503
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-10 04:18:11.205446769 Z
+  when: 2024-10-10 05:15:25.463552270 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -6485,15 +6485,29 @@
   where: github
   who: 46355873
   why: Reported bug in h1alexbel/fakehub#199
-- _id: 1862
-  _time: 2024-10-10 04:18:05.986570608 Z
+- _id: 1864
+  _time: 2024-10-10 05:15:09.515247857 Z
   _version: 0.4.0/0.26.1/
-  latest: 42693152604
+  branch: '196'
+  details: The pull request h1alexbel/fakehub#200 has been opened by @h1alexbel.
+  event_id: 42694117632
+  event_type: PullRequestEvent
+  is_human: 1
+  issue: 200
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-10-09 15:40:50.000000000 Z
+  where: github
+  who: 83453843
+- _id: 1867
+  _time: 2024-10-10 05:15:19.471375401 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42695505463
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1863
-  _time: 2024-10-10 04:18:11.183444461 Z
+- _id: 1868
+  _time: 2024-10-10 05:15:25.444159688 Z
   _version: 0.4.0/0.26.1/
   latest: 0
   repository: 807802459
