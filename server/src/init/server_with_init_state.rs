@@ -19,24 +19,30 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use crate::{DtServer, Server};
+use crate::Server;
 use anyhow::Result;
 
 /// Bootstrap server.
-pub struct ServerWithInitState {
+pub struct ServerWithInitState<O> {
     /// Origin.
-    pub origin: DtServer,
+    pub origin: O,
     /// Path to file or directory with state.
     pub path: String,
 }
 
-impl ServerWithInitState {
-    pub fn new(origin: DtServer, path: String) -> ServerWithInitState {
+impl<O> ServerWithInitState<O>
+where
+    O: Server,
+{
+    pub fn new(origin: O, path: String) -> ServerWithInitState<O> {
         ServerWithInitState { origin, path }
     }
 }
 
-impl Server for ServerWithInitState {
+impl<O> Server for ServerWithInitState<O>
+where
+    O: Server,
+{
     /// Start.
     async fn start(self) -> Result<()> {
         self.origin.start().await
