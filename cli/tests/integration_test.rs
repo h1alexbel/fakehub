@@ -82,6 +82,8 @@ mod tests {
         assert!(output.contains("-d"));
         assert!(output.contains("--detach"));
         assert!(output.contains("Run in detach mode"));
+        assert!(output.contains("--bootstrap"));
+        assert!(output.contains("Bootstrap fakehub with initial state"));
         Ok(())
     }
 
