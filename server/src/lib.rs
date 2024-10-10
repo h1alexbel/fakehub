@@ -51,14 +51,19 @@ pub mod init;
 #[macro_use]
 extern crate hamcrest;
 
-/// Server.
+pub trait Server {
+    
+    async fn start(self) -> Result<()>;
+}
+
+/// Default server.
 #[derive(Default)]
-pub struct Server {
+pub struct DtServer {
     /// Port.
     port: usize,
 }
 
-impl Server {
+impl DtServer {
     /// Create new server with port.
     ///
     /// * `port`: Server port
@@ -68,11 +73,11 @@ impl Server {
     /// Examples:
     ///
     /// ```
-    /// use fakehub_server::Server;
-    /// let server = Server::new(1234);
+    /// use fakehub_server::DtServer;
+    /// let server = DtServer::new(1234);
     /// ```
-    pub fn new(port: usize) -> Server {
-        Server { port }
+    pub fn new(port: usize) -> DtServer {
+        DtServer { port }
     }
 }
 
@@ -86,9 +91,9 @@ pub struct ServerConfig {
 // @todo #79:30min Log 404 NOT FOUND requests too.
 //  Let's create a handler that would log requests failed with 404. Let's use
 //  info!() for this one.
-impl Server {
+impl Server for DtServer {
     /// Start a server.
-    pub async fn start(self) -> Result<()> {
+    async fn start(self) -> Result<()> {
         let addr: String = format!("0.0.0.0:{}", self.port);
         sys_info();
         let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
@@ -121,7 +126,7 @@ mod tests {
 
     #[test]
     fn creates_the_server() -> Result<()> {
-        let server = crate::Server::new(1234);
+        let server = crate::DtServer::new(1234);
         assert_that!(server.port, is(equal_to(1234)));
         Ok(())
     }

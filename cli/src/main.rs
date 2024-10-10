@@ -28,7 +28,7 @@ use log::{error, info};
 /// System calls.
 pub mod sys;
 
-use fakehub_server::Server;
+use fakehub_server::{DtServer, Server};
 
 use crate::args::{Args, Command};
 use crate::sys::current_port::current_port;
@@ -88,17 +88,16 @@ async fn main() {
                     }
                 };
             }
-            let server = Server::new(start.port);
+            let mut server: dyn Server = DtServer::new(start.port);
             if !start.state.is_empty() {
-                ServerWithInitState {origin: server, path: start.state };
-            } else {
-                match server.start().await {
-                    Ok(_) => info!("Server started successfully on port {}", start.port),
-                    Err(e) => panic!(
-                        "{}",
-                        format!("Failed to start server on port {}: {}", start.port, e)
-                    ),
-                }
+                server = ServerWithInitState::new(server, start.state);
+            }
+            match server.start().await {
+                Ok(_) => info!("Server started successfully on port {}", start.port),
+                Err(e) => panic!(
+                    "{}",
+                    format!("Failed to start server on port {}: {}", start.port, e)
+                ),
             }
         }
         // @todo #77:45min Implement kill_windows_port(id) for windows OS.
