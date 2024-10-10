@@ -54,7 +54,7 @@ pub(crate) struct StartArgs {
     /// Run in detach mode.
     #[arg(short, long, default_value = "false")]
     pub(crate) detach: bool,
-    /// Bootstrap fakehub with initial state.
+    /// Path to file or directory with state.
     #[arg(long)]
-    pub(crate) bootstrap: String,
+    pub(crate) state: String,
 }

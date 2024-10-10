@@ -44,6 +44,9 @@ pub mod objects;
 pub mod report;
 /// System information.
 pub mod sys;
+/// Initialize.
+pub mod init;
+
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;

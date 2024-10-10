@@ -37,6 +37,7 @@ use fakehub_server::sys::instance_os::instance_os;
 use fakehub_server::sys::sys_info::sys_info;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
+use fakehub_server::init::server_with_init_state::ServerWithInitState;
 
 mod args;
 
@@ -88,12 +89,16 @@ async fn main() {
                 };
             }
             let server = Server::new(start.port);
-            match server.start().await {
-                Ok(_) => info!("Server started successfully on port {}", start.port),
-                Err(e) => panic!(
-                    "{}",
-                    format!("Failed to start server on port {}: {}", start.port, e)
-                ),
+            if !start.state.is_empty() {
+                ServerWithInitState {origin: server, path: start.state };
+            } else {
+                match server.start().await {
+                    Ok(_) => info!("Server started successfully on port {}", start.port),
+                    Err(e) => panic!(
+                        "{}",
+                        format!("Failed to start server on port {}: {}", start.port, e)
+                    ),
+                }
             }
         }
         // @todo #77:45min Implement kill_windows_port(id) for windows OS.
