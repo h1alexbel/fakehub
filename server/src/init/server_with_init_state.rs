@@ -19,32 +19,38 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-use crate::Server;
+use crate::{DtServer, Server};
 use anyhow::Result;
+use fsl::transpiler::errors::err_ast::ErrAst;
+use fsl::transpiler::fsl_transpiler::Fslt;
+use futures::future::BoxFuture;
+use log::{debug, info};
+use std::path::Path;
 
 /// Bootstrap server.
-pub struct ServerWithInitState<O> {
+pub struct ServerWithInitState {
     /// Origin.
-    pub origin: O,
+    pub origin: DtServer,
     /// Path to file or directory with state.
     pub path: String,
 }
 
-impl<O> ServerWithInitState<O>
-where
-    O: Server,
-{
-    pub fn new(origin: O, path: String) -> ServerWithInitState<O> {
+impl ServerWithInitState {
+    /// New.
+    pub fn new(origin: DtServer, path: String) -> ServerWithInitState {
         ServerWithInitState { origin, path }
     }
 }
 
-impl<O> Server for ServerWithInitState<O>
-where
-    O: Server,
-{
+impl Server for ServerWithInitState {
     /// Start.
-    async fn start(self) -> Result<()> {
-        self.origin.start().await
+    fn start(&self) -> BoxFuture<'_, Result<()>> {
+        Box::pin(async move {
+            let transpiled =
+                ErrAst::default(Fslt::file(Path::new(&self.path))).decorate();
+            debug!("Transpiled {}: {}", self.path, transpiled);
+            info!("Initialized {} as state", self.path);
+            self.origin.start().await
+        })
     }
 }

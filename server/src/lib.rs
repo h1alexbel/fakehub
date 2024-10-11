@@ -27,6 +27,7 @@ use std::io;
 use anyhow::Result;
 use axum::routing::{get, post};
 use axum::Router;
+use futures::future::BoxFuture;
 use tokio::net::TcpListener;
 
 use crate::handlers::home;
@@ -38,26 +39,28 @@ use crate::sys::sys_info::sys_info;
 
 /// Handlers.
 pub mod handlers;
+/// Initialize.
+pub mod init;
 /// Fakehub objects.
 pub mod objects;
 /// Reports.
 pub mod report;
 /// System information.
 pub mod sys;
-/// Initialize.
-pub mod init;
 
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
 
+/// Server.
 pub trait Server {
-    
-    async fn start(self) -> Result<()>;
+    /// Start a server.
+    #[allow(async_fn_in_trait)]
+    fn start(&self) -> BoxFuture<'_, Result<()>>;
 }
 
 /// Default server.
-#[derive(Default)]
+#[derive(Default, Clone, Copy)]
 pub struct DtServer {
     /// Port.
     port: usize,
@@ -93,29 +96,31 @@ pub struct ServerConfig {
 //  info!() for this one.
 impl Server for DtServer {
     /// Start a server.
-    async fn start(self) -> Result<()> {
-        let addr: String = format!("0.0.0.0:{}", self.port);
-        sys_info();
-        let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
-        match started {
-            Ok(listener) => axum::serve(
-                listener,
-                Router::new()
-                    .route("/", get(home::home))
-                    .route("/users", post(register_user))
-                    .route("/users/:login", get(user))
-                    .route("/users", get(users))
-                    .with_state(ServerConfig {
-                        fakehub: FakeHub::with_addr(addr),
-                    }),
-            )
-            .await
-            .ok(),
-            Err(err) => {
-                panic!("Can't bind address {}: '{}'", addr.clone(), err)
-            }
-        };
-        Ok(())
+    fn start(&self) -> BoxFuture<'_, Result<()>> {
+        Box::pin(async move {
+            let addr: String = format!("0.0.0.0:{}", self.port);
+            sys_info();
+            let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
+            match started {
+                Ok(listener) => axum::serve(
+                    listener,
+                    Router::new()
+                        .route("/", get(home::home))
+                        .route("/users", post(register_user))
+                        .route("/users/:login", get(user))
+                        .route("/users", get(users))
+                        .with_state(ServerConfig {
+                            fakehub: FakeHub::with_addr(addr),
+                        }),
+                )
+                .await
+                .ok(),
+                Err(err) => {
+                    panic!("Can't bind address {}: '{}'", addr.clone(), err)
+                }
+            };
+            Ok(())
+        })
     }
 }
 

@@ -33,11 +33,11 @@ use fakehub_server::{DtServer, Server};
 use crate::args::{Args, Command};
 use crate::sys::current_port::current_port;
 use crate::sys::kill_unix::kill_unix;
+use fakehub_server::init::server_with_init_state::ServerWithInitState;
 use fakehub_server::sys::instance_os::instance_os;
 use fakehub_server::sys::sys_info::sys_info;
 #[cfg(target_os = "windows")]
 use std::os::windows::process::CommandExt;
-use fakehub_server::init::server_with_init_state::ServerWithInitState;
 
 mod args;
 
@@ -88,10 +88,12 @@ async fn main() {
                     }
                 };
             }
-            let mut server: dyn Server = DtServer::new(start.port);
-            if !start.state.is_empty() {
-                server = ServerWithInitState::new(server, start.state);
-            }
+            let base = DtServer::new(start.port);
+            let server: Box<dyn Server> = if !start.init.is_empty() {
+                Box::new(ServerWithInitState::new(base, start.init))
+            } else {
+                Box::new(base)
+            };
             match server.start().await {
                 Ok(_) => info!("Server started successfully on port {}", start.port),
                 Err(e) => panic!(
