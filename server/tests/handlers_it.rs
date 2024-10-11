@@ -23,7 +23,7 @@
 #[cfg(test)]
 mod routes_its {
     use anyhow::Result;
-    use fakehub_server::Server;
+    use fakehub_server::{DtServer, Server};
     #[allow(deprecated)]
     // @todo #79:25min Import assert_that!() macro like in lib.rs instead of assert_that.
     //  For some reason we can't use '#[macro_use] extern crate hamcrest;'
@@ -41,7 +41,7 @@ mod routes_its {
     //  in resources/home.json (expected). Don't forget this puzzle.
     async fn returns_home() -> Result<()> {
         let port = 1234;
-        Server::new(port)
+        DtServer::new(port)
             .start()
             .await
             .expect("Server failed to start");

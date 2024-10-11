@@ -28,11 +28,12 @@ use log::{error, info};
 /// System calls.
 pub mod sys;
 
-use fakehub_server::Server;
+use fakehub_server::{DtServer, Server};
 
 use crate::args::{Args, Command};
 use crate::sys::current_port::current_port;
 use crate::sys::kill_unix::kill_unix;
+use fakehub_server::init::server_with_init_state::ServerWithInitState;
 use fakehub_server::sys::instance_os::instance_os;
 use fakehub_server::sys::sys_info::sys_info;
 #[cfg(target_os = "windows")]
@@ -87,7 +88,12 @@ async fn main() {
                     }
                 };
             }
-            let server = Server::new(start.port);
+            let base = DtServer::new(start.port);
+            let server: Box<dyn Server> = if !start.init.is_empty() {
+                Box::new(ServerWithInitState::new(base, start.init))
+            } else {
+                Box::new(base)
+            };
             match server.start().await {
                 Ok(_) => info!("Server started successfully on port {}", start.port),
                 Err(e) => panic!(

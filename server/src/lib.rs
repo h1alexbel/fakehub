@@ -27,6 +27,7 @@ use std::io;
 use anyhow::Result;
 use axum::routing::{get, post};
 use axum::Router;
+use futures::future::BoxFuture;
 use tokio::net::TcpListener;
 
 use crate::handlers::home;
@@ -38,24 +39,34 @@ use crate::sys::sys_info::sys_info;
 
 /// Handlers.
 pub mod handlers;
+/// Initialize.
+pub mod init;
 /// Fakehub objects.
 pub mod objects;
 /// Reports.
 pub mod report;
 /// System information.
 pub mod sys;
+
 #[allow(unused_imports)]
 #[macro_use]
 extern crate hamcrest;
 
 /// Server.
-#[derive(Default)]
-pub struct Server {
+pub trait Server {
+    /// Start a server.
+    #[allow(async_fn_in_trait)]
+    fn start(&self) -> BoxFuture<'_, Result<()>>;
+}
+
+/// Default server.
+#[derive(Default, Clone, Copy)]
+pub struct DtServer {
     /// Port.
     port: usize,
 }
 
-impl Server {
+impl DtServer {
     /// Create new server with port.
     ///
     /// * `port`: Server port
@@ -65,11 +76,11 @@ impl Server {
     /// Examples:
     ///
     /// ```
-    /// use fakehub_server::Server;
-    /// let server = Server::new(1234);
+    /// use fakehub_server::DtServer;
+    /// let server = DtServer::new(1234);
     /// ```
-    pub fn new(port: usize) -> Server {
-        Server { port }
+    pub fn new(port: usize) -> DtServer {
+        DtServer { port }
     }
 }
 
@@ -83,31 +94,33 @@ pub struct ServerConfig {
 // @todo #79:30min Log 404 NOT FOUND requests too.
 //  Let's create a handler that would log requests failed with 404. Let's use
 //  info!() for this one.
-impl Server {
+impl Server for DtServer {
     /// Start a server.
-    pub async fn start(self) -> Result<()> {
-        let addr: String = format!("0.0.0.0:{}", self.port);
-        sys_info();
-        let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
-        match started {
-            Ok(listener) => axum::serve(
-                listener,
-                Router::new()
-                    .route("/", get(home::home))
-                    .route("/users", post(register_user))
-                    .route("/users/:login", get(user))
-                    .route("/users", get(users))
-                    .with_state(ServerConfig {
-                        fakehub: FakeHub::with_addr(addr),
-                    }),
-            )
-            .await
-            .ok(),
-            Err(err) => {
-                panic!("Can't bind address {}: '{}'", addr.clone(), err)
-            }
-        };
-        Ok(())
+    fn start(&self) -> BoxFuture<'_, Result<()>> {
+        Box::pin(async move {
+            let addr: String = format!("0.0.0.0:{}", self.port);
+            sys_info();
+            let started: io::Result<TcpListener> = TcpListener::bind(addr.clone()).await;
+            match started {
+                Ok(listener) => axum::serve(
+                    listener,
+                    Router::new()
+                        .route("/", get(home::home))
+                        .route("/users", post(register_user))
+                        .route("/users/:login", get(user))
+                        .route("/users", get(users))
+                        .with_state(ServerConfig {
+                            fakehub: FakeHub::with_addr(addr),
+                        }),
+                )
+                .await
+                .ok(),
+                Err(err) => {
+                    panic!("Can't bind address {}: '{}'", addr.clone(), err)
+                }
+            };
+            Ok(())
+        })
     }
 }
 
@@ -118,7 +131,7 @@ mod tests {
 
     #[test]
     fn creates_the_server() -> Result<()> {
-        let server = crate::Server::new(1234);
+        let server = crate::DtServer::new(1234);
         assert_that!(server.port, is(equal_to(1234)));
         Ok(())
     }

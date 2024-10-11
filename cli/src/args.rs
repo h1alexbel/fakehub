@@ -54,4 +54,7 @@ pub(crate) struct StartArgs {
     /// Run in detach mode.
     #[arg(short, long, default_value = "false")]
     pub(crate) detach: bool,
+    /// Path to file or directory with initial state.
+    #[arg(long, default_value = "")]
+    pub(crate) init: String,
 }
