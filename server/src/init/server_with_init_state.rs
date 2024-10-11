@@ -44,6 +44,9 @@ impl ServerWithInitState {
 
 impl Server for ServerWithInitState {
     /// Start.
+    // @todo #45:60min Transform transpiled state from FSL AST to Fakehub objects.
+    //  Now we simply logging transpiled AST, let's create Fakehub objects from
+    //  obtained AST.
     fn start(&self) -> BoxFuture<'_, Result<()>> {
         Box::pin(async move {
             let transpiled =
