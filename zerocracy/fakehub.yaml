@@ -2,10 +2,10 @@
 - added: 8
   cycles: 1
   removed: 8
-  seconds: 7.134862285
+  seconds: 13.110586569
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-12 02:43:28.351943903 Z
+  when: 2024-10-12 03:18:27.277541532 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -6736,17 +6736,37 @@
   when: 2024-10-11 13:02:05.000000000 Z
   where: github
   who: 83453843
-- _id: 1977
-  _time: 2024-10-12 02:43:23.149225805 Z
+- _id: 1979
+  _job: 9493
+  _time: 2024-10-12 02:44:05.461414378 Z
+  _version: 0.4.0/0.26.1/0.0.54
+  award: 4
+  details: It's time to reward @h1alexbel for the code contributed in h1alexbel/fakehub#201,
+    the reward amount is 4.
+  greeting: |-
+    Thank you for your contribution! Here's your point breakdown: +4 base points, +9 for 180 [hits-of-code](https://www.yegor256.com/2014/11/14/hits-of-code.html), -16 for no code review, and -4 for insufficient comments (only 1). As per our policy, we've adjusted your total to +4 points to meet the minimum reward. Your current balance is [+43](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). Please remember the importance of code reviews and comments for future contributions. We appreciate your work and encourage you to [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) submitting high-quality code!
+
+    <!-- Thanks for the contribution! You've earned +4 points for this: +4 as a basis; +9 for the 180 hits-of-code that you wrote; -16 for the lack of code review; -4 for very few (1) comments; +11 to give you at least something. Please, [keep](https://www.yegor256.com/2018/03/06/speed-vs-quality.html) them coming. Your running balance is [+43](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  -->
+  href: https://github.com/h1alexbel/fakehub/issues/201/#issuecomment-2408316825
+  is_human: 1
+  issue: 201
+  repository: 807802459
+  what: code-contribution-was-rewarded
+  when: 2024-10-12 02:44:05.466372791 Z
+  where: github
+  who: 83453843
+  why: Contributed code in h1alexbel/fakehub#201
+- _id: 1980
+  _time: 2024-10-12 03:18:17.301399967 Z
   _version: 0.4.0/0.26.1/
-  latest: 42766680099
+  latest: 42768740729
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 1978
-  _time: 2024-10-12 02:43:28.330236188 Z
+- _id: 1981
+  _time: 2024-10-12 03:18:27.256179798 Z
   _version: 0.4.0/0.26.1/
-  latest: 0
+  latest: 158
   repository: 807802459
   what: labels-were-scanned
   where: github
