@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 12.789991149
+  seconds: 226.437243075
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-14 21:14:10.277506246 Z
+  when: 2024-10-14 22:19:44.126911112 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8334,24 +8334,60 @@
   when: 2024-10-14 15:17:10.000000000 Z
   where: github
   who: 29139614
-- _id: 2275
-  _time: 2024-10-14 21:13:59.450123122 Z
+- _id: 2281
+  _time: 2024-10-14 22:16:29.953943059 Z
+  _version: 0.4.0/0.26.1/
+  average_backlog_size: 3.875
+  average_build_duration: 70.84520123839009
+  average_build_mttr: -10751
+  average_build_success_rate: 0.9566563467492261
+  average_issue_lifetime: 3250007.0
+  average_pull_files_size: 4.8
+  average_pull_hoc_size: 131.6
+  average_pull_lifetime: 20695.0
+  average_pull_rejection_rate: 0.16666666666666666
+  average_release_commits_size: 4.0
+  average_release_hoc_size: 386.0
+  average_release_interval: 6175.0
+  average_review_size: 0.0
+  average_review_time: 1047.0
+  average_reviewers_per_pull: 0.2
+  average_reviews_per_pull: 0.2
+  average_triage_time: 5.571428571428571
+  since: 2024-10-07 22:16:29.954183771 Z
+  what: quality-of-service
+  when: 2024-10-14 22:16:29.954092209 Z
+- _id: 2282
+  _time: 2024-10-14 22:18:39.012356704 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-10-07 22:18:39.012557510 Z
+  total_builds_ran: 646
+  total_commits_pushed: 49
+  total_hoc_committed: 1634
+  total_issues_created: 7
+  total_pulls_submitted: 1
+  total_releases_published: 2
+  total_reviews_submitted: 1
+  what: quantity-of-deliverables
+  when: 2024-10-14 22:18:39.012492539 Z
+- _id: 2283
+  _time: 2024-10-14 22:19:31.151445966 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2276
-  _time: 2024-10-14 21:14:00.885072886 Z
+- _id: 2284
+  _time: 2024-10-14 22:19:32.114597548 Z
   _version: 0.4.0/0.26.1/
-  latest: 42831601234
+  latest: 42833084897
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2277
-  _time: 2024-10-14 21:14:10.252275612 Z
+- _id: 2285
+  _time: 2024-10-14 22:19:44.100273083 Z
   _version: 0.4.0/0.26.1/
-  latest: 197
+  latest: 25
   repository: 807802459
   what: labels-were-scanned
   where: github
