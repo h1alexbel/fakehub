@@ -2,10 +2,10 @@
 - added: 8
   cycles: 1
   removed: 8
-  seconds: 10.699218583
+  seconds: 4.865548148
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-14 10:17:05.895578636 Z
+  when: 2024-10-14 11:13:46.623642772 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8295,24 +8295,49 @@
   when: 2024-06-05 10:05:39.000000000 Z
   where: github
   who: 46355873
-- _id: 2237
-  _time: 2024-10-14 10:16:56.795075017 Z
+- _id: 2240
+  _job: 9743
+  _time: 2024-10-14 10:17:11.769882485 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#203,
+    the reward amount is 4.
+  greeting: "Thanks for your code review! Here's the breakdown of your +4 points:
+    +4 base points; -24 for self-review; +0.02 for 2 hits-of-code (capped at 16);
+    -16 for no comments; -8 for less than 16 hits-of-code; +48 to meet the minimum
+    4-point reward. Your current balance is [+43](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Keep up the good work and aim for more comments and hits-of-code next time! \U0001F4BB\n\n<!--
+    Thanks for the review! You've earned +4 points for this: +4 as a basis; -10 for
+    very few (4) comments; -8 for too few (2) hits-of-code; +18 to give you at least
+    something.  Your running balance is [+43](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    \ -->"
+  href: https://github.com/h1alexbel/fakehub/issues/203/#issuecomment-2410709772
+  is_human: 1
+  issue: 203
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-10-14 10:17:11.775093558 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#203
+- _id: 2241
+  _time: 2024-10-14 11:13:43.655672813 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2238
-  _time: 2024-10-14 10:16:57.794110260 Z
+- _id: 2242
+  _time: 2024-10-14 11:13:45.551425642 Z
   _version: 0.4.0/0.26.1/
   latest: 42816510665
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2239
-  _time: 2024-10-14 10:17:05.870060323 Z
+- _id: 2243
+  _time: 2024-10-14 11:13:46.594002019 Z
   _version: 0.4.0/0.26.1/
-  latest: 197
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
