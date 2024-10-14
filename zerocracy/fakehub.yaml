@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 5
+  cycles: 1
   removed: 8
-  seconds: 112.349711908
+  seconds: 10.699218583
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-14 09:19:03.617086322 Z
+  when: 2024-10-14 10:17:05.895578636 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8165,24 +8165,11 @@
   when: 2024-07-24 10:37:53.000000000 Z
   where: github
   who: 24456188
-- _id: 2225
-  _time: 2024-10-14 09:18:50.724532432 Z
-  _version: 0.4.0/0.26.1/
-  latest: 1
-  repository: 807802459
-  what: min-issue-was-found
-  where: github
-- _id: 2226
-  _time: 2024-10-14 09:18:51.943594189 Z
-  _version: 0.4.0/0.26.1/
-  latest: 42814990924
-  repository: 807802459
-  what: events-were-scanned
-  where: github
 - _id: 2227
   _time: 2024-10-14 09:18:52.930509352 Z
   _version: 0.4.0/0.26.1/
   details: The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#101.
+  is_human: 0
   issue: 101
   label: bug
   repository: 807802459
@@ -8194,6 +8181,7 @@
   _time: 2024-10-14 09:18:53.494285243 Z
   _version: 0.4.0/0.26.1/
   details: The '#bug' label was attached by @0pdd to the issue h1alexbel/fakehub#105.
+  is_human: 0
   issue: 105
   label: bug
   repository: 807802459
@@ -8205,6 +8193,7 @@
   _time: 2024-10-14 09:18:54.511914699 Z
   _version: 0.4.0/0.26.1/
   details: The '#enhancement' label was attached by @h1alexbel to the issue h1alexbel/fakehub#120.
+  is_human: 1
   issue: 120
   label: enhancement
   repository: 807802459
@@ -8212,10 +8201,118 @@
   when: 2024-08-26 10:38:29.000000000 Z
   where: github
   who: 83453843
-- _id: 2230
-  _time: 2024-10-14 09:19:03.594500014 Z
+- _id: 2231
+  _job: 9729
+  _time: 2024-10-14 09:19:08.672916343 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  details: 'In the repository #807802459, the user #83453843 attached the ''#bug''
+    label to the issue #12 reported by the user #46355873; this means that a bug was-accepted
+    as valid, by the project team.'
+  is_human: 1
+  issue: 12
+  reporter: 46355873
+  repository: 807802459
+  what: bug-was-accepted
+  when: 2024-06-01 21:21:13.000000000 Z
+  where: github
+  who: 83453843
+- _id: 2232
+  _job: 9729
+  _time: 2024-10-14 09:19:10.392994109 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  comments: 3
+  details: The pull request h1alexbel/fakehub#203 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 3 hours of being in review and 3 comments.
+  hoc: 2
+  is_human: 0
+  issue: 203
+  merger: 8086956
+  repository: 807802459
+  seconds: 11870
+  what: code-was-contributed
+  when: 2024-10-14 08:35:41.000000000 Z
+  where: github
+  who: 29139614
+- _id: 2233
+  _job: 9729
+  _time: 2024-10-14 09:19:11.026035037 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  author: 29139614
+  comments: 4
+  details: The pull request h1alexbel/fakehub#203 with 2 HoC created by @renovate[bot]
+    was reviewed by @h1alexbel after 3 hours and 4 comments.
+  hoc: 2
+  is_human: 1
+  issue: 203
+  repository: 807802459
+  seconds: 10822
+  what: code-was-reviewed
+  when: 2024-10-14 08:18:13.000000000 Z
+  where: github
+  who: 83453843
+- _id: 2234
+  _job: 9729
+  _time: 2024-10-14 09:19:11.727556586 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  closer: 83453843
+  details: 'In the repository #807802459, the user #46355873 submitted the issue #6
+    which was later closed by the user #83453843 not becoming a bug or enhancement;
+    this means that the issue was not valid, maybe a duplicate or simply a mistake.'
+  is_human: 1
+  issue: 6
+  repository: 807802459
+  what: dud-was-closed
+  when: 2024-05-30 12:49:46.000000000 Z
+  where: github
+  who: 46355873
+- _id: 2235
+  _job: 9729
+  _time: 2024-10-14 09:19:12.142593202 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  details: 'In the repository #807802459, the user #83453843 attached the ''#enhancement''
+    label to the issue #11 reported by the user #46355873; this means that a feature
+    request was-accepted as valid, by the project team.'
+  is_human: 1
+  issue: 11
+  reporter: 46355873
+  repository: 807802459
+  what: enhancement-was-accepted
+  when: 2024-08-26 10:25:16.000000000 Z
+  where: github
+  who: 83453843
+- _id: 2236
+  _job: 9729
+  _time: 2024-10-14 09:19:12.312533350 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  details: 'In the repository #807802459, the user #46355873 attached the ''#enhancement''
+    label to the issue #22 reported by the user #83453843; this means that a feature
+    request was-accepted as valid, by the project team.'
+  is_human: 1
+  issue: 22
+  reporter: 83453843
+  repository: 807802459
+  what: enhancement-was-accepted
+  when: 2024-06-05 10:05:39.000000000 Z
+  where: github
+  who: 46355873
+- _id: 2237
+  _time: 2024-10-14 10:16:56.795075017 Z
   _version: 0.4.0/0.26.1/
-  latest: 147
+  latest: 1
+  repository: 807802459
+  what: min-issue-was-found
+  where: github
+- _id: 2238
+  _time: 2024-10-14 10:16:57.794110260 Z
+  _version: 0.4.0/0.26.1/
+  latest: 42816510665
+  repository: 807802459
+  what: events-were-scanned
+  where: github
+- _id: 2239
+  _time: 2024-10-14 10:17:05.870060323 Z
+  _version: 0.4.0/0.26.1/
+  latest: 197
   repository: 807802459
   what: labels-were-scanned
   where: github
