@@ -41,7 +41,7 @@ jobs:
             vitals_url=https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html
             repositories=h1alexbel/fakehub
           factbase: fakehub.fb
-      - uses: zerocracy/pages-action@0.0.37
+      - uses: zerocracy/pages-action@0.0.38
         with:
           factbase: fakehub.fb
           output: pages
