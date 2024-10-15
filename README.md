@@ -21,7 +21,7 @@ API server somehow. We offer a fully functioning mock version of a GitHub REST
 API, which would support all functions, but work locally, with absolutely no
 connection to GitHub.
 
-## How to use?
+## Quick start
 
 First, install it from [crate][fakehub-crate]:
 
@@ -29,21 +29,46 @@ First, install it from [crate][fakehub-crate]:
 cargo install fakehub
 ```
 
-or with [homebrew] (macOS):
+Then, create a simple test, `test.sh`:
 
 ```bash
-brew install fakehub
+{
+  fakehub start -d
+  out="$(curl -s 'http://localhost:3000/users/jeff' | jq -r '.login')"
+  expected="jeff"
+  if [ "$out" == $expected ]; then
+    echo "Test passed!"
+  else
+    echo "Login '$out' does not match with expected: '$expected'"
+    exit 1
+  fi
+  fakehub stop
+}
 ```
 
-Then, run it:
+And run it:
 
 ```bash
-fakehub start --port 8080
+sh test.sh
+```
+
+You should be able to see this:
+
+```text
+2024-10-15T15:14:33.469924Z  INFO fakehub: Starting server on port 3000
+2024-10-15T15:14:33.470238Z  INFO fakehub: Server is running in detached mode on port 3000
+2024-10-15T15:14:33.470247Z  INFO fakehub_server::sys::sys_info: OS: macos
+2024-10-15T15:14:33.470251Z  INFO fakehub_server::sys::sys_info: PID: 11751
+Test passed!
+2024-10-15T15:14:33.486892Z  INFO fakehub: Stopping fakehub...
+2024-10-15T15:14:33.518901Z  INFO fakehub::sys::kill_unix: Port 3000 killed
+2024-10-15T15:14:33.518913Z  INFO fakehub: fakehub stopped
 ```
 
 Table of contents:
 
 * [Overview](#overview)
+* [Request Format](#request-format)
 * [GitHub Objects](#github-objects)
 * [CLI Options](#cli-options)
 
@@ -81,19 +106,6 @@ curl -X POST \
 ```
 
 This should generate you an access token to fakehub [API](#supported-api).
-
-To stop a server, run:
-
-```bash
-fakehub stop
-```
-
-### Supported API
-
-We support the following list of "fake" versions of GitHub endpoints:
-
-| Operation | GitHub REST API Endpoint | Supported in fakehub |
-|-----------|--------------------------|----------------------|
 
 ### GitHub Objects
 
