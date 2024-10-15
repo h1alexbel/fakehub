@@ -105,7 +105,7 @@ curl -X POST \
   http://localhost:$port/login
 ```
 
-This should generate you an access token to fakehub [API](#supported-api).
+This should generate you an access token to fakehub API.
 
 ### GitHub objects
 
@@ -140,7 +140,6 @@ Here is the [contribution vitals][Zerocracy Vitals], made by [zerocracy/judges-a
 (updated every hour!).
 
 [GitHub REST API]: https://docs.github.com/en/rest?apiVersion=2022-11-28
-[homebrew]: https://brew.sh
 [fakehub-crate]: https://crates.io/crates/fakehub
 [LaTeX]: https://en.wikipedia.org/wiki/LaTeX
 [XML]: https://en.wikipedia.org/wiki/XML
