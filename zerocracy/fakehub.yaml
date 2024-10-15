@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 1
   removed: 8
-  seconds: 60.626741958
+  seconds: 14.060098746
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-15 09:17:18.762402203 Z
+  when: 2024-10-15 10:17:45.753816041 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8448,24 +8448,64 @@
   when: 2024-10-15 07:22:01.000000000 Z
   where: github
   who: 8086956
-- _id: 2323
-  _time: 2024-10-15 09:17:06.274170559 Z
+- _id: 2326
+  _job: 9817
+  _time: 2024-10-15 09:17:27.896539444 Z
+  _version: 0.4.0/0.27.0/0.0.55
+  award: 4
+  details: It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#204,
+    the reward amount is 4.
+  greeting: "Great job on the review! \U0001F31F You've earned +4 points: +4 base,
+    adjustments for comments (-10) and hits-of-code (-8), plus a bonus (+18). Your
+    dedication is appreciated! Your current balance stands at [+47](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    Keep up the excellent work!\n\n<!-- Thanks for the review! You've earned +4 points
+    for this: +4 as a basis; -10 for very few (4) comments; -8 for too few (2) hits-of-code;
+    +18 to give you at least something.  Your running balance is [+47](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).
+    \ -->"
+  href: https://github.com/h1alexbel/fakehub/issues/204/#issuecomment-2413346413
+  is_human: 1
+  issue: 204
+  repository: 807802459
+  what: code-review-was-rewarded
+  when: 2024-10-15 09:17:27.903753798 Z
+  where: github
+  who: 83453843
+  why: Reviewed code in h1alexbel/fakehub#204
+- _id: 2327
+  _job: 9817
+  _time: 2024-10-15 09:17:31.966000006 Z
+  _version: 0.4.0/0.27.0/0.0.55
+  comments: 3
+  details: The pull request h1alexbel/fakehub#204 with 2 HoC created by @renovate[bot]
+    was merged by @rultor after 16 hours of being in review and 3 comments.
+  hoc: 2
+  is_human: 0
+  issue: 204
+  merger: 8086956
+  repository: 807802459
+  seconds: 57891
+  what: code-was-contributed
+  when: 2024-10-15 07:22:01.000000000 Z
+  where: github
+  who: 29139614
+- _id: 2328
+  _time: 2024-10-15 10:17:33.874805025 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2324
-  _time: 2024-10-15 09:17:07.115260009 Z
+- _id: 2329
+  _time: 2024-10-15 10:17:35.192393506 Z
   _version: 0.4.0/0.26.1/
-  latest: 42850311191
+  latest: 42852260713
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2325
-  _time: 2024-10-15 09:17:18.737656697 Z
+- _id: 2330
+  _time: 2024-10-15 10:17:45.726963461 Z
   _version: 0.4.0/0.26.1/
-  latest: 25
+  latest: 55
   repository: 807802459
   what: labels-were-scanned
   where: github
