@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 15.915578567
+  seconds: 27.434312129
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-15 07:16:28.587581218 Z
+  when: 2024-10-15 08:20:22.046245500 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8374,24 +8374,42 @@
   total_reviews_submitted: 1
   what: quantity-of-deliverables
   when: 2024-10-14 22:18:39.012492539 Z
-- _id: 2307
-  _time: 2024-10-15 07:16:14.866917304 Z
+- _id: 2311
+  _time: 2024-10-15 08:19:57.846405305 Z
+  _version: 0.4.0/0.26.1/
+  comments: 4
+  commits: 1
+  details: The pull request h1alexbel/fakehub#204 has been reviewed by @h1alexbel
+    with 2 HoC and 4 comments.
+  event_id: 42849755183
+  event_type: PullRequestReviewEvent
+  files: 1
+  hoc: 2
+  is_human: 1
+  issue: 204
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-10-15 07:04:48.000000000 Z
+  where: github
+  who: 83453843
+- _id: 2314
+  _time: 2024-10-15 08:20:12.658275010 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2308
-  _time: 2024-10-15 07:16:16.458494136 Z
+- _id: 2315
+  _time: 2024-10-15 08:20:13.696235025 Z
   _version: 0.4.0/0.26.1/
-  latest: 42847155849
+  latest: 42849819112
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2309
-  _time: 2024-10-15 07:16:28.563756183 Z
+- _id: 2316
+  _time: 2024-10-15 08:20:22.019510334 Z
   _version: 0.4.0/0.26.1/
-  latest: 99
+  latest: 197
   repository: 807802459
   what: labels-were-scanned
   where: github
