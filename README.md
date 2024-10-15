@@ -21,7 +21,7 @@ API server somehow. We offer a fully functioning mock version of a GitHub REST
 API, which would support all functions, but work locally, with absolutely no
 connection to GitHub.
 
-## How to use?
+## Quick start
 
 First, install it from [crate][fakehub-crate]:
 
@@ -29,23 +29,48 @@ First, install it from [crate][fakehub-crate]:
 cargo install fakehub
 ```
 
-or with [homebrew] (macOS):
+Then, create a simple test, `test.sh`:
 
 ```bash
-brew install fakehub
+{
+  fakehub start -d
+  out="$(curl -s 'http://localhost:3000/users/jeff' | jq -r '.login')"
+  expected="jeff"
+  if [ "$out" == $expected ]; then
+    echo "Test passed!"
+  else
+    echo "Login '$out' does not match with expected: '$expected'"
+    exit 1
+  fi
+  fakehub stop
+}
 ```
 
-Then, run it:
+And run it:
 
 ```bash
-fakehub start --port 8080
+sh test.sh
 ```
 
-Table of contents:
+You should be able to see this:
+
+```text
+2024-10-15T15:14:33.469924Z  INFO fakehub: Starting server on port 3000
+2024-10-15T15:14:33.470238Z  INFO fakehub: Server is running in detached mode on port 3000
+2024-10-15T15:14:33.470247Z  INFO fakehub_server::sys::sys_info: OS: macos
+2024-10-15T15:14:33.470251Z  INFO fakehub_server::sys::sys_info: PID: 11751
+Test passed!
+2024-10-15T15:14:33.486892Z  INFO fakehub: Stopping fakehub...
+2024-10-15T15:14:33.518901Z  INFO fakehub::sys::kill_unix: Port 3000 killed
+2024-10-15T15:14:33.518913Z  INFO fakehub: fakehub stopped
+```
+
+## Table of contents
 
 * [Overview](#overview)
-* [GitHub Objects](#github-objects)
-* [CLI Options](#cli-options)
+* [Request format](#request-format)
+* [GitHub objects](#github-objects)
+* [CLI options](#cli-options)
 
 ### Overview
 
@@ -55,7 +80,7 @@ fakehub stores all the data in memory. When [request arrives](#request-format),
 we query the storage, transform objects into GitHub API-compatible format
 ([JSON]) and give it to you.
 
-### Request Format
+### Request format
 
 fakehub supports the format specified in [GitHub REST API docs][GitHub REST API].
 For instance, if you want to use [Get a repository][GitHub REST API Get Repo]
@@ -80,26 +105,13 @@ curl -X POST \
   http://localhost:$port/login
 ```
 
-This should generate you an access token to fakehub [API](#supported-api).
+This should generate you an access token to fakehub API.
 
-To stop a server, run:
-
-```bash
-fakehub stop
-```
-
-### Supported API
-
-We support the following list of "fake" versions of GitHub endpoints:
-
-| Operation | GitHub REST API Endpoint | Supported in fakehub |
-|-----------|--------------------------|----------------------|
-
-### GitHub Objects
+### GitHub objects
 
 TBD..
 
-### CLI Options
+### CLI options
 
 You can use the following options within `fakehub` command-line tool:
 
@@ -108,8 +120,9 @@ You can use the following options within `fakehub` command-line tool:
 | `-p`, `--port`    | int     | `3000`  | Port to run fakehub server on.                                                                            |
 | `-v`, `--verbose` | boolean | `false` | Verbose run output, i.e. debug logs, etc.                                                                 |
 | `-d`,  `--detach` | boolean | `false` | Run fakehub server in detached mode.                                                                      |
-| `report`          | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
-| `report-format`   | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
+| `-i`, `--init`    | string  | -       | Path to file or directory with initial state.                                                             |
+| `-r`, `--report`  | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
+| `--report-format` | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
 
 ## How to contribute?
 
@@ -127,7 +140,6 @@ Here is the [contribution vitals][Zerocracy Vitals], made by [zerocracy/judges-a
 (updated every hour!).
 
 [GitHub REST API]: https://docs.github.com/en/rest?apiVersion=2022-11-28
-[homebrew]: https://brew.sh
 [fakehub-crate]: https://crates.io/crates/fakehub
 [LaTeX]: https://en.wikipedia.org/wiki/LaTeX
 [XML]: https://en.wikipedia.org/wiki/XML
