@@ -120,8 +120,9 @@ You can use the following options within `fakehub` command-line tool:
 | `-p`, `--port`    | int     | `3000`  | Port to run fakehub server on.                                                                            |
 | `-v`, `--verbose` | boolean | `false` | Verbose run output, i.e. debug logs, etc.                                                                 |
 | `-d`,  `--detach` | boolean | `false` | Run fakehub server in detached mode.                                                                      |
-| `report`          | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
-| `report-format`   | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
+| `-i`, `--init`    | string  | -       | Path to file or directory with initial state.                                                             |
+| `-r`, `--report`  | boolean | `false` | Generate report after fakehub shutdown.                                                                   |
+| `--report-format` | string  | -       | Generated report format. Possible values: `latex` for [LaTeX], `xml` for [XML], and `txt` for plain text. |
 
 ## How to contribute?
 
