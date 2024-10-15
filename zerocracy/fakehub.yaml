@@ -2,10 +2,10 @@
 - added: 8
   cycles: 1
   removed: 8
-  seconds: 11.733704916
+  seconds: 3.354360601
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-15 15:16:21.848675352 Z
+  when: 2024-10-15 16:18:56.556576888 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -2521,14 +2521,6 @@
   when: 2024-09-19 17:30:15.000000000 Z
   where: github
   who: 46355873
-- _id: 609
-  _job: 7426
-  _time: 2024-09-19 23:15:50.253370974 Z
-  _version: 0.4.0/0.26.1/0.0.52!null
-  cost_of_qod: 13.318534961154272
-  qod_per_day: 0.12871428573359928
-  what: learn-eva
-  when: 2024-09-19 23:15:50.240438598 Z
 - _id: 610
   _time: 2024-09-20 01:07:34.650320457 Z
   _version: 0.4.0/0.26.1/
@@ -8508,24 +8500,36 @@
   _version: 0.4.0/0.26.1/0.0.55
   what: earned-value-prev
   when: *2
-- _id: 2339
-  _time: 2024-10-15 15:16:11.992490262 Z
+- _id: 2342
+  _job: 9841
+  _time: 2024-10-15 15:17:44.390584809 Z
+  _version: 0.4.0/0.26.1/0.0.55
+  cost_of_qod:
+  - 13.318534961154272
+  - 0.823271130625686
+  qod_per_day:
+  - 0.12871428573359928
+  - 2.082285714509405
+  what: learn-eva
+  when: 2024-10-15 15:17:44.243830922 Z
+- _id: 2343
+  _time: 2024-10-15 16:18:54.789001864 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2340
-  _time: 2024-10-15 15:16:13.186066667 Z
+- _id: 2344
+  _time: 2024-10-15 16:18:55.759307195 Z
   _version: 0.4.0/0.26.1/
   latest: 42861208890
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2341
-  _time: 2024-10-15 15:16:21.822580137 Z
+- _id: 2345
+  _time: 2024-10-15 16:18:56.530803611 Z
   _version: 0.4.0/0.26.1/
-  latest: 197
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
