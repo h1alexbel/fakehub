@@ -65,12 +65,12 @@ Test passed!
 2024-10-15T15:14:33.518913Z  INFO fakehub: fakehub stopped
 ```
 
-Table of contents:
+## Table of contents
 
 * [Overview](#overview)
-* [Request Format](#request-format)
-* [GitHub Objects](#github-objects)
-* [CLI Options](#cli-options)
+* [Request format](#request-format)
+* [GitHub objects](#github-objects)
+* [CLI options](#cli-options)
 
 ### Overview
 
@@ -80,7 +80,7 @@ fakehub stores all the data in memory. When [request arrives](#request-format),
 we query the storage, transform objects into GitHub API-compatible format
 ([JSON]) and give it to you.
 
-### Request Format
+### Request format
 
 fakehub supports the format specified in [GitHub REST API docs][GitHub REST API].
 For instance, if you want to use [Get a repository][GitHub REST API Get Repo]
@@ -107,11 +107,11 @@ curl -X POST \
 
 This should generate you an access token to fakehub [API](#supported-api).
 
-### GitHub Objects
+### GitHub objects
 
 TBD..
 
-### CLI Options
+### CLI options
 
 You can use the following options within `fakehub` command-line tool:
 
