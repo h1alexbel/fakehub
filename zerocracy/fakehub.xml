@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="219899">
+<fb version="0.4.0" size="221051">
   <f>
     <added t="I">8</added>
     <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">20.949787676</seconds>
+    <seconds t="F">38.94542782</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-16T12:30:22Z</when>
+    <when t="T">2024-10-16T13:23:32Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -9457,8 +9457,28 @@
     <who t="I">83453843</who>
   </f>
   <f>
-    <_id t="I">2432</_id>
-    <_time t="T">2024-10-16T12:30:03Z</_time>
+    <_id t="I">2435</_id>
+    <_job t="I">9878</_job>
+    <_time t="T">2024-10-16T12:30:27Z</_time>
+    <_version t="S">0.4.0/0.27.0/0.0.55</_version>
+    <award t="I">4</award>
+    <details t="S">It's time to reward @h1alexbel for the code review in h1alexbel/fakehub#207, the reward amount is 4.</details>
+    <greeting t="S">Thanks for your code review! Here's how your +4 points were calculated: +4 base points, -24 for self-review, +0.02 for 2 hits-of-code, -16 for no comments, -8 for &lt; 16 hits-of-code, and +48 to meet the minimum 4-point reward. Your balance is now [+55](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html). Keep up the good work and aim for more comments and hits-of-code next time! 💻
+
+&lt;!-- Thanks for the review! You've earned +4 points for this: +4 as a basis; -10 for very few (4) comments; -8 for too few (2) hits-of-code; +18 to give you at least something.  Your running balance is [+55](https://www.h1alexbel.xyz/fakehub/zerocracy/fakehub-vitals.html).  --&gt;</greeting>
+    <href t="S">https://github.com/h1alexbel/fakehub/issues/207/#issuecomment-2416706775</href>
+    <is_human t="I">1</is_human>
+    <issue t="I">207</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">code-review-was-rewarded</what>
+    <when t="T">2024-10-16T12:30:27Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+    <why t="S">Reviewed code in h1alexbel/fakehub#207</why>
+  </f>
+  <f>
+    <_id t="I">2436</_id>
+    <_time t="T">2024-10-16T13:23:23Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -9466,8 +9486,8 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">2433</_id>
-    <_time t="T">2024-10-16T12:30:05Z</_time>
+    <_id t="I">2437</_id>
+    <_time t="T">2024-10-16T13:23:24Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">42896755803</latest>
     <repository t="I">807802459</repository>
@@ -9475,10 +9495,10 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">2434</_id>
-    <_time t="T">2024-10-16T12:30:22Z</_time>
+    <_id t="I">2438</_id>
+    <_time t="T">2024-10-16T13:23:32Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">25</latest>
+    <latest t="I">55</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
