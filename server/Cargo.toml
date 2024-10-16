@@ -54,7 +54,7 @@ rand = "0.8.5"
 regex = "1.10.6"
 parameterized = "2.0.0"
 testing_logger = "0.1.1"
-fsl = "0.0.4"
+fsl = "0.0.5"
 futures = "0.3.31"
 
 [features]
