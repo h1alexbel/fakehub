@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 15.241866948
+  seconds: 37.315642548
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-16 10:16:10.172096287 Z
+  when: 2024-10-16 11:14:04.340612220 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8693,24 +8693,66 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-10-16 09:16:35.326794766 Z
-- _id: 2419
-  _time: 2024-10-16 10:15:57.134539903 Z
+- _id: 2423
+  _time: 2024-10-16 11:13:30.721629648 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/zerocracy-pages-action-0.x
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#207 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 42893962650
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 207
+  repository: 807802459
+  succeeded_builds: 12
+  what: pull-was-merged
+  when: 2024-10-16 08:01:17.000000000 Z
+  where: github
+  who: 8086956
+- _id: 2424
+  _time: 2024-10-16 11:13:47.931366460 Z
+  _version: 0.4.0/0.26.1/
+  comments: 4
+  commits: 1
+  details: The pull request h1alexbel/fakehub#207 has been reviewed by @h1alexbel
+    with 2 HoC and 4 comments.
+  event_id: 42893377749
+  event_type: PullRequestReviewEvent
+  files: 1
+  hoc: 2
+  is_human: 1
+  issue: 207
+  repository: 807802459
+  what: pull-was-reviewed
+  when: 2024-10-16 07:43:53.000000000 Z
+  where: github
+  who: 83453843
+- _id: 2427
+  _time: 2024-10-16 11:14:02.250507258 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2420
-  _time: 2024-10-16 10:15:58.759797479 Z
+- _id: 2428
+  _time: 2024-10-16 11:14:03.283626111 Z
   _version: 0.4.0/0.26.1/
-  latest: 42892426958
+  latest: 42894637516
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2421
-  _time: 2024-10-16 10:16:10.144238488 Z
+- _id: 2429
+  _time: 2024-10-16 11:14:04.313733247 Z
   _version: 0.4.0/0.26.1/
-  latest: 147
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github

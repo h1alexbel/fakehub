@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="218390">
+<fb version="0.4.0" size="219146">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">15.241866948</seconds>
+    <seconds t="F">37.315642548</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-16T10:16:10Z</when>
+    <when t="T">2024-10-16T11:14:04Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -9377,8 +9377,52 @@
     <when t="T">2024-10-16T09:16:35Z</when>
   </f>
   <f>
-    <_id t="I">2419</_id>
-    <_time t="T">2024-10-16T10:15:57Z</_time>
+    <_id t="I">2423</_id>
+    <_time t="T">2024-10-16T11:13:30Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">renovate/zerocracy-pages-action-0.x</branch>
+    <comments t="I">3</comments>
+    <comments_appreciated t="I">1</comments_appreciated>
+    <comments_by_author t="I">0</comments_by_author>
+    <comments_by_reviewers t="I">4</comments_by_reviewers>
+    <comments_resolved t="I">0</comments_resolved>
+    <comments_to_code t="I">0</comments_to_code>
+    <details t="S">The pull request h1alexbel/fakehub#207 has been closed by @rultor, with 2 HoC and 3 comments.</details>
+    <event_id t="I">42893962650</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <failed_builds t="I">0</failed_builds>
+    <hoc t="I">2</hoc>
+    <is_human t="I">0</is_human>
+    <issue t="I">207</issue>
+    <repository t="I">807802459</repository>
+    <succeeded_builds t="I">12</succeeded_builds>
+    <what t="S">pull-was-merged</what>
+    <when t="T">2024-10-16T08:01:17Z</when>
+    <where t="S">github</where>
+    <who t="I">8086956</who>
+  </f>
+  <f>
+    <_id t="I">2424</_id>
+    <_time t="T">2024-10-16T11:13:47Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <comments t="I">4</comments>
+    <commits t="I">1</commits>
+    <details t="S">The pull request h1alexbel/fakehub#207 has been reviewed by @h1alexbel with 2 HoC and 4 comments.</details>
+    <event_id t="I">42893377749</event_id>
+    <event_type t="S">PullRequestReviewEvent</event_type>
+    <files t="I">1</files>
+    <hoc t="I">2</hoc>
+    <is_human t="I">1</is_human>
+    <issue t="I">207</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-reviewed</what>
+    <when t="T">2024-10-16T07:43:53Z</when>
+    <where t="S">github</where>
+    <who t="I">83453843</who>
+  </f>
+  <f>
+    <_id t="I">2427</_id>
+    <_time t="T">2024-10-16T11:14:02Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -9386,19 +9430,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">2420</_id>
-    <_time t="T">2024-10-16T10:15:58Z</_time>
+    <_id t="I">2428</_id>
+    <_time t="T">2024-10-16T11:14:03Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">42892426958</latest>
+    <latest t="I">42894637516</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">2421</_id>
-    <_time t="T">2024-10-16T10:16:10Z</_time>
+    <_id t="I">2429</_id>
+    <_time t="T">2024-10-16T11:14:04Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">147</latest>
+    <latest t="I">0</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
