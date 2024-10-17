@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 12.519616057
+  seconds: 35.692469785
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-17 01:09:58.475304509 Z
+  when: 2024-10-17 02:48:33.179555009 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -8866,24 +8866,48 @@
   total_reviews_submitted: 3
   what: quantity-of-deliverables
   when: 2024-10-16 23:18:15.115476047 Z
-- _id: 2479
-  _time: 2024-10-17 01:09:47.706080414 Z
+- _id: 2483
+  _time: 2024-10-17 02:48:00.238684621 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/fsl-0.x
+  comments: 6
+  comments_appreciated: 2
+  comments_by_author: 0
+  comments_by_reviewers: 7
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#208 has been closed by @rultor, with
+    2 HoC and 6 comments.
+  event_id: 42915297032
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 208
+  repository: 807802459
+  succeeded_builds: 12
+  what: pull-was-merged
+  when: 2024-10-16 17:37:27.000000000 Z
+  where: github
+  who: 8086956
+- _id: 2486
+  _time: 2024-10-17 02:48:23.544340812 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 2480
-  _time: 2024-10-17 01:09:48.906989285 Z
+- _id: 2487
+  _time: 2024-10-17 02:48:24.427949531 Z
   _version: 0.4.0/0.26.1/
-  latest: 42912747355
+  latest: 42915333907
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 2481
-  _time: 2024-10-17 01:09:58.446159559 Z
+- _id: 2488
+  _time: 2024-10-17 02:48:33.150630678 Z
   _version: 0.4.0/0.26.1/
-  latest: 99
+  latest: 197
   repository: 807802459
   what: labels-were-scanned
   where: github
