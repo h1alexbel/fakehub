@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="226609">
+<fb version="0.4.0" size="226651">
   <f>
     <added t="I">8</added>
-    <cycles t="I">2</cycles>
+    <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">146.31264844</seconds>
+    <seconds t="F">12.303999831</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-10-23T02:50:00Z</when>
+    <when t="T">2024-10-23T03:21:01Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -9809,6 +9809,8 @@
     <average_reviewers_per_pull t="I">0</average_reviewers_per_pull>
     <average_reviews_per_pull t="I">0</average_reviews_per_pull>
     <average_triage_time t="I">0</average_triage_time>
+    <composite t="F">0.222</composite>
+    <ffact t="I">84</ffact>
     <since t="T">2024-10-16T02:47:51Z</since>
     <what t="S">quality-of-service</what>
     <when t="T">2024-10-23T02:47:51Z</when>
@@ -9817,6 +9819,8 @@
     <_id t="I">2939</_id>
     <_time t="T">2024-10-23T02:49:08Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
+    <composite t="F">0.545</composite>
+    <ffact t="I">85</ffact>
     <since t="T">2024-10-16T02:49:08Z</since>
     <total_builds_ran t="I">280</total_builds_ran>
     <total_commits_pushed t="I">2</total_commits_pushed>
@@ -9829,8 +9833,8 @@
     <when t="T">2024-10-23T02:49:08Z</when>
   </f>
   <f>
-    <_id t="I">2940</_id>
-    <_time t="T">2024-10-23T02:49:49Z</_time>
+    <_id t="I">2943</_id>
+    <_time t="T">2024-10-23T03:20:51Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -9838,8 +9842,8 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">2941</_id>
-    <_time t="T">2024-10-23T02:49:50Z</_time>
+    <_id t="I">2944</_id>
+    <_time t="T">2024-10-23T03:20:52Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">43089183018</latest>
     <repository t="I">807802459</repository>
@@ -9847,10 +9851,10 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">2942</_id>
-    <_time t="T">2024-10-23T02:50:00Z</_time>
+    <_id t="I">2945</_id>
+    <_time t="T">2024-10-23T03:21:01Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">55</latest>
+    <latest t="I">99</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
