@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 2
+  cycles: 1
   removed: 8
-  seconds: 119.395945465
+  seconds: 10.142667293
   version: 0.26.1
   what: judges-summary
-  when: 2024-10-31 03:25:24.599331616 Z
+  when: 2024-10-31 04:19:36.648311542 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -9377,12 +9377,16 @@
   average_reviewers_per_pull: 0
   average_reviews_per_pull: 0
   average_triage_time: 0
+  composite: 0.222
+  ffact: 84
   since: 2024-10-24 03:23:33.302639623 Z
   what: quality-of-service
   when: 2024-10-31 03:23:33.302560074 Z
 - _id: 3546
   _time: 2024-10-31 03:24:35.224582212 Z
   _version: 0.4.0/0.26.1/
+  composite: 0.419
+  ffact: 85
   since: 2024-10-24 03:24:35.224798888 Z
   total_builds_ran: 281
   total_commits_pushed: 0
@@ -9393,24 +9397,24 @@
   total_reviews_submitted: 0
   what: quantity-of-deliverables
   when: 2024-10-31 03:24:35.224729798 Z
-- _id: 3547
-  _time: 2024-10-31 03:25:10.930200966 Z
+- _id: 3550
+  _time: 2024-10-31 04:19:28.055440836 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 3548
-  _time: 2024-10-31 03:25:11.884856754 Z
+- _id: 3551
+  _time: 2024-10-31 04:19:28.890353631 Z
   _version: 0.4.0/0.26.1/
-  latest: 43374807704
+  latest: 43375370683
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 3549
-  _time: 2024-10-31 03:25:24.571874451 Z
+- _id: 3552
+  _time: 2024-10-31 04:19:36.620527140 Z
   _version: 0.4.0/0.26.1/
-  latest: 25
+  latest: 55
   repository: 807802459
   what: labels-were-scanned
   where: github
