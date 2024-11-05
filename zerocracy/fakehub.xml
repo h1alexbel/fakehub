@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="233169">
+<fb version="0.4.0" size="233512">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">3.843942463</seconds>
+    <seconds t="F">26.879523059</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-11-04T23:15:36Z</when>
+    <when t="T">2024-11-05T01:09:02Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -10318,8 +10318,24 @@
     <when t="T">2024-11-04T20:15:58Z</when>
   </f>
   <f>
-    <_id t="I">3913</_id>
-    <_time t="T">2024-11-04T23:15:34Z</_time>
+    <_id t="I">3917</_id>
+    <_time t="T">2024-11-05T01:08:38Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">renovate/yegor256-copyrights-action-0.x</branch>
+    <details t="S">The pull request h1alexbel/fakehub#209 has been opened by @renovate[bot].</details>
+    <event_id t="I">43491655113</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <is_human t="I">0</is_human>
+    <issue t="I">209</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-opened</what>
+    <when t="T">2024-11-04T18:20:51Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">3920</_id>
+    <_time t="T">2024-11-05T01:08:52Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -10327,19 +10343,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">3914</_id>
-    <_time t="T">2024-11-04T23:15:35Z</_time>
+    <_id t="I">3921</_id>
+    <_time t="T">2024-11-05T01:08:53Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">43489521414</latest>
+    <latest t="I">43491655113</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">3915</_id>
-    <_time t="T">2024-11-04T23:15:36Z</_time>
+    <_id t="I">3922</_id>
+    <_time t="T">2024-11-05T01:09:02Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">0</latest>
+    <latest t="I">55</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
