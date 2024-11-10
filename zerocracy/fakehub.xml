@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="237638">
+<fb version="0.4.0" size="237674">
   <f>
     <added t="I">8</added>
-    <cycles t="I">2</cycles>
+    <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">163.880444129</seconds>
+    <seconds t="F">3.437288179</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-11-10T06:22:09Z</when>
+    <when t="T">2024-11-10T07:13:19Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -10586,6 +10586,8 @@
     <average_reviewers_per_pull t="F">0.0</average_reviewers_per_pull>
     <average_reviews_per_pull t="F">0.0</average_reviews_per_pull>
     <average_triage_time t="I">0</average_triage_time>
+    <composite t="F">0.312</composite>
+    <ffact t="I">84</ffact>
     <since t="T">2024-11-03T06:19:40Z</since>
     <what t="S">quality-of-service</what>
     <when t="T">2024-11-10T06:19:40Z</when>
@@ -10594,6 +10596,8 @@
     <_id t="I">4320</_id>
     <_time t="T">2024-11-10T06:21:13Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
+    <composite t="F">1.424</composite>
+    <ffact t="I">85</ffact>
     <since t="T">2024-11-03T06:21:13Z</since>
     <total_builds_ran t="I">341</total_builds_ran>
     <total_commits_pushed t="I">1</total_commits_pushed>
@@ -10606,8 +10610,8 @@
     <when t="T">2024-11-10T06:21:13Z</when>
   </f>
   <f>
-    <_id t="I">4321</_id>
-    <_time t="T">2024-11-10T06:21:57Z</_time>
+    <_id t="I">4324</_id>
+    <_time t="T">2024-11-10T07:13:17Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -10615,19 +10619,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">4322</_id>
-    <_time t="T">2024-11-10T06:21:59Z</_time>
+    <_id t="I">4325</_id>
+    <_time t="T">2024-11-10T07:13:18Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">43668990399</latest>
+    <latest t="I">43669471948</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">4323</_id>
-    <_time t="T">2024-11-10T06:22:09Z</_time>
+    <_id t="I">4326</_id>
+    <_time t="T">2024-11-10T07:13:19Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">197</latest>
+    <latest t="I">0</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
