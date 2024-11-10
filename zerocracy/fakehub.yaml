@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 12.851461052
+  seconds: 163.880444129
   version: 0.26.1
   what: judges-summary
-  when: 2024-11-10 05:13:58.246631123 Z
+  when: 2024-11-10 06:22:09.729798119 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -9762,24 +9762,74 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-11-09 22:13:03.415383676 Z
-- _id: 4312
-  _time: 2024-11-10 05:13:47.174571071 Z
+- _id: 4316
+  _time: 2024-11-10 06:19:29.542543053 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/jamesives-github-pages-deploy-action-4.x
+  details: The pull request h1alexbel/fakehub#210 has been opened by @renovate[bot].
+  event_id: 43668478308
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 210
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-11-09 21:14:24.000000000 Z
+  where: github
+  who: 29139614
+- _id: 4319
+  _time: 2024-11-10 06:19:40.949285946 Z
+  _version: 0.4.0/0.26.1/
+  average_backlog_size: 0.0
+  average_build_duration: 63.91202346041056
+  average_build_mttr: -3393
+  average_build_success_rate: 0.9853372434017595
+  average_issue_lifetime: 0
+  average_pull_files_size: 1.0
+  average_pull_hoc_size: 2.0
+  average_pull_lifetime: 53254.0
+  average_pull_rejection_rate: 0.0
+  average_release_commits_size: 0
+  average_release_hoc_size: 0
+  average_release_interval: 0
+  average_review_size: 0.0
+  average_review_time: 0
+  average_reviewers_per_pull: 0.0
+  average_reviews_per_pull: 0.0
+  average_triage_time: 0
+  since: 2024-11-03 06:19:40.949503723 Z
+  what: quality-of-service
+  when: 2024-11-10 06:19:40.949422161 Z
+- _id: 4320
+  _time: 2024-11-10 06:21:13.872565032 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-11-03 06:21:13.872838483 Z
+  total_builds_ran: 341
+  total_commits_pushed: 1
+  total_hoc_committed: 2
+  total_issues_created: 2
+  total_pulls_submitted: 1
+  total_releases_published: 0
+  total_reviews_submitted: 0
+  what: quantity-of-deliverables
+  when: 2024-11-10 06:21:13.872753334 Z
+- _id: 4321
+  _time: 2024-11-10 06:21:57.935755328 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 4313
-  _time: 2024-11-10 05:13:48.395881215 Z
+- _id: 4322
+  _time: 2024-11-10 06:21:59.027009462 Z
   _version: 0.4.0/0.26.1/
-  latest: 43667955984
+  latest: 43668990399
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 4314
-  _time: 2024-11-10 05:13:58.219443432 Z
+- _id: 4323
+  _time: 2024-11-10 06:22:09.700683356 Z
   _version: 0.4.0/0.26.1/
-  latest: 99
+  latest: 197
   repository: 807802459
   what: labels-were-scanned
   where: github
