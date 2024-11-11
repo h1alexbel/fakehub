@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 12.785403462
+  seconds: 40.930269941
   version: 0.26.1
   what: judges-summary
-  when: 2024-11-11 09:17:11.077701246 Z
+  when: 2024-11-11 10:17:07.529725505 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -9831,24 +9831,48 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-11-10 22:13:22.055956779 Z
-- _id: 4403
-  _time: 2024-11-11 09:17:00.037129127 Z
+- _id: 4407
+  _time: 2024-11-11 10:16:29.820206664 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/jamesives-github-pages-deploy-action-4.x
+  comments: 3
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 4
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#210 has been closed by @rultor, with
+    2 HoC and 3 comments.
+  event_id: 43694818118
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 210
+  repository: 807802459
+  succeeded_builds: 12
+  what: pull-was-merged
+  when: 2024-11-11 09:26:51.000000000 Z
+  where: github
+  who: 8086956
+- _id: 4410
+  _time: 2024-11-11 10:16:56.826506004 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 4404
-  _time: 2024-11-11 09:17:01.608716072 Z
+- _id: 4411
+  _time: 2024-11-11 10:16:57.928923829 Z
   _version: 0.4.0/0.26.1/
-  latest: 43694272609
+  latest: 43694844613
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 4405
-  _time: 2024-11-11 09:17:11.040956951 Z
+- _id: 4412
+  _time: 2024-11-11 10:17:07.502712427 Z
   _version: 0.4.0/0.26.1/
-  latest: 55
+  latest: 147
   repository: 807802459
   what: labels-were-scanned
   where: github

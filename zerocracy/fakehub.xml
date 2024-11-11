@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="237889">
+<fb version="0.4.0" size="238319">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">12.785403462</seconds>
+    <seconds t="F">40.930269941</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-11-11T09:17:11Z</when>
+    <when t="T">2024-11-11T10:17:07Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -10627,8 +10627,33 @@
     <when t="T">2024-11-10T22:13:22Z</when>
   </f>
   <f>
-    <_id t="I">4403</_id>
-    <_time t="T">2024-11-11T09:17:00Z</_time>
+    <_id t="I">4407</_id>
+    <_time t="T">2024-11-11T10:16:29Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">renovate/jamesives-github-pages-deploy-action-4.x</branch>
+    <comments t="I">3</comments>
+    <comments_appreciated t="I">1</comments_appreciated>
+    <comments_by_author t="I">0</comments_by_author>
+    <comments_by_reviewers t="I">4</comments_by_reviewers>
+    <comments_resolved t="I">0</comments_resolved>
+    <comments_to_code t="I">0</comments_to_code>
+    <details t="S">The pull request h1alexbel/fakehub#210 has been closed by @rultor, with 2 HoC and 3 comments.</details>
+    <event_id t="I">43694818118</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <failed_builds t="I">0</failed_builds>
+    <hoc t="I">2</hoc>
+    <is_human t="I">0</is_human>
+    <issue t="I">210</issue>
+    <repository t="I">807802459</repository>
+    <succeeded_builds t="I">12</succeeded_builds>
+    <what t="S">pull-was-merged</what>
+    <when t="T">2024-11-11T09:26:51Z</when>
+    <where t="S">github</where>
+    <who t="I">8086956</who>
+  </f>
+  <f>
+    <_id t="I">4410</_id>
+    <_time t="T">2024-11-11T10:16:56Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -10636,19 +10661,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">4404</_id>
-    <_time t="T">2024-11-11T09:17:01Z</_time>
+    <_id t="I">4411</_id>
+    <_time t="T">2024-11-11T10:16:57Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">43694272609</latest>
+    <latest t="I">43694844613</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">4405</_id>
-    <_time t="T">2024-11-11T09:17:11Z</_time>
+    <_id t="I">4412</_id>
+    <_time t="T">2024-11-11T10:17:07Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">55</latest>
+    <latest t="I">147</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
