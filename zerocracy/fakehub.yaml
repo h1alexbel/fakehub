@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 5.635143742
+  seconds: 57.401773905
   version: 0.26.1
   what: judges-summary
-  when: 2024-11-15 15:16:36.752784074 Z
+  when: 2024-11-15 16:20:20.294596580 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -10026,24 +10026,48 @@
   when: 2024-11-14 17:15:27.000000000 Z
   where: github
   who: 29139614
-- _id: 4732
-  _time: 2024-11-15 15:16:33.479661045 Z
+- _id: 4736
+  _time: 2024-11-15 16:19:38.026134719 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/codecov-codecov-action-5.x
+  comments: 2
+  comments_appreciated: 1
+  comments_by_author: 0
+  comments_by_reviewers: 3
+  comments_resolved: 0
+  comments_to_code: 0
+  details: The pull request h1alexbel/fakehub#211 has been closed by @rultor, with
+    2 HoC and 2 comments.
+  event_id: 43854193053
+  event_type: PullRequestEvent
+  failed_builds: 0
+  hoc: 2
+  is_human: 0
+  issue: 211
+  repository: 807802459
+  succeeded_builds: 12
+  what: pull-was-merged
+  when: 2024-11-15 07:46:53.000000000 Z
+  where: github
+  who: 8086956
+- _id: 4739
+  _time: 2024-11-15 16:20:10.712570834 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 4733
-  _time: 2024-11-15 15:16:35.356771914 Z
+- _id: 4740
+  _time: 2024-11-15 16:20:11.566621855 Z
   _version: 0.4.0/0.26.1/
-  latest: 43852253016
+  latest: 43854233077
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 4734
-  _time: 2024-11-15 15:16:36.723756731 Z
+- _id: 4741
+  _time: 2024-11-15 16:20:20.248780957 Z
   _version: 0.4.0/0.26.1/
-  latest: 0
+  latest: 55
   repository: 807802459
   what: labels-were-scanned
   where: github
