@@ -2,10 +2,10 @@
 - added: 8
   cycles: 1
   removed: 8
-  seconds: 4.211218181
+  seconds: 14.912154275
   version: 0.26.1
   what: judges-summary
-  when: 2024-11-18 18:21:28.820176580 Z
+  when: 2024-11-18 19:13:08.531213924 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -10192,24 +10192,24 @@
   total_reviews_submitted: 0
   what: quantity-of-deliverables
   when: 2024-11-18 07:17:12.802815583 Z
-- _id: 4975
-  _time: 2024-11-18 18:21:26.498594967 Z
+- _id: 4978
+  _time: 2024-11-18 19:12:55.298895852 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 4976
-  _time: 2024-11-18 18:21:27.644680342 Z
+- _id: 4979
+  _time: 2024-11-18 19:12:56.231979996 Z
   _version: 0.4.0/0.26.1/
   latest: 43935600503
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 4977
-  _time: 2024-11-18 18:21:28.789825298 Z
+- _id: 4980
+  _time: 2024-11-18 19:13:08.499935297 Z
   _version: 0.4.0/0.26.1/
-  latest: 0
+  latest: 25
   repository: 807802459
   what: labels-were-scanned
   where: github
