@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 24.997693947
+  seconds: 97.108123288
   version: 0.26.1
   what: judges-summary
-  when: 2024-11-18 06:23:50.424816292 Z
+  when: 2024-11-18 07:17:56.359062788 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -10152,24 +10152,60 @@
   total_stars: 5
   what: dimensions-of-terrain
   when: 2024-11-18 02:58:19.104708882 Z
-- _id: 4934
-  _time: 2024-11-18 06:23:39.513581699 Z
+- _id: 4940
+  _time: 2024-11-18 07:16:23.012175324 Z
+  _version: 0.4.0/0.26.1/
+  average_backlog_size: 0.0
+  average_build_duration: 66.2258064516129
+  average_build_mttr: 0
+  average_build_success_rate: 0.9967741935483871
+  average_issue_lifetime: 0
+  average_pull_files_size: 1.0
+  average_pull_hoc_size: 2.0
+  average_pull_lifetime: 52287.0
+  average_pull_rejection_rate: 0.0
+  average_release_commits_size: 0
+  average_release_hoc_size: 0
+  average_release_interval: 0
+  average_review_size: 0.0
+  average_review_time: 0
+  average_reviewers_per_pull: 0.0
+  average_reviews_per_pull: 0.0
+  average_triage_time: 0
+  since: 2024-11-11 07:16:23.012471287 Z
+  what: quality-of-service
+  when: 2024-11-18 07:16:23.012384084 Z
+- _id: 4941
+  _time: 2024-11-18 07:17:12.801718324 Z
+  _version: 0.4.0/0.26.1/
+  since: 2024-11-11 07:17:12.802877799 Z
+  total_builds_ran: 310
+  total_commits_pushed: 1
+  total_hoc_committed: 2
+  total_issues_created: 1
+  total_pulls_submitted: 0
+  total_releases_published: 0
+  total_reviews_submitted: 0
+  what: quantity-of-deliverables
+  when: 2024-11-18 07:17:12.802815583 Z
+- _id: 4942
+  _time: 2024-11-18 07:17:43.922039215 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 4935
-  _time: 2024-11-18 06:23:40.795431479 Z
+- _id: 4943
+  _time: 2024-11-18 07:17:44.642485940 Z
   _version: 0.4.0/0.26.1/
-  latest: 43915178850
+  latest: 43916612520
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 4936
-  _time: 2024-11-18 06:23:50.393472621 Z
+- _id: 4944
+  _time: 2024-11-18 07:17:56.329558599 Z
   _version: 0.4.0/0.26.1/
-  latest: 197
+  latest: 25
   repository: 807802459
   what: labels-were-scanned
   where: github
