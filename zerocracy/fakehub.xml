@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="249187">
+<fb version="0.4.0" size="249538">
   <f>
     <added t="I">8</added>
-    <cycles t="I">1</cycles>
+    <cycles t="I">2</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">14.987744787</seconds>
+    <seconds t="F">16.56273393</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-11-28T19:13:13Z</when>
+    <when t="T">2024-11-28T20:17:38Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -11414,8 +11414,24 @@
     <when t="T">2024-11-28T10:19:31Z</when>
   </f>
   <f>
-    <_id t="I">5727</_id>
-    <_time t="T">2024-11-28T19:13:00Z</_time>
+    <_id t="I">5731</_id>
+    <_time t="T">2024-11-28T20:17:25Z</_time>
+    <_version t="S">0.4.0/0.26.1/</_version>
+    <branch t="S">renovate/jamesives-github-pages-deploy-action-4.x</branch>
+    <details t="S">The pull request h1alexbel/fakehub#212 has been opened by @renovate[bot].</details>
+    <event_id t="I">44287886369</event_id>
+    <event_type t="S">PullRequestEvent</event_type>
+    <is_human t="I">0</is_human>
+    <issue t="I">212</issue>
+    <repository t="I">807802459</repository>
+    <what t="S">pull-was-opened</what>
+    <when t="T">2024-11-28T13:26:39Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">5734</_id>
+    <_time t="T">2024-11-28T20:17:36Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -11423,19 +11439,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">5728</_id>
-    <_time t="T">2024-11-28T19:13:01Z</_time>
+    <_id t="I">5735</_id>
+    <_time t="T">2024-11-28T20:17:37Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">44285991344</latest>
+    <latest t="I">44288056378</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">5729</_id>
-    <_time t="T">2024-11-28T19:13:13Z</_time>
+    <_id t="I">5736</_id>
+    <_time t="T">2024-11-28T20:17:38Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">147</latest>
+    <latest t="I">0</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
