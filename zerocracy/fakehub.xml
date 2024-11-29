@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="249967">
+<fb version="0.4.0" size="250349">
   <f>
     <added t="I">8</added>
-    <cycles t="I">2</cycles>
+    <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">44.739826556</seconds>
+    <seconds t="F">17.285362521</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-11-28T23:16:16Z</when>
+    <when t="T">2024-11-29T01:15:19Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -11455,8 +11455,26 @@
     <who t="I">8086956</who>
   </f>
   <f>
-    <_id t="I">5747</_id>
-    <_time t="T">2024-11-28T23:16:06Z</_time>
+    <_id t="I">5750</_id>
+    <_job t="I">11310</_job>
+    <_time t="T">2024-11-28T23:16:22Z</_time>
+    <_version t="S">0.4.0/0.27.0/0.0.55</_version>
+    <comments t="I">3</comments>
+    <details t="S">The pull request h1alexbel/fakehub#212 with 2 HoC created by @renovate[bot] was merged by @rultor after 2 hours of being in review and 3 comments.</details>
+    <hoc t="I">2</hoc>
+    <is_human t="I">0</is_human>
+    <issue t="I">212</issue>
+    <merger t="I">8086956</merger>
+    <repository t="I">807802459</repository>
+    <seconds t="I">9313</seconds>
+    <what t="S">code-was-contributed</what>
+    <when t="T">2024-11-28T16:01:52Z</when>
+    <where t="S">github</where>
+    <who t="I">29139614</who>
+  </f>
+  <f>
+    <_id t="I">5751</_id>
+    <_time t="T">2024-11-29T01:15:08Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -11464,19 +11482,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">5748</_id>
-    <_time t="T">2024-11-28T23:16:07Z</_time>
+    <_id t="I">5752</_id>
+    <_time t="T">2024-11-29T01:15:09Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">44293812691</latest>
+    <latest t="I">44297702725</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">5749</_id>
-    <_time t="T">2024-11-28T23:16:16Z</_time>
+    <_id t="I">5753</_id>
+    <_time t="T">2024-11-29T01:15:19Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">147</latest>
+    <latest t="I">197</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
