@@ -1,11 +1,11 @@
 ---
 - added: 8
-  cycles: 1
+  cycles: 2
   removed: 8
-  seconds: 13.270525791
+  seconds: 16.398576991
   version: 0.26.1
   what: judges-summary
-  when: 2024-12-03 23:15:39.229217802 Z
+  when: 2024-12-04 01:17:03.426161044 Z
 - _id: 1
   _time: 2024-09-10 12:29:34.067357322 Z
   _version: 0.4.0/0.26.1/
@@ -10752,24 +10752,38 @@
   total_stars: 6
   what: dimensions-of-terrain
   when: 2024-12-03 13:26:40.470011143 Z
-- _id: 6116
-  _time: 2024-12-03 23:15:27.803165592 Z
+- _id: 6120
+  _time: 2024-12-04 01:16:49.852161436 Z
+  _version: 0.4.0/0.26.1/
+  branch: renovate/jamesives-github-pages-deploy-action-4.x
+  details: The pull request h1alexbel/fakehub#213 has been opened by @renovate[bot].
+  event_id: 44433778077
+  event_type: PullRequestEvent
+  is_human: 0
+  issue: 213
+  repository: 807802459
+  what: pull-was-opened
+  when: 2024-12-03 18:21:10.000000000 Z
+  where: github
+  who: 29139614
+- _id: 6123
+  _time: 2024-12-04 01:17:01.138441682 Z
   _version: 0.4.0/0.26.1/
   latest: 1
   repository: 807802459
   what: min-issue-was-found
   where: github
-- _id: 6117
-  _time: 2024-12-03 23:15:29.030695644 Z
+- _id: 6124
+  _time: 2024-12-04 01:17:02.233733034 Z
   _version: 0.4.0/0.26.1/
-  latest: 44431665009
+  latest: 44433778077
   repository: 807802459
   what: events-were-scanned
   where: github
-- _id: 6118
-  _time: 2024-12-03 23:15:39.198757371 Z
+- _id: 6125
+  _time: 2024-12-04 01:17:03.395655105 Z
   _version: 0.4.0/0.26.1/
-  latest: 147
+  latest: 0
   repository: 807802459
   what: labels-were-scanned
   where: github
