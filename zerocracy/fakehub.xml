@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fb version="0.4.0" size="267655">
+<fb version="0.4.0" size="267664">
   <f>
     <added t="I">8</added>
     <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">12.729750332</seconds>
+    <seconds t="F">12.431320644</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-12-26T22:14:05Z</when>
+    <when t="T">2024-12-26T23:14:32Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -12628,22 +12628,6 @@
     <when t="T">2024-12-26T06:21:31Z</when>
   </f>
   <f>
-    <_id t="I">7827</_id>
-    <_job t="I">12339</_job>
-    <_time t="T">2024-12-26T13:21:28Z</_time>
-    <_version t="S">0.4.0/0.26.1/0.0.55!0.0.65</_version>
-    <cost_of_qod>
-      <v t="F">13.318534961154272</v>
-      <v t="F">0.823271130625686</v>
-    </cost_of_qod>
-    <qod_per_day>
-      <v t="F">0.12871428573359928</v>
-      <v t="F">2.082285714509405</v>
-    </qod_per_day>
-    <what t="S">learn-eva</what>
-    <when t="T">2024-12-26T13:21:27Z</when>
-  </f>
-  <f>
     <_id t="I">7843</_id>
     <_time t="T">2024-12-26T18:20:22Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
@@ -12688,8 +12672,24 @@
     <when t="T">2024-12-26T18:22:06Z</when>
   </f>
   <f>
-    <_id t="I">7857</_id>
-    <_time t="T">2024-12-26T22:13:53Z</_time>
+    <_id t="I">7860</_id>
+    <_job t="I">12353</_job>
+    <_time t="T">2024-12-26T22:14:34Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.55!0.0.65</_version>
+    <cost_of_qod>
+      <v t="F">13.318534961154272</v>
+      <v t="F">0.823271130625686</v>
+    </cost_of_qod>
+    <qod_per_day>
+      <v t="F">0.12871428573359928</v>
+      <v t="F">2.082285714509405</v>
+    </qod_per_day>
+    <what t="S">learn-eva</what>
+    <when t="T">2024-12-26T22:14:34Z</when>
+  </f>
+  <f>
+    <_id t="I">7861</_id>
+    <_time t="T">2024-12-26T23:14:22Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -12697,19 +12697,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">7858</_id>
-    <_time t="T">2024-12-26T22:13:55Z</_time>
+    <_id t="I">7862</_id>
+    <_time t="T">2024-12-26T23:14:23Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">45101887271</latest>
+    <latest t="I">45102532803</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">7859</_id>
-    <_time t="T">2024-12-26T22:14:05Z</_time>
+    <_id t="I">7863</_id>
+    <_time t="T">2024-12-26T23:14:32Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">99</latest>
+    <latest t="I">147</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
