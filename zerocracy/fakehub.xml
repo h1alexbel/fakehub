@@ -4,10 +4,10 @@
     <added t="I">8</added>
     <cycles t="I">1</cycles>
     <removed t="I">8</removed>
-    <seconds t="F">14.849769447</seconds>
+    <seconds t="F">13.819538</seconds>
     <version t="S">0.26.1</version>
     <what t="S">judges-summary</what>
-    <when t="T">2024-12-28T11:11:48Z</when>
+    <when t="T">2024-12-28T12:27:40Z</when>
   </f>
   <f>
     <_id t="I">1</_id>
@@ -12689,22 +12689,6 @@
     <when t="T">2024-12-27T07:15:09Z</when>
   </f>
   <f>
-    <_id t="I">7892</_id>
-    <_job t="I">12366</_job>
-    <_time t="T">2024-12-27T08:20:33Z</_time>
-    <_version t="S">0.4.0/0.26.1/0.0.55!0.0.65</_version>
-    <cost_of_qod>
-      <v t="F">13.318534961154272</v>
-      <v t="F">0.823271130625686</v>
-    </cost_of_qod>
-    <qod_per_day>
-      <v t="F">0.12871428573359928</v>
-      <v t="F">2.082285714509405</v>
-    </qod_per_day>
-    <what t="S">learn-eva</what>
-    <when t="T">2024-12-27T08:20:33Z</when>
-  </f>
-  <f>
     <_id t="I">7899</_id>
     <_time t="T">2024-12-28T08:18:00Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
@@ -12722,8 +12706,24 @@
     <when t="T">2024-12-28T08:18:00Z</when>
   </f>
   <f>
-    <_id t="I">7912</_id>
-    <_time t="T">2024-12-28T11:11:35Z</_time>
+    <_id t="I">7915</_id>
+    <_job t="I">12417</_job>
+    <_time t="T">2024-12-28T11:12:16Z</_time>
+    <_version t="S">0.4.0/0.26.1/0.0.55!0.0.65</_version>
+    <cost_of_qod>
+      <v t="F">13.318534961154272</v>
+      <v t="F">0.823271130625686</v>
+    </cost_of_qod>
+    <qod_per_day>
+      <v t="F">0.12871428573359928</v>
+      <v t="F">2.082285714509405</v>
+    </qod_per_day>
+    <what t="S">learn-eva</what>
+    <when t="T">2024-12-28T11:12:16Z</when>
+  </f>
+  <f>
+    <_id t="I">7916</_id>
+    <_time t="T">2024-12-28T12:27:28Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
     <latest t="I">1</latest>
     <repository t="I">807802459</repository>
@@ -12731,19 +12731,19 @@
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">7913</_id>
-    <_time t="T">2024-12-28T11:11:36Z</_time>
+    <_id t="I">7917</_id>
+    <_time t="T">2024-12-28T12:27:29Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">45128380164</latest>
+    <latest t="I">45128849534</latest>
     <repository t="I">807802459</repository>
     <what t="S">events-were-scanned</what>
     <where t="S">github</where>
   </f>
   <f>
-    <_id t="I">7914</_id>
-    <_time t="T">2024-12-28T11:11:48Z</_time>
+    <_id t="I">7918</_id>
+    <_time t="T">2024-12-28T12:27:40Z</_time>
     <_version t="S">0.4.0/0.26.1/</_version>
-    <latest t="I">55</latest>
+    <latest t="I">99</latest>
     <repository t="I">807802459</repository>
     <what t="S">labels-were-scanned</what>
     <where t="S">github</where>
