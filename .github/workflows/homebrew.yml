@@ -20,35 +20,22 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: tarpaulin
+name: homebrew
 'on':
   push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    tags:
+      - '*'
+permissions:
+  contents: read
 jobs:
-  tarpaulin:
-    runs-on: ubuntu-24.04
+  release:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Bump formula
+        uses: mislav/bump-homebrew-formula-action@v3
         with:
-          distribution: 'temurin'
-          java-version: 21
-      - uses: extractions/setup-just@v2
-        with:
-          just-version: 1.30.1
-      - name: Build mirror
-        run: |
-          just install
-          just gen
-      - uses: actions-rs/tarpaulin@v0.1
-        with:
-          version: '0.22.0'
-          args: '-- --test-threads 1'
-      - uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+          formula-name: fakehub
+          formula-path: Formula/f/fakehub.rb
+          base-branch: master
+        env:
+          COMMITTER_TOKEN: ${{ secrets.HOMEBREW_COMMITTER_TOKEN }}
