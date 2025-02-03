@@ -45,7 +45,7 @@ jobs:
           just install
           cargo install cargo-tarpaulin
           just gen
-          cargo tarpaulin --test-threads 1
+          cargo tarpaulin
       - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
