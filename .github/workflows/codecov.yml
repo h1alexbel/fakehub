@@ -42,6 +42,7 @@ jobs:
           just-version: 1.30.1
       - name: Build mirror
         run: |
+          sudo apt install libssl1.1
           just install
           just gen
       - uses: actions-rs/tarpaulin@v0.1
