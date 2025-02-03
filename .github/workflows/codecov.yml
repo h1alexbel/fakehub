@@ -43,7 +43,6 @@ jobs:
       - name: Coverage
         run: |
           just install
-          cargo install cargo-tarpaulin
           just gen
           cargo tarpaulin
       - uses: codecov/codecov-action@v5

@@ -24,6 +24,7 @@
 install:
   cargo install cargo-machete
   cargo install killport
+  cargo install cargo-tarpaulin
   npm install @openapitools/openapi-generator-cli@2.13.7 -g
 
 # Full build.
