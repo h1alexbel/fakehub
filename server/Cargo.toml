@@ -48,7 +48,7 @@ log = { version = "0.4.21", features = [] }
 hamcrest = "0.1.5"
 reqwest = "0.12.5"
 uuid = { version = "1.10.0", features = ["v4", "fast-rng", "macro-diagnostics", ] }
-md5 = "0.7.0"
+md5 = "0.8.0"
 chrono = "0.4.38"
 rand = "0.8.5"
 regex = "1.10.6"
