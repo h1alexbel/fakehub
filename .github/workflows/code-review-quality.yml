@@ -32,7 +32,7 @@ jobs:
     if: ${{ github.event.review.state == 'approved' }}
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker://tracehub/code-review-action:0.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
